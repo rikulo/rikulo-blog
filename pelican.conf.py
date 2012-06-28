@@ -3,7 +3,7 @@
 
 AUTHOR = u"Various"
 SITENAME = u"Rikulo Blog"
-SITEURL = '/'
+SITEURL = 'www.rikulo.org/blog'
 
 TIMEZONE = 'Europe/Paris'
 
@@ -23,6 +23,5 @@ SOCIAL = (
          )
 
 DEFAULT_PAGINATION = 7
-
-
-    
+RELATIVE_URL = True
+STATIC_PATHS = ["files"]
