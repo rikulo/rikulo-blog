@@ -9,18 +9,11 @@ TIMEZONE = 'Europe/Paris'
 
 DEFAULT_LANG='en'
 
-# Blogroll
-LINKS =  (
-    ('Pelican', 'http://docs.notmyidea.org/alexis/pelican/'),
-    ('Python.org', 'http://python.org'),
-    ('Jinja2', 'http://jinja.pocoo.org'),
-    ('You can modify those links in your config file', '#')
-         )
+CSS_FILE = 'blog.css'
 
-# Social widget
-SOCIAL = (
-          ('You can add links in your config file', '#'),
-         )
+FEED_RSS = "feeds/all.rss.xml"
+
+THEME = "rikulo-theme"
 
 DEFAULT_PAGINATION = 7
 RELATIVE_URL = True

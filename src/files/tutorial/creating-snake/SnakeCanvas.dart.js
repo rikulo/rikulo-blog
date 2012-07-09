@@ -133,7 +133,7 @@ Isolate.$defineClass("HashMapImplementation", "Object", ["_numberOfDeleted", "_n
   $.setRuntimeTypeInfo(list, ({E: 'V'}));
   t0.list_1 = list;
   t0.i_2 = 0;
-  this.forEach$1(new $.Closure30(t0));
+  this.forEach$1(new $.Closure24(t0));
   return t0.list_1;
  },
  getKeys$0: function() {
@@ -142,7 +142,7 @@ Isolate.$defineClass("HashMapImplementation", "Object", ["_numberOfDeleted", "_n
   $.setRuntimeTypeInfo(list, ({E: 'K'}));
   t0.list_1 = list;
   t0.i_2 = 0;
-  this.forEach$1(new $.Closure22(t0));
+  this.forEach$1(new $.Closure74(t0));
   return t0.list_1;
  },
  forEach$1: function(f) {
@@ -466,7 +466,7 @@ Isolate.$defineClass("HashSetImplementation", "Object", ["_backingMap?"], {
   var result = $.HashSetImplementation$0();
   $.setRuntimeTypeInfo(result, ({E: 'E'}));
   t0.result_2 = result;
-  $.forEach(this._backingMap, new $.Closure26(t0));
+  $.forEach(this._backingMap, new $.Closure20(t0));
   return t0.result_2;
  },
  forEach$1: function(f) {
@@ -475,7 +475,7 @@ Isolate.$defineClass("HashSetImplementation", "Object", ["_backingMap?"], {
   $.forEach(this._backingMap, new $.Closure3(t0));
  },
  addAll$1: function(collection) {
-  $.forEach(collection, new $.Closure24(this));
+  $.forEach(collection, new $.Closure18(this));
  },
  remove$1: function(value) {
   if (this._backingMap.containsKey$1(value) !== true) {
@@ -592,7 +592,7 @@ Isolate.$defineClass("LinkedHashMapImplementation", "Object", ["_map", "_list"],
   $.setRuntimeTypeInfo(list, ({E: 'V'}));
   t0.list_1 = list;
   t0.index_2 = 0;
-  $.forEach(this._list, new $.Closure31(t0));
+  $.forEach(this._list, new $.Closure25(t0));
   $.assert($.eq(t0.index_2, $.get$length(this)));
   return t0.list_1;
  },
@@ -602,7 +602,7 @@ Isolate.$defineClass("LinkedHashMapImplementation", "Object", ["_map", "_list"],
   $.setRuntimeTypeInfo(list, ({E: 'K'}));
   t0.list_1 = list;
   t0.index_2 = 0;
-  $.forEach(this._list, new $.Closure23(t0));
+  $.forEach(this._list, new $.Closure75(t0));
   $.assert($.eq(t0.index_2, $.get$length(this)));
   return t0.list_1;
  },
@@ -1017,7 +1017,7 @@ Isolate.$defineClass("Closure94", "Object", [], {
  }
 });
 
-Isolate.$defineClass("ConstantMap", "Object", ["_lib6_keys?", "_jsObject", "length?"], {
+Isolate.$defineClass("ConstantMap", "Object", ["_lib5_keys?", "_jsObject", "length?"], {
  clear$0: function() {
   return this._throwImmutable$0();
  },
@@ -1031,7 +1031,7 @@ Isolate.$defineClass("ConstantMap", "Object", ["_lib6_keys?", "_jsObject", "leng
   return this._throwImmutable$0();
  },
  _throwImmutable$0: function() {
-  throw $.captureStackTrace($.CTC38);
+  throw $.captureStackTrace($.CTC12);
  },
  toString$0: function() {
   return $.mapToString(this);
@@ -1042,16 +1042,16 @@ Isolate.$defineClass("ConstantMap", "Object", ["_lib6_keys?", "_jsObject", "leng
  getValues$0: function() {
   var t0 = ({});
   t0.result_1 = [];
-  $.forEach(this._lib6_keys, new $.Closure47(this, t0));
+  $.forEach(this._lib5_keys, new $.Closure26(this, t0));
   return t0.result_1;
  },
  getKeys$0: function() {
-  return this._lib6_keys;
+  return this._lib5_keys;
  },
  forEach$1: function(f) {
   var t0 = ({});
   t0.f_1 = f;
-  $.forEach(this._lib6_keys, new $.Closure46(this, t0));
+  $.forEach(this._lib5_keys, new $.Closure17(this, t0));
  },
  operator$index$1: function(key) {
   if (this.containsKey$1(key) !== true) {
@@ -1229,7 +1229,7 @@ Isolate.$defineClass("SnakeCanvas", "Activity", ["right?", "left=", "down", "up"
   }
  },
  get$onKeyDown: function() { return new $.Closure99(this); },
- onEnterDocument_$0: function() {
+ onMount_$0: function() {
   this.ctx2d = this.canvas.get$context2D();
   var t0 = this.canvas.get$node();
   var t1 = this._gestureMove$0();
@@ -1598,7 +1598,7 @@ Isolate.$defineClass("FilteredElementList", "Object", ["_childNodes", "_lib_node
   $.clear(this._childNodes);
  },
  removeRange$2: function(start, rangeLength) {
-  $.forEach($.getRange(this.get$_filtered(), start, rangeLength), new $.Closure28());
+  $.forEach($.getRange(this.get$_filtered(), start, rangeLength), new $.Closure22());
  },
  addLast$1: function(value) {
   this.add$1(value);
@@ -1638,7 +1638,7 @@ Isolate.$defineClass("FilteredElementList", "Object", ["_childNodes", "_lib_node
  },
  first$0: function() { return this.get$first().$call$0(); },
  get$_filtered: function() {
-  return $.List$from($.filter(this._childNodes, new $.Closure25()));
+  return $.List$from($.filter(this._childNodes, new $.Closure19()));
  },
  is$List2: function() { return true; },
  is$Collection: function() { return true; }
@@ -1671,7 +1671,7 @@ Isolate.$defineClass("_ChildrenElementList", "Object", ["_childElements", "_lib_
   return $._FrozenElementList$_wrap$1($.getRange2(this, start, rangeLength, []));
  },
  removeRange$2: function(start, rangeLength) {
-  throw $.captureStackTrace($.CTC13);
+  throw $.captureStackTrace($.CTC57);
  },
  addAll$1: function(collection) {
   for (var t0 = $.iterator(collection); t0.hasNext$0() === true; ) {
@@ -1690,7 +1690,7 @@ Isolate.$defineClass("_ChildrenElementList", "Object", ["_childElements", "_lib_
   return value;
  },
  set$length: function(newLength) {
-  throw $.captureStackTrace($.CTC12);
+  throw $.captureStackTrace($.CTC13);
  },
  operator$indexSet$2: function(index, value) {
   this._lib_element.$dom_replaceChild$2(value, $.index(this._childElements, index));
@@ -1708,7 +1708,7 @@ Isolate.$defineClass("_ChildrenElementList", "Object", ["_childElements", "_lib_
   var t0 = ({});
   t0.f_1 = f;
   var output = [];
-  this.forEach$1(new $.Closure27(t0, output));
+  this.forEach$1(new $.Closure21(t0, output));
   return $._FrozenElementList$_wrap$1(output);
  },
  forEach$1: function(f) {
@@ -1767,10 +1767,10 @@ Isolate.$defineClass("_FrozenElementList", "Object", ["_nodeList"], {
   return $.last(this._nodeList);
  },
  removeLast$0: function() {
-  throw $.captureStackTrace($.CTC12);
+  throw $.captureStackTrace($.CTC13);
  },
  clear$0: function() {
-  throw $.captureStackTrace($.CTC12);
+  throw $.captureStackTrace($.CTC13);
  },
  indexOf$2: function(element, start) {
   return $.indexOf$2(this._nodeList, element, start);
@@ -1782,25 +1782,25 @@ Isolate.$defineClass("_FrozenElementList", "Object", ["_nodeList"], {
   return $._FrozenElementList$_wrap$1($.getRange(this._nodeList, start, rangeLength));
  },
  removeRange$2: function(start, rangeLength) {
-  throw $.captureStackTrace($.CTC12);
+  throw $.captureStackTrace($.CTC13);
  },
  addAll$1: function(collection) {
-  throw $.captureStackTrace($.CTC12);
+  throw $.captureStackTrace($.CTC13);
  },
  iterator$0: function() {
   return $._FrozenElementListIterator$1(this);
  },
  addLast$1: function(value) {
-  throw $.captureStackTrace($.CTC12);
+  throw $.captureStackTrace($.CTC13);
  },
  add$1: function(value) {
-  throw $.captureStackTrace($.CTC12);
+  throw $.captureStackTrace($.CTC13);
  },
  set$length: function(newLength) {
   $.set$length(this._nodeList, newLength);
  },
  operator$indexSet$2: function(index, value) {
-  throw $.captureStackTrace($.CTC12);
+  throw $.captureStackTrace($.CTC13);
  },
  operator$index$1: function(index) {
   return $.index(this._nodeList, index);
@@ -2031,6 +2031,62 @@ Isolate.$defineClass("_ElementAttributeMap", "Object", ["_lib_element?"], {
  is$Map: function() { return true; }
 });
 
+Isolate.$defineClass("_DataAttributeMap", "Object", ["$$dom_attributes?"], {
+ _strip$1: function(key) {
+  return $.substring$1(key, 5);
+ },
+ _matches$1: function(key) {
+  return $.startsWith(key, 'data-');
+ },
+ _attr$1: function(key) {
+  return 'data-' + $.stringToString(key);
+ },
+ isEmpty$0: function() {
+  return $.eq($.get$length(this), 0);
+ },
+ get$length: function() {
+  return $.get$length(this.getKeys$0());
+ },
+ getValues$0: function() {
+  var values = $.List((void 0));
+  $.setRuntimeTypeInfo(values, ({E: 'String'}));
+  $.forEach(this.$$dom_attributes, new $.Closure49(this, values));
+  return values;
+ },
+ getKeys$0: function() {
+  var keys = $.List((void 0));
+  $.setRuntimeTypeInfo(keys, ({E: 'String'}));
+  $.forEach(this.$$dom_attributes, new $.Closure47(this, keys));
+  return keys;
+ },
+ forEach$1: function(f) {
+  var t0 = ({});
+  t0.f_1 = f;
+  $.forEach(this.$$dom_attributes, new $.Closure48(this, t0));
+ },
+ clear$0: function() {
+  for (var t0 = $.iterator(this.getKeys$0()); t0.hasNext$0() === true; ) {
+    this.remove$1(t0.next$0());
+  }
+ },
+ remove$1: function(key) {
+  return this.$$dom_attributes.remove$1(this._attr$1(key));
+ },
+ putIfAbsent$2: function(key, ifAbsent) {
+  return this.$$dom_attributes.putIfAbsent$2(this._attr$1(key), ifAbsent);
+ },
+ operator$indexSet$2: function(key, value) {
+  $.indexSet(this.$$dom_attributes, this._attr$1(key), '' + $.stringToString(value));
+ },
+ operator$index$1: function(key) {
+  return $.index(this.$$dom_attributes, this._attr$1(key));
+ },
+ containsKey$1: function(key) {
+  return this.$$dom_attributes.containsKey$1(this._attr$1(key));
+ },
+ is$Map: function() { return true; }
+});
+
 Isolate.$defineClass("_CssClassSet", "Object", ["_lib_element?"], {
  _formatSet$1: function(s) {
   return $.join($.List$from(s), ' ');
@@ -2059,12 +2115,12 @@ Isolate.$defineClass("_CssClassSet", "Object", ["_lib_element?"], {
   this._write$1(s);
  },
  clear$0: function() {
-  this._modify$1(new $.Closure67());
+  this._modify$1(new $.Closure60());
  },
  addAll$1: function(collection) {
   var t0 = ({});
   t0.collection_1 = collection;
-  this._modify$1(new $.Closure66(t0));
+  this._modify$1(new $.Closure59(t0));
  },
  remove$1: function(value) {
   var s = this._read$0();
@@ -2075,7 +2131,7 @@ Isolate.$defineClass("_CssClassSet", "Object", ["_lib_element?"], {
  add$1: function(value) {
   var t0 = ({});
   t0.value_1 = value;
-  this._modify$1(new $.Closure65(t0));
+  this._modify$1(new $.Closure58(t0));
  },
  contains$1: function(value) {
   return $.contains$1(this._read$0(), value);
@@ -2514,7 +2570,7 @@ Isolate.$defineClass("_VariableSizeListIterator", "Object", [], {
 });
 
 Isolate.$defineClass("Activity", "Object", ["_dlgInfos?", "_mainView?"], {
- onEnterDocument_$0: function() {
+ onMount_$0: function() {
  },
  onCreate_$0: function() {
  },
@@ -2556,21 +2612,21 @@ Isolate.$defineClass("Activity", "Object", ["_dlgInfos?", "_mainView?"], {
     this.get$mainView().requestLayout$0();
   }
  },
- mount_$0: function() {
+ _init$0: function() {
   var t0 = $.window().get$on();
   if ($.browser.get$mobile() === true || $.application().get$inSimulator() === true) {
     var t1 = 'deviceOrientation';
   } else {
     t1 = 'resize';
   }
-  $.add$1($.index(t0, t1), new $.Closure74(this));
+  $.add$1($.index(t0, t1), new $.Closure67(this));
   var t2 = $.document().get$on();
   if ($.browser.get$touch() === true) {
     var t3 = 'touchStart';
   } else {
     t3 = 'mouseDown';
   }
-  $.add$1($.index(t2, t3), new $.Closure75());
+  $.add$1($.index(t2, t3), new $.Closure68());
   var clses = $.document().get$body().get$classes();
   $.add$1(clses, 'rikulo');
   $.add$1(clses, $.browser.get$name());
@@ -2589,7 +2645,7 @@ Isolate.$defineClass("Activity", "Object", ["_dlgInfos?", "_mainView?"], {
     throw $.captureStackTrace($.CTC);
   }
   $.activity = this;
-  this.mount_$0();
+  this._init$0();
   if (this._mainView === (void 0)) {
     this._mainView = $.Section$0();
   }
@@ -2627,7 +2683,7 @@ Isolate.$defineClass("Application", "Object", ["_lib2_uuid", "_readyCB", "inSimu
   if (this._lib2_uuid === (void 0)) {
     var body = $.document().get$body();
     if (body === (void 0)) {
-      throw $.captureStackTrace($.CTC42);
+      throw $.captureStackTrace($.CTC44);
     }
     var sval = body.$dom_getAttribute$1('data-rikuloAppCount');
     if (!(sval === (void 0))) {
@@ -2671,6 +2727,110 @@ Isolate.$defineClass("SystemException", "Object", ["message?"], {
  toString$0: function() {
   return 'SystemException(' + $.stringToString(this.message) + ')';
  }
+});
+
+Isolate.$defineClass("_EmptyColl", "Object", [], {
+ get$length: function() {
+  return 0;
+ },
+ isEmpty$0: function() {
+  return true;
+ },
+ filter$1: function(f) {
+  return $.CTC41;
+ },
+ forEach$1: function(f) {
+ },
+ iterator$0: function() {
+  return $.CTC42;
+ },
+ is$Collection: function() { return true; }
+});
+
+Isolate.$defineClass("_EmptyIter", "Object", [], {
+ hasNext$0: function() {
+  return false;
+ },
+ next$0: function() {
+  throw $.captureStackTrace($.CTC4);
+ }
+});
+
+Isolate.$defineClass("_OnDemandMap", "Object", ["_lib6_map", "_creator"], {
+ remove$1: function(key) {
+  if (!(this._lib6_map === (void 0))) {
+    var t0 = this._lib6_map.remove$1(key);
+  } else {
+    t0 = (void 0);
+  }
+  return t0;
+ },
+ putIfAbsent$2: function(key, ifAbsent) {
+  return this._lib6_init$0().putIfAbsent$2(key, ifAbsent);
+ },
+ get$length: function() {
+  if (!(this._lib6_map === (void 0))) {
+    var t0 = $.get$length(this._lib6_map);
+  } else {
+    t0 = 0;
+  }
+  return t0;
+ },
+ isEmpty$0: function() {
+  return this._lib6_map === (void 0) || $.isEmpty(this._lib6_map) === true;
+ },
+ getValues$0: function() {
+  if (!(this._lib6_map === (void 0))) {
+    var t0 = this._lib6_map.getValues$0();
+  } else {
+    t0 = $.CTC41;
+  }
+  return t0;
+ },
+ getKeys$0: function() {
+  if (!(this._lib6_map === (void 0))) {
+    var t0 = this._lib6_map.getKeys$0();
+  } else {
+    t0 = $.CTC41;
+  }
+  return t0;
+ },
+ forEach$1: function(f) {
+  if (!(this._lib6_map === (void 0))) {
+    $.forEach(this._lib6_map, f);
+  }
+ },
+ containsKey$1: function(key) {
+  return !(this._lib6_map === (void 0)) && this._lib6_map.containsKey$1(key) === true;
+ },
+ clear$0: function() {
+  if (!(this._lib6_map === (void 0))) {
+    $.clear(this._lib6_map);
+  }
+ },
+ operator$indexSet$2: function(key, value) {
+  $.indexSet(this._lib6_init$0(), key, value);
+ },
+ operator$index$1: function(key) {
+  if (!(this._lib6_map === (void 0))) {
+    var t0 = $.index(this._lib6_map, key);
+  } else {
+    t0 = (void 0);
+  }
+  return t0;
+ },
+ _lib6_init$0: function() {
+  if (!(this._lib6_map === (void 0))) {
+    var t0 = this._lib6_map;
+  } else {
+    var t1 = this._creator$0();
+    this._lib6_map = t1;
+    t0 = t1;
+  }
+  return t0;
+ },
+ _creator$0: function() { return this._creator.$call$0(); },
+ is$Map: function() { return true; }
 });
 
 Isolate.$defineClass("AbstractList", "Object", [], {
@@ -2812,7 +2972,10 @@ Isolate.$defineClass("RunOnceQueue", "Object", ["_tasks?"], {
     this._tasks = $.makeLiteralMap([]);
   }
   $.indexSet(this._tasks, t0.key_1, $.window().setTimeout$2(new $.Closure8(this, t0), timeout));
- }
+ },
+ add$2: function(key,task) {
+  return this.add$3(key,task,0)
+}
 });
 
 Isolate.$defineClass("_Offset", "Object", ["top=", "left="], {
@@ -2820,7 +2983,13 @@ Isolate.$defineClass("_Offset", "Object", ["top=", "left="], {
   return '(' + $.stringToString(this.left) + ', ' + $.stringToString(this.top) + ')';
  },
  hashCode$0: function() {
-  return $.add(this.left, this.top);
+  return $.toInt($.add(this.left, this.top));
+ },
+ operator$div$1: function(scalar) {
+  return $._Offset$2($.div(this.left, scalar), $.div(this.top, scalar));
+ },
+ operator$mul$1: function(scalar) {
+  return $._Offset$2($.mul(this.left, scalar), $.mul(this.top, scalar));
  },
  operator$add$1: function(other) {
   return $._Offset$2($.add(this.left, other.get$left()), $.add(this.top, other.get$top()));
@@ -2829,7 +2998,7 @@ Isolate.$defineClass("_Offset", "Object", ["top=", "left="], {
   return $._Offset$2($.sub(this.left, other.get$left()), $.sub(this.top, other.get$top()));
  },
  operator$eq$1: function(other) {
-  return !(other === (void 0)) && $.eqB(this.left, other.get$left()) && $.eqB(this.top, other.get$top());
+  return typeof other === 'object' && !!other.is$Offset && $.eqB(this.left, other.left) && $.eqB(this.top, other.get$top());
  },
  set$y: function(y) {
   this.top = y;
@@ -2842,7 +3011,8 @@ Isolate.$defineClass("_Offset", "Object", ["top=", "left="], {
  },
  get$x: function() {
   return this.left;
- }
+ },
+ is$Offset: true
 });
 
 Isolate.$defineClass("_Offset3d", "_Offset", ["zIndex?", "top", "left"], {
@@ -2850,7 +3020,13 @@ Isolate.$defineClass("_Offset3d", "_Offset", ["zIndex?", "top", "left"], {
   return '(' + $.stringToString(this.get$x()) + ', ' + $.stringToString(this.get$y()) + ', ' + $.stringToString(this.get$z()) + ')';
  },
  hashCode$0: function() {
-  return $.add($.add(this.get$x(), this.get$y()), this.get$z());
+  return $.toInt($.add($.add(this.get$x(), this.get$y()), this.get$z()));
+ },
+ operator$div$1: function(scalar) {
+  return $._Offset3d$3($.div(this.left, scalar), $.div(this.top, scalar), $.div(this.zIndex, scalar));
+ },
+ operator$mul$1: function(scalar) {
+  return $._Offset3d$3($.mul(this.left, scalar), $.mul(this.top, scalar), $.mul(this.zIndex, scalar));
  },
  operator$add$1: function(other) {
   return $._Offset3d$3($.add(this.left, other.get$left()), $.add(this.top, other.get$top()), $.add(this.zIndex, other.get$zIndex()));
@@ -2859,11 +3035,13 @@ Isolate.$defineClass("_Offset3d", "_Offset", ["zIndex?", "top", "left"], {
   return $._Offset3d$3($.sub(this.left, other.get$left()), $.sub(this.top, other.get$top()), $.sub(this.zIndex, other.get$zIndex()));
  },
  operator$eq$1: function(other) {
-  return !(other === (void 0)) && $.eqB(this.left, other.get$left()) && $.eqB(this.top, other.get$top()) && $.eqB(this.zIndex, other.get$zIndex());
+  return typeof other === 'object' && !!other.is$Offset3d && $.eqB(this.left, other.get$left()) && $.eqB(this.top, other.get$top()) && $.eqB(this.zIndex, other.get$zIndex());
  },
  get$z: function() {
   return this.zIndex;
- }
+ },
+ is$Offset3d: true,
+ is$Offset: true
 });
 
 Isolate.$defineClass("_Size", "Object", ["height=", "width="], {
@@ -2871,24 +3049,25 @@ Isolate.$defineClass("_Size", "Object", ["height=", "width="], {
   return '(' + $.stringToString(this.width) + ', ' + $.stringToString(this.height) + ')';
  },
  hashCode$0: function() {
-  return $.add(this.width, this.height);
+  return $.toInt($.add(this.width, this.height));
  },
  operator$eq$1: function(other) {
-  return !(other === (void 0)) && $.eqB(this.width, other.get$width()) && $.eqB(this.height, other.get$height());
- }
+  return typeof other === 'object' && !!other.is$Size && $.eqB(this.width, other.get$width()) && $.eqB(this.height, other.get$height());
+ },
+ is$Size: true
 });
 
 Isolate.$defineClass("Browser", "Object", ["size?", "androidVersion?", "iosVersion?", "webkitVersion", "touch?", "mobile?", "android?", "ios?", "webkit", "firefox?", "msie", "chrome", "safari", "version!", "name="], {
  _initBrowserInfo$0: function() {
   var ua = $.toLowerCase($.window().get$navigator().get$userAgent());
-  var bm = new $.Closure64(this, ua);
-  if (bm.$call$1($.CTC43) === true) {
+  var bm = new $.Closure57(this, ua);
+  if (bm.$call$1($.CTC45) === true) {
     this.webkit = true;
     $.prefix = '-webkit-';
     this.webkitVersion = this.version;
-    if (bm.$call$1($.CTC44) === true) {
+    if (bm.$call$1($.CTC46) === true) {
       this.chrome = true;
-      var m = $.CTC45.firstMatch$1(ua);
+      var m = $.CTC47.firstMatch$1(ua);
       if (!(m === (void 0))) {
         this.android = true;
         this.mobile = true;
@@ -2896,9 +3075,9 @@ Isolate.$defineClass("Browser", "Object", ["size?", "androidVersion?", "iosVersi
         this.androidVersion = $._versionOf(m.group$1(1), '.');
       }
     } else {
-      if (bm.$call$1($.CTC46) === true) {
+      if (bm.$call$1($.CTC48) === true) {
         this.safari = true;
-        var m0 = $.CTC47.firstMatch$1(ua);
+        var m0 = $.CTC49.firstMatch$1(ua);
         if (!(m0 === (void 0))) {
           this.ios = true;
           this.mobile = true;
@@ -2908,14 +3087,14 @@ Isolate.$defineClass("Browser", "Object", ["size?", "androidVersion?", "iosVersi
       }
     }
   } else {
-    if (bm.$call$1($.CTC48) === true) {
+    if (bm.$call$1($.CTC50) === true) {
       $.prefix = '-ms-';
       this.msie = true;
       var t0 = $.ge($.indexOf$1(ua, 'IEMobile'), 0);
       this.mobile = t0;
       this.touch = t0;
     } else {
-      if ($.ltB($.indexOf$1(ua, 'compatible'), 0) && bm.$call$1($.CTC49) === true) {
+      if ($.ltB($.indexOf$1(ua, 'compatible'), 0) && bm.$call$1($.CTC51) === true) {
         $.prefix = '-moz-';
         this.name = 'firefox';
         this.firefox = true;
@@ -2945,7 +3124,7 @@ Isolate.$defineClass("Browser", "Object", ["size?", "androidVersion?", "iosVersi
 
 Isolate.$defineClass("DOMQuery2", "Object", ["node?"], {
  get$borderWidth: function() {
-  return $.intOf(this.get$computedStyle().get$borderWidth());
+  return $.intOf(this.get$computedStyle().get$borderWidth(), (void 0));
  },
  isDescendantOf$1: function(parent$) {
   for (var n = this.node; !(n === (void 0)); n = n.get$parent()) {
@@ -2998,6 +3177,9 @@ Isolate.$defineClass("DOMQuery2", "Object", ["node?"], {
 });
 
 Isolate.$defineClass("_WindowQuery", "DOMQuery2", ["node"], {
+ get$computedStyle: function() {
+  return $.CSSStyleDeclaration();
+ },
  isDescendantOf$1: function(parent$) {
   return false;
  },
@@ -3021,6 +3203,21 @@ Isolate.$defineClass("_WindowQuery", "DOMQuery2", ["node"], {
  },
  get$innerWidth: function() {
   return this.node.get$innerWidth();
+ }
+});
+
+Isolate.$defineClass("_NullQuery", "_WindowQuery", ["node"], {
+ get$outerHeight: function() {
+  return 0;
+ },
+ get$outerWidth: function() {
+  return 0;
+ },
+ get$innerHeight: function() {
+  return 0;
+ },
+ get$innerWidth: function() {
+  return 0;
  }
 });
 
@@ -3160,8 +3357,8 @@ Isolate.$defineClass("_DragGesture2", "Object", ["_fnRange?"], {
   var t0 = this._state.get$_pending();
   this._state.set$_touched(t0);
   this._state.set$_pending((void 0));
-  if (!(this._lib9_start === (void 0))) {
-    var dragged = this._lib9_start$1(this._state);
+  if (!(this._lib10_start === (void 0))) {
+    var dragged = this._lib10_start$1(this._state);
   } else {
     dragged = this.get$owner();
   }
@@ -3192,16 +3389,16 @@ Isolate.$defineClass("_DragGesture2", "Object", ["_fnRange?"], {
   return this._handle;
  },
  get$owner: function() {
-  return this._lib9_owner;
+  return this._lib10_owner;
  },
  _fnRange$0: function() { return this._fnRange.$call$0(); },
- _lib9_start$1: function(arg0) { return this._lib9_start.$call$1(arg0); },
+ _lib10_start$1: function(arg0) { return this._lib10_start.$call$1(arg0); },
  _DragGesture$_init$8: function(_owner, _handle, _transform, _fnRange, _movement, _start, _end, _moving) {
   this._listen$0();
  }
 });
 
-Isolate.$defineClass("_TouchDragGesture", "_DragGesture2", ["_elEnd", "_elMove", "_elStart", "_transform", "_state", "_movement", "_fnRange", "_moving", "_end", "_lib9_start", "_handle", "_lib9_owner"], {
+Isolate.$defineClass("_TouchDragGesture", "_DragGesture2", ["_elEnd", "_elMove", "_elStart", "_transform", "_state", "_movement", "_fnRange", "_moving", "_end", "_lib10_start", "_handle", "_lib10_owner"], {
  _listen$0: function() {
   var on = this.get$handle().get$on();
   var t0 = on.get$touchStart();
@@ -3219,7 +3416,7 @@ Isolate.$defineClass("_TouchDragGesture", "_DragGesture2", ["_elEnd", "_elMove",
  }
 });
 
-Isolate.$defineClass("_MouseDragGesture", "_DragGesture2", ["_captured", "_elEnd", "_elMove", "_elStart", "_transform", "_state", "_movement", "_fnRange", "_moving", "_end", "_lib9_start", "_handle", "_lib9_owner"], {
+Isolate.$defineClass("_MouseDragGesture", "_DragGesture2", ["_captured", "_elEnd", "_elMove", "_elStart", "_transform", "_state", "_movement", "_fnRange", "_moving", "_end", "_lib10_start", "_handle", "_lib10_owner"], {
  _listen$0: function() {
   var t0 = this.get$handle().get$on().get$mouseDown();
   var t1 = new $.Closure83(this);
@@ -3253,7 +3450,7 @@ Isolate.$defineClass("_MouseDragGesture", "_DragGesture2", ["_captured", "_elEnd
  }
 });
 
-Isolate.$defineClass("View", "Object", ["_inDoc", "_hidden", "_layout", "_profile", "_innerofs", "_height", "_width", "_lib4_top", "_left", "_node", "_style", "_classes", "_data", "_evlInfo", "_childInfo?", "_virtIS=", "_prevSibling=", "_nextSibling=", "_lib4_parent!", "_uuid", "_id"], {
+Isolate.$defineClass("View", "Object", ["_inDoc", "_hidden", "_layout", "_profile", "_innerofs", "_height", "_width", "_lib4_top", "_left", "_node", "_style", "_classes", "_mntAttrs", "_dataAttrs!", "_evlInfo", "_childInfo?", "_virtIS=", "_prevSibling=", "_nextSibling=", "_lib4_parent!", "_uuid", "_id"], {
  toString$0: function() {
   var t0 = '' + $.stringToString(this.get$className()) + '(';
   if ($.isEmpty(this.get$id()) === true) {
@@ -3265,6 +3462,14 @@ Isolate.$defineClass("View", "Object", ["_inDoc", "_hidden", "_layout", "_profil
  },
  hashCode$0: function() {
   return $.hashCode(this.get$uuid());
+ },
+ get$dataAttributes: function() {
+  if (!(this._dataAttrs === (void 0))) {
+    var t0 = this._dataAttrs;
+  } else {
+    t0 = $.onDemand(new $.Closure50(this));
+  }
+  return t0;
  },
  domUnlisten_$2: function(n, type) {
   if (!(this._evlInfo === (void 0))) {
@@ -3286,46 +3491,8 @@ Isolate.$defineClass("View", "Object", ["_inDoc", "_hidden", "_layout", "_profil
  getDOMEventDispatcher_$1: function(type) {
   return $.getDOMEventDispatcher(type);
  },
- isEventListened$1: function(type) {
-  var t0 = !(this._evlInfo === (void 0)) && !$.eqNullB(this._evlInfo.get$listeners());
-  var ls = (void 0);
-  var t1 = t0;
-  if (t0) {
-    var ls0 = $.index(this._evlInfo.get$listeners(), type);
-    var t2 = !$.eqNullB(ls0);
-    ls = ls0;
-    t1 = t2;
-  }
-  return t1 && $.isEmpty(ls) !== true;
- },
  sendEvent$2: function(event$, type) {
-  var type0 = type;
-  if ($.eqNullB(type)) {
-    type0 = event$.get$type();
-  }
-  var t0 = !(this._evlInfo === (void 0)) && !$.eqNullB(this._evlInfo.get$listeners());
-  var ls = (void 0);
-  var t1 = t0;
-  if (t0) {
-    var ls0 = $.index(this._evlInfo.get$listeners(), type0);
-    var t2 = !$.eqNullB(ls0);
-    ls = ls0;
-    t1 = t2;
-  }
-  var dispatched = false;
-  if (t1) {
-    event$.set$currentTarget(this);
-    for (var t3 = $.iterator($.List$from(ls)), dispatched0 = false; t3.hasNext$0() === true; dispatched0 = dispatched1) {
-      var dispatched1 = dispatched0;
-      t3.next$0().$call$1(event$);
-      if (event$.isPropagationStopped$0() === true) {
-        return true;
-      }
-      dispatched1 = true;
-    }
-    dispatched = dispatched0;
-  }
-  return dispatched;
+  return !(this._evlInfo === (void 0)) && this._evlInfo.send$2(event$, type) === true;
  },
  sendEvent$1: function(event$) {
   return this.sendEvent$2(event$,(void 0))
@@ -3333,60 +3500,8 @@ Isolate.$defineClass("View", "Object", ["_inDoc", "_hidden", "_layout", "_profil
  sendEvent$1: function(event$) {
   return this.sendEvent$2(event$,(void 0))
 },
- removeEventListener$2: function(type, listener) {
-  var t0 = !(this._evlInfo === (void 0)) && !(this._evlInfo.get$listeners() === (void 0));
-  var ls = (void 0);
-  var t1 = t0;
-  if (t0) {
-    var ls0 = $.index(this._evlInfo.get$listeners(), type);
-    var t2 = !$.eqNullB(ls0);
-    ls = ls0;
-    t1 = t2;
-  }
-  var found = false;
-  if (t1) {
-    var j = $.indexOf$1(ls, listener);
-    found = false;
-    if ($.geB(j, 0)) {
-      $.removeRange(ls, j, 1);
-      if ($.isEmpty(ls) === true && this._inDoc === true && !$.eqNullB(this.getDOMEventDispatcher_$1(type))) {
-        this.domUnlisten_$2(this.get$node(), type);
-      }
-      found = true;
-    }
-  }
-  return found;
- },
- addEventListener$2: function(type, listener) {
-  var t0 = ({});
-  if ($.eqNullB(listener)) {
-    throw $.captureStackTrace($.CTC9);
-  }
-  var ei = this._initEventListenerInfo$0();
-  if ($.eqNullB(ei.get$listeners())) {
-    ei.set$listeners($.makeLiteralMap([]));
-  }
-  t0.first_1 = false;
-  $.add$1(ei.get$listeners().putIfAbsent$2(type, new $.Closure18(t0)), listener);
-  var t1 = t0.first_1 === true && this._inDoc === true;
-  var disp = (void 0);
-  var t2 = t1;
-  if (t1) {
-    var disp0 = this.getDOMEventDispatcher_$1(type);
-    var t3 = !$.eqNullB(disp0);
-    disp = disp0;
-    t2 = t3;
-  }
-  if (t2) {
-    this.domListen_$3(this.get$node(), type, disp);
-  }
- },
  get$on: function() {
-  var ei = this._initEventListenerInfo$0();
-  if (ei.get$on() === (void 0)) {
-    ei.set$on($._ViewEvents$1(this));
-  }
-  return ei.get$on();
+  return this._initEventListenerInfo$0().get$on();
  },
  domStyle_$7: function(out, noLeft, noTop, noWidth, noHeight, noHidden, noStyle) {
   if (noLeft !== true && !$.eqB(this.get$left(), 0)) {
@@ -3414,7 +3529,7 @@ Isolate.$defineClass("View", "Object", ["_inDoc", "_hidden", "_layout", "_profil
     t1 = t2;
   }
   if (t1) {
-    $.add$1(out, s);
+    $.add$1(out, $.encodeXML(s, false, 0, false));
   }
  },
  domStyle_$1: function(out) {
@@ -3588,6 +3703,7 @@ Isolate.$defineClass("View", "Object", ["_inDoc", "_hidden", "_layout", "_profil
     var t0 = $.px(height);
     this.get$node().get$style().set$height(t0);
     this.adjustInnerNode_$1$bHeight(true);
+    $.layoutManager.sizeUpdated$3(this, height, false);
   }
  },
  get$height: function() {
@@ -3599,6 +3715,7 @@ Isolate.$defineClass("View", "Object", ["_inDoc", "_hidden", "_layout", "_profil
     var t0 = $.px(width);
     this.get$node().get$style().set$width(t0);
     this.adjustInnerNode_$1$bWidth(true);
+    $.layoutManager.sizeUpdated$3(this, width, true);
   }
  },
  get$width: function() {
@@ -3652,17 +3769,17 @@ Isolate.$defineClass("View", "Object", ["_inDoc", "_hidden", "_layout", "_profil
  },
  measureHeight_$1: function(mctx) {
   if (this.isViewGroup$0() === true) {
-    var t0 = $.layoutManager.measureHeight$2(mctx, this);
+    var t0 = mctx.measureHeight$1(this);
   } else {
-    t0 = $.layoutManager.measureHeightByContent$3(mctx, this, true);
+    t0 = mctx.measureHeightByContent$2(this, true);
   }
   return t0;
  },
  measureWidth_$1: function(mctx) {
   if (this.isViewGroup$0() === true) {
-    var t0 = $.layoutManager.measureWidth$2(mctx, this);
+    var t0 = mctx.measureWidth$1(this);
   } else {
-    t0 = $.layoutManager.measureWidthByContent$3(mctx, this, true);
+    t0 = mctx.measureWidthByContent$2(this, true);
   }
   return t0;
  },
@@ -3682,152 +3799,43 @@ Isolate.$defineClass("View", "Object", ["_inDoc", "_hidden", "_layout", "_profil
  requestLayout$0: function() {
   return this.requestLayout$1(false)
 },
- exitDocument_$0: function() {
-  this.sendEvent$1($.ViewEvent$6(this, 'exitDocument', (void 0), (void 0), (void 0), (void 0)));
-  var n = this.get$node();
-  if (!(this._evlInfo === (void 0)) && !(this._evlInfo.get$listeners() === (void 0))) {
-    var listeners = this._evlInfo.get$listeners();
-    if (typeof listeners !== 'string' && (typeof listeners !== 'object'||listeners.constructor !== Array)) return this.exitDocument_$0$bailout(1, n, listeners);
-    for (var t0 = $.iterator(listeners.getKeys$0()); t0.hasNext$0() === true; ) {
-      var t1 = t0.next$0();
-      var t2 = !$.eqNullB(this.getDOMEventDispatcher_$1(t1));
-      var t3 = t2;
-      if (t2) {
-        if (t1 !== (t1 | 0)) throw $.iae(t1);
-        var t4 = listeners.length;
-        if (t1 < 0 || t1 >= t4) throw $.ioore(t1);
-        t3 = $.isEmpty(listeners[t1]) !== true;
-      }
-      if (t3) {
-        this.domUnlisten_$2(n, t1);
-      }
-    }
+ unmount_$0: function() {
+  this.sendEvent$1($.ViewEvent$6(this, 'unmount', (void 0), (void 0), (void 0), (void 0)));
+  if (!(this._evlInfo === (void 0))) {
+    this._evlInfo.unmount$0();
   }
   for (var child = this.get$firstChild(); !$.eqNullB(child); child = child.get$nextSibling()) {
-    child.exitDocument_$0();
+    child.unmount_$0();
   }
+  this._mntAttrs = (void 0);
   this._inDoc = false;
   this._node = (void 0);
  },
- exitDocument_$0$bailout: function(state, env0, env1) {
-  switch (state) {
-    case 1:
-      n = env0;
-      listeners = env1;
-      break;
-  }
-  switch (state) {
-    case 0:
-      this.sendEvent$1($.ViewEvent$6(this, 'exitDocument', (void 0), (void 0), (void 0), (void 0)));
-      var n = this.get$node();
-    case 1:
-      if (state == 1 || (state == 0 && (!(this._evlInfo === (void 0)) && !(this._evlInfo.get$listeners() === (void 0))))) {
-        switch (state) {
-          case 0:
-            var listeners = this._evlInfo.get$listeners();
-          case 1:
-            state = 0;
-            var t0 = $.iterator(listeners.getKeys$0());
-            L0: while (true) {
-              if (!(t0.hasNext$0() === true)) break L0;
-              var t1 = t0.next$0();
-              if (!$.eqNullB(this.getDOMEventDispatcher_$1(t1)) && $.isEmpty($.index(listeners, t1)) !== true) {
-                this.domUnlisten_$2(n, t1);
-              }
-            }
-        }
-      }
-      var child = this.get$firstChild();
-      L1: while (true) {
-        if (!!$.eqNullB(child)) break L1;
-        child.exitDocument_$0();
-        child = child.get$nextSibling();
-      }
-      this._inDoc = false;
-      this._node = (void 0);
-  }
- },
- enterDocument_$0: function() {
+ mount_$0: function() {
   this._inDoc = true;
   this.adjustInnerNode_$4(true, true, true, true);
   for (var child = this.get$firstChild(); !$.eqNullB(child); child = child.get$nextSibling()) {
-    child.enterDocument_$0();
+    child.mount_$0();
   }
-  var n = this.get$node();
-  if (!(this._evlInfo === (void 0)) && !(this._evlInfo.get$listeners() === (void 0))) {
-    var listeners = this._evlInfo.get$listeners();
-    if (typeof listeners !== 'string' && (typeof listeners !== 'object'||listeners.constructor !== Array)) return this.enterDocument_$0$bailout(1, n, listeners);
-    for (var t0 = $.iterator(listeners.getKeys$0()); t0.hasNext$0() === true; ) {
-      var t1 = t0.next$0();
-      var disp = this.getDOMEventDispatcher_$1(t1);
-      var t2 = !$.eqNullB(disp);
-      var t3 = t2;
-      if (t2) {
-        if (t1 !== (t1 | 0)) throw $.iae(t1);
-        var t4 = listeners.length;
-        if (t1 < 0 || t1 >= t4) throw $.ioore(t1);
-        t3 = $.isEmpty(listeners[t1]) !== true;
-      }
-      if (t3) {
-        this.domListen_$3(n, t1, disp);
-      }
-    }
+  if (!(this._evlInfo === (void 0))) {
+    this._evlInfo.mount$0();
   }
-  this.sendEvent$1($.ViewEvent$6(this, 'enterDocument', (void 0), (void 0), (void 0), (void 0)));
+  this.sendEvent$1($.ViewEvent$6(this, 'mount', (void 0), (void 0), (void 0), (void 0)));
  },
- enterDocument_$0$bailout: function(state, env0, env1) {
-  switch (state) {
-    case 1:
-      n = env0;
-      listeners = env1;
-      break;
-  }
-  switch (state) {
-    case 0:
-      this._inDoc = true;
-      this.adjustInnerNode_$4(true, true, true, true);
-      var child = this.get$firstChild();
-      L0: while (true) {
-        if (!!$.eqNullB(child)) break L0;
-        child.enterDocument_$0();
-        child = child.get$nextSibling();
-      }
-      var n = this.get$node();
-    case 1:
-      if (state == 1 || (state == 0 && (!(this._evlInfo === (void 0)) && !(this._evlInfo.get$listeners() === (void 0))))) {
-        switch (state) {
-          case 0:
-            var listeners = this._evlInfo.get$listeners();
-          case 1:
-            state = 0;
-            var t0 = $.iterator(listeners.getKeys$0());
-            L1: while (true) {
-              if (!(t0.hasNext$0() === true)) break L1;
-              var t1 = t0.next$0();
-              var disp = this.getDOMEventDispatcher_$1(t1);
-              if (!$.eqNullB(disp) && $.isEmpty($.index(listeners, t1)) !== true) {
-                this.domListen_$3(n, t1, disp);
-              }
-            }
-        }
-      }
-      this.sendEvent$1($.ViewEvent$6(this, 'enterDocument', (void 0), (void 0), (void 0), (void 0)));
-  }
- },
- _exitDocument$0: function() {
+ _unmount$0: function() {
   if (this.get$inDocument() === true) {
-    this.exitDocument_$0();
+    this.unmount_$0();
   }
  },
- _enterDocument$0: function() {
-  $._enterDocCnt = $.add($._enterDocCnt, 1);
+ _mount$0: function() {
+  $._mntCnt = $.add($._mntCnt, 1);
   try {
-    this.enterDocument_$0();
+    this.mount_$0();
     this.requestLayout$0();
   } finally {
-    $._enterDocCnt = $.sub($._enterDocCnt, 1);
+    $._mntCnt = $.sub($._mntCnt, 1);
   }
-  if ($.eqB($._enterDocCnt, 0)) {
+  if ($.eqB($._mntCnt, 0)) {
     if (!($._afters === (void 0)) && $.isEmpty($._afters) !== true) {
       var afters = $.List$from($._afters);
       $.clear($._afters);
@@ -3839,7 +3847,7 @@ Isolate.$defineClass("View", "Object", ["_inDoc", "_hidden", "_layout", "_profil
         }
       }
     }
-    if ($.eqB($._enterDocCnt, 0)) {
+    if ($.eqB($._mntCnt, 0)) {
       $.layoutManager.flush$0();
     }
   }
@@ -3873,7 +3881,7 @@ Isolate.$defineClass("View", "Object", ["_inDoc", "_hidden", "_layout", "_profil
       p.insertAdjacentHTML$2('beforeEnd', html);
     }
   }
-  this._enterDocument$0();
+  this._mount$0();
  },
  addToDocument$5: function(node, outer, inner, before, keepId) {
   var t0 = this.get$parent() === (void 0);
@@ -3989,7 +3997,7 @@ Isolate.$defineClass("View", "Object", ["_inDoc", "_hidden", "_layout", "_profil
   if (this.get$inDocument() === true) {
     var childNode = child.get$node();
     if (exit === true) {
-      child._exitDocument$0();
+      child._unmount$0();
     }
     this.removeChildFromDocument_$2(child, childNode);
   }
@@ -4047,7 +4055,7 @@ Isolate.$defineClass("View", "Object", ["_inDoc", "_hidden", "_layout", "_profil
       this.insertChildToDocument_$3(child, childNode, beforeChild0);
     } else {
       this.insertChildToDocument_$3(child, child._asHTML$0(), beforeChild0);
-      child._enterDocument$0();
+      child._mount$0();
     }
   }
   this.onChildAdded_$1(child);
@@ -4201,7 +4209,7 @@ Isolate.$defineClass("View", "Object", ["_inDoc", "_hidden", "_layout", "_profil
  },
  _initEventListenerInfo$0: function() {
   if (this._evlInfo === (void 0)) {
-    this._evlInfo = $._EventListenerInfo$0();
+    this._evlInfo = $._EventListenerInfo$1(this);
   }
   return this._evlInfo;
  },
@@ -4285,7 +4293,7 @@ Isolate.$defineClass("_SubviewList", "AbstractList", ["_owner"], {
  },
  operator$indexSet$2: function(index, value) {
   if (value === (void 0)) {
-    throw $.captureStackTrace($.CTC11);
+    throw $.captureStackTrace($.CTC9);
   }
   var w = this.operator$index$1(index);
   if (!(w === value)) {
@@ -4391,7 +4399,121 @@ Isolate.$defineClass("_WCIterator", "Object", ["_lib4_next="], {
 Isolate.$defineClass("_ChildInfo", "Object", ["children=", "nChild=", "lastChild=", "firstChild="], {
 });
 
-Isolate.$defineClass("_EventListenerInfo", "Object", ["domListeners=", "listeners=", "on="], {
+Isolate.$defineClass("_EventListenerInfo", "Object", ["domListeners=", "_listeners", "on?", "_owner"], {
+ unmount$0: function() {
+  if (!(this._listeners === (void 0))) {
+    var n = this._owner.get$node();
+    for (var t0 = $.iterator(this._listeners.getKeys$0()); t0.hasNext$0() === true; ) {
+      var t1 = t0.next$0();
+      if (!$.eqNullB(this._owner.getDOMEventDispatcher_$1(t1)) && $.isEmpty($.index(this._listeners, t1)) !== true) {
+        this._owner.domUnlisten_$2(n, t1);
+      }
+    }
+  }
+ },
+ mount$0: function() {
+  if (!(this._listeners === (void 0))) {
+    var n = this._owner.get$node();
+    for (var t0 = $.iterator(this._listeners.getKeys$0()); t0.hasNext$0() === true; ) {
+      var t1 = t0.next$0();
+      var disp = this._owner.getDOMEventDispatcher_$1(t1);
+      if (!$.eqNullB(disp) && $.isEmpty($.index(this._listeners, t1)) !== true) {
+        this._owner.domListen_$3(n, t1, disp);
+      }
+    }
+  }
+ },
+ send$2: function(event$, type) {
+  var type0 = type;
+  if ($.eqNullB(type)) {
+    type0 = event$.get$type();
+  }
+  var t0 = !$.eqNullB(this._listeners);
+  var ls = (void 0);
+  var t1 = t0;
+  if (t0) {
+    var ls0 = $.index(this._listeners, type0);
+    var t2 = !$.eqNullB(ls0);
+    ls = ls0;
+    t1 = t2;
+  }
+  var dispatched = false;
+  if (t1) {
+    event$.set$currentTarget(this._owner);
+    for (var t3 = $.iterator($.List$from(ls)), dispatched0 = false; t3.hasNext$0() === true; dispatched0 = dispatched1) {
+      var dispatched1 = dispatched0;
+      t3.next$0().$call$1(event$);
+      if (event$.isPropagationStopped$0() === true) {
+        return true;
+      }
+      dispatched1 = true;
+    }
+    dispatched = dispatched0;
+  }
+  return dispatched;
+ },
+ remove$2: function(type, listener) {
+  var t0 = !(this._listeners === (void 0));
+  var ls = (void 0);
+  var t1 = t0;
+  if (t0) {
+    var ls0 = $.index(this._listeners, type);
+    var t2 = !(ls0 === (void 0));
+    ls = ls0;
+    t1 = t2;
+  }
+  var found = false;
+  if (t1) {
+    var j = $.indexOf$1(ls, listener);
+    found = false;
+    if ($.geB(j, 0)) {
+      $.removeRange(ls, j, 1);
+      if ($.isEmpty(ls) === true && this._owner.get$inDocument() === true && !(this._owner.getDOMEventDispatcher_$1(type) === (void 0))) {
+        this._owner.domUnlisten_$2(this._owner.get$node(), type);
+      }
+      found = true;
+    }
+  }
+  return found;
+ },
+ add$2: function(type, listener) {
+  var t0 = ({});
+  if (listener === (void 0)) {
+    throw $.captureStackTrace($.CTC55);
+  }
+  if (this._listeners === (void 0)) {
+    this._listeners = $.makeLiteralMap([]);
+  }
+  t0.first_1 = false;
+  $.add$1(this._listeners.putIfAbsent$2(type, new $.Closure70(t0)), listener);
+  var t1 = t0.first_1 === true && this._owner.get$inDocument() === true;
+  var disp = (void 0);
+  var t2 = t1;
+  if (t1) {
+    var disp0 = this._owner.getDOMEventDispatcher_$1(type);
+    var t3 = !(disp0 === (void 0));
+    disp = disp0;
+    t2 = t3;
+  }
+  if (t2) {
+    this._owner.domListen_$3(this._owner.get$node(), type, disp);
+  }
+ },
+ isEmpty$1: function(type) {
+  var t0 = this._listeners === (void 0);
+  var ls = (void 0);
+  var t1 = t0;
+  if (!t0) {
+    var ls0 = $.index(this._listeners, type);
+    var t2 = ls0 === (void 0);
+    ls = ls0;
+    t1 = t2;
+  }
+  return t1 || $.isEmpty(ls) === true;
+ },
+ _EventListenerInfo$1: function(_owner) {
+  this.on = $._ViewEvents$1(this);
+ }
 });
 
 Isolate.$defineClass("_ClassSet", "HashSetImplementation", ["view?", "_backingMap"], {
@@ -4439,7 +4561,7 @@ Isolate.$defineClass("_VirtualIdSpace", "Object", ["_fellows", "_owner"], {
  is$IdSpace: true
 });
 
-Isolate.$defineClass("Section", "View", ["_fellows", "_inDoc", "_hidden", "_layout", "_profile", "_innerofs", "_height", "_width", "_lib4_top", "_left", "_node", "_style", "_classes", "_data", "_evlInfo", "_childInfo", "_virtIS", "_prevSibling", "_nextSibling", "_lib4_parent", "_uuid", "_id"], {
+Isolate.$defineClass("Section", "View", ["_fellows", "_inDoc", "_hidden", "_layout", "_profile", "_innerofs", "_height", "_width", "_lib4_top", "_left", "_node", "_style", "_classes", "_mntAttrs", "_dataAttrs", "_evlInfo", "_childInfo", "_virtIS", "_prevSibling", "_nextSibling", "_lib4_parent", "_uuid", "_id"], {
  get$domTag_: function() {
   return 'section';
  },
@@ -4462,7 +4584,7 @@ Isolate.$defineClass("Section", "View", ["_fellows", "_inDoc", "_hidden", "_layo
  is$IdSpace: true
 });
 
-Isolate.$defineClass("TextView", "View", ["_html", "_text", "_inDoc", "_hidden", "_layout", "_profile", "_innerofs", "_height", "_width", "_lib4_top", "_left", "_node", "_style", "_classes", "_data", "_evlInfo", "_childInfo", "_virtIS", "_prevSibling", "_nextSibling", "_lib4_parent", "_uuid", "_id"], {
+Isolate.$defineClass("TextView", "View", ["_html", "_text", "_inDoc", "_hidden", "_layout", "_profile", "_innerofs", "_height", "_width", "_lib4_top", "_left", "_node", "_style", "_classes", "_mntAttrs", "_dataAttrs", "_evlInfo", "_childInfo", "_virtIS", "_prevSibling", "_nextSibling", "_lib4_parent", "_uuid", "_id"], {
  toString$0: function() {
   return '' + $.stringToString(this.get$className()) + '(\'' + $.stringToString(this.get$text()) + $.stringToString(this.get$html()) + '\')';
  },
@@ -4513,7 +4635,7 @@ Isolate.$defineClass("TextView", "View", ["_html", "_text", "_inDoc", "_hidden",
  }
 });
 
-Isolate.$defineClass("Canvas", "View", ["_inDoc", "_hidden", "_layout", "_profile", "_innerofs", "_height", "_width", "_lib4_top", "_left", "_node", "_style", "_classes", "_data", "_evlInfo", "_childInfo", "_virtIS", "_prevSibling", "_nextSibling", "_lib4_parent", "_uuid", "_id"], {
+Isolate.$defineClass("Canvas", "View", ["_inDoc", "_hidden", "_layout", "_profile", "_innerofs", "_height", "_width", "_lib4_top", "_left", "_node", "_style", "_classes", "_mntAttrs", "_dataAttrs", "_evlInfo", "_childInfo", "_virtIS", "_prevSibling", "_nextSibling", "_lib4_parent", "_uuid", "_id"], {
  get$domTag_: function() {
   return 'canvas';
  },
@@ -4634,55 +4756,63 @@ Isolate.$defineClass("ViewEvent", "Object", ["currentTarget!", "_propStop", "_of
  }
 });
 
-Isolate.$defineClass("_ViewEventListenerList", "Object", ["_type", "_lib5_ptr?"], {
+Isolate.$defineClass("_ViewEventListenerList", "Object", ["_type", "_lib9_ptr?"], {
  isEmpty$0: function() {
-  return this._lib5_ptr.isEventListened$1(this._type);
+  return this._lib9_ptr.isEmpty$1(this._type);
  },
  remove$1: function(handler) {
-  this._lib5_ptr.removeEventListener$2(this._type, handler);
+  this._lib9_ptr.remove$2(this._type, handler);
   return this;
  },
  add$1: function(handler) {
-  this._lib5_ptr.addEventListener$2(this._type, handler);
+  this._lib9_ptr.add$2(this._type, handler);
   return this;
  }
 });
 
-Isolate.$defineClass("_ViewEventListenerMap", "Object", ["_lib5_ptr?"], {
- _lib5_get$1: function(type) {
+Isolate.$defineClass("_ViewEventListenerMap", "Object", ["_lib9_ptr?"], {
+ _lib9_get$1: function(type) {
   var t0 = ({});
   t0.type_1 = type;
-  return this._lnlist.putIfAbsent$2(t0.type_1, new $.Closure17(this, t0));
+  return this._lnlist.putIfAbsent$2(t0.type_1, new $.Closure69(this, t0));
  },
  operator$index$1: function(type) {
-  return this._lib5_get$1(type);
+  return this._lib9_get$1(type);
  }
 });
 
-Isolate.$defineClass("_ViewEvents", "_ViewEventListenerMap", ["_lnlist", "_lib5_ptr"], {
+Isolate.$defineClass("_ViewEvents", "_ViewEventListenerMap", ["_lnlist", "_lib9_ptr"], {
+ get$unmount: function() {
+  return this._lib9_get$1('unmount');
+ },
+ unmount$0: function() { return this.get$unmount().$call$0(); },
+ get$mount: function() {
+  return this._lib9_get$1('mount');
+ },
+ mount$0: function() { return this.get$mount().$call$0(); },
  get$layout: function() {
-  return this._lib5_get$1('layout');
+  return this._lib9_get$1('layout');
  },
  get$mouseUp: function() {
-  return this._lib5_get$1('mouseUp');
+  return this._lib9_get$1('mouseUp');
  },
  get$mouseMove: function() {
-  return this._lib5_get$1('mouseMove');
+  return this._lib9_get$1('mouseMove');
  },
  get$mouseDown: function() {
-  return this._lib5_get$1('mouseDown');
+  return this._lib9_get$1('mouseDown');
  },
  get$keyDown: function() {
-  return this._lib5_get$1('keyDown');
+  return this._lib9_get$1('keyDown');
  }
 });
 
-Isolate.$defineClass("_BroadcastEvents", "_ViewEventListenerMap", ["_lnlist", "_lib5_ptr"], {
+Isolate.$defineClass("_BroadcastEvents", "_ViewEventListenerMap", ["_lnlist", "_lib9_ptr"], {
 });
 
-Isolate.$defineClass("_Broadcaster", "Object", ["_on", "_listeners"], {
+Isolate.$defineClass("_Broadcaster", "Object", ["_on", "_lib9_listeners"], {
  sendEvent$2: function(event$, type) {
-  return this._listeners.sendEvent$2(event$, type);
+  return this._lib9_listeners.send$2(event$, type);
  },
  sendEvent$1: function(event$) {
   return this.sendEvent$2(event$,(void 0))
@@ -4691,18 +4821,18 @@ Isolate.$defineClass("_Broadcaster", "Object", ["_on", "_listeners"], {
   return this._on;
  },
  _Broadcaster$0: function() {
-  this._listeners = $._BroadcastListeners$1(this);
-  this._on = $._BroadcastEvents$1(this._listeners);
+  this._lib9_listeners = $._BroadcastListeners$1(this);
+  this._on = $._BroadcastEvents$1(this._lib9_listeners);
  }
 });
 
-Isolate.$defineClass("_BroadcastListeners", "Object", ["_listeners", "_lib5_owner"], {
- sendEvent$2: function(event$, type) {
+Isolate.$defineClass("_BroadcastListeners", "Object", ["_lib9_listeners", "_lib9_owner"], {
+ send$2: function(event$, type) {
   var type0 = type;
   if ($.eqNullB(type)) {
     type0 = event$.get$type();
   }
-  var ls = $.index(this._listeners, type0);
+  var ls = $.index(this._lib9_listeners, type0);
   var dispatched = false;
   if (!$.eqNullB(ls)) {
     for (var t0 = $.iterator($.List$from(ls)), dispatched0 = false; t0.hasNext$0() === true; dispatched0 = dispatched1) {
@@ -4717,18 +4847,27 @@ Isolate.$defineClass("_BroadcastListeners", "Object", ["_listeners", "_lib5_owne
   }
   return dispatched;
  },
- sendEvent$1: function(event$) {
-  return this.sendEvent$2(event$,(void 0))
-},
- removeEventListener$2: function(type, listener) {
-  var ls = $.index(this._listeners, type);
+ remove$2: function(type, listener) {
+  var ls = $.index(this._lib9_listeners, type);
   return !$.eqNullB(ls) && $.remove(ls, listener) === true;
  },
- addEventListener$2: function(type, listener) {
+ add$2: function(type, listener) {
   if ($.eqNullB(listener)) {
-    throw $.captureStackTrace($.CTC9);
+    throw $.captureStackTrace($.CTC55);
   }
-  $.add$1(this._listeners.putIfAbsent$2(type, new $.Closure76()), listener);
+  $.add$1(this._lib9_listeners.putIfAbsent$2(type, new $.Closure76()), listener);
+ },
+ isEmpty$1: function(type) {
+  var t0 = this._lib9_listeners === (void 0);
+  var ls = (void 0);
+  var t1 = t0;
+  if (!t0) {
+    var ls0 = $.index(this._lib9_listeners, type);
+    var t2 = ls0 === (void 0);
+    ls = ls0;
+    t1 = t2;
+  }
+  return t1 || $.isEmpty(ls) === true;
  }
 });
 
@@ -4737,6 +4876,1892 @@ Isolate.$defineClass("PopupEvent", "ViewEvent", ["_source", "currentTarget", "_p
   return this._source;
  },
  source$1: function(arg0) { return this.get$source().$call$1(arg0); }
+});
+
+Isolate.$defineClass("LayoutManager", "RunOnceViewManager", ["_inLayout", "_imgWaits", "_layouts", "_ignoreSubviews", "_ignoreDetached", "_readyChecks", "_task", "_views", "_runQue"], {
+ doLayout$2: function(mctx, view) {
+  if (view.get$parent() === (void 0) && view.get$profile().get$anchorView() === (void 0)) {
+    mctx.setWidthByProfile$2(view, new $.Closure12());
+    mctx.setHeightByProfile$2(view, new $.Closure13());
+    $._positionRoot(view);
+  }
+  this.getLayoutOfView$1(view).doLayout$2(mctx, view);
+  view.onLayout$0();
+ },
+ handle_$1: function(view) {
+  this._inLayout = $.add(this._inLayout, 1);
+  try {
+    this.doLayout$2($.MeasureContext$0(), view);
+  } finally {
+    this._inLayout = $.sub(this._inLayout, 1);
+  }
+ },
+ flush$1: function(view) {
+  if ($.isEmpty(this._imgWaits) === true) {
+    $.RunOnceViewManager.prototype.flush$1.call(this, view);
+  } else {
+    if (!(view === (void 0))) {
+      this.queue$1(view);
+    }
+  }
+ },
+ flush$0: function() {
+  return this.flush$1((void 0))
+},
+ sizeUpdated$3: function(view, value, horizontal) {
+  if (horizontal === true) {
+    var nm = 'rk.layout.w';
+  } else {
+    nm = 'rk.layout.h';
+  }
+  if ($.gtB(this._inLayout, 0)) {
+    $.indexSet(view.get$dataAttributes(), nm, value);
+  } else {
+    view.get$dataAttributes().remove$1(nm);
+  }
+ },
+ getLayoutOfView$1: function(view) {
+  var name$ = view.get$layout().get$type();
+  var clayout = this.getLayout$1(name$);
+  if ($.eqNullB(clayout)) {
+    throw $.captureStackTrace($.UIException$1('Unknown layout, ' + $.stringToString(name$)));
+  }
+  return clayout;
+ },
+ getLayout$1: function(name$) {
+  return $.index(this._layouts, name$);
+ },
+ addLayout$2: function(name$, clayout) {
+  var old = $.index(this._layouts, name$);
+  $.indexSet(this._layouts, name$, clayout);
+  return old;
+ },
+ LayoutManager$0: function() {
+  this.addLayout$2('linear', $.LinearLayout$0());
+  var freeLayout = $.FreeLayout$0();
+  this.addLayout$2('none', freeLayout);
+  this.addLayout$2('', freeLayout);
+ }
+});
+
+Isolate.$defineClass("MeasureContext", "Object", ["_borderWds", "heights?", "widths?"], {
+ getHeightSetByApp$1: function(view) {
+  var amtInf = $.LayoutAmountInfo$1(this.getProfile$2(view, 'height'));
+  $0:{
+    var t0 = amtInf.type;
+    if (1 === t0) {
+      return amtInf.value;
+    } else {
+      if (0 === t0) {
+        return $._getSetByApp(view, view.get$height(), 'rk.layout.h');
+      }
+    }
+  }
+ },
+ getWidthSetByApp$1: function(view) {
+  var amtInf = $.LayoutAmountInfo$1(this.getProfile$2(view, 'width'));
+  $0:{
+    var t0 = amtInf.type;
+    if (1 === t0) {
+      return amtInf.value;
+    } else {
+      if (0 === t0) {
+        return $._getSetByApp(view, view.get$width(), 'rk.layout.w');
+      }
+    }
+  }
+ },
+ _measureByContent$2: function(view, autowidth) {
+  var t0 = ({});
+  t0.view_1 = view;
+  var t1 = autowidth === true;
+  var orgwd = (void 0);
+  var orghgh = (void 0);
+  var orgspace = (void 0);
+  var nodestyle = (void 0);
+  if (t1) {
+    var nodestyle0 = t0.view_1.get$node().get$style();
+    var pos = nodestyle0.get$position();
+    orgspace = (void 0);
+    if (!$.eqB(pos, 'fixed') && !$.eqB(pos, 'static')) {
+      var orgspace0 = nodestyle0.get$whiteSpace();
+      orgspace = orgspace0;
+      if (orgspace0 === (void 0)) {
+        orgspace = '';
+      }
+      nodestyle0.set$whiteSpace('nowrap');
+    }
+    var orgwd0 = nodestyle0.get$width();
+    var orghgh0 = nodestyle0.get$height();
+    nodestyle0.set$width('');
+    nodestyle0.set$height('');
+    orgwd = orgwd0;
+    orghgh = orghgh0;
+    nodestyle = nodestyle0;
+  }
+  var qview = $.DOMQuery(t0.view_1);
+  var size = $._Size$2(qview.get$outerWidth(), qview.get$outerHeight());
+  if (!(orgspace === (void 0))) {
+    nodestyle.set$whiteSpace(orgspace);
+  }
+  if (!(orgwd === (void 0)) && $.isEmpty(orgwd) !== true) {
+    nodestyle.set$width(orgwd);
+  }
+  if (!(orghgh === (void 0)) && $.isEmpty(orghgh) !== true) {
+    nodestyle.set$height(orghgh);
+  }
+  var parentInnerWidth = new $.Closure45(t0);
+  var parentInnerHeight = new $.Closure46(t0);
+  var limit = $._amountOf(t0.view_1.get$profile().get$maxWidth(), parentInnerWidth);
+  if (t1 && $.gtB(size.width, $.browser.get$size().get$width()) || !(limit === (void 0)) && $.gtB(size.width, limit)) {
+    if (!$.eqNullB(limit)) {
+      var t2 = limit;
+    } else {
+      t2 = $.browser.get$size().get$width();
+    }
+    nodestyle.set$width($.px(t2));
+    size.width = qview.get$outerWidth();
+    size.height = qview.get$outerHeight();
+  }
+  var limit0 = $._amountOf(t0.view_1.get$profile().get$maxHeight(), parentInnerHeight);
+  if (!(limit0 === (void 0)) && $.gtB(size.height, limit0)) {
+    size.height = limit0;
+  }
+  var limit1 = $._amountOf(t0.view_1.get$profile().get$minWidth(), parentInnerWidth);
+  if (!(limit1 === (void 0)) && $.ltB(size.width, limit1)) {
+    size.width = limit1;
+  }
+  var limit2 = $._amountOf(t0.view_1.get$profile().get$minHeight(), parentInnerHeight);
+  if (!(limit2 === (void 0)) && $.ltB(size.height, limit2)) {
+    size.height = limit2;
+  }
+  $.indexSet(this.widths, t0.view_1, size.width);
+  $.indexSet(this.heights, t0.view_1, size.height);
+  return size;
+ },
+ measureHeightByContent$2: function(view, autowidth) {
+  var hgh = $.index(this.heights, view);
+  var t0 = hgh === (void 0);
+  var t1 = !t0;
+  if (t0) {
+    t1 = this.heights.containsKey$1(view) === true;
+  }
+  if (t1) {
+    var t2 = hgh;
+  } else {
+    t2 = this._measureByContent$2(view, autowidth).get$height();
+  }
+  return t2;
+ },
+ measureWidthByContent$2: function(view, autowidth) {
+  var wd = $.index(this.widths, view);
+  var t0 = wd === (void 0);
+  var t1 = !t0;
+  if (t0) {
+    t1 = this.widths.containsKey$1(view) === true;
+  }
+  if (t1) {
+    var t2 = wd;
+  } else {
+    t2 = this._measureByContent$2(view, autowidth).get$width();
+  }
+  return t2;
+ },
+ measureHeight$1: function(view) {
+  return $.layoutManager.getLayoutOfView$1(view).measureHeight$2(this, view);
+ },
+ measureWidth$1: function(view) {
+  return $.layoutManager.getLayoutOfView$1(view).measureWidth$2(this, view);
+ },
+ setHeightByProfile$2: function(view, height) {
+  var amt = $.LayoutAmountInfo$1(this.getProfile$2(view, 'height'));
+  $0:{
+    var t0 = amt.type;
+    if (1 === t0) {
+      view.set$height(amt.value);
+      break $0;
+    } else {
+      if (2 === t0) {
+        view.set$height(height.$call$0());
+        break $0;
+      } else {
+        if (3 === t0) {
+          view.set$height($.toInt($.round($.mul(height.$call$0(), amt.value))));
+          break $0;
+        } else {
+          if (0 === t0 || 4 === t0) {
+            if ($.eqB(amt.type, 0) && !(this.getHeightSetByApp$1(view) === (void 0))) {
+              break $0;
+            }
+            var hgh = view.measureHeight_$1(this);
+            if (!$.eqNullB(hgh)) {
+              view.set$height(hgh);
+            }
+            break $0;
+          }
+        }
+      }
+    }
+  }
+ },
+ setWidthByProfile$2: function(view, width) {
+  var amt = $.LayoutAmountInfo$1(this.getProfile$2(view, 'width'));
+  $0:{
+    var t0 = amt.type;
+    if (1 === t0) {
+      view.set$width(amt.value);
+      break $0;
+    } else {
+      if (2 === t0) {
+        view.set$width(width.$call$0());
+        break $0;
+      } else {
+        if (3 === t0) {
+          view.set$width($.toInt($.round($.mul(width.$call$0(), amt.value))));
+          break $0;
+        } else {
+          if (0 === t0 || 4 === t0) {
+            if ($.eqB(amt.type, 0) && !(this.getWidthSetByApp$1(view) === (void 0))) {
+              break $0;
+            }
+            var wd = view.measureWidth_$1(this);
+            if (!$.eqNullB(wd)) {
+              view.set$width(wd);
+            }
+            break $0;
+          }
+        }
+      }
+    }
+  }
+ },
+ getProfile$2: function(view, name$) {
+  var v = view.get$profile().getPropertyValue$1(name$);
+  var t0 = $.isEmpty(v) === true;
+  var t1 = !t0;
+  if (t0) {
+    t1 = view.get$parent() === (void 0);
+  }
+  if (t1 || $.layoutManager.getLayoutOfView$1(view.get$parent()).isProfileInherited$0() !== true) {
+    var t2 = v;
+  } else {
+    t2 = view.get$parent().get$layout().getPropertyValue$1(name$);
+  }
+  return t2;
+ },
+ getBorderWidth$1: function(view) {
+  var v = $.index(this._borderWds, view);
+  var v0 = v;
+  if (v === (void 0)) {
+    var t0 = this._borderWds;
+    var v1 = $.DOMQuery(view.get$node()).get$borderWidth();
+    $.indexSet(t0, view, v1);
+    v0 = v1;
+  }
+  return v0;
+ }
+});
+
+Isolate.$defineClass("FreeLayout", "Object", [], {
+ doLayout$2: function(mctx, view) {
+  var t0 = ({});
+  t0.view_1 = view;
+  if (!(t0.view_1.get$firstChild() === (void 0))) {
+    var ar = $.AnchorRelation$1(t0.view_1);
+    var innerWidth$ = new $.Closure55(t0);
+    var innerHeight$ = new $.Closure56(t0);
+    for (var t1 = $.iterator(ar.indeps); t1.hasNext$0() === true; ) {
+      var t2 = t1.next$0();
+      mctx.setWidthByProfile$2(t2, innerWidth$);
+      mctx.setHeightByProfile$2(t2, innerHeight$);
+    }
+    ar.layoutAnchored$1(mctx);
+    for (var t3 = $.iterator(t0.view_1.get$children()); t3.hasNext$0() === true; ) {
+      t3.next$0().doLayout_$1(mctx);
+    }
+  }
+ },
+ isProfileInherited$0: function() {
+  return false;
+ },
+ measureHeight$2: function(mctx, view) {
+  var hgh = $.index(mctx.get$heights(), view);
+  var t0 = hgh === (void 0);
+  var t1 = !t0;
+  if (t0) {
+    t1 = mctx.get$heights().containsKey$1(view) === true;
+  }
+  if (t1) {
+    return hgh;
+  }
+  var hgh0 = mctx.getHeightSetByApp$1(view);
+  var hgh1 = hgh0;
+  if (hgh0 === (void 0)) {
+    var hgh2 = view.get$innerHeight();
+    if (typeof hgh2 !== 'number') return this.measureHeight$2$bailout(mctx, view, 1, hgh2);
+    for (var t2 = $.iterator(view.get$children()), hgh3 = hgh2; t2.hasNext$0() === true; hgh3 = hgh4) {
+      var hgh4 = hgh3;
+      var t3 = t2.next$0();
+      hgh4 = hgh3;
+      if (view.shallLayout_$1(t3) === true && $.eqNullB(t3.get$profile().get$anchorView())) {
+        var subsz = t3.measureHeight_$1(mctx);
+        var t4 = t3.get$top();
+        if (!(subsz === (void 0))) {
+          var t5 = subsz;
+        } else {
+          t5 = 0;
+        }
+        var subsz0 = $.add(t4, t5);
+        hgh4 = hgh3;
+        if ($.eqNullB(hgh3) || $.gtB(subsz0, hgh3)) {
+          hgh4 = subsz0;
+        }
+      }
+    }
+    hgh1 = hgh3;
+    if (!(hgh3 === (void 0))) {
+      hgh1 = $.add(hgh3, $.shl(mctx.getBorderWidth$1(view), 1));
+    }
+  }
+  $.indexSet(mctx.get$heights(), view, hgh1);
+  return hgh1;
+ },
+ measureHeight$2$bailout: function(mctx, view, state, env0) {
+  switch (state) {
+    case 1:
+      hgh2 = env0;
+      break;
+  }
+  switch (state) {
+    case 0:
+      var hgh = $.index(mctx.get$heights(), view);
+      var t0 = hgh === (void 0);
+      var t1 = !t0;
+      if (t0) {
+        t1 = mctx.get$heights().containsKey$1(view) === true;
+      }
+      if (t1) {
+        return hgh;
+      }
+      var hgh0 = mctx.getHeightSetByApp$1(view);
+      var hgh1 = hgh0;
+    case 1:
+      if (state == 1 || (state == 0 && hgh0 === (void 0))) {
+        switch (state) {
+          case 0:
+            var hgh2 = view.get$innerHeight();
+          case 1:
+            state = 0;
+            var t2 = $.iterator(view.get$children());
+            var hgh3 = hgh2;
+            L0: while (true) {
+              if (!(t2.hasNext$0() === true)) break L0;
+              var hgh4 = hgh3;
+              var t3 = t2.next$0();
+              hgh4 = hgh3;
+              if (view.shallLayout_$1(t3) === true && $.eqNullB(t3.get$profile().get$anchorView())) {
+                var subsz = t3.measureHeight_$1(mctx);
+                var t4 = t3.get$top();
+                if (!(subsz === (void 0))) {
+                  var t5 = subsz;
+                } else {
+                  t5 = 0;
+                }
+                var subsz0 = $.add(t4, t5);
+                hgh4 = hgh3;
+                if ($.eqNullB(hgh3) || $.gtB(subsz0, hgh3)) {
+                  hgh4 = subsz0;
+                }
+              }
+              hgh3 = hgh4;
+            }
+            hgh1 = hgh3;
+            if (!(hgh3 === (void 0))) {
+              hgh1 = $.add(hgh3, $.shl(mctx.getBorderWidth$1(view), 1));
+            }
+        }
+      }
+      $.indexSet(mctx.get$heights(), view, hgh1);
+      return hgh1;
+  }
+ },
+ measureWidth$2: function(mctx, view) {
+  var wd = $.index(mctx.get$widths(), view);
+  var t0 = wd === (void 0);
+  var t1 = !t0;
+  if (t0) {
+    t1 = mctx.get$widths().containsKey$1(view) === true;
+  }
+  if (t1) {
+    return wd;
+  }
+  var wd0 = mctx.getWidthSetByApp$1(view);
+  var wd1 = wd0;
+  if (wd0 === (void 0)) {
+    var wd2 = view.get$innerWidth();
+    if (typeof wd2 !== 'number') return this.measureWidth$2$bailout(mctx, view, 1, wd2);
+    for (var t2 = $.iterator(view.get$children()), wd3 = wd2; t2.hasNext$0() === true; wd3 = wd4) {
+      var wd4 = wd3;
+      var t3 = t2.next$0();
+      wd4 = wd3;
+      if (view.shallLayout_$1(t3) === true && $.eqNullB(t3.get$profile().get$anchorView())) {
+        var subsz = t3.measureWidth_$1(mctx);
+        var t4 = t3.get$left();
+        if (!(subsz === (void 0))) {
+          var t5 = subsz;
+        } else {
+          t5 = 0;
+        }
+        var subsz0 = $.add(t4, t5);
+        wd4 = wd3;
+        if (wd3 === (void 0) || $.gtB(subsz0, wd3)) {
+          wd4 = subsz0;
+        }
+      }
+    }
+    wd1 = wd3;
+    if (!(wd3 === (void 0))) {
+      wd1 = $.add(wd3, $.shl(mctx.getBorderWidth$1(view), 1));
+    }
+  }
+  $.indexSet(mctx.get$widths(), view, wd1);
+  return wd1;
+ },
+ measureWidth$2$bailout: function(mctx, view, state, env0) {
+  switch (state) {
+    case 1:
+      wd2 = env0;
+      break;
+  }
+  switch (state) {
+    case 0:
+      var wd = $.index(mctx.get$widths(), view);
+      var t0 = wd === (void 0);
+      var t1 = !t0;
+      if (t0) {
+        t1 = mctx.get$widths().containsKey$1(view) === true;
+      }
+      if (t1) {
+        return wd;
+      }
+      var wd0 = mctx.getWidthSetByApp$1(view);
+      var wd1 = wd0;
+    case 1:
+      if (state == 1 || (state == 0 && wd0 === (void 0))) {
+        switch (state) {
+          case 0:
+            var wd2 = view.get$innerWidth();
+          case 1:
+            state = 0;
+            var t2 = $.iterator(view.get$children());
+            var wd3 = wd2;
+            L0: while (true) {
+              if (!(t2.hasNext$0() === true)) break L0;
+              var wd4 = wd3;
+              var t3 = t2.next$0();
+              wd4 = wd3;
+              if (view.shallLayout_$1(t3) === true && $.eqNullB(t3.get$profile().get$anchorView())) {
+                var subsz = t3.measureWidth_$1(mctx);
+                var t4 = t3.get$left();
+                if (!(subsz === (void 0))) {
+                  var t5 = subsz;
+                } else {
+                  t5 = 0;
+                }
+                var subsz0 = $.add(t4, t5);
+                wd4 = wd3;
+                if (wd3 === (void 0) || $.gtB(subsz0, wd3)) {
+                  wd4 = subsz0;
+                }
+              }
+              wd3 = wd4;
+            }
+            wd1 = wd3;
+            if (!(wd3 === (void 0))) {
+              wd1 = $.add(wd3, $.shl(mctx.getBorderWidth$1(view), 1));
+            }
+        }
+      }
+      $.indexSet(mctx.get$widths(), view, wd1);
+      return wd1;
+  }
+ }
+});
+
+Isolate.$defineClass("LinearLayout", "Object", [], {
+ doLayout$2: function(mctx, view) {
+  if (!(view.get$firstChild() === (void 0))) {
+    var ar = $.AnchorRelation$1(view);
+    $._getRealLayout(view).doLayout$3(mctx, view, ar.indeps);
+    ar.layoutAnchored$1(mctx);
+    for (var t0 = $.iterator(view.get$children()); t0.hasNext$0() === true; ) {
+      t0.next$0().doLayout_$1(mctx);
+    }
+  }
+ },
+ isProfileInherited$0: function() {
+  return true;
+ },
+ measureHeight$2: function(mctx, view) {
+  var height = $.index(mctx.get$heights(), view);
+  var t0 = height === (void 0);
+  var t1 = !t0;
+  if (t0) {
+    t1 = mctx.get$heights().containsKey$1(view) === true;
+  }
+  if (t1) {
+    return height;
+  }
+  var t2 = mctx.get$heights();
+  var t3 = $._getRealLayout(view).measureHeight$2(mctx, view);
+  $.indexSet(t2, view, t3);
+  return t3;
+ },
+ measureWidth$2: function(mctx, view) {
+  var width = $.index(mctx.get$widths(), view);
+  var t0 = width === (void 0);
+  var t1 = !t0;
+  if (t0) {
+    t1 = mctx.get$widths().containsKey$1(view) === true;
+  }
+  if (t1) {
+    return width;
+  }
+  var t2 = mctx.get$widths();
+  var t3 = $._getRealLayout(view).measureWidth$2(mctx, view);
+  $.indexSet(t2, view, t3);
+  return t3;
+ }
+});
+
+Isolate.$defineClass("_HLayout", "Object", [], {
+ doLayout$3: function(mctx, view, children) {
+  var t0 = ({});
+  t0.view_1 = view;
+  var innerWidth$ = new $.Closure51(t0);
+  var spcinf = $.LayoutSideInfo$3(t0.view_1.get$layout().get$spacing(), 2, (void 0));
+  var gapinf = $.LayoutSideInfo$3(t0.view_1.get$layout().get$gap(), (void 0), (void 0));
+  var defpwd = t0.view_1.get$layout().get$width();
+  var childspcinfs = $.HashMapImplementation$0();
+  var flexViews = $.List((void 0));
+  var flexs = $.List((void 0));
+  for (var t1 = $.iterator(children), prevSpacing = (void 0), nflex = 0, assigned = 0; t1.hasNext$0() === true; prevSpacing = prevSpacing0, nflex = nflex0, assigned = assigned0) {
+    var assigned0 = assigned;
+    var prevSpacing0 = prevSpacing;
+    var nflex0 = nflex;
+    var t2 = t1.next$0();
+    if (t0.view_1.shallLayout_$1(t2) !== true) {
+      mctx.setWidthByProfile$2(t2, new $.Closure52(t0));
+      mctx.setHeightByProfile$2(t2, new $.Closure53(t0));
+      assigned0 = assigned;
+      prevSpacing0 = prevSpacing;
+      nflex0 = nflex;
+      continue;
+    }
+    var si = $.LayoutSideInfo$3(t2.get$profile().get$spacing(), 0, spcinf);
+    childspcinfs.operator$indexSet$2(t2, si);
+    if (prevSpacing === (void 0)) {
+      var t3 = si.left;
+    } else {
+      if (!(gapinf.left === (void 0))) {
+        t3 = gapinf.left;
+      } else {
+        t3 = $.max(prevSpacing, si.left);
+      }
+    }
+    var assigned1 = $.add(assigned, t3);
+    var prevSpacing1 = si.right;
+    var pwd = t2.get$profile().get$width();
+    if ($.isEmpty(pwd) === true) {
+      var t4 = defpwd;
+    } else {
+      t4 = pwd;
+    }
+    var amt = $.LayoutAmountInfo$1(t4);
+    $1:{
+      var t5 = amt.type;
+      if (1 === t5) {
+        var t6 = amt.value;
+        t2.set$width(t6);
+        var assigned2 = $.add(assigned1, t6);
+        assigned0 = assigned2;
+        nflex0 = nflex;
+        break $1;
+      } else {
+        if (2 === t5) {
+          var nflex1 = $.add(nflex, amt.value);
+          flexs.push(amt.value);
+          flexViews.push(t2);
+          assigned0 = assigned1;
+          nflex0 = nflex1;
+          break $1;
+        } else {
+          if (3 === t5) {
+            var t7 = $.toInt($.round($.mul(innerWidth$.$call$0(), amt.value)));
+            t2.set$width(t7);
+            var assigned3 = $.add(assigned1, t7);
+            assigned0 = assigned3;
+            nflex0 = nflex;
+            break $1;
+          } else {
+            var wd = t2.measureWidth_$1(mctx);
+            if (!$.eqNullB(wd)) {
+              t2.set$width(wd);
+              assigned0 = $.add(assigned1, wd);
+            } else {
+              assigned0 = $.add(assigned1, t2.get$outerWidth());
+            }
+            nflex0 = nflex;
+            break $1;
+          }
+        }
+      }
+    }
+    mctx.setHeightByProfile$2(t2, new $.Closure54(t0, si));
+    prevSpacing0 = prevSpacing1;
+  }
+  if (nflex > 0) {
+    var space = $.sub($.sub(innerWidth$.$call$0(), assigned), prevSpacing);
+    if (typeof space !== 'number') return this.doLayout$3$bailout(mctx, view, children, 1, nflex, gapinf, t0, childspcinfs, flexViews, flexs, space);
+    var per = space / nflex;
+    for (var len = flexs.length - 1, space0 = space, j = 0; true; space0 = space1, j = j + 1) {
+      var space1 = space0;
+      if (j === len) {
+        var t8 = flexViews.length;
+        if (j < 0 || j >= t8) throw $.ioore(j);
+        flexViews[j].set$width(space0);
+        break;
+      }
+      var t9 = flexs.length;
+      if (j < 0 || j >= t9) throw $.ioore(j);
+      var delta = $.toInt($.round($.mul(per, flexs[j])));
+      var t10 = flexViews.length;
+      if (j < 0 || j >= t10) throw $.ioore(j);
+      flexViews[j].set$width(delta);
+      space1 = $.sub(space0, delta);
+    }
+  }
+  var defAlign = t0.view_1.get$layout().get$align();
+  if (typeof defAlign !== 'string') return this.doLayout$3$bailout(mctx, view, children, 2, childspcinfs, gapinf, t0, defAlign);
+  for (var t11 = $.iterator(children), assigned4 = 0, prevSpacing2 = (void 0); t11.hasNext$0() === true; assigned4 = assigned5, prevSpacing2 = prevSpacing3) {
+    var prevSpacing3 = prevSpacing2;
+    var assigned5 = assigned4;
+    var t12 = t11.next$0();
+    if (t0.view_1.shallLayout_$1(t12) !== true) {
+      prevSpacing3 = prevSpacing2;
+      assigned5 = assigned4;
+      continue;
+    }
+    var si0 = childspcinfs.operator$index$1(t12);
+    if (prevSpacing2 === (void 0)) {
+      var t13 = si0.get$left();
+    } else {
+      if (!(gapinf.left === (void 0))) {
+        t13 = gapinf.left;
+      } else {
+        t13 = $.max(prevSpacing2, si0.get$left());
+      }
+    }
+    var assigned6 = $.add(assigned4, t13);
+    t12.set$left(assigned6);
+    var assigned7 = $.add(assigned6, t12.get$outerWidth());
+    var prevSpacing4 = si0.get$right();
+    var align = t12.get$profile().get$align();
+    var align0 = align;
+    if ($.isEmpty(align) === true) {
+      align0 = defAlign;
+    }
+    var space2 = childspcinfs.operator$index$1(t12).get$top();
+    $1:{
+      if ('center' === align0 || 'end' === align0) {
+        var delta0 = $.sub($.sub($.sub(t0.view_1.get$innerHeight(), si0.get$top()), si0.get$bottom()), t12.get$outerHeight());
+        var delta1 = delta0;
+        if ($.eqB(align0, 'center')) {
+          delta1 = $.tdiv(delta0, 2);
+        }
+        t12.set$top($.add(space2, delta1));
+        break $1;
+      } else {
+        t12.set$top(space2);
+      }
+    }
+    prevSpacing3 = prevSpacing4;
+    assigned5 = assigned7;
+  }
+ },
+ doLayout$3$bailout: function(mctx, view, children, state, env0, env1, env2, env3, env4, env5, env6) {
+  switch (state) {
+    case 1:
+      nflex = env0;
+      gapinf = env1;
+      t0 = env2;
+      childspcinfs = env3;
+      flexViews = env4;
+      flexs = env5;
+      space = env6;
+      break;
+    case 2:
+      childspcinfs = env0;
+      gapinf = env1;
+      t0 = env2;
+      defAlign = env3;
+      break;
+  }
+  switch (state) {
+    case 0:
+      var t0 = ({});
+      t0.view_1 = view;
+      var innerWidth$ = new $.Closure51(t0);
+      var spcinf = $.LayoutSideInfo$3(t0.view_1.get$layout().get$spacing(), 2, (void 0));
+      var gapinf = $.LayoutSideInfo$3(t0.view_1.get$layout().get$gap(), (void 0), (void 0));
+      var defpwd = t0.view_1.get$layout().get$width();
+      var childspcinfs = $.HashMapImplementation$0();
+      var flexViews = $.List((void 0));
+      var flexs = $.List((void 0));
+      var t1 = $.iterator(children);
+      var prevSpacing = (void 0);
+      var nflex = 0;
+      var assigned = 0;
+      L0: while (true) {
+        if (!(t1.hasNext$0() === true)) break L0;
+        c$0:{
+          var assigned0 = assigned;
+          var prevSpacing0 = prevSpacing;
+          var nflex0 = nflex;
+          var t2 = t1.next$0();
+          if (t0.view_1.shallLayout_$1(t2) !== true) {
+            mctx.setWidthByProfile$2(t2, new $.Closure52(t0));
+            mctx.setHeightByProfile$2(t2, new $.Closure53(t0));
+            assigned0 = assigned;
+            prevSpacing0 = prevSpacing;
+            nflex0 = nflex;
+            break c$0;
+          }
+          var si = $.LayoutSideInfo$3(t2.get$profile().get$spacing(), 0, spcinf);
+          childspcinfs.operator$indexSet$2(t2, si);
+          if (prevSpacing === (void 0)) {
+            var t3 = si.left;
+          } else {
+            if (!(gapinf.left === (void 0))) {
+              t3 = gapinf.left;
+            } else {
+              t3 = $.max(prevSpacing, si.left);
+            }
+          }
+          var assigned1 = $.add(assigned, t3);
+          var prevSpacing1 = si.right;
+          var pwd = t2.get$profile().get$width();
+          if ($.isEmpty(pwd) === true) {
+            var t4 = defpwd;
+          } else {
+            t4 = pwd;
+          }
+          var amt = $.LayoutAmountInfo$1(t4);
+          $1:{
+            var t5 = amt.type;
+            if (1 === t5) {
+              var t6 = amt.value;
+              t2.set$width(t6);
+              var assigned2 = $.add(assigned1, t6);
+              assigned0 = assigned2;
+              nflex0 = nflex;
+              break $1;
+            } else {
+              if (2 === t5) {
+                var nflex1 = $.add(nflex, amt.value);
+                flexs.push(amt.value);
+                flexViews.push(t2);
+                assigned0 = assigned1;
+                nflex0 = nflex1;
+                break $1;
+              } else {
+                if (3 === t5) {
+                  var t7 = $.toInt($.round($.mul(innerWidth$.$call$0(), amt.value)));
+                  t2.set$width(t7);
+                  var assigned3 = $.add(assigned1, t7);
+                  assigned0 = assigned3;
+                  nflex0 = nflex;
+                  break $1;
+                } else {
+                  var wd = t2.measureWidth_$1(mctx);
+                  if (!$.eqNullB(wd)) {
+                    t2.set$width(wd);
+                    assigned0 = $.add(assigned1, wd);
+                  } else {
+                    assigned0 = $.add(assigned1, t2.get$outerWidth());
+                  }
+                  nflex0 = nflex;
+                  break $1;
+                }
+              }
+            }
+          }
+          mctx.setHeightByProfile$2(t2, new $.Closure54(t0, si));
+          prevSpacing0 = prevSpacing1;
+        }
+        prevSpacing = prevSpacing0;
+        nflex = nflex0;
+        assigned = assigned0;
+      }
+    case 1:
+      if (state == 1 || (state == 0 && nflex > 0)) {
+        switch (state) {
+          case 0:
+            var space = $.sub($.sub(innerWidth$.$call$0(), assigned), prevSpacing);
+          case 1:
+            state = 0;
+            var per = $.div(space, nflex);
+            var len = flexs.length - 1;
+            var space0 = space;
+            var j = 0;
+            L1: while (true) {
+              if (!true) break L1;
+              var space1 = space0;
+              if (j === len) {
+                var t8 = flexViews.length;
+                if (j < 0 || j >= t8) throw $.ioore(j);
+                flexViews[j].set$width(space0);
+                break;
+              }
+              var t9 = flexs.length;
+              if (j < 0 || j >= t9) throw $.ioore(j);
+              var delta = $.toInt($.round($.mul(per, flexs[j])));
+              var t10 = flexViews.length;
+              if (j < 0 || j >= t10) throw $.ioore(j);
+              flexViews[j].set$width(delta);
+              space1 = $.sub(space0, delta);
+              space0 = space1;
+              j = j + 1;
+            }
+        }
+      }
+      var defAlign = t0.view_1.get$layout().get$align();
+    case 2:
+      state = 0;
+      var t11 = $.iterator(children);
+      var assigned4 = 0;
+      var prevSpacing2 = (void 0);
+      L2: while (true) {
+        if (!(t11.hasNext$0() === true)) break L2;
+        c$0:{
+          var prevSpacing3 = prevSpacing2;
+          var assigned5 = assigned4;
+          var t12 = t11.next$0();
+          if (t0.view_1.shallLayout_$1(t12) !== true) {
+            prevSpacing3 = prevSpacing2;
+            assigned5 = assigned4;
+            break c$0;
+          }
+          var si0 = childspcinfs.operator$index$1(t12);
+          if (prevSpacing2 === (void 0)) {
+            var t13 = si0.get$left();
+          } else {
+            if (!(gapinf.left === (void 0))) {
+              t13 = gapinf.left;
+            } else {
+              t13 = $.max(prevSpacing2, si0.get$left());
+            }
+          }
+          var assigned6 = $.add(assigned4, t13);
+          t12.set$left(assigned6);
+          var assigned7 = $.add(assigned6, t12.get$outerWidth());
+          var prevSpacing4 = si0.get$right();
+          var align = t12.get$profile().get$align();
+          var align0 = align;
+          if ($.isEmpty(align) === true) {
+            align0 = defAlign;
+          }
+          var space2 = childspcinfs.operator$index$1(t12).get$top();
+          $1:{
+            if ('center' === align0 || 'end' === align0) {
+              var delta0 = $.sub($.sub($.sub(t0.view_1.get$innerHeight(), si0.get$top()), si0.get$bottom()), t12.get$outerHeight());
+              var delta1 = delta0;
+              if ($.eqB(align0, 'center')) {
+                delta1 = $.tdiv(delta0, 2);
+              }
+              t12.set$top($.add(space2, delta1));
+              break $1;
+            } else {
+              t12.set$top(space2);
+            }
+          }
+          prevSpacing3 = prevSpacing4;
+          assigned5 = assigned7;
+        }
+        assigned4 = assigned5;
+        prevSpacing2 = prevSpacing3;
+      }
+  }
+ },
+ measureHeight$2: function(mctx, view) {
+  var va = mctx.getHeightSetByApp$1(view);
+  if (!(va === (void 0))) {
+    return va;
+  }
+  var spcinf = $.LayoutSideInfo$3(view.get$layout().get$spacing(), 2, (void 0));
+  var defphgh = view.get$layout().get$height();
+  var borderWd = $.shl(mctx.getBorderWidth$1(view), 1);
+  if (borderWd !== (borderWd | 0)) return this.measureHeight$2$bailout(mctx, view, 1, spcinf, defphgh, borderWd);
+  for (var t0 = $.iterator(view.get$children()), height = (void 0); t0.hasNext$0() === true; height = height0) {
+    var height0 = height;
+    var t1 = t0.next$0();
+    var t2 = view.shallLayout_$1(t1) === true;
+    var t3 = !t2;
+    if (t2) {
+      t3 = !(t1.get$profile().get$anchorView() === (void 0));
+    }
+    if (t3) {
+      height0 = height;
+      continue;
+    }
+    var si = $.LayoutSideInfo$3(t1.get$profile().get$spacing(), 0, spcinf);
+    var hgh = $.add($.add(si.top, si.bottom), borderWd);
+    var phgh = t1.get$profile().get$height();
+    if ($.isEmpty(phgh) === true) {
+      var t4 = defphgh;
+    } else {
+      t4 = phgh;
+    }
+    var amt = $.LayoutAmountInfo$1(t4);
+    $1:{
+      var t5 = amt.type;
+      if (1 === t5) {
+        var hgh0 = $.add(hgh, amt.value);
+        break $1;
+      } else {
+        if (0 === t5 || 4 === t5) {
+          var h = t1.measureHeight_$1(mctx);
+          if (!$.eqNullB(h)) {
+            var t6 = h;
+          } else {
+            t6 = t1.get$outerHeight();
+          }
+          hgh0 = $.add(hgh, t6);
+          break $1;
+        } else {
+          height0 = height;
+          continue;
+        }
+      }
+    }
+    height0 = height;
+    if ($.eqNullB(height) || $.gtB(hgh0, height)) {
+      height0 = hgh0;
+    }
+  }
+  return height;
+ },
+ measureHeight$2$bailout: function(mctx, view, state, env0, env1, env2) {
+  switch (state) {
+    case 1:
+      spcinf = env0;
+      defphgh = env1;
+      borderWd = env2;
+      break;
+  }
+  switch (state) {
+    case 0:
+      var va = mctx.getHeightSetByApp$1(view);
+      if (!(va === (void 0))) {
+        return va;
+      }
+      var spcinf = $.LayoutSideInfo$3(view.get$layout().get$spacing(), 2, (void 0));
+      var defphgh = view.get$layout().get$height();
+      var borderWd = $.shl(mctx.getBorderWidth$1(view), 1);
+    case 1:
+      state = 0;
+      var t0 = $.iterator(view.get$children());
+      var height = (void 0);
+      L0: while (true) {
+        if (!(t0.hasNext$0() === true)) break L0;
+        c$0:{
+          var height0 = height;
+          var t1 = t0.next$0();
+          var t2 = view.shallLayout_$1(t1) === true;
+          var t3 = !t2;
+          if (t2) {
+            t3 = !(t1.get$profile().get$anchorView() === (void 0));
+          }
+          if (t3) {
+            height0 = height;
+            break c$0;
+          }
+          var si = $.LayoutSideInfo$3(t1.get$profile().get$spacing(), 0, spcinf);
+          var hgh = $.add($.add(si.top, si.bottom), borderWd);
+          var phgh = t1.get$profile().get$height();
+          if ($.isEmpty(phgh) === true) {
+            var t4 = defphgh;
+          } else {
+            t4 = phgh;
+          }
+          var amt = $.LayoutAmountInfo$1(t4);
+          $1:{
+            var t5 = amt.type;
+            if (1 === t5) {
+              var hgh0 = $.add(hgh, amt.value);
+              break $1;
+            } else {
+              if (0 === t5 || 4 === t5) {
+                var h = t1.measureHeight_$1(mctx);
+                if (!$.eqNullB(h)) {
+                  var t6 = h;
+                } else {
+                  t6 = t1.get$outerHeight();
+                }
+                hgh0 = $.add(hgh, t6);
+                break $1;
+              } else {
+                height0 = height;
+                break c$0;
+              }
+            }
+          }
+          height0 = height;
+          if ($.eqNullB(height) || $.gtB(hgh0, height)) {
+            height0 = hgh0;
+          }
+        }
+        height = height0;
+      }
+      return height;
+  }
+ },
+ measureWidth$2: function(mctx, view) {
+  var va = mctx.getWidthSetByApp$1(view);
+  if (!(va === (void 0))) {
+    return va;
+  }
+  var spcinf = $.LayoutSideInfo$3(view.get$layout().get$spacing(), 2, (void 0));
+  var gapinf = $.LayoutSideInfo$3(view.get$layout().get$gap(), (void 0), (void 0));
+  var defpwd = view.get$layout().get$width();
+  for (var t0 = $.iterator(view.get$children()), width = 0, prevSpacing = (void 0); t0.hasNext$0() === true; width = width0, prevSpacing = prevSpacing0) {
+    var prevSpacing0 = prevSpacing;
+    var width0 = width;
+    var t1 = t0.next$0();
+    var t2 = view.shallLayout_$1(t1) === true;
+    var t3 = !t2;
+    if (t2) {
+      t3 = !(t1.get$profile().get$anchorView() === (void 0));
+    }
+    if (t3) {
+      prevSpacing0 = prevSpacing;
+      width0 = width;
+      continue;
+    }
+    var si = $.LayoutSideInfo$3(t1.get$profile().get$spacing(), 0, spcinf);
+    if (prevSpacing === (void 0)) {
+      var t4 = si.left;
+    } else {
+      if (!(gapinf.left === (void 0))) {
+        t4 = gapinf.left;
+      } else {
+        t4 = $.max(prevSpacing, si.left);
+      }
+    }
+    var width1 = $.add(width, t4);
+    var prevSpacing1 = si.right;
+    var pwd = t1.get$profile().get$width();
+    if ($.isEmpty(pwd) === true) {
+      var t5 = defpwd;
+    } else {
+      t5 = pwd;
+    }
+    var amt = $.LayoutAmountInfo$1(t5);
+    $1:{
+      var t6 = amt.type;
+      if (1 === t6) {
+        width0 = $.add(width1, amt.value);
+        break $1;
+      } else {
+        if (0 === t6 || 4 === t6) {
+          var wd = t1.measureWidth_$1(mctx);
+          if (!$.eqNullB(wd)) {
+            var t7 = wd;
+          } else {
+            t7 = t1.get$outerWidth();
+          }
+          width0 = $.add(width1, t7);
+          break $1;
+        }
+      }
+      width0 = width1;
+    }
+    prevSpacing0 = prevSpacing1;
+  }
+  var t8 = $.mul(mctx.getBorderWidth$1(view), 2);
+  if (!(prevSpacing === (void 0))) {
+    var t9 = prevSpacing;
+  } else {
+    t9 = $.add(spcinf.left, spcinf.right);
+  }
+  return $.add(width, $.add(t8, t9));
+ }
+});
+
+Isolate.$defineClass("_VLayout", "Object", [], {
+ doLayout$3: function(mctx, view, children) {
+  var t0 = ({});
+  t0.view_1 = view;
+  var innerHeight$ = new $.Closure41(t0);
+  var spcinf = $.LayoutSideInfo$3(t0.view_1.get$layout().get$spacing(), 2, (void 0));
+  var gapinf = $.LayoutSideInfo$3(t0.view_1.get$layout().get$gap(), (void 0), (void 0));
+  var defphgh = t0.view_1.get$layout().get$height();
+  var childspcinfs = $.HashMapImplementation$0();
+  var flexViews = $.List((void 0));
+  var flexs = $.List((void 0));
+  for (var t1 = $.iterator(children), assigned = 0, nflex = 0, prevSpacing = (void 0); t1.hasNext$0() === true; assigned = assigned0, nflex = nflex0, prevSpacing = prevSpacing0) {
+    var prevSpacing0 = prevSpacing;
+    var assigned0 = assigned;
+    var nflex0 = nflex;
+    var t2 = t1.next$0();
+    if (t0.view_1.shallLayout_$1(t2) !== true) {
+      mctx.setWidthByProfile$2(t2, new $.Closure42(t0));
+      mctx.setHeightByProfile$2(t2, new $.Closure43(t0));
+      prevSpacing0 = prevSpacing;
+      assigned0 = assigned;
+      nflex0 = nflex;
+      continue;
+    }
+    var si = $.LayoutSideInfo$3(t2.get$profile().get$spacing(), 0, spcinf);
+    childspcinfs.operator$indexSet$2(t2, si);
+    if (prevSpacing === (void 0)) {
+      var t3 = si.top;
+    } else {
+      if (!(gapinf.top === (void 0))) {
+        t3 = gapinf.top;
+      } else {
+        t3 = $.max(prevSpacing, si.top);
+      }
+    }
+    var assigned1 = $.add(assigned, t3);
+    var prevSpacing1 = si.bottom;
+    var phgh = t2.get$profile().get$height();
+    if ($.isEmpty(phgh) === true) {
+      var t4 = defphgh;
+    } else {
+      t4 = phgh;
+    }
+    var amt = $.LayoutAmountInfo$1(t4);
+    $1:{
+      var t5 = amt.type;
+      if (1 === t5) {
+        var t6 = amt.value;
+        t2.set$height(t6);
+        var assigned2 = $.add(assigned1, t6);
+        assigned0 = assigned2;
+        nflex0 = nflex;
+        break $1;
+      } else {
+        if (2 === t5) {
+          var nflex1 = $.add(nflex, amt.value);
+          flexs.push(amt.value);
+          flexViews.push(t2);
+          assigned0 = assigned1;
+          nflex0 = nflex1;
+          break $1;
+        } else {
+          if (3 === t5) {
+            var t7 = $.toInt($.round($.mul(innerHeight$.$call$0(), amt.value)));
+            t2.set$height(t7);
+            var assigned3 = $.add(assigned1, t7);
+            assigned0 = assigned3;
+            nflex0 = nflex;
+            break $1;
+          } else {
+            var hgh = t2.measureHeight_$1(mctx);
+            if (!$.eqNullB(hgh)) {
+              t2.set$height(hgh);
+              assigned0 = $.add(assigned1, hgh);
+            } else {
+              assigned0 = $.add(assigned1, t2.get$outerHeight());
+            }
+            nflex0 = nflex;
+            break $1;
+          }
+        }
+      }
+    }
+    mctx.setWidthByProfile$2(t2, new $.Closure44(t0, si));
+    prevSpacing0 = prevSpacing1;
+  }
+  if (nflex > 0) {
+    var space = $.sub($.sub(innerHeight$.$call$0(), assigned), prevSpacing);
+    if (typeof space !== 'number') return this.doLayout$3$bailout(mctx, view, children, 1, nflex, gapinf, t0, childspcinfs, flexViews, flexs, space);
+    var per = space / nflex;
+    for (var len = flexs.length - 1, space0 = space, j = 0; true; space0 = space1, j = j + 1) {
+      var space1 = space0;
+      if (j === len) {
+        var t8 = flexViews.length;
+        if (j < 0 || j >= t8) throw $.ioore(j);
+        flexViews[j].set$height(space0);
+        break;
+      }
+      var t9 = flexs.length;
+      if (j < 0 || j >= t9) throw $.ioore(j);
+      var delta = $.toInt($.round($.mul(per, flexs[j])));
+      var t10 = flexViews.length;
+      if (j < 0 || j >= t10) throw $.ioore(j);
+      flexViews[j].set$height(delta);
+      space1 = $.sub(space0, delta);
+    }
+  }
+  var defAlign = t0.view_1.get$layout().get$align();
+  if (typeof defAlign !== 'string') return this.doLayout$3$bailout(mctx, view, children, 2, childspcinfs, gapinf, t0, defAlign);
+  for (var t11 = $.iterator(children), prevSpacing2 = (void 0), assigned4 = 0; t11.hasNext$0() === true; prevSpacing2 = prevSpacing3, assigned4 = assigned5) {
+    var prevSpacing3 = prevSpacing2;
+    var assigned5 = assigned4;
+    var t12 = t11.next$0();
+    if (t0.view_1.shallLayout_$1(t12) !== true) {
+      prevSpacing3 = prevSpacing2;
+      assigned5 = assigned4;
+      continue;
+    }
+    var si0 = childspcinfs.operator$index$1(t12);
+    if (prevSpacing2 === (void 0)) {
+      var t13 = si0.get$top();
+    } else {
+      if (!(gapinf.top === (void 0))) {
+        t13 = gapinf.top;
+      } else {
+        t13 = $.max(prevSpacing2, si0.get$top());
+      }
+    }
+    var assigned6 = $.add(assigned4, t13);
+    t12.set$top(assigned6);
+    var assigned7 = $.add(assigned6, t12.get$outerHeight());
+    var prevSpacing4 = si0.get$bottom();
+    var align = t12.get$profile().get$align();
+    var align0 = align;
+    if ($.isEmpty(align) === true) {
+      align0 = defAlign;
+    }
+    var space2 = childspcinfs.operator$index$1(t12).get$left();
+    $1:{
+      if ('center' === align0 || 'end' === align0) {
+        var delta0 = $.sub($.sub($.sub(t0.view_1.get$innerWidth(), si0.get$left()), si0.get$right()), t12.get$outerWidth());
+        var delta1 = delta0;
+        if ($.eqB(align0, 'center')) {
+          delta1 = $.tdiv(delta0, 2);
+        }
+        t12.set$left($.add(space2, delta1));
+        break $1;
+      } else {
+        t12.set$left(space2);
+      }
+    }
+    prevSpacing3 = prevSpacing4;
+    assigned5 = assigned7;
+  }
+ },
+ doLayout$3$bailout: function(mctx, view, children, state, env0, env1, env2, env3, env4, env5, env6) {
+  switch (state) {
+    case 1:
+      nflex = env0;
+      gapinf = env1;
+      t0 = env2;
+      childspcinfs = env3;
+      flexViews = env4;
+      flexs = env5;
+      space = env6;
+      break;
+    case 2:
+      childspcinfs = env0;
+      gapinf = env1;
+      t0 = env2;
+      defAlign = env3;
+      break;
+  }
+  switch (state) {
+    case 0:
+      var t0 = ({});
+      t0.view_1 = view;
+      var innerHeight$ = new $.Closure41(t0);
+      var spcinf = $.LayoutSideInfo$3(t0.view_1.get$layout().get$spacing(), 2, (void 0));
+      var gapinf = $.LayoutSideInfo$3(t0.view_1.get$layout().get$gap(), (void 0), (void 0));
+      var defphgh = t0.view_1.get$layout().get$height();
+      var childspcinfs = $.HashMapImplementation$0();
+      var flexViews = $.List((void 0));
+      var flexs = $.List((void 0));
+      var t1 = $.iterator(children);
+      var assigned = 0;
+      var nflex = 0;
+      var prevSpacing = (void 0);
+      L0: while (true) {
+        if (!(t1.hasNext$0() === true)) break L0;
+        c$0:{
+          var prevSpacing0 = prevSpacing;
+          var assigned0 = assigned;
+          var nflex0 = nflex;
+          var t2 = t1.next$0();
+          if (t0.view_1.shallLayout_$1(t2) !== true) {
+            mctx.setWidthByProfile$2(t2, new $.Closure42(t0));
+            mctx.setHeightByProfile$2(t2, new $.Closure43(t0));
+            prevSpacing0 = prevSpacing;
+            assigned0 = assigned;
+            nflex0 = nflex;
+            break c$0;
+          }
+          var si = $.LayoutSideInfo$3(t2.get$profile().get$spacing(), 0, spcinf);
+          childspcinfs.operator$indexSet$2(t2, si);
+          if (prevSpacing === (void 0)) {
+            var t3 = si.top;
+          } else {
+            if (!(gapinf.top === (void 0))) {
+              t3 = gapinf.top;
+            } else {
+              t3 = $.max(prevSpacing, si.top);
+            }
+          }
+          var assigned1 = $.add(assigned, t3);
+          var prevSpacing1 = si.bottom;
+          var phgh = t2.get$profile().get$height();
+          if ($.isEmpty(phgh) === true) {
+            var t4 = defphgh;
+          } else {
+            t4 = phgh;
+          }
+          var amt = $.LayoutAmountInfo$1(t4);
+          $1:{
+            var t5 = amt.type;
+            if (1 === t5) {
+              var t6 = amt.value;
+              t2.set$height(t6);
+              var assigned2 = $.add(assigned1, t6);
+              assigned0 = assigned2;
+              nflex0 = nflex;
+              break $1;
+            } else {
+              if (2 === t5) {
+                var nflex1 = $.add(nflex, amt.value);
+                flexs.push(amt.value);
+                flexViews.push(t2);
+                assigned0 = assigned1;
+                nflex0 = nflex1;
+                break $1;
+              } else {
+                if (3 === t5) {
+                  var t7 = $.toInt($.round($.mul(innerHeight$.$call$0(), amt.value)));
+                  t2.set$height(t7);
+                  var assigned3 = $.add(assigned1, t7);
+                  assigned0 = assigned3;
+                  nflex0 = nflex;
+                  break $1;
+                } else {
+                  var hgh = t2.measureHeight_$1(mctx);
+                  if (!$.eqNullB(hgh)) {
+                    t2.set$height(hgh);
+                    assigned0 = $.add(assigned1, hgh);
+                  } else {
+                    assigned0 = $.add(assigned1, t2.get$outerHeight());
+                  }
+                  nflex0 = nflex;
+                  break $1;
+                }
+              }
+            }
+          }
+          mctx.setWidthByProfile$2(t2, new $.Closure44(t0, si));
+          prevSpacing0 = prevSpacing1;
+        }
+        assigned = assigned0;
+        nflex = nflex0;
+        prevSpacing = prevSpacing0;
+      }
+    case 1:
+      if (state == 1 || (state == 0 && nflex > 0)) {
+        switch (state) {
+          case 0:
+            var space = $.sub($.sub(innerHeight$.$call$0(), assigned), prevSpacing);
+          case 1:
+            state = 0;
+            var per = $.div(space, nflex);
+            var len = flexs.length - 1;
+            var space0 = space;
+            var j = 0;
+            L1: while (true) {
+              if (!true) break L1;
+              var space1 = space0;
+              if (j === len) {
+                var t8 = flexViews.length;
+                if (j < 0 || j >= t8) throw $.ioore(j);
+                flexViews[j].set$height(space0);
+                break;
+              }
+              var t9 = flexs.length;
+              if (j < 0 || j >= t9) throw $.ioore(j);
+              var delta = $.toInt($.round($.mul(per, flexs[j])));
+              var t10 = flexViews.length;
+              if (j < 0 || j >= t10) throw $.ioore(j);
+              flexViews[j].set$height(delta);
+              space1 = $.sub(space0, delta);
+              space0 = space1;
+              j = j + 1;
+            }
+        }
+      }
+      var defAlign = t0.view_1.get$layout().get$align();
+    case 2:
+      state = 0;
+      var t11 = $.iterator(children);
+      var prevSpacing2 = (void 0);
+      var assigned4 = 0;
+      L2: while (true) {
+        if (!(t11.hasNext$0() === true)) break L2;
+        c$0:{
+          var prevSpacing3 = prevSpacing2;
+          var assigned5 = assigned4;
+          var t12 = t11.next$0();
+          if (t0.view_1.shallLayout_$1(t12) !== true) {
+            prevSpacing3 = prevSpacing2;
+            assigned5 = assigned4;
+            break c$0;
+          }
+          var si0 = childspcinfs.operator$index$1(t12);
+          if (prevSpacing2 === (void 0)) {
+            var t13 = si0.get$top();
+          } else {
+            if (!(gapinf.top === (void 0))) {
+              t13 = gapinf.top;
+            } else {
+              t13 = $.max(prevSpacing2, si0.get$top());
+            }
+          }
+          var assigned6 = $.add(assigned4, t13);
+          t12.set$top(assigned6);
+          var assigned7 = $.add(assigned6, t12.get$outerHeight());
+          var prevSpacing4 = si0.get$bottom();
+          var align = t12.get$profile().get$align();
+          var align0 = align;
+          if ($.isEmpty(align) === true) {
+            align0 = defAlign;
+          }
+          var space2 = childspcinfs.operator$index$1(t12).get$left();
+          $1:{
+            if ('center' === align0 || 'end' === align0) {
+              var delta0 = $.sub($.sub($.sub(t0.view_1.get$innerWidth(), si0.get$left()), si0.get$right()), t12.get$outerWidth());
+              var delta1 = delta0;
+              if ($.eqB(align0, 'center')) {
+                delta1 = $.tdiv(delta0, 2);
+              }
+              t12.set$left($.add(space2, delta1));
+              break $1;
+            } else {
+              t12.set$left(space2);
+            }
+          }
+          prevSpacing3 = prevSpacing4;
+          assigned5 = assigned7;
+        }
+        prevSpacing2 = prevSpacing3;
+        assigned4 = assigned5;
+      }
+  }
+ },
+ measureWidth$2: function(mctx, view) {
+  var va = mctx.getWidthSetByApp$1(view);
+  if (!(va === (void 0))) {
+    return va;
+  }
+  var spcinf = $.LayoutSideInfo$3(view.get$layout().get$spacing(), 2, (void 0));
+  var defpwd = view.get$layout().get$width();
+  var borderWd = $.shl(mctx.getBorderWidth$1(view), 1);
+  if (borderWd !== (borderWd | 0)) return this.measureWidth$2$bailout(mctx, view, 1, spcinf, defpwd, borderWd);
+  for (var t0 = $.iterator(view.get$children()), width = (void 0); t0.hasNext$0() === true; width = width0) {
+    var width0 = width;
+    var t1 = t0.next$0();
+    var t2 = view.shallLayout_$1(t1) === true;
+    var t3 = !t2;
+    if (t2) {
+      t3 = !(t1.get$profile().get$anchorView() === (void 0));
+    }
+    if (t3) {
+      width0 = width;
+      continue;
+    }
+    var si = $.LayoutSideInfo$3(t1.get$profile().get$spacing(), 0, spcinf);
+    var wd = $.add($.add(si.left, si.right), borderWd);
+    var pwd = t1.get$profile().get$width();
+    if ($.isEmpty(pwd) === true) {
+      var t4 = defpwd;
+    } else {
+      t4 = pwd;
+    }
+    var amt = $.LayoutAmountInfo$1(t4);
+    $1:{
+      var t5 = amt.type;
+      if (1 === t5) {
+        var wd0 = $.add(wd, amt.value);
+        break $1;
+      } else {
+        if (0 === t5 || 4 === t5) {
+          var w = t1.measureWidth_$1(mctx);
+          if (!$.eqNullB(w)) {
+            var t6 = w;
+          } else {
+            t6 = t1.get$outerWidth();
+          }
+          wd0 = $.add(wd, t6);
+          break $1;
+        } else {
+          width0 = width;
+          continue;
+        }
+      }
+    }
+    width0 = width;
+    if ($.eqNullB(width) || $.gtB(wd0, width)) {
+      width0 = wd0;
+    }
+  }
+  return width;
+ },
+ measureWidth$2$bailout: function(mctx, view, state, env0, env1, env2) {
+  switch (state) {
+    case 1:
+      spcinf = env0;
+      defpwd = env1;
+      borderWd = env2;
+      break;
+  }
+  switch (state) {
+    case 0:
+      var va = mctx.getWidthSetByApp$1(view);
+      if (!(va === (void 0))) {
+        return va;
+      }
+      var spcinf = $.LayoutSideInfo$3(view.get$layout().get$spacing(), 2, (void 0));
+      var defpwd = view.get$layout().get$width();
+      var borderWd = $.shl(mctx.getBorderWidth$1(view), 1);
+    case 1:
+      state = 0;
+      var t0 = $.iterator(view.get$children());
+      var width = (void 0);
+      L0: while (true) {
+        if (!(t0.hasNext$0() === true)) break L0;
+        c$0:{
+          var width0 = width;
+          var t1 = t0.next$0();
+          var t2 = view.shallLayout_$1(t1) === true;
+          var t3 = !t2;
+          if (t2) {
+            t3 = !(t1.get$profile().get$anchorView() === (void 0));
+          }
+          if (t3) {
+            width0 = width;
+            break c$0;
+          }
+          var si = $.LayoutSideInfo$3(t1.get$profile().get$spacing(), 0, spcinf);
+          var wd = $.add($.add(si.left, si.right), borderWd);
+          var pwd = t1.get$profile().get$width();
+          if ($.isEmpty(pwd) === true) {
+            var t4 = defpwd;
+          } else {
+            t4 = pwd;
+          }
+          var amt = $.LayoutAmountInfo$1(t4);
+          $1:{
+            var t5 = amt.type;
+            if (1 === t5) {
+              var wd0 = $.add(wd, amt.value);
+              break $1;
+            } else {
+              if (0 === t5 || 4 === t5) {
+                var w = t1.measureWidth_$1(mctx);
+                if (!$.eqNullB(w)) {
+                  var t6 = w;
+                } else {
+                  t6 = t1.get$outerWidth();
+                }
+                wd0 = $.add(wd, t6);
+                break $1;
+              } else {
+                width0 = width;
+                break c$0;
+              }
+            }
+          }
+          width0 = width;
+          if ($.eqNullB(width) || $.gtB(wd0, width)) {
+            width0 = wd0;
+          }
+        }
+        width = width0;
+      }
+      return width;
+  }
+ },
+ measureHeight$2: function(mctx, view) {
+  var va = mctx.getHeightSetByApp$1(view);
+  if (!(va === (void 0))) {
+    return va;
+  }
+  var spcinf = $.LayoutSideInfo$3(view.get$layout().get$spacing(), 2, (void 0));
+  var gapinf = $.LayoutSideInfo$3(view.get$layout().get$gap(), (void 0), (void 0));
+  var defphgh = view.get$layout().get$height();
+  for (var t0 = $.iterator(view.get$children()), height = 0, prevSpacing = (void 0); t0.hasNext$0() === true; height = height0, prevSpacing = prevSpacing0) {
+    var height0 = height;
+    var prevSpacing0 = prevSpacing;
+    var t1 = t0.next$0();
+    var t2 = view.shallLayout_$1(t1) === true;
+    var t3 = !t2;
+    if (t2) {
+      t3 = !(t1.get$profile().get$anchorView() === (void 0));
+    }
+    if (t3) {
+      height0 = height;
+      prevSpacing0 = prevSpacing;
+      continue;
+    }
+    var si = $.LayoutSideInfo$3(t1.get$profile().get$spacing(), 0, spcinf);
+    if (prevSpacing === (void 0)) {
+      var t4 = si.top;
+    } else {
+      if (!(gapinf.top === (void 0))) {
+        t4 = gapinf.top;
+      } else {
+        t4 = $.max(prevSpacing, si.top);
+      }
+    }
+    var height1 = $.add(height, t4);
+    var prevSpacing1 = si.bottom;
+    var phgh = t1.get$profile().get$height();
+    if ($.isEmpty(phgh) === true) {
+      var t5 = defphgh;
+    } else {
+      t5 = phgh;
+    }
+    var amt = $.LayoutAmountInfo$1(t5);
+    $1:{
+      var t6 = amt.type;
+      if (1 === t6) {
+        height0 = $.add(height1, amt.value);
+        break $1;
+      } else {
+        if (0 === t6 || 4 === t6) {
+          var hgh = t1.measureHeight_$1(mctx);
+          if (!$.eqNullB(hgh)) {
+            var t7 = hgh;
+          } else {
+            t7 = t1.get$outerHeight();
+          }
+          height0 = $.add(height1, t7);
+          break $1;
+        }
+      }
+      height0 = height1;
+    }
+    prevSpacing0 = prevSpacing1;
+  }
+  var t8 = $.mul(mctx.getBorderWidth$1(view), 2);
+  if (!(prevSpacing === (void 0))) {
+    var t9 = prevSpacing;
+  } else {
+    t9 = $.add(spcinf.top, spcinf.bottom);
+  }
+  return $.add(height, $.add(t8, t9));
+ }
+});
+
+Isolate.$defineClass("AnchorRelation", "Object", ["parent?", "anchored", "indeps"], {
+ _layoutAnchored$2: function(mctx, anchor) {
+  var t0 = ({});
+  t0.anchor_1 = anchor;
+  var views = $.index(this.anchored, t0.anchor_1);
+  if (!(views === (void 0)) && $.isEmpty(views) !== true) {
+    var anchorOuterWidth = new $.Closure27(t0);
+    var anchorOuterHeight = new $.Closure28(t0);
+    var anchorInnerWidth = new $.Closure29(t0);
+    var anchorInnerHeight = new $.Closure30(t0);
+    for (var t1 = $.iterator(views); t1.hasNext$0() === true; ) {
+      var t2 = t1.next$0();
+      if (t0.anchor_1 === t2.get$parent()) {
+        var t3 = anchorInnerWidth;
+      } else {
+        t3 = anchorOuterWidth;
+      }
+      mctx.setWidthByProfile$2(t2, t3);
+      if (t0.anchor_1 === t2.get$parent()) {
+        var t4 = anchorInnerHeight;
+      } else {
+        t4 = anchorOuterHeight;
+      }
+      mctx.setHeightByProfile$2(t2, t4);
+      var handlers = $._getHandlers(t2.get$profile().get$location());
+      var offset = $._getOffset(t0.anchor_1, t2);
+      $.index($._anchorXHandlers(), $.index(handlers, 0)).$call$3(offset.get$left(), t0.anchor_1, t2);
+      $.index($._anchorYHandlers(), $.index(handlers, 1)).$call$3(offset.get$top(), t0.anchor_1, t2);
+    }
+    for (var t5 = $.iterator(views); t5.hasNext$0() === true; ) {
+      this._layoutAnchored$2(mctx, t5.next$0());
+    }
+  }
+ },
+ layoutAnchored$1: function(mctx) {
+  this._layoutAnchored$2(mctx, this.parent);
+  for (var t0 = $.iterator(this.indeps); t0.hasNext$0() === true; ) {
+    this._layoutAnchored$2(mctx, t0.next$0());
+  }
+ },
+ AnchorRelation$1: function(view) {
+  for (var t0 = $.iterator(view.get$children()); t0.hasNext$0() === true; ) {
+    var t1 = t0.next$0();
+    var av = t1.get$profile().get$anchorView();
+    if ($.eqNullB(av)) {
+      $.add$1(this.indeps, t1);
+    } else {
+      if (!(av.get$parent() === view) && !(av === view)) {
+        throw $.captureStackTrace($.UIException$1('Anchor can be parent or sibling, not ' + $.stringToString(av)));
+      }
+      var deps = $.index(this.anchored, av);
+      var deps0 = deps;
+      if ($.eqNullB(deps)) {
+        var t2 = this.anchored;
+        var deps1 = $.List((void 0));
+        $.indexSet(t2, av, deps1);
+        deps0 = deps1;
+      }
+      $.add$1(deps0, t1);
+    }
+  }
+ }
+});
+
+Isolate.$defineClass("_AnchorOfRoot", "Object", [], {
+ get$innerHeight: function() {
+  return $.browser.get$size().get$height();
+ },
+ get$outerHeight: function() {
+  return $.browser.get$size().get$height();
+ },
+ get$innerWidth: function() {
+  return $.browser.get$size().get$width();
+ },
+ get$outerWidth: function() {
+  return $.browser.get$size().get$width();
+ }
+});
+
+Isolate.$defineClass("LayoutAmountInfo", "Object", ["value=", "type="], {
+ toString$0: function() {
+  return '' + $.stringToString(this.type) + ':' + $.stringToString(this.value);
+ },
+ LayoutAmountInfo$1: function(profile) {
+  if ($.eqNullB(profile) || $.isEmpty(profile) === true) {
+    this.type = 0;
+  } else {
+    if ($.eqB(profile, 'content')) {
+      this.type = 4;
+    } else {
+      if ($.startsWith(profile, 'flex') === true) {
+        this.type = 2;
+        if ($.gtB($.get$length(profile), 4)) {
+          var t0 = $.parseInt($.trim($.substring$1(profile, 4)));
+        } else {
+          t0 = 1;
+        }
+        this.value = t0;
+        if ($.ltB(this.value, 1)) {
+          this.value = 1;
+        }
+      } else {
+        if ($.endsWith(profile, '%') === true) {
+          this.type = 3;
+          this.value = $.div($.parseDouble($.trim($.substring$2(profile, 0, $.sub($.get$length(profile), 1)))), 100);
+        } else {
+          this.type = 1;
+          this.value = $.intOf(profile, true);
+        }
+      }
+    }
+  }
+ }
+});
+
+Isolate.$defineClass("LayoutSideInfo", "Object", ["right?", "left=", "bottom?", "top="], {
+ toString$0: function() {
+  return '(' + $.stringToString(this.left) + ',' + $.stringToString(this.top) + ':' + $.stringToString(this.right) + ',' + $.stringToString(this.bottom) + ')';
+ },
+ LayoutSideInfo$3: function(profile, defaultValue, defaultInfo) {
+  if (!$.eqNullB(profile) && $.isEmpty(profile) !== true) {
+    var wds = [];
+    for (var t0 = $.iterator($.CTC39.allMatches$1(profile)); t0.hasNext$0() === true; ) {
+      $.add$1(wds, $.parseInt(t0.next$0().group$1(0)));
+    }
+    $0:{
+      var t1 = wds.length;
+      if (0 === t1) {
+        break $0;
+      } else {
+        if (1 === t1) {
+          var t2 = wds.length;
+          if (0 >= t2) throw $.ioore(0);
+          var t3 = wds[0];
+          this.right = t3;
+          this.left = t3;
+          this.bottom = t3;
+          this.top = t3;
+          return;
+        } else {
+          if (2 === t1) {
+            var t4 = wds.length;
+            if (0 >= t4) throw $.ioore(0);
+            var t5 = wds[0];
+            this.bottom = t5;
+            this.top = t5;
+            var t6 = wds.length;
+            if (1 >= t6) throw $.ioore(1);
+            var t7 = wds[1];
+            this.right = t7;
+            this.left = t7;
+            return;
+          } else {
+            if (3 === t1) {
+              var t8 = wds.length;
+              if (0 >= t8) throw $.ioore(0);
+              this.top = wds[0];
+              var t9 = wds.length;
+              if (1 >= t9) throw $.ioore(1);
+              var t10 = wds[1];
+              this.right = t10;
+              this.left = t10;
+              var t11 = wds.length;
+              if (2 >= t11) throw $.ioore(2);
+              this.bottom = wds[2];
+              return;
+            } else {
+              var t12 = wds.length;
+              if (0 >= t12) throw $.ioore(0);
+              this.top = wds[0];
+              var t13 = wds.length;
+              if (1 >= t13) throw $.ioore(1);
+              this.right = wds[1];
+              var t14 = wds.length;
+              if (2 >= t14) throw $.ioore(2);
+              this.bottom = wds[2];
+              var t15 = wds.length;
+              if (3 >= t15) throw $.ioore(3);
+              this.left = wds[3];
+              return;
+            }
+          }
+        }
+      }
+    }
+  }
+  if (!$.eqNullB(defaultInfo)) {
+    this.top = defaultInfo.get$top();
+    this.bottom = defaultInfo.get$bottom();
+    this.left = defaultInfo.get$left();
+    this.right = defaultInfo.get$right();
+  } else {
+    if (!(defaultValue === (void 0))) {
+      this.right = defaultValue;
+      this.left = defaultValue;
+      this.bottom = defaultValue;
+      this.top = defaultValue;
+    }
+  }
+ }
 });
 
 Isolate.$defineClass("CSSStyleDeclarationImpl", "Object", ["_pcss", "_view"], {
@@ -5115,2012 +7140,6 @@ Isolate.$defineClass("ViewConfig", "Object", ["uuidPrefix?", "classPrefix?"], {
   var appid = $.application().get$uuid();
   if ($.gtB(appid, 0)) {
     this.uuidPrefix = '' + $.stringToString($.encodeId(appid, 'v')) + '_';
-  }
- }
-});
-
-Isolate.$defineClass("LayoutManager", "RunOnceViewManager", ["_imgWaits", "_layouts", "_ignoreSubviews", "_ignoreDetached", "_readyChecks", "_task", "_views", "_runQue"], {
- _measureByContent$3: function(mctx, view, autowidth) {
-  var t0 = ({});
-  t0.view_1 = view;
-  var t1 = autowidth === true;
-  var nodestyle = (void 0);
-  var orgwd = (void 0);
-  var orghgh = (void 0);
-  var orgspace = (void 0);
-  if (t1) {
-    var nodestyle0 = t0.view_1.get$node().get$style();
-    var pos = nodestyle0.get$position();
-    orgspace = (void 0);
-    if (!$.eqB(pos, 'fixed') && !$.eqB(pos, 'static')) {
-      var orgspace0 = nodestyle0.get$whiteSpace();
-      orgspace = orgspace0;
-      if (orgspace0 === (void 0)) {
-        orgspace = '';
-      }
-      nodestyle0.set$whiteSpace('nowrap');
-    }
-    var orgwd0 = nodestyle0.get$width();
-    var orghgh0 = nodestyle0.get$height();
-    nodestyle0.set$width('');
-    nodestyle0.set$height('');
-    nodestyle = nodestyle0;
-    orgwd = orgwd0;
-    orghgh = orghgh0;
-  }
-  var qview = $.DOMQuery(t0.view_1);
-  var size = $._Size$2(qview.get$outerWidth(), qview.get$outerHeight());
-  if (!(orgspace === (void 0))) {
-    nodestyle.set$whiteSpace(orgspace);
-  }
-  if (!(orgwd === (void 0)) && $.isEmpty(orgwd) !== true) {
-    nodestyle.set$width(orgwd);
-  }
-  if (!(orghgh === (void 0)) && $.isEmpty(orghgh) !== true) {
-    nodestyle.set$height(orghgh);
-  }
-  var parentInnerWidth = new $.Closure53(t0);
-  var parentInnerHeight = new $.Closure54(t0);
-  var limit = $._amountOf(t0.view_1.get$profile().get$maxWidth(), parentInnerWidth);
-  if (t1 && $.gtB(size.width, $.browser.get$size().get$width()) || !(limit === (void 0)) && $.gtB(size.width, limit)) {
-    if (!$.eqNullB(limit)) {
-      var t2 = limit;
-    } else {
-      t2 = $.browser.get$size().get$width();
-    }
-    nodestyle.set$width($.px(t2));
-    size.width = qview.get$outerWidth();
-    size.height = qview.get$outerHeight();
-  }
-  var limit0 = $._amountOf(t0.view_1.get$profile().get$maxHeight(), parentInnerHeight);
-  if (!(limit0 === (void 0)) && $.gtB(size.height, limit0)) {
-    size.height = limit0;
-  }
-  var limit1 = $._amountOf(t0.view_1.get$profile().get$minWidth(), parentInnerWidth);
-  if (!(limit1 === (void 0)) && $.ltB(size.width, limit1)) {
-    size.width = limit1;
-  }
-  var limit2 = $._amountOf(t0.view_1.get$profile().get$minHeight(), parentInnerHeight);
-  if (!(limit2 === (void 0)) && $.ltB(size.height, limit2)) {
-    size.height = limit2;
-  }
-  $.indexSet(mctx.get$widths(), t0.view_1, size.width);
-  $.indexSet(mctx.get$heights(), t0.view_1, size.height);
-  return size;
- },
- measureHeightByContent$3: function(mctx, view, autowidth) {
-  var hgh = $.index(mctx.get$heights(), view);
-  var t0 = hgh === (void 0);
-  var t1 = !t0;
-  if (t0) {
-    t1 = mctx.get$heights().containsKey$1(view) === true;
-  }
-  if (t1) {
-    var t2 = hgh;
-  } else {
-    t2 = this._measureByContent$3(mctx, view, autowidth).get$height();
-  }
-  return t2;
- },
- measureWidthByContent$3: function(mctx, view, autowidth) {
-  var wd = $.index(mctx.get$widths(), view);
-  var t0 = wd === (void 0);
-  var t1 = !t0;
-  if (t0) {
-    t1 = mctx.get$widths().containsKey$1(view) === true;
-  }
-  if (t1) {
-    var t2 = wd;
-  } else {
-    t2 = this._measureByContent$3(mctx, view, autowidth).get$width();
-  }
-  return t2;
- },
- setHeightByProfile$5: function(mctx, view, height, defaultHeight, defaultProfile) {
-  var profile = view.get$profile().get$height();
-  var profile0 = profile;
-  if ($.isEmpty(profile) === true && !(defaultProfile === (void 0))) {
-    profile0 = defaultProfile.$call$0();
-  }
-  var amt = $.LayoutAmountInfo$1(profile0);
-  $0:{
-    var t0 = amt.type;
-    if (0 === t0) {
-      if (view.get$height() === (void 0) && !(defaultHeight === (void 0))) {
-        view.set$height(defaultHeight.$call$0());
-      }
-      break $0;
-    } else {
-      if (1 === t0) {
-        view.set$height(amt.value);
-        break $0;
-      } else {
-        if (2 === t0) {
-          view.set$height(height.$call$0());
-          break $0;
-        } else {
-          if (3 === t0) {
-            view.set$height($.toInt($.round($.mul(height.$call$0(), amt.value))));
-            break $0;
-          } else {
-            if (4 === t0) {
-              var hgh = view.measureHeight_$1(mctx);
-              if (!$.eqNullB(hgh)) {
-                view.set$height(hgh);
-              }
-              break $0;
-            }
-          }
-        }
-      }
-    }
-  }
- },
- setHeightByProfile$3: function(mctx,view,height) {
-  return this.setHeightByProfile$5(mctx,view,height,(void 0),(void 0))
-},
- setHeightByProfile$3: function(mctx,view,height) {
-  return this.setHeightByProfile$5(mctx,view,height,(void 0),(void 0))
-},
- setWidthByProfile$5: function(mctx, view, width, defaultWidth, defaultProfile) {
-  var profile = view.get$profile().get$width();
-  var profile0 = profile;
-  if ($.isEmpty(profile) === true && !(defaultProfile === (void 0))) {
-    profile0 = defaultProfile.$call$0();
-  }
-  var amt = $.LayoutAmountInfo$1(profile0);
-  $0:{
-    var t0 = amt.type;
-    if (0 === t0) {
-      if (view.get$width() === (void 0) && !(defaultWidth === (void 0))) {
-        view.set$width(defaultWidth.$call$0());
-      }
-      break $0;
-    } else {
-      if (1 === t0) {
-        view.set$width(amt.value);
-        break $0;
-      } else {
-        if (2 === t0) {
-          view.set$width(width.$call$0());
-          break $0;
-        } else {
-          if (3 === t0) {
-            view.set$width($.toInt($.round($.mul(width.$call$0(), amt.value))));
-            break $0;
-          } else {
-            if (4 === t0) {
-              var wd = view.measureWidth_$1(mctx);
-              if (!$.eqNullB(wd)) {
-                view.set$width(wd);
-              }
-              break $0;
-            }
-          }
-        }
-      }
-    }
-  }
- },
- setWidthByProfile$3: function(mctx,view,width) {
-  return this.setWidthByProfile$5(mctx,view,width,(void 0),(void 0))
-},
- setWidthByProfile$3: function(mctx,view,width) {
-  return this.setWidthByProfile$5(mctx,view,width,(void 0),(void 0))
-},
- doLayout$2: function(mctx, view) {
-  if (view.get$parent() === (void 0) && view.get$profile().get$anchorView() === (void 0)) {
-    this.setWidthByProfile$3(mctx, view, new $.Closure12());
-    this.setHeightByProfile$3(mctx, view, new $.Closure13());
-    $._positionRoot(view);
-  }
-  this._layoutOfView$1(view).doLayout$2(mctx, view);
-  view.onLayout$0();
- },
- handle_$1: function(view) {
-  this.doLayout$2($.MeasureContext$0(), view);
- },
- _layoutOfView$1: function(view) {
-  var name$ = view.get$layout().get$type();
-  var clayout = this.getLayout$1(name$);
-  if ($.eqNullB(clayout)) {
-    throw $.captureStackTrace($.UIException$1('Unknown layout, ' + $.stringToString(name$)));
-  }
-  return clayout;
- },
- flush$1: function(view) {
-  if ($.isEmpty(this._imgWaits) === true) {
-    $.RunOnceViewManager.prototype.flush$1.call(this, view);
-  } else {
-    if (!(view === (void 0))) {
-      this.queue$1(view);
-    }
-  }
- },
- flush$0: function() {
-  return this.flush$1((void 0))
-},
- measureHeight$2: function(mctx, view) {
-  return this._layoutOfView$1(view).measureHeight$2(mctx, view);
- },
- measureWidth$2: function(mctx, view) {
-  return this._layoutOfView$1(view).measureWidth$2(mctx, view);
- },
- getLayout$1: function(name$) {
-  return $.index(this._layouts, name$);
- },
- addLayout$2: function(name$, clayout) {
-  var old = $.index(this._layouts, name$);
-  $.indexSet(this._layouts, name$, clayout);
-  return old;
- },
- LayoutManager$0: function() {
-  this.addLayout$2('linear', $.LinearLayout$0());
-  var freeLayout = $.FreeLayout$0();
-  this.addLayout$2('none', freeLayout);
-  this.addLayout$2('', freeLayout);
- }
-});
-
-Isolate.$defineClass("MeasureContext", "Object", ["heights?", "widths?"], {
-});
-
-Isolate.$defineClass("FreeLayout", "Object", [], {
- doLayout$2: function(mctx, view) {
-  var t0 = ({});
-  t0.view_1 = view;
-  if (!(t0.view_1.get$firstChild() === (void 0))) {
-    var ar = $.AnchorRelation$1(t0.view_1);
-    var innerWidth$ = new $.Closure62(t0);
-    var innerHeight$ = new $.Closure63(t0);
-    for (var t1 = $.iterator(ar.indeps); t1.hasNext$0() === true; ) {
-      var t2 = t1.next$0();
-      $.layoutManager.setWidthByProfile$3(mctx, t2, innerWidth$);
-      $.layoutManager.setHeightByProfile$3(mctx, t2, innerHeight$);
-    }
-    ar.layoutAnchored$1(mctx);
-    for (var t3 = $.iterator(t0.view_1.get$children()); t3.hasNext$0() === true; ) {
-      t3.next$0().doLayout_$1(mctx);
-    }
-  }
- },
- measureHeight$2: function(mctx, view) {
-  var t0 = ({});
-  t0.view_1 = view;
-  var hgh = $.index(mctx.get$heights(), t0.view_1);
-  var t1 = hgh === (void 0);
-  var t2 = !t1;
-  if (t1) {
-    t2 = mctx.get$heights().containsKey$1(t0.view_1) === true;
-  }
-  if (t2) {
-    return hgh;
-  }
-  var hgh0 = $._initSize(t0.view_1.get$profile().get$height(), new $.Closure55(t0));
-  if (typeof hgh0 !== 'number') return this.measureHeight$2$bailout(mctx, view, 1, t0, hgh0);
-  for (var t3 = $.iterator(t0.view_1.get$children()), hgh1 = hgh0; t3.hasNext$0() === true; hgh1 = hgh2) {
-    var hgh2 = hgh1;
-    var t4 = t3.next$0();
-    hgh2 = hgh1;
-    if (t0.view_1.shallLayout_$1(t4) === true && $.eqNullB(t4.get$profile().get$anchorView())) {
-      var subsz = t4.measureHeight_$1(mctx);
-      var t5 = t4.get$top();
-      if (!(subsz === (void 0))) {
-        var t6 = subsz;
-      } else {
-        t6 = 0;
-      }
-      var subsz0 = $.add(t5, t6);
-      hgh2 = hgh1;
-      if ($.eqNullB(hgh1) || $.gtB(subsz0, hgh1)) {
-        hgh2 = subsz0;
-      }
-    }
-  }
-  var hgh3 = hgh1;
-  if (!(hgh1 === (void 0))) {
-    hgh3 = $.add(hgh1, $.mul($.DOMQuery(t0.view_1.get$node()).get$borderWidth(), 2));
-  }
-  $.indexSet(mctx.get$heights(), t0.view_1, hgh3);
-  return hgh3;
- },
- measureHeight$2$bailout: function(mctx, view, state, env0, env1) {
-  switch (state) {
-    case 1:
-      t0 = env0;
-      hgh0 = env1;
-      break;
-  }
-  switch (state) {
-    case 0:
-      var t0 = ({});
-      t0.view_1 = view;
-      var hgh = $.index(mctx.get$heights(), t0.view_1);
-      var t1 = hgh === (void 0);
-      var t2 = !t1;
-      if (t1) {
-        t2 = mctx.get$heights().containsKey$1(t0.view_1) === true;
-      }
-      if (t2) {
-        return hgh;
-      }
-      var hgh0 = $._initSize(t0.view_1.get$profile().get$height(), new $.Closure55(t0));
-    case 1:
-      state = 0;
-      var t3 = $.iterator(t0.view_1.get$children());
-      var hgh1 = hgh0;
-      L0: while (true) {
-        if (!(t3.hasNext$0() === true)) break L0;
-        var hgh2 = hgh1;
-        var t4 = t3.next$0();
-        hgh2 = hgh1;
-        if (t0.view_1.shallLayout_$1(t4) === true && $.eqNullB(t4.get$profile().get$anchorView())) {
-          var subsz = t4.measureHeight_$1(mctx);
-          var t5 = t4.get$top();
-          if (!(subsz === (void 0))) {
-            var t6 = subsz;
-          } else {
-            t6 = 0;
-          }
-          var subsz0 = $.add(t5, t6);
-          hgh2 = hgh1;
-          if ($.eqNullB(hgh1) || $.gtB(subsz0, hgh1)) {
-            hgh2 = subsz0;
-          }
-        }
-        hgh1 = hgh2;
-      }
-      var hgh3 = hgh1;
-      if (!(hgh1 === (void 0))) {
-        hgh3 = $.add(hgh1, $.mul($.DOMQuery(t0.view_1.get$node()).get$borderWidth(), 2));
-      }
-      $.indexSet(mctx.get$heights(), t0.view_1, hgh3);
-      return hgh3;
-  }
- },
- measureWidth$2: function(mctx, view) {
-  var t0 = ({});
-  t0.view_1 = view;
-  var wd = $.index(mctx.get$widths(), t0.view_1);
-  var t1 = wd === (void 0);
-  var t2 = !t1;
-  if (t1) {
-    t2 = mctx.get$widths().containsKey$1(t0.view_1) === true;
-  }
-  if (t2) {
-    return wd;
-  }
-  var wd0 = $._initSize(t0.view_1.get$profile().get$width(), new $.Closure61(t0));
-  if (typeof wd0 !== 'number') return this.measureWidth$2$bailout(mctx, view, 1, t0, wd0);
-  for (var t3 = $.iterator(t0.view_1.get$children()), wd1 = wd0; t3.hasNext$0() === true; wd1 = wd2) {
-    var wd2 = wd1;
-    var t4 = t3.next$0();
-    wd2 = wd1;
-    if (t0.view_1.shallLayout_$1(t4) === true && $.eqNullB(t4.get$profile().get$anchorView())) {
-      var subsz = t4.measureWidth_$1(mctx);
-      var t5 = t4.get$left();
-      if (!(subsz === (void 0))) {
-        var t6 = subsz;
-      } else {
-        t6 = 0;
-      }
-      var subsz0 = $.add(t5, t6);
-      wd2 = wd1;
-      if (wd1 === (void 0) || $.gtB(subsz0, wd1)) {
-        wd2 = subsz0;
-      }
-    }
-  }
-  var wd3 = wd1;
-  if (!(wd1 === (void 0))) {
-    wd3 = $.add(wd1, $.mul($.DOMQuery(t0.view_1.get$node()).get$borderWidth(), 2));
-  }
-  $.indexSet(mctx.get$widths(), t0.view_1, wd3);
-  return wd3;
- },
- measureWidth$2$bailout: function(mctx, view, state, env0, env1) {
-  switch (state) {
-    case 1:
-      t0 = env0;
-      wd0 = env1;
-      break;
-  }
-  switch (state) {
-    case 0:
-      var t0 = ({});
-      t0.view_1 = view;
-      var wd = $.index(mctx.get$widths(), t0.view_1);
-      var t1 = wd === (void 0);
-      var t2 = !t1;
-      if (t1) {
-        t2 = mctx.get$widths().containsKey$1(t0.view_1) === true;
-      }
-      if (t2) {
-        return wd;
-      }
-      var wd0 = $._initSize(t0.view_1.get$profile().get$width(), new $.Closure61(t0));
-    case 1:
-      state = 0;
-      var t3 = $.iterator(t0.view_1.get$children());
-      var wd1 = wd0;
-      L0: while (true) {
-        if (!(t3.hasNext$0() === true)) break L0;
-        var wd2 = wd1;
-        var t4 = t3.next$0();
-        wd2 = wd1;
-        if (t0.view_1.shallLayout_$1(t4) === true && $.eqNullB(t4.get$profile().get$anchorView())) {
-          var subsz = t4.measureWidth_$1(mctx);
-          var t5 = t4.get$left();
-          if (!(subsz === (void 0))) {
-            var t6 = subsz;
-          } else {
-            t6 = 0;
-          }
-          var subsz0 = $.add(t5, t6);
-          wd2 = wd1;
-          if (wd1 === (void 0) || $.gtB(subsz0, wd1)) {
-            wd2 = subsz0;
-          }
-        }
-        wd1 = wd2;
-      }
-      var wd3 = wd1;
-      if (!(wd1 === (void 0))) {
-        wd3 = $.add(wd1, $.mul($.DOMQuery(t0.view_1.get$node()).get$borderWidth(), 2));
-      }
-      $.indexSet(mctx.get$widths(), t0.view_1, wd3);
-      return wd3;
-  }
- }
-});
-
-Isolate.$defineClass("LinearLayout", "Object", [], {
- doLayout$2: function(mctx, view) {
-  if (!(view.get$firstChild() === (void 0))) {
-    var ar = $.AnchorRelation$1(view);
-    $._getRealLayout(view).doLayout$3(mctx, view, ar.indeps);
-    ar.layoutAnchored$1(mctx);
-    for (var t0 = $.iterator(view.get$children()); t0.hasNext$0() === true; ) {
-      t0.next$0().doLayout_$1(mctx);
-    }
-  }
- },
- measureHeight$2: function(mctx, view) {
-  var height = $.index(mctx.get$heights(), view);
-  var t0 = height === (void 0);
-  var t1 = !t0;
-  if (t0) {
-    t1 = mctx.get$heights().containsKey$1(view) === true;
-  }
-  if (t1) {
-    return height;
-  }
-  var t2 = mctx.get$heights();
-  var t3 = $._getRealLayout(view).measureHeight$2(mctx, view);
-  $.indexSet(t2, view, t3);
-  return t3;
- },
- measureWidth$2: function(mctx, view) {
-  var width = $.index(mctx.get$widths(), view);
-  var t0 = width === (void 0);
-  var t1 = !t0;
-  if (t0) {
-    t1 = mctx.get$widths().containsKey$1(view) === true;
-  }
-  if (t1) {
-    return width;
-  }
-  var t2 = mctx.get$widths();
-  var t3 = $._getRealLayout(view).measureWidth$2(mctx, view);
-  $.indexSet(t2, view, t3);
-  return t3;
- }
-});
-
-Isolate.$defineClass("_HLayout", "Object", [], {
- doLayout$3: function(mctx, view, children) {
-  var t0 = ({});
-  t0.view_1 = view;
-  var innerWidth$ = new $.Closure56(t0);
-  var defaultProfile = new $.Closure57(t0);
-  var amtWdDefault = $.getDefaultAmountInfo(t0.view_1.get$layout().get$width());
-  var spcinf = $.LayoutSideInfo$3(t0.view_1.get$layout().get$spacing(), 2, (void 0));
-  var gapinf = $.LayoutSideInfo$3(t0.view_1.get$layout().get$gap(), (void 0), (void 0));
-  var childspcinfs = $.HashMapImplementation$0();
-  var flexViews = $.List((void 0));
-  var flexs = $.List((void 0));
-  for (var t1 = $.iterator(children), prevSpacing = (void 0), assigned = 0, nflex = 0; t1.hasNext$0() === true; prevSpacing = prevSpacing0, assigned = assigned0, nflex = nflex0) {
-    var assigned0 = assigned;
-    var nflex0 = nflex;
-    var prevSpacing0 = prevSpacing;
-    var t2 = t1.next$0();
-    if (t0.view_1.shallLayout_$1(t2) !== true) {
-      $.layoutManager.setWidthByProfile$3(mctx, t2, new $.Closure58(t0));
-      $.layoutManager.setHeightByProfile$3(mctx, t2, new $.Closure59(t0));
-      assigned0 = assigned;
-      nflex0 = nflex;
-      prevSpacing0 = prevSpacing;
-      continue;
-    }
-    var si = $.LayoutSideInfo$3(t2.get$profile().get$spacing(), 0, spcinf);
-    childspcinfs.operator$indexSet$2(t2, si);
-    if (prevSpacing === (void 0)) {
-      var t3 = si.left;
-    } else {
-      if (!(gapinf.left === (void 0))) {
-        t3 = gapinf.left;
-      } else {
-        t3 = $.max(prevSpacing, si.left);
-      }
-    }
-    var assigned1 = $.add(assigned, t3);
-    var prevSpacing1 = si.right;
-    var amt = $.profileWidth(t2, amtWdDefault);
-    $1:{
-      var t4 = amt.get$type();
-      if (1 === t4) {
-        var t5 = amt.get$value();
-        t2.set$width(t5);
-        var assigned2 = $.add(assigned1, t5);
-        nflex0 = nflex;
-        assigned0 = assigned2;
-        break $1;
-      } else {
-        if (2 === t4) {
-          var nflex1 = $.add(nflex, amt.get$value());
-          flexs.push(amt.get$value());
-          flexViews.push(t2);
-          nflex0 = nflex1;
-          assigned0 = assigned1;
-          break $1;
-        } else {
-          if (3 === t4) {
-            var t6 = $.toInt($.round($.mul(innerWidth$.$call$0(), amt.get$value())));
-            t2.set$width(t6);
-            var assigned3 = $.add(assigned1, t6);
-            nflex0 = nflex;
-            assigned0 = assigned3;
-            break $1;
-          } else {
-            var wd = t2.measureWidth_$1(mctx);
-            if (!$.eqNullB(wd)) {
-              t2.set$width(wd);
-              assigned0 = $.add(assigned1, wd);
-            } else {
-              assigned0 = $.add(assigned1, t2.get$outerWidth());
-            }
-            nflex0 = nflex;
-            break $1;
-          }
-        }
-      }
-    }
-    var defaultHeight = new $.Closure60(t0, si);
-    $.layoutManager.setHeightByProfile$5(mctx, t2, defaultHeight, defaultHeight, defaultProfile);
-    prevSpacing0 = prevSpacing1;
-  }
-  if (nflex > 0) {
-    var space = $.sub($.sub(innerWidth$.$call$0(), assigned), prevSpacing);
-    if (typeof space !== 'number') return this.doLayout$3$bailout(mctx, view, children, 1, t0, nflex, gapinf, childspcinfs, flexViews, flexs, space);
-    var per = space / nflex;
-    for (var len = flexs.length - 1, j = 0, space0 = space; true; j = j + 1, space0 = space1) {
-      var space1 = space0;
-      if (j === len) {
-        var t7 = flexViews.length;
-        if (j < 0 || j >= t7) throw $.ioore(j);
-        flexViews[j].set$width(space0);
-        break;
-      }
-      var t8 = flexs.length;
-      if (j < 0 || j >= t8) throw $.ioore(j);
-      var delta = $.toInt($.round($.mul(per, flexs[j])));
-      var t9 = flexViews.length;
-      if (j < 0 || j >= t9) throw $.ioore(j);
-      flexViews[j].set$width(delta);
-      space1 = $.sub(space0, delta);
-    }
-  }
-  var defAlign = t0.view_1.get$layout().get$align();
-  if (typeof defAlign !== 'string') return this.doLayout$3$bailout(mctx, view, children, 2, gapinf, t0, childspcinfs, defAlign);
-  for (var t10 = $.iterator(children), assigned4 = 0, prevSpacing2 = (void 0); t10.hasNext$0() === true; assigned4 = assigned5, prevSpacing2 = prevSpacing3) {
-    var prevSpacing3 = prevSpacing2;
-    var assigned5 = assigned4;
-    var t11 = t10.next$0();
-    if (t0.view_1.shallLayout_$1(t11) !== true) {
-      prevSpacing3 = prevSpacing2;
-      assigned5 = assigned4;
-      continue;
-    }
-    var si0 = childspcinfs.operator$index$1(t11);
-    if (prevSpacing2 === (void 0)) {
-      var t12 = si0.get$left();
-    } else {
-      if (!(gapinf.left === (void 0))) {
-        t12 = gapinf.left;
-      } else {
-        t12 = $.max(prevSpacing2, si0.get$left());
-      }
-    }
-    var assigned6 = $.add(assigned4, t12);
-    t11.set$left(assigned6);
-    var assigned7 = $.add(assigned6, t11.get$outerWidth());
-    var prevSpacing4 = si0.get$right();
-    var align = t11.get$profile().get$align();
-    var align0 = align;
-    if ($.isEmpty(align) === true) {
-      align0 = defAlign;
-    }
-    var space2 = childspcinfs.operator$index$1(t11).get$top();
-    $1:{
-      if ('center' === align0 || 'end' === align0) {
-        var delta0 = $.sub($.sub($.sub(t0.view_1.get$innerHeight(), si0.get$top()), si0.get$bottom()), t11.get$outerHeight());
-        var delta1 = delta0;
-        if ($.eqB(align0, 'center')) {
-          delta1 = $.tdiv(delta0, 2);
-        }
-        t11.set$top($.add(space2, delta1));
-        break $1;
-      } else {
-        t11.set$top(space2);
-      }
-    }
-    prevSpacing3 = prevSpacing4;
-    assigned5 = assigned7;
-  }
- },
- doLayout$3$bailout: function(mctx, view, children, state, env0, env1, env2, env3, env4, env5, env6) {
-  switch (state) {
-    case 1:
-      t0 = env0;
-      nflex = env1;
-      gapinf = env2;
-      childspcinfs = env3;
-      flexViews = env4;
-      flexs = env5;
-      space = env6;
-      break;
-    case 2:
-      gapinf = env0;
-      t0 = env1;
-      childspcinfs = env2;
-      defAlign = env3;
-      break;
-  }
-  switch (state) {
-    case 0:
-      var t0 = ({});
-      t0.view_1 = view;
-      var innerWidth$ = new $.Closure56(t0);
-      var defaultProfile = new $.Closure57(t0);
-      var amtWdDefault = $.getDefaultAmountInfo(t0.view_1.get$layout().get$width());
-      var spcinf = $.LayoutSideInfo$3(t0.view_1.get$layout().get$spacing(), 2, (void 0));
-      var gapinf = $.LayoutSideInfo$3(t0.view_1.get$layout().get$gap(), (void 0), (void 0));
-      var childspcinfs = $.HashMapImplementation$0();
-      var flexViews = $.List((void 0));
-      var flexs = $.List((void 0));
-      var t1 = $.iterator(children);
-      var prevSpacing = (void 0);
-      var assigned = 0;
-      var nflex = 0;
-      L0: while (true) {
-        if (!(t1.hasNext$0() === true)) break L0;
-        c$0:{
-          var assigned0 = assigned;
-          var nflex0 = nflex;
-          var prevSpacing0 = prevSpacing;
-          var t2 = t1.next$0();
-          if (t0.view_1.shallLayout_$1(t2) !== true) {
-            $.layoutManager.setWidthByProfile$3(mctx, t2, new $.Closure58(t0));
-            $.layoutManager.setHeightByProfile$3(mctx, t2, new $.Closure59(t0));
-            assigned0 = assigned;
-            nflex0 = nflex;
-            prevSpacing0 = prevSpacing;
-            break c$0;
-          }
-          var si = $.LayoutSideInfo$3(t2.get$profile().get$spacing(), 0, spcinf);
-          childspcinfs.operator$indexSet$2(t2, si);
-          if (prevSpacing === (void 0)) {
-            var t3 = si.left;
-          } else {
-            if (!(gapinf.left === (void 0))) {
-              t3 = gapinf.left;
-            } else {
-              t3 = $.max(prevSpacing, si.left);
-            }
-          }
-          var assigned1 = $.add(assigned, t3);
-          var prevSpacing1 = si.right;
-          var amt = $.profileWidth(t2, amtWdDefault);
-          $1:{
-            var t4 = amt.get$type();
-            if (1 === t4) {
-              var t5 = amt.get$value();
-              t2.set$width(t5);
-              var assigned2 = $.add(assigned1, t5);
-              nflex0 = nflex;
-              assigned0 = assigned2;
-              break $1;
-            } else {
-              if (2 === t4) {
-                var nflex1 = $.add(nflex, amt.get$value());
-                flexs.push(amt.get$value());
-                flexViews.push(t2);
-                nflex0 = nflex1;
-                assigned0 = assigned1;
-                break $1;
-              } else {
-                if (3 === t4) {
-                  var t6 = $.toInt($.round($.mul(innerWidth$.$call$0(), amt.get$value())));
-                  t2.set$width(t6);
-                  var assigned3 = $.add(assigned1, t6);
-                  nflex0 = nflex;
-                  assigned0 = assigned3;
-                  break $1;
-                } else {
-                  var wd = t2.measureWidth_$1(mctx);
-                  if (!$.eqNullB(wd)) {
-                    t2.set$width(wd);
-                    assigned0 = $.add(assigned1, wd);
-                  } else {
-                    assigned0 = $.add(assigned1, t2.get$outerWidth());
-                  }
-                  nflex0 = nflex;
-                  break $1;
-                }
-              }
-            }
-          }
-          var defaultHeight = new $.Closure60(t0, si);
-          $.layoutManager.setHeightByProfile$5(mctx, t2, defaultHeight, defaultHeight, defaultProfile);
-          prevSpacing0 = prevSpacing1;
-        }
-        prevSpacing = prevSpacing0;
-        assigned = assigned0;
-        nflex = nflex0;
-      }
-    case 1:
-      if (state == 1 || (state == 0 && nflex > 0)) {
-        switch (state) {
-          case 0:
-            var space = $.sub($.sub(innerWidth$.$call$0(), assigned), prevSpacing);
-          case 1:
-            state = 0;
-            var per = $.div(space, nflex);
-            var len = flexs.length - 1;
-            var j = 0;
-            var space0 = space;
-            L1: while (true) {
-              if (!true) break L1;
-              var space1 = space0;
-              if (j === len) {
-                var t7 = flexViews.length;
-                if (j < 0 || j >= t7) throw $.ioore(j);
-                flexViews[j].set$width(space0);
-                break;
-              }
-              var t8 = flexs.length;
-              if (j < 0 || j >= t8) throw $.ioore(j);
-              var delta = $.toInt($.round($.mul(per, flexs[j])));
-              var t9 = flexViews.length;
-              if (j < 0 || j >= t9) throw $.ioore(j);
-              flexViews[j].set$width(delta);
-              space1 = $.sub(space0, delta);
-              j = j + 1;
-              space0 = space1;
-            }
-        }
-      }
-      var defAlign = t0.view_1.get$layout().get$align();
-    case 2:
-      state = 0;
-      var t10 = $.iterator(children);
-      var assigned4 = 0;
-      var prevSpacing2 = (void 0);
-      L2: while (true) {
-        if (!(t10.hasNext$0() === true)) break L2;
-        c$0:{
-          var prevSpacing3 = prevSpacing2;
-          var assigned5 = assigned4;
-          var t11 = t10.next$0();
-          if (t0.view_1.shallLayout_$1(t11) !== true) {
-            prevSpacing3 = prevSpacing2;
-            assigned5 = assigned4;
-            break c$0;
-          }
-          var si0 = childspcinfs.operator$index$1(t11);
-          if (prevSpacing2 === (void 0)) {
-            var t12 = si0.get$left();
-          } else {
-            if (!(gapinf.left === (void 0))) {
-              t12 = gapinf.left;
-            } else {
-              t12 = $.max(prevSpacing2, si0.get$left());
-            }
-          }
-          var assigned6 = $.add(assigned4, t12);
-          t11.set$left(assigned6);
-          var assigned7 = $.add(assigned6, t11.get$outerWidth());
-          var prevSpacing4 = si0.get$right();
-          var align = t11.get$profile().get$align();
-          var align0 = align;
-          if ($.isEmpty(align) === true) {
-            align0 = defAlign;
-          }
-          var space2 = childspcinfs.operator$index$1(t11).get$top();
-          $1:{
-            if ('center' === align0 || 'end' === align0) {
-              var delta0 = $.sub($.sub($.sub(t0.view_1.get$innerHeight(), si0.get$top()), si0.get$bottom()), t11.get$outerHeight());
-              var delta1 = delta0;
-              if ($.eqB(align0, 'center')) {
-                delta1 = $.tdiv(delta0, 2);
-              }
-              t11.set$top($.add(space2, delta1));
-              break $1;
-            } else {
-              t11.set$top(space2);
-            }
-          }
-          prevSpacing3 = prevSpacing4;
-          assigned5 = assigned7;
-        }
-        assigned4 = assigned5;
-        prevSpacing2 = prevSpacing3;
-      }
-  }
- },
- measureHeight$2: function(mctx, view) {
-  var amtHghDefault = $.getDefaultAmountInfo(view.get$layout().get$height());
-  var spcinf = $.LayoutSideInfo$3(view.get$layout().get$spacing(), 2, (void 0));
-  var borderWd = $.mul($.DOMQuery(view.get$node()).get$borderWidth(), 2);
-  if (typeof borderWd !== 'number') return this.measureHeight$2$bailout(mctx, view, 1, spcinf, amtHghDefault, borderWd);
-  for (var t0 = $.iterator(view.get$children()), height = (void 0); t0.hasNext$0() === true; height = height0) {
-    var height0 = height;
-    var t1 = t0.next$0();
-    var t2 = view.shallLayout_$1(t1) === true;
-    var t3 = !t2;
-    if (t2) {
-      t3 = !(t1.get$profile().get$anchorView() === (void 0));
-    }
-    if (t3) {
-      height0 = height;
-      continue;
-    }
-    var si = $.LayoutSideInfo$3(t1.get$profile().get$spacing(), 0, spcinf);
-    var hgh = $.add($.add(si.top, si.bottom), borderWd);
-    var amt = $.profileHeight(t1, amtHghDefault);
-    $1:{
-      var t4 = amt.get$type();
-      if (1 === t4) {
-        var hgh0 = $.add(hgh, amt.get$value());
-        break $1;
-      } else {
-        if (4 === t4) {
-          var h = t1.measureHeight_$1(mctx);
-          if (!$.eqNullB(h)) {
-            var t5 = h;
-          } else {
-            t5 = t1.get$outerHeight();
-          }
-          hgh0 = $.add(hgh, t5);
-          break $1;
-        } else {
-          height0 = height;
-          continue;
-        }
-      }
-    }
-    height0 = height;
-    if ($.eqNullB(height) || $.gtB(hgh0, height)) {
-      height0 = hgh0;
-    }
-  }
-  return height;
- },
- measureHeight$2$bailout: function(mctx, view, state, env0, env1, env2) {
-  switch (state) {
-    case 1:
-      spcinf = env0;
-      amtHghDefault = env1;
-      borderWd = env2;
-      break;
-  }
-  switch (state) {
-    case 0:
-      var amtHghDefault = $.getDefaultAmountInfo(view.get$layout().get$height());
-      var spcinf = $.LayoutSideInfo$3(view.get$layout().get$spacing(), 2, (void 0));
-      var borderWd = $.mul($.DOMQuery(view.get$node()).get$borderWidth(), 2);
-    case 1:
-      state = 0;
-      var t0 = $.iterator(view.get$children());
-      var height = (void 0);
-      L0: while (true) {
-        if (!(t0.hasNext$0() === true)) break L0;
-        c$0:{
-          var height0 = height;
-          var t1 = t0.next$0();
-          var t2 = view.shallLayout_$1(t1) === true;
-          var t3 = !t2;
-          if (t2) {
-            t3 = !(t1.get$profile().get$anchorView() === (void 0));
-          }
-          if (t3) {
-            height0 = height;
-            break c$0;
-          }
-          var si = $.LayoutSideInfo$3(t1.get$profile().get$spacing(), 0, spcinf);
-          var hgh = $.add($.add(si.top, si.bottom), borderWd);
-          var amt = $.profileHeight(t1, amtHghDefault);
-          $1:{
-            var t4 = amt.get$type();
-            if (1 === t4) {
-              var hgh0 = $.add(hgh, amt.get$value());
-              break $1;
-            } else {
-              if (4 === t4) {
-                var h = t1.measureHeight_$1(mctx);
-                if (!$.eqNullB(h)) {
-                  var t5 = h;
-                } else {
-                  t5 = t1.get$outerHeight();
-                }
-                hgh0 = $.add(hgh, t5);
-                break $1;
-              } else {
-                height0 = height;
-                break c$0;
-              }
-            }
-          }
-          height0 = height;
-          if ($.eqNullB(height) || $.gtB(hgh0, height)) {
-            height0 = hgh0;
-          }
-        }
-        height = height0;
-      }
-      return height;
-  }
- },
- measureWidth$2: function(mctx, view) {
-  var amtWdDefault = $.getDefaultAmountInfo(view.get$layout().get$width());
-  if (!(view.get$parent() === (void 0))) {
-    var maxWd = view.get$parent().get$innerWidth();
-  } else {
-    maxWd = $.browser.get$size().get$width();
-  }
-  if (typeof maxWd !== 'number') return this.measureWidth$2$bailout(mctx, view, 1, amtWdDefault, maxWd);
-  var spcinf = $.LayoutSideInfo$3(view.get$layout().get$spacing(), 2, (void 0));
-  var gapinf = $.LayoutSideInfo$3(view.get$layout().get$gap(), (void 0), (void 0));
-  for (var t0 = $.iterator(view.get$children()), width = 0, prevSpacing = (void 0); t0.hasNext$0() === true; width = width0, prevSpacing = prevSpacing0) {
-    var prevSpacing0 = prevSpacing;
-    var width0 = width;
-    var t1 = t0.next$0();
-    var t2 = view.shallLayout_$1(t1) === true;
-    var t3 = !t2;
-    if (t2) {
-      t3 = !(t1.get$profile().get$anchorView() === (void 0));
-    }
-    if (t3) {
-      prevSpacing0 = prevSpacing;
-      width0 = width;
-      continue;
-    }
-    var si = $.LayoutSideInfo$3(t1.get$profile().get$spacing(), 0, spcinf);
-    if (prevSpacing === (void 0)) {
-      var t4 = si.left;
-    } else {
-      if (!(gapinf.left === (void 0))) {
-        t4 = gapinf.left;
-      } else {
-        t4 = $.max(prevSpacing, si.left);
-      }
-    }
-    var width1 = $.add(width, t4);
-    if (width1 >= maxWd) {
-      return maxWd;
-    }
-    var prevSpacing1 = si.right;
-    var amt = $.profileWidth(t1, amtWdDefault);
-    $1:{
-      var t5 = amt.get$type();
-      if (1 === t5) {
-        var width2 = $.add(width1, amt.get$value());
-        if (width2 >= maxWd) {
-          return maxWd;
-        }
-        width0 = width2;
-        break $1;
-      } else {
-        if (4 === t5) {
-          var wd = t1.measureWidth_$1(mctx);
-          if (!$.eqNullB(wd)) {
-            var t6 = wd;
-          } else {
-            t6 = t1.get$outerWidth();
-          }
-          var width3 = $.add(width1, t6);
-          if (width3 >= maxWd) {
-            return maxWd;
-          }
-          width0 = width3;
-          break $1;
-        } else {
-          return maxWd;
-        }
-      }
-    }
-    prevSpacing0 = prevSpacing1;
-  }
-  var t7 = $.mul($.DOMQuery(view.get$node()).get$borderWidth(), 2);
-  if (!(prevSpacing === (void 0))) {
-    var t8 = prevSpacing;
-  } else {
-    t8 = $.add(spcinf.left, spcinf.right);
-  }
-  var width4 = $.add(width, $.add(t7, t8));
-  if (width4 >= maxWd) {
-    var t9 = maxWd;
-  } else {
-    t9 = width4;
-  }
-  return t9;
- },
- measureWidth$2$bailout: function(mctx, view, state, env0, env1) {
-  switch (state) {
-    case 1:
-      amtWdDefault = env0;
-      maxWd = env1;
-      break;
-  }
-  switch (state) {
-    case 0:
-      var amtWdDefault = $.getDefaultAmountInfo(view.get$layout().get$width());
-      if (!(view.get$parent() === (void 0))) {
-        var maxWd = view.get$parent().get$innerWidth();
-      } else {
-        maxWd = $.browser.get$size().get$width();
-      }
-    case 1:
-      state = 0;
-      var spcinf = $.LayoutSideInfo$3(view.get$layout().get$spacing(), 2, (void 0));
-      var gapinf = $.LayoutSideInfo$3(view.get$layout().get$gap(), (void 0), (void 0));
-      var t0 = $.iterator(view.get$children());
-      var width = 0;
-      var prevSpacing = (void 0);
-      L0: while (true) {
-        if (!(t0.hasNext$0() === true)) break L0;
-        c$0:{
-          var prevSpacing0 = prevSpacing;
-          var width0 = width;
-          var t1 = t0.next$0();
-          var t2 = view.shallLayout_$1(t1) === true;
-          var t3 = !t2;
-          if (t2) {
-            t3 = !(t1.get$profile().get$anchorView() === (void 0));
-          }
-          if (t3) {
-            prevSpacing0 = prevSpacing;
-            width0 = width;
-            break c$0;
-          }
-          var si = $.LayoutSideInfo$3(t1.get$profile().get$spacing(), 0, spcinf);
-          if (prevSpacing === (void 0)) {
-            var t4 = si.left;
-          } else {
-            if (!(gapinf.left === (void 0))) {
-              t4 = gapinf.left;
-            } else {
-              t4 = $.max(prevSpacing, si.left);
-            }
-          }
-          var width1 = $.add(width, t4);
-          if ($.geB(width1, maxWd)) {
-            return maxWd;
-          }
-          var prevSpacing1 = si.right;
-          var amt = $.profileWidth(t1, amtWdDefault);
-          $1:{
-            var t5 = amt.get$type();
-            if (1 === t5) {
-              var width2 = $.add(width1, amt.get$value());
-              if ($.geB(width2, maxWd)) {
-                return maxWd;
-              }
-              width0 = width2;
-              break $1;
-            } else {
-              if (4 === t5) {
-                var wd = t1.measureWidth_$1(mctx);
-                if (!$.eqNullB(wd)) {
-                  var t6 = wd;
-                } else {
-                  t6 = t1.get$outerWidth();
-                }
-                var width3 = $.add(width1, t6);
-                if ($.geB(width3, maxWd)) {
-                  return maxWd;
-                }
-                width0 = width3;
-                break $1;
-              } else {
-                return maxWd;
-              }
-            }
-          }
-          prevSpacing0 = prevSpacing1;
-        }
-        width = width0;
-        prevSpacing = prevSpacing0;
-      }
-      var t7 = $.mul($.DOMQuery(view.get$node()).get$borderWidth(), 2);
-      if (!(prevSpacing === (void 0))) {
-        var t8 = prevSpacing;
-      } else {
-        t8 = $.add(spcinf.left, spcinf.right);
-      }
-      var width4 = $.add(width, $.add(t7, t8));
-      if ($.geB(width4, maxWd)) {
-        var t9 = maxWd;
-      } else {
-        t9 = width4;
-      }
-      return t9;
-  }
- }
-});
-
-Isolate.$defineClass("_VLayout", "Object", [], {
- doLayout$3: function(mctx, view, children) {
-  var t0 = ({});
-  t0.view_1 = view;
-  var innerHeight$ = new $.Closure48(t0);
-  var defaultProfile = new $.Closure49(t0);
-  var amtHghDefault = $.getDefaultAmountInfo(t0.view_1.get$layout().get$height());
-  var spcinf = $.LayoutSideInfo$3(t0.view_1.get$layout().get$spacing(), 2, (void 0));
-  var gapinf = $.LayoutSideInfo$3(t0.view_1.get$layout().get$gap(), (void 0), (void 0));
-  var childspcinfs = $.HashMapImplementation$0();
-  var flexViews = $.List((void 0));
-  var flexs = $.List((void 0));
-  for (var t1 = $.iterator(children), assigned = 0, prevSpacing = (void 0), nflex = 0; t1.hasNext$0() === true; assigned = assigned0, prevSpacing = prevSpacing0, nflex = nflex0) {
-    var prevSpacing0 = prevSpacing;
-    var nflex0 = nflex;
-    var assigned0 = assigned;
-    var t2 = t1.next$0();
-    if (t0.view_1.shallLayout_$1(t2) !== true) {
-      $.layoutManager.setWidthByProfile$3(mctx, t2, new $.Closure50(t0));
-      $.layoutManager.setHeightByProfile$3(mctx, t2, new $.Closure51(t0));
-      prevSpacing0 = prevSpacing;
-      nflex0 = nflex;
-      assigned0 = assigned;
-      continue;
-    }
-    var si = $.LayoutSideInfo$3(t2.get$profile().get$spacing(), 0, spcinf);
-    childspcinfs.operator$indexSet$2(t2, si);
-    if (prevSpacing === (void 0)) {
-      var t3 = si.top;
-    } else {
-      if (!(gapinf.top === (void 0))) {
-        t3 = gapinf.top;
-      } else {
-        t3 = $.max(prevSpacing, si.top);
-      }
-    }
-    var assigned1 = $.add(assigned, t3);
-    var prevSpacing1 = si.bottom;
-    var amt = $.profileHeight(t2, amtHghDefault);
-    $1:{
-      var t4 = amt.get$type();
-      if (1 === t4) {
-        var t5 = amt.get$value();
-        t2.set$height(t5);
-        var assigned2 = $.add(assigned1, t5);
-        nflex0 = nflex;
-        assigned0 = assigned2;
-        break $1;
-      } else {
-        if (2 === t4) {
-          var nflex1 = $.add(nflex, amt.get$value());
-          flexs.push(amt.get$value());
-          flexViews.push(t2);
-          nflex0 = nflex1;
-          assigned0 = assigned1;
-          break $1;
-        } else {
-          if (3 === t4) {
-            var t6 = $.toInt($.round($.mul(innerHeight$.$call$0(), amt.get$value())));
-            t2.set$height(t6);
-            var assigned3 = $.add(assigned1, t6);
-            nflex0 = nflex;
-            assigned0 = assigned3;
-            break $1;
-          } else {
-            var hgh = t2.measureHeight_$1(mctx);
-            if (!$.eqNullB(hgh)) {
-              t2.set$height(hgh);
-              assigned0 = $.add(assigned1, hgh);
-            } else {
-              assigned0 = $.add(assigned1, t2.get$outerHeight());
-            }
-            nflex0 = nflex;
-            break $1;
-          }
-        }
-      }
-    }
-    var defaultWidth = new $.Closure52(t0, si);
-    $.layoutManager.setWidthByProfile$5(mctx, t2, defaultWidth, defaultWidth, defaultProfile);
-    prevSpacing0 = prevSpacing1;
-  }
-  if (nflex > 0) {
-    var space = $.sub($.sub(innerHeight$.$call$0(), assigned), prevSpacing);
-    if (typeof space !== 'number') return this.doLayout$3$bailout(mctx, view, children, 1, t0, nflex, gapinf, childspcinfs, flexViews, flexs, space);
-    var per = space / nflex;
-    for (var len = flexs.length - 1, space0 = space, j = 0; true; space0 = space1, j = j + 1) {
-      var space1 = space0;
-      if (j === len) {
-        var t7 = flexViews.length;
-        if (j < 0 || j >= t7) throw $.ioore(j);
-        flexViews[j].set$height(space0);
-        break;
-      }
-      var t8 = flexs.length;
-      if (j < 0 || j >= t8) throw $.ioore(j);
-      var delta = $.toInt($.round($.mul(per, flexs[j])));
-      var t9 = flexViews.length;
-      if (j < 0 || j >= t9) throw $.ioore(j);
-      flexViews[j].set$height(delta);
-      space1 = $.sub(space0, delta);
-    }
-  }
-  var defAlign = t0.view_1.get$layout().get$align();
-  if (typeof defAlign !== 'string') return this.doLayout$3$bailout(mctx, view, children, 2, gapinf, t0, childspcinfs, defAlign);
-  for (var t10 = $.iterator(children), prevSpacing2 = (void 0), assigned4 = 0; t10.hasNext$0() === true; prevSpacing2 = prevSpacing3, assigned4 = assigned5) {
-    var assigned5 = assigned4;
-    var prevSpacing3 = prevSpacing2;
-    var t11 = t10.next$0();
-    if (t0.view_1.shallLayout_$1(t11) !== true) {
-      assigned5 = assigned4;
-      prevSpacing3 = prevSpacing2;
-      continue;
-    }
-    var si0 = childspcinfs.operator$index$1(t11);
-    if (prevSpacing2 === (void 0)) {
-      var t12 = si0.get$top();
-    } else {
-      if (!(gapinf.top === (void 0))) {
-        t12 = gapinf.top;
-      } else {
-        t12 = $.max(prevSpacing2, si0.get$top());
-      }
-    }
-    var assigned6 = $.add(assigned4, t12);
-    t11.set$top(assigned6);
-    var assigned7 = $.add(assigned6, t11.get$outerHeight());
-    var prevSpacing4 = si0.get$bottom();
-    var align = t11.get$profile().get$align();
-    var align0 = align;
-    if ($.isEmpty(align) === true) {
-      align0 = defAlign;
-    }
-    var space2 = childspcinfs.operator$index$1(t11).get$left();
-    $1:{
-      if ('center' === align0 || 'end' === align0) {
-        var delta0 = $.sub($.sub($.sub(t0.view_1.get$innerWidth(), si0.get$left()), si0.get$right()), t11.get$outerWidth());
-        var delta1 = delta0;
-        if ($.eqB(align0, 'center')) {
-          delta1 = $.tdiv(delta0, 2);
-        }
-        t11.set$left($.add(space2, delta1));
-        break $1;
-      } else {
-        t11.set$left(space2);
-      }
-    }
-    assigned5 = assigned7;
-    prevSpacing3 = prevSpacing4;
-  }
- },
- doLayout$3$bailout: function(mctx, view, children, state, env0, env1, env2, env3, env4, env5, env6) {
-  switch (state) {
-    case 1:
-      t0 = env0;
-      nflex = env1;
-      gapinf = env2;
-      childspcinfs = env3;
-      flexViews = env4;
-      flexs = env5;
-      space = env6;
-      break;
-    case 2:
-      gapinf = env0;
-      t0 = env1;
-      childspcinfs = env2;
-      defAlign = env3;
-      break;
-  }
-  switch (state) {
-    case 0:
-      var t0 = ({});
-      t0.view_1 = view;
-      var innerHeight$ = new $.Closure48(t0);
-      var defaultProfile = new $.Closure49(t0);
-      var amtHghDefault = $.getDefaultAmountInfo(t0.view_1.get$layout().get$height());
-      var spcinf = $.LayoutSideInfo$3(t0.view_1.get$layout().get$spacing(), 2, (void 0));
-      var gapinf = $.LayoutSideInfo$3(t0.view_1.get$layout().get$gap(), (void 0), (void 0));
-      var childspcinfs = $.HashMapImplementation$0();
-      var flexViews = $.List((void 0));
-      var flexs = $.List((void 0));
-      var t1 = $.iterator(children);
-      var assigned = 0;
-      var prevSpacing = (void 0);
-      var nflex = 0;
-      L0: while (true) {
-        if (!(t1.hasNext$0() === true)) break L0;
-        c$0:{
-          var prevSpacing0 = prevSpacing;
-          var nflex0 = nflex;
-          var assigned0 = assigned;
-          var t2 = t1.next$0();
-          if (t0.view_1.shallLayout_$1(t2) !== true) {
-            $.layoutManager.setWidthByProfile$3(mctx, t2, new $.Closure50(t0));
-            $.layoutManager.setHeightByProfile$3(mctx, t2, new $.Closure51(t0));
-            prevSpacing0 = prevSpacing;
-            nflex0 = nflex;
-            assigned0 = assigned;
-            break c$0;
-          }
-          var si = $.LayoutSideInfo$3(t2.get$profile().get$spacing(), 0, spcinf);
-          childspcinfs.operator$indexSet$2(t2, si);
-          if (prevSpacing === (void 0)) {
-            var t3 = si.top;
-          } else {
-            if (!(gapinf.top === (void 0))) {
-              t3 = gapinf.top;
-            } else {
-              t3 = $.max(prevSpacing, si.top);
-            }
-          }
-          var assigned1 = $.add(assigned, t3);
-          var prevSpacing1 = si.bottom;
-          var amt = $.profileHeight(t2, amtHghDefault);
-          $1:{
-            var t4 = amt.get$type();
-            if (1 === t4) {
-              var t5 = amt.get$value();
-              t2.set$height(t5);
-              var assigned2 = $.add(assigned1, t5);
-              nflex0 = nflex;
-              assigned0 = assigned2;
-              break $1;
-            } else {
-              if (2 === t4) {
-                var nflex1 = $.add(nflex, amt.get$value());
-                flexs.push(amt.get$value());
-                flexViews.push(t2);
-                nflex0 = nflex1;
-                assigned0 = assigned1;
-                break $1;
-              } else {
-                if (3 === t4) {
-                  var t6 = $.toInt($.round($.mul(innerHeight$.$call$0(), amt.get$value())));
-                  t2.set$height(t6);
-                  var assigned3 = $.add(assigned1, t6);
-                  nflex0 = nflex;
-                  assigned0 = assigned3;
-                  break $1;
-                } else {
-                  var hgh = t2.measureHeight_$1(mctx);
-                  if (!$.eqNullB(hgh)) {
-                    t2.set$height(hgh);
-                    assigned0 = $.add(assigned1, hgh);
-                  } else {
-                    assigned0 = $.add(assigned1, t2.get$outerHeight());
-                  }
-                  nflex0 = nflex;
-                  break $1;
-                }
-              }
-            }
-          }
-          var defaultWidth = new $.Closure52(t0, si);
-          $.layoutManager.setWidthByProfile$5(mctx, t2, defaultWidth, defaultWidth, defaultProfile);
-          prevSpacing0 = prevSpacing1;
-        }
-        assigned = assigned0;
-        prevSpacing = prevSpacing0;
-        nflex = nflex0;
-      }
-    case 1:
-      if (state == 1 || (state == 0 && nflex > 0)) {
-        switch (state) {
-          case 0:
-            var space = $.sub($.sub(innerHeight$.$call$0(), assigned), prevSpacing);
-          case 1:
-            state = 0;
-            var per = $.div(space, nflex);
-            var len = flexs.length - 1;
-            var space0 = space;
-            var j = 0;
-            L1: while (true) {
-              if (!true) break L1;
-              var space1 = space0;
-              if (j === len) {
-                var t7 = flexViews.length;
-                if (j < 0 || j >= t7) throw $.ioore(j);
-                flexViews[j].set$height(space0);
-                break;
-              }
-              var t8 = flexs.length;
-              if (j < 0 || j >= t8) throw $.ioore(j);
-              var delta = $.toInt($.round($.mul(per, flexs[j])));
-              var t9 = flexViews.length;
-              if (j < 0 || j >= t9) throw $.ioore(j);
-              flexViews[j].set$height(delta);
-              space1 = $.sub(space0, delta);
-              space0 = space1;
-              j = j + 1;
-            }
-        }
-      }
-      var defAlign = t0.view_1.get$layout().get$align();
-    case 2:
-      state = 0;
-      var t10 = $.iterator(children);
-      var prevSpacing2 = (void 0);
-      var assigned4 = 0;
-      L2: while (true) {
-        if (!(t10.hasNext$0() === true)) break L2;
-        c$0:{
-          var assigned5 = assigned4;
-          var prevSpacing3 = prevSpacing2;
-          var t11 = t10.next$0();
-          if (t0.view_1.shallLayout_$1(t11) !== true) {
-            assigned5 = assigned4;
-            prevSpacing3 = prevSpacing2;
-            break c$0;
-          }
-          var si0 = childspcinfs.operator$index$1(t11);
-          if (prevSpacing2 === (void 0)) {
-            var t12 = si0.get$top();
-          } else {
-            if (!(gapinf.top === (void 0))) {
-              t12 = gapinf.top;
-            } else {
-              t12 = $.max(prevSpacing2, si0.get$top());
-            }
-          }
-          var assigned6 = $.add(assigned4, t12);
-          t11.set$top(assigned6);
-          var assigned7 = $.add(assigned6, t11.get$outerHeight());
-          var prevSpacing4 = si0.get$bottom();
-          var align = t11.get$profile().get$align();
-          var align0 = align;
-          if ($.isEmpty(align) === true) {
-            align0 = defAlign;
-          }
-          var space2 = childspcinfs.operator$index$1(t11).get$left();
-          $1:{
-            if ('center' === align0 || 'end' === align0) {
-              var delta0 = $.sub($.sub($.sub(t0.view_1.get$innerWidth(), si0.get$left()), si0.get$right()), t11.get$outerWidth());
-              var delta1 = delta0;
-              if ($.eqB(align0, 'center')) {
-                delta1 = $.tdiv(delta0, 2);
-              }
-              t11.set$left($.add(space2, delta1));
-              break $1;
-            } else {
-              t11.set$left(space2);
-            }
-          }
-          assigned5 = assigned7;
-          prevSpacing3 = prevSpacing4;
-        }
-        prevSpacing2 = prevSpacing3;
-        assigned4 = assigned5;
-      }
-  }
- },
- measureWidth$2: function(mctx, view) {
-  var amtWdDefault = $.getDefaultAmountInfo(view.get$layout().get$width());
-  var spcinf = $.LayoutSideInfo$3(view.get$layout().get$spacing(), 2, (void 0));
-  var borderWd = $.mul($.DOMQuery(view.get$node()).get$borderWidth(), 2);
-  if (typeof borderWd !== 'number') return this.measureWidth$2$bailout(mctx, view, 1, spcinf, amtWdDefault, borderWd);
-  for (var t0 = $.iterator(view.get$children()), width = (void 0); t0.hasNext$0() === true; width = width0) {
-    var width0 = width;
-    var t1 = t0.next$0();
-    var t2 = view.shallLayout_$1(t1) === true;
-    var t3 = !t2;
-    if (t2) {
-      t3 = !(t1.get$profile().get$anchorView() === (void 0));
-    }
-    if (t3) {
-      width0 = width;
-      continue;
-    }
-    var si = $.LayoutSideInfo$3(t1.get$profile().get$spacing(), 0, spcinf);
-    var wd = $.add($.add(si.left, si.right), borderWd);
-    var amt = $.profileWidth(t1, amtWdDefault);
-    $1:{
-      var t4 = amt.get$type();
-      if (1 === t4) {
-        var wd0 = $.add(wd, amt.get$value());
-        break $1;
-      } else {
-        if (4 === t4) {
-          var w = t1.measureWidth_$1(mctx);
-          if (!$.eqNullB(w)) {
-            var t5 = w;
-          } else {
-            t5 = t1.get$outerWidth();
-          }
-          wd0 = $.add(wd, t5);
-          break $1;
-        } else {
-          width0 = width;
-          continue;
-        }
-      }
-    }
-    width0 = width;
-    if ($.eqNullB(width) || $.gtB(wd0, width)) {
-      width0 = wd0;
-    }
-  }
-  return width;
- },
- measureWidth$2$bailout: function(mctx, view, state, env0, env1, env2) {
-  switch (state) {
-    case 1:
-      spcinf = env0;
-      amtWdDefault = env1;
-      borderWd = env2;
-      break;
-  }
-  switch (state) {
-    case 0:
-      var amtWdDefault = $.getDefaultAmountInfo(view.get$layout().get$width());
-      var spcinf = $.LayoutSideInfo$3(view.get$layout().get$spacing(), 2, (void 0));
-      var borderWd = $.mul($.DOMQuery(view.get$node()).get$borderWidth(), 2);
-    case 1:
-      state = 0;
-      var t0 = $.iterator(view.get$children());
-      var width = (void 0);
-      L0: while (true) {
-        if (!(t0.hasNext$0() === true)) break L0;
-        c$0:{
-          var width0 = width;
-          var t1 = t0.next$0();
-          var t2 = view.shallLayout_$1(t1) === true;
-          var t3 = !t2;
-          if (t2) {
-            t3 = !(t1.get$profile().get$anchorView() === (void 0));
-          }
-          if (t3) {
-            width0 = width;
-            break c$0;
-          }
-          var si = $.LayoutSideInfo$3(t1.get$profile().get$spacing(), 0, spcinf);
-          var wd = $.add($.add(si.left, si.right), borderWd);
-          var amt = $.profileWidth(t1, amtWdDefault);
-          $1:{
-            var t4 = amt.get$type();
-            if (1 === t4) {
-              var wd0 = $.add(wd, amt.get$value());
-              break $1;
-            } else {
-              if (4 === t4) {
-                var w = t1.measureWidth_$1(mctx);
-                if (!$.eqNullB(w)) {
-                  var t5 = w;
-                } else {
-                  t5 = t1.get$outerWidth();
-                }
-                wd0 = $.add(wd, t5);
-                break $1;
-              } else {
-                width0 = width;
-                break c$0;
-              }
-            }
-          }
-          width0 = width;
-          if ($.eqNullB(width) || $.gtB(wd0, width)) {
-            width0 = wd0;
-          }
-        }
-        width = width0;
-      }
-      return width;
-  }
- },
- measureHeight$2: function(mctx, view) {
-  var amtHghDefault = $.getDefaultAmountInfo(view.get$layout().get$height());
-  if (!(view.get$parent() === (void 0))) {
-    var maxHgh = view.get$parent().get$innerHeight();
-  } else {
-    maxHgh = $.browser.get$size().get$height();
-  }
-  if (typeof maxHgh !== 'number') return this.measureHeight$2$bailout(mctx, view, 1, amtHghDefault, maxHgh);
-  var spcinf = $.LayoutSideInfo$3(view.get$layout().get$spacing(), 2, (void 0));
-  var gapinf = $.LayoutSideInfo$3(view.get$layout().get$gap(), (void 0), (void 0));
-  for (var t0 = $.iterator(view.get$children()), prevSpacing = (void 0), height = 0; t0.hasNext$0() === true; prevSpacing = prevSpacing0, height = height0) {
-    var height0 = height;
-    var prevSpacing0 = prevSpacing;
-    var t1 = t0.next$0();
-    var t2 = view.shallLayout_$1(t1) === true;
-    var t3 = !t2;
-    if (t2) {
-      t3 = !(t1.get$profile().get$anchorView() === (void 0));
-    }
-    if (t3) {
-      height0 = height;
-      prevSpacing0 = prevSpacing;
-      continue;
-    }
-    var si = $.LayoutSideInfo$3(t1.get$profile().get$spacing(), 0, spcinf);
-    if (prevSpacing === (void 0)) {
-      var t4 = si.top;
-    } else {
-      if (!(gapinf.top === (void 0))) {
-        t4 = gapinf.top;
-      } else {
-        t4 = $.max(prevSpacing, si.top);
-      }
-    }
-    var height1 = $.add(height, t4);
-    if (height1 >= maxHgh) {
-      return maxHgh;
-    }
-    var prevSpacing1 = si.bottom;
-    var amt = $.profileHeight(t1, amtHghDefault);
-    $1:{
-      var t5 = amt.get$type();
-      if (1 === t5) {
-        var height2 = $.add(height1, amt.get$value());
-        if (height2 >= maxHgh) {
-          return maxHgh;
-        }
-        height0 = height2;
-        break $1;
-      } else {
-        if (4 === t5) {
-          var hgh = t1.measureHeight_$1(mctx);
-          if (!$.eqNullB(hgh)) {
-            var t6 = hgh;
-          } else {
-            t6 = t1.get$outerHeight();
-          }
-          var height3 = $.add(height1, t6);
-          if (height3 >= maxHgh) {
-            return maxHgh;
-          }
-          height0 = height3;
-          break $1;
-        } else {
-          return maxHgh;
-        }
-      }
-    }
-    prevSpacing0 = prevSpacing1;
-  }
-  var t7 = $.mul($.DOMQuery(view.get$node()).get$borderWidth(), 2);
-  if (!(prevSpacing === (void 0))) {
-    var t8 = prevSpacing;
-  } else {
-    t8 = $.add(spcinf.top, spcinf.bottom);
-  }
-  var height4 = $.add(height, $.add(t7, t8));
-  if (height4 >= maxHgh) {
-    var t9 = maxHgh;
-  } else {
-    t9 = height4;
-  }
-  return t9;
- },
- measureHeight$2$bailout: function(mctx, view, state, env0, env1) {
-  switch (state) {
-    case 1:
-      amtHghDefault = env0;
-      maxHgh = env1;
-      break;
-  }
-  switch (state) {
-    case 0:
-      var amtHghDefault = $.getDefaultAmountInfo(view.get$layout().get$height());
-      if (!(view.get$parent() === (void 0))) {
-        var maxHgh = view.get$parent().get$innerHeight();
-      } else {
-        maxHgh = $.browser.get$size().get$height();
-      }
-    case 1:
-      state = 0;
-      var spcinf = $.LayoutSideInfo$3(view.get$layout().get$spacing(), 2, (void 0));
-      var gapinf = $.LayoutSideInfo$3(view.get$layout().get$gap(), (void 0), (void 0));
-      var t0 = $.iterator(view.get$children());
-      var prevSpacing = (void 0);
-      var height = 0;
-      L0: while (true) {
-        if (!(t0.hasNext$0() === true)) break L0;
-        c$0:{
-          var height0 = height;
-          var prevSpacing0 = prevSpacing;
-          var t1 = t0.next$0();
-          var t2 = view.shallLayout_$1(t1) === true;
-          var t3 = !t2;
-          if (t2) {
-            t3 = !(t1.get$profile().get$anchorView() === (void 0));
-          }
-          if (t3) {
-            height0 = height;
-            prevSpacing0 = prevSpacing;
-            break c$0;
-          }
-          var si = $.LayoutSideInfo$3(t1.get$profile().get$spacing(), 0, spcinf);
-          if (prevSpacing === (void 0)) {
-            var t4 = si.top;
-          } else {
-            if (!(gapinf.top === (void 0))) {
-              t4 = gapinf.top;
-            } else {
-              t4 = $.max(prevSpacing, si.top);
-            }
-          }
-          var height1 = $.add(height, t4);
-          if ($.geB(height1, maxHgh)) {
-            return maxHgh;
-          }
-          var prevSpacing1 = si.bottom;
-          var amt = $.profileHeight(t1, amtHghDefault);
-          $1:{
-            var t5 = amt.get$type();
-            if (1 === t5) {
-              var height2 = $.add(height1, amt.get$value());
-              if ($.geB(height2, maxHgh)) {
-                return maxHgh;
-              }
-              height0 = height2;
-              break $1;
-            } else {
-              if (4 === t5) {
-                var hgh = t1.measureHeight_$1(mctx);
-                if (!$.eqNullB(hgh)) {
-                  var t6 = hgh;
-                } else {
-                  t6 = t1.get$outerHeight();
-                }
-                var height3 = $.add(height1, t6);
-                if ($.geB(height3, maxHgh)) {
-                  return maxHgh;
-                }
-                height0 = height3;
-                break $1;
-              } else {
-                return maxHgh;
-              }
-            }
-          }
-          prevSpacing0 = prevSpacing1;
-        }
-        prevSpacing = prevSpacing0;
-        height = height0;
-      }
-      var t7 = $.mul($.DOMQuery(view.get$node()).get$borderWidth(), 2);
-      if (!(prevSpacing === (void 0))) {
-        var t8 = prevSpacing;
-      } else {
-        t8 = $.add(spcinf.top, spcinf.bottom);
-      }
-      var height4 = $.add(height, $.add(t7, t8));
-      if ($.geB(height4, maxHgh)) {
-        var t9 = maxHgh;
-      } else {
-        t9 = height4;
-      }
-      return t9;
-  }
- }
-});
-
-Isolate.$defineClass("AnchorRelation", "Object", ["parent?", "anchored", "indeps"], {
- _layoutAnchored$2: function(mctx, anchor) {
-  var t0 = ({});
-  t0.anchor_1 = anchor;
-  var views = $.index(this.anchored, t0.anchor_1);
-  if (!(views === (void 0)) && $.isEmpty(views) !== true) {
-    var anchorOuterWidth = new $.Closure32(t0);
-    var anchorOuterHeight = new $.Closure33(t0);
-    var anchorInnerWidth = new $.Closure34(t0);
-    var anchorInnerHeight = new $.Closure35(t0);
-    for (var t1 = $.iterator(views); t1.hasNext$0() === true; ) {
-      var t2 = t1.next$0();
-      var t3 = $.layoutManager;
-      if (t0.anchor_1 === t2.get$parent()) {
-        var t4 = anchorInnerWidth;
-      } else {
-        t4 = anchorOuterWidth;
-      }
-      t3.setWidthByProfile$3(mctx, t2, t4);
-      var t5 = $.layoutManager;
-      if (t0.anchor_1 === t2.get$parent()) {
-        var t6 = anchorInnerHeight;
-      } else {
-        t6 = anchorOuterHeight;
-      }
-      t5.setHeightByProfile$3(mctx, t2, t6);
-      var handlers = $._getHandlers(t2.get$profile().get$location());
-      var offset = $._getOffset(t0.anchor_1, t2);
-      $.index($._anchorXHandlers(), $.index(handlers, 0)).$call$3(offset.get$left(), t0.anchor_1, t2);
-      $.index($._anchorYHandlers(), $.index(handlers, 1)).$call$3(offset.get$top(), t0.anchor_1, t2);
-    }
-    for (var t7 = $.iterator(views); t7.hasNext$0() === true; ) {
-      this._layoutAnchored$2(mctx, t7.next$0());
-    }
-  }
- },
- layoutAnchored$1: function(mctx) {
-  this._layoutAnchored$2(mctx, this.parent);
-  for (var t0 = $.iterator(this.indeps); t0.hasNext$0() === true; ) {
-    this._layoutAnchored$2(mctx, t0.next$0());
-  }
- },
- AnchorRelation$1: function(view) {
-  for (var t0 = $.iterator(view.get$children()); t0.hasNext$0() === true; ) {
-    var t1 = t0.next$0();
-    var av = t1.get$profile().get$anchorView();
-    if ($.eqNullB(av)) {
-      $.add$1(this.indeps, t1);
-    } else {
-      if (!(av.get$parent() === view) && !(av === view)) {
-        throw $.captureStackTrace($.UIException$1('Anchor can be parent or sibling, not ' + $.stringToString(av)));
-      }
-      var deps = $.index(this.anchored, av);
-      var deps0 = deps;
-      if ($.eqNullB(deps)) {
-        var t2 = this.anchored;
-        var deps1 = $.List((void 0));
-        $.indexSet(t2, av, deps1);
-        deps0 = deps1;
-      }
-      $.add$1(deps0, t1);
-    }
-  }
- }
-});
-
-Isolate.$defineClass("_AnchorOfRoot", "Object", [], {
- get$innerHeight: function() {
-  return $.browser.get$size().get$height();
- },
- get$outerHeight: function() {
-  return $.browser.get$size().get$height();
- },
- get$innerWidth: function() {
-  return $.browser.get$size().get$width();
- },
- get$outerWidth: function() {
-  return $.browser.get$size().get$width();
- }
-});
-
-Isolate.$defineClass("LayoutAmountInfo", "Object", ["value=", "type="], {
- toString$0: function() {
-  return '' + $.stringToString(this.type) + ':' + $.stringToString(this.value);
- },
- LayoutAmountInfo$1: function(profile) {
-  if ($.eqNullB(profile) || $.isEmpty(profile) === true) {
-    this.type = 0;
-  } else {
-    if ($.eqB(profile, 'content')) {
-      this.type = 4;
-    } else {
-      if ($.startsWith(profile, 'flex') === true) {
-        this.type = 2;
-        if ($.gtB($.get$length(profile), 4)) {
-          var t0 = $.parseInt($.trim($.substring$1(profile, 4)));
-        } else {
-          t0 = 1;
-        }
-        this.value = t0;
-        if ($.ltB(this.value, 1)) {
-          this.value = 1;
-        }
-      } else {
-        if ($.endsWith(profile, '%') === true) {
-          this.type = 3;
-          this.value = $.div($.parseDouble($.trim($.substring$2(profile, 0, $.sub($.get$length(profile), 1)))), 100);
-        } else {
-          this.type = 1;
-          this.value = $.parseInt(profile);
-        }
-      }
-    }
-  }
- }
-});
-
-Isolate.$defineClass("LayoutSideInfo", "Object", ["right?", "left=", "bottom?", "top="], {
- toString$0: function() {
-  return '(' + $.stringToString(this.left) + ',' + $.stringToString(this.top) + ':' + $.stringToString(this.right) + ',' + $.stringToString(this.bottom) + ')';
- },
- LayoutSideInfo$3: function(profile, defaultValue, defaultInfo) {
-  if (!$.eqNullB(profile) && $.isEmpty(profile) !== true) {
-    var wds = [];
-    for (var t0 = $.iterator($.CTC39.allMatches$1(profile)); t0.hasNext$0() === true; ) {
-      $.add$1(wds, $.parseInt(t0.next$0().group$1(0)));
-    }
-    $0:{
-      var t1 = wds.length;
-      if (0 === t1) {
-        break $0;
-      } else {
-        if (1 === t1) {
-          var t2 = wds.length;
-          if (0 >= t2) throw $.ioore(0);
-          var t3 = wds[0];
-          this.right = t3;
-          this.left = t3;
-          this.bottom = t3;
-          this.top = t3;
-          return;
-        } else {
-          if (2 === t1) {
-            var t4 = wds.length;
-            if (0 >= t4) throw $.ioore(0);
-            var t5 = wds[0];
-            this.bottom = t5;
-            this.top = t5;
-            var t6 = wds.length;
-            if (1 >= t6) throw $.ioore(1);
-            var t7 = wds[1];
-            this.right = t7;
-            this.left = t7;
-            return;
-          } else {
-            if (3 === t1) {
-              var t8 = wds.length;
-              if (0 >= t8) throw $.ioore(0);
-              this.top = wds[0];
-              var t9 = wds.length;
-              if (1 >= t9) throw $.ioore(1);
-              var t10 = wds[1];
-              this.right = t10;
-              this.left = t10;
-              var t11 = wds.length;
-              if (2 >= t11) throw $.ioore(2);
-              this.bottom = wds[2];
-              return;
-            } else {
-              var t12 = wds.length;
-              if (0 >= t12) throw $.ioore(0);
-              this.top = wds[0];
-              var t13 = wds.length;
-              if (1 >= t13) throw $.ioore(1);
-              this.right = wds[1];
-              var t14 = wds.length;
-              if (2 >= t14) throw $.ioore(2);
-              this.bottom = wds[2];
-              var t15 = wds.length;
-              if (3 >= t15) throw $.ioore(3);
-              this.left = wds[3];
-              return;
-            }
-          }
-        }
-      }
-    }
-  }
-  if (!$.eqNullB(defaultInfo)) {
-    this.top = defaultInfo.get$top();
-    this.bottom = defaultInfo.get$bottom();
-    this.left = defaultInfo.get$left();
-    this.right = defaultInfo.get$right();
-  } else {
-    if (!(defaultValue === (void 0))) {
-      this.right = defaultValue;
-      this.left = defaultValue;
-      this.bottom = defaultValue;
-      this.top = defaultValue;
-    }
   }
  }
 });
@@ -7843,7 +7862,7 @@ Isolate.$defineClass("Closure", "Closure94", ["this_2", "box_0"], {
       this.this_2._createDialog$1(t3);
     }
   }
-  this.this_2.onEnterDocument_$0();
+  this.this_2.onMount_$0();
  }
 });
 
@@ -7973,71 +7992,24 @@ Isolate.$defineClass("Closure16", "Closure94", [], {
 });
 
 Isolate.$defineClass("Closure17", "Closure94", ["this_2", "box_0"], {
- $call$0: function() {
-  return $._ViewEventListenerList$2(this.this_2.get$_lib5_ptr(), this.box_0.type_1);
+ $call$1: function(key) {
+  return this.box_0.f_1.$call$2(key, $.index(this.this_2, key));
  }
 });
 
-Isolate.$defineClass("Closure18", "Closure94", ["box_0"], {
- $call$0: function() {
-  this.box_0.first_1 = true;
-  return [];
- }
-});
-
-Isolate.$defineClass("Closure19", "Closure94", ["box_2"], {
- $call$1: function(target) {
-  var t0 = ({});
-  t0.target_1 = target;
-  return new $.Closure20(t0, this.box_2);
- }
-});
-
-Isolate.$defineClass("Closure20", "Closure94", ["box_0", "box_2"], {
- $call$1: function(event$) {
-  this.box_0.target_1.sendEvent$1($.ViewEvent$dom$3(this.box_0.target_1, event$, this.box_2.type_3));
- }
-});
-
-Isolate.$defineClass("Closure21", "Closure94", ["keys_0"], {
- $call$2: function(k, v) {
-  return $.add$1(this.keys_0, k);
- }
-});
-
-Isolate.$defineClass("Closure22", "Closure94", ["box_0"], {
- $call$2: function(key, value) {
-  var t0 = this.box_0.list_1;
-  var t1 = this.box_0.i_2;
-  var i = $.add(t1, 1);
-  this.box_0.i_2 = i;
-  $.indexSet(t0, t1, key);
- }
-});
-
-Isolate.$defineClass("Closure23", "Closure94", ["box_0"], {
- $call$1: function(entry) {
-  var t0 = this.box_0.list_1;
-  var t1 = this.box_0.index_2;
-  var index = $.add(t1, 1);
-  this.box_0.index_2 = index;
-  $.indexSet(t0, t1, entry.get$key());
- }
-});
-
-Isolate.$defineClass("Closure24", "Closure94", ["this_0"], {
+Isolate.$defineClass("Closure18", "Closure94", ["this_0"], {
  $call$1: function(value) {
   this.this_0.add$1(value);
  }
 });
 
-Isolate.$defineClass("Closure25", "Closure94", [], {
+Isolate.$defineClass("Closure19", "Closure94", [], {
  $call$1: function(n) {
   return typeof n === 'object' && n.is$Element();
  }
 });
 
-Isolate.$defineClass("Closure26", "Closure94", ["box_0"], {
+Isolate.$defineClass("Closure20", "Closure94", ["box_0"], {
  $call$2: function(key, value) {
   if (this.box_0.f_1.$call$1(key) === true) {
     $.add$1(this.box_0.result_2, key);
@@ -8045,7 +8017,7 @@ Isolate.$defineClass("Closure26", "Closure94", ["box_0"], {
  }
 });
 
-Isolate.$defineClass("Closure27", "Closure94", ["box_0", "output_2"], {
+Isolate.$defineClass("Closure21", "Closure94", ["box_0", "output_2"], {
  $call$1: function(element) {
   if (this.box_0.f_1.$call$1(element) === true) {
     $.add$1(this.output_2, element);
@@ -8053,19 +8025,19 @@ Isolate.$defineClass("Closure27", "Closure94", ["box_0", "output_2"], {
  }
 });
 
-Isolate.$defineClass("Closure28", "Closure94", [], {
+Isolate.$defineClass("Closure22", "Closure94", [], {
  $call$1: function(el) {
   return el.remove$0();
  }
 });
 
-Isolate.$defineClass("Closure29", "Closure94", ["values_0"], {
+Isolate.$defineClass("Closure23", "Closure94", ["values_0"], {
  $call$2: function(k, v) {
   return $.add$1(this.values_0, v);
  }
 });
 
-Isolate.$defineClass("Closure30", "Closure94", ["box_0"], {
+Isolate.$defineClass("Closure24", "Closure94", ["box_0"], {
  $call$2: function(key, value) {
   var t0 = this.box_0.list_1;
   var t1 = this.box_0.i_2;
@@ -8075,7 +8047,7 @@ Isolate.$defineClass("Closure30", "Closure94", ["box_0"], {
  }
 });
 
-Isolate.$defineClass("Closure31", "Closure94", ["box_0"], {
+Isolate.$defineClass("Closure25", "Closure94", ["box_0"], {
  $call$1: function(entry) {
   var t0 = this.box_0.list_1;
   var t1 = this.box_0.index_2;
@@ -8085,49 +8057,55 @@ Isolate.$defineClass("Closure31", "Closure94", ["box_0"], {
  }
 });
 
-Isolate.$defineClass("Closure32", "Closure94", ["box_0"], {
+Isolate.$defineClass("Closure26", "Closure94", ["this_2", "box_0"], {
+ $call$1: function(key) {
+  return $.add$1(this.box_0.result_1, $.index(this.this_2, key));
+ }
+});
+
+Isolate.$defineClass("Closure27", "Closure94", ["box_0"], {
  $call$0: function() {
   return this.box_0.anchor_1.get$outerWidth();
  }
 });
 
-Isolate.$defineClass("Closure33", "Closure94", ["box_0"], {
+Isolate.$defineClass("Closure28", "Closure94", ["box_0"], {
  $call$0: function() {
   return this.box_0.anchor_1.get$outerHeight();
  }
 });
 
-Isolate.$defineClass("Closure34", "Closure94", ["box_0"], {
+Isolate.$defineClass("Closure29", "Closure94", ["box_0"], {
  $call$0: function() {
   return this.box_0.anchor_1.get$innerWidth();
  }
 });
 
-Isolate.$defineClass("Closure35", "Closure94", ["box_0"], {
+Isolate.$defineClass("Closure30", "Closure94", ["box_0"], {
  $call$0: function() {
   return this.box_0.anchor_1.get$innerHeight();
  }
 });
 
-Isolate.$defineClass("Closure36", "Closure94", [], {
+Isolate.$defineClass("Closure31", "Closure94", [], {
  $call$3: function(offset, anchor, view) {
   view.set$top($.sub(offset, view.get$outerHeight()));
  }
 });
 
-Isolate.$defineClass("Closure37", "Closure94", [], {
+Isolate.$defineClass("Closure32", "Closure94", [], {
  $call$3: function(offset, anchor, view) {
   view.set$top(offset);
  }
 });
 
-Isolate.$defineClass("Closure38", "Closure94", [], {
+Isolate.$defineClass("Closure33", "Closure94", [], {
  $call$3: function(offset, anchor, view) {
   view.set$top($.add(offset, $.tdiv($.sub(anchor.get$outerHeight(), view.get$outerHeight()), 2)));
  }
 });
 
-Isolate.$defineClass("Closure39", "Closure94", [], {
+Isolate.$defineClass("Closure34", "Closure94", [], {
  $call$3: function(offset, anchor, view) {
   if (anchor === view.get$parent()) {
     var t0 = anchor.get$innerHeight();
@@ -8138,31 +8116,31 @@ Isolate.$defineClass("Closure39", "Closure94", [], {
  }
 });
 
-Isolate.$defineClass("Closure40", "Closure94", [], {
+Isolate.$defineClass("Closure35", "Closure94", [], {
  $call$3: function(offset, anchor, view) {
   view.set$top($.add(offset, anchor.get$outerHeight()));
  }
 });
 
-Isolate.$defineClass("Closure41", "Closure94", [], {
+Isolate.$defineClass("Closure36", "Closure94", [], {
  $call$3: function(offset, anchor, view) {
   view.set$left($.sub(offset, view.get$outerWidth()));
  }
 });
 
-Isolate.$defineClass("Closure42", "Closure94", [], {
+Isolate.$defineClass("Closure37", "Closure94", [], {
  $call$3: function(offset, anchor, view) {
   view.set$left(offset);
  }
 });
 
-Isolate.$defineClass("Closure43", "Closure94", [], {
+Isolate.$defineClass("Closure38", "Closure94", [], {
  $call$3: function(offset, anchor, view) {
   view.set$left($.add(offset, $.tdiv($.sub(anchor.get$outerWidth(), view.get$outerWidth()), 2)));
  }
 });
 
-Isolate.$defineClass("Closure44", "Closure94", [], {
+Isolate.$defineClass("Closure39", "Closure94", [], {
  $call$3: function(offset, anchor, view) {
   if (anchor === view.get$parent()) {
     var t0 = anchor.get$innerWidth();
@@ -8173,61 +8151,37 @@ Isolate.$defineClass("Closure44", "Closure94", [], {
  }
 });
 
-Isolate.$defineClass("Closure45", "Closure94", [], {
+Isolate.$defineClass("Closure40", "Closure94", [], {
  $call$3: function(offset, anchor, view) {
   view.set$left($.add(offset, anchor.get$outerWidth()));
  }
 });
 
-Isolate.$defineClass("Closure46", "Closure94", ["this_2", "box_0"], {
- $call$1: function(key) {
-  return this.box_0.f_1.$call$2(key, $.index(this.this_2, key));
- }
-});
-
-Isolate.$defineClass("Closure47", "Closure94", ["this_2", "box_0"], {
- $call$1: function(key) {
-  return $.add$1(this.box_0.result_1, $.index(this.this_2, key));
- }
-});
-
-Isolate.$defineClass("Closure48", "Closure94", ["box_0"], {
+Isolate.$defineClass("Closure41", "Closure94", ["box_0"], {
  $call$0: function() {
   return this.box_0.view_1.get$innerHeight();
  }
 });
 
-Isolate.$defineClass("Closure49", "Closure94", ["box_0"], {
- $call$0: function() {
-  var s = this.box_0.view_1.get$layout().get$width();
-  if ($.isEmpty(s) === true) {
-    var t0 = 'content';
-  } else {
-    t0 = s;
-  }
-  return t0;
- }
-});
-
-Isolate.$defineClass("Closure50", "Closure94", ["box_0"], {
+Isolate.$defineClass("Closure42", "Closure94", ["box_0"], {
  $call$0: function() {
   return this.box_0.view_1.get$innerWidth();
  }
 });
 
-Isolate.$defineClass("Closure51", "Closure94", ["box_0"], {
+Isolate.$defineClass("Closure43", "Closure94", ["box_0"], {
  $call$0: function() {
   return this.box_0.view_1.get$innerHeight();
  }
 });
 
-Isolate.$defineClass("Closure52", "Closure94", ["box_0", "si_2"], {
+Isolate.$defineClass("Closure44", "Closure94", ["box_0", "si_2"], {
  $call$0: function() {
   return $.sub($.sub(this.box_0.view_1.get$innerWidth(), this.si_2.get$left()), this.si_2.get$right());
  }
 });
 
-Isolate.$defineClass("Closure53", "Closure94", ["box_0"], {
+Isolate.$defineClass("Closure45", "Closure94", ["box_0"], {
  $call$0: function() {
   if (!(this.box_0.view_1.get$parent() === (void 0))) {
     var t0 = this.box_0.view_1.get$parent().get$innerWidth();
@@ -8238,7 +8192,7 @@ Isolate.$defineClass("Closure53", "Closure94", ["box_0"], {
  }
 });
 
-Isolate.$defineClass("Closure54", "Closure94", ["box_0"], {
+Isolate.$defineClass("Closure46", "Closure94", ["box_0"], {
  $call$0: function() {
   if (!(this.box_0.view_1.get$parent() === (void 0))) {
     var t0 = this.box_0.view_1.get$parent().get$innerHeight();
@@ -8249,67 +8203,75 @@ Isolate.$defineClass("Closure54", "Closure94", ["box_0"], {
  }
 });
 
-Isolate.$defineClass("Closure55", "Closure94", ["box_0"], {
- $call$0: function() {
-  return this.box_0.view_1.get$innerHeight();
- }
-});
-
-Isolate.$defineClass("Closure56", "Closure94", ["box_0"], {
- $call$0: function() {
-  return this.box_0.view_1.get$innerWidth();
- }
-});
-
-Isolate.$defineClass("Closure57", "Closure94", ["box_0"], {
- $call$0: function() {
-  var s = this.box_0.view_1.get$layout().get$height();
-  if ($.isEmpty(s) === true) {
-    var t0 = 'content';
-  } else {
-    t0 = s;
+Isolate.$defineClass("Closure47", "Closure94", ["this_1", "keys_0"], {
+ $call$2: function(key, value) {
+  if (this.this_1._matches$1(key) === true) {
+    $.add$1(this.keys_0, this.this_1._strip$1(key));
   }
+ }
+});
+
+Isolate.$defineClass("Closure48", "Closure94", ["this_2", "box_0"], {
+ $call$2: function(key, value) {
+  if (this.this_2._matches$1(key) === true) {
+    this.box_0.f_1.$call$2(this.this_2._strip$1(key), value);
+  }
+ }
+});
+
+Isolate.$defineClass("Closure49", "Closure94", ["this_1", "values_0"], {
+ $call$2: function(key, value) {
+  if (this.this_1._matches$1(key) === true) {
+    $.add$1(this.values_0, value);
+  }
+ }
+});
+
+Isolate.$defineClass("Closure50", "Closure94", ["this_0"], {
+ $call$0: function() {
+  var t0 = $.HashMapImplementation$0();
+  this.this_0.set$_dataAttrs(t0);
   return t0;
  }
 });
 
-Isolate.$defineClass("Closure58", "Closure94", ["box_0"], {
+Isolate.$defineClass("Closure51", "Closure94", ["box_0"], {
  $call$0: function() {
   return this.box_0.view_1.get$innerWidth();
  }
 });
 
-Isolate.$defineClass("Closure59", "Closure94", ["box_0"], {
+Isolate.$defineClass("Closure52", "Closure94", ["box_0"], {
+ $call$0: function() {
+  return this.box_0.view_1.get$innerWidth();
+ }
+});
+
+Isolate.$defineClass("Closure53", "Closure94", ["box_0"], {
  $call$0: function() {
   return this.box_0.view_1.get$innerHeight();
  }
 });
 
-Isolate.$defineClass("Closure60", "Closure94", ["box_0", "si_2"], {
+Isolate.$defineClass("Closure54", "Closure94", ["box_0", "si_2"], {
  $call$0: function() {
   return $.sub($.sub(this.box_0.view_1.get$innerHeight(), this.si_2.get$top()), this.si_2.get$bottom());
  }
 });
 
-Isolate.$defineClass("Closure61", "Closure94", ["box_0"], {
+Isolate.$defineClass("Closure55", "Closure94", ["box_0"], {
  $call$0: function() {
   return this.box_0.view_1.get$innerWidth();
  }
 });
 
-Isolate.$defineClass("Closure62", "Closure94", ["box_0"], {
- $call$0: function() {
-  return this.box_0.view_1.get$innerWidth();
- }
-});
-
-Isolate.$defineClass("Closure63", "Closure94", ["box_0"], {
+Isolate.$defineClass("Closure56", "Closure94", ["box_0"], {
  $call$0: function() {
   return this.box_0.view_1.get$innerHeight();
  }
 });
 
-Isolate.$defineClass("Closure64", "Closure94", ["this_1", "ua_0"], {
+Isolate.$defineClass("Closure57", "Closure94", ["this_1", "ua_0"], {
  $call$1: function(regex) {
   var m = regex.firstMatch$1(this.ua_0);
   if (!(m === (void 0))) {
@@ -8323,69 +8285,122 @@ Isolate.$defineClass("Closure64", "Closure94", ["this_1", "ua_0"], {
  }
 });
 
-Isolate.$defineClass("Closure65", "Closure94", ["box_0"], {
+Isolate.$defineClass("Closure58", "Closure94", ["box_0"], {
  $call$1: function(s) {
   return $.add$1(s, this.box_0.value_1);
  }
 });
 
-Isolate.$defineClass("Closure66", "Closure94", ["box_0"], {
+Isolate.$defineClass("Closure59", "Closure94", ["box_0"], {
  $call$1: function(s) {
   return $.addAll(s, this.box_0.collection_1);
  }
 });
 
-Isolate.$defineClass("Closure67", "Closure94", [], {
+Isolate.$defineClass("Closure60", "Closure94", [], {
  $call$1: function(s) {
   return $.clear(s);
  }
 });
 
-Isolate.$defineClass("Closure68", "Closure94", [], {
+Isolate.$defineClass("Closure61", "Closure94", [], {
  $call$2: function(ctx, param) {
   return $.eqNullB(param) && $.eqNullB(ctx.get$view().get$previousSibling());
  }
 });
 
-Isolate.$defineClass("Closure69", "Closure94", [], {
+Isolate.$defineClass("Closure62", "Closure94", [], {
  $call$2: function(ctx, param) {
   return $.eqNullB(param) && $.eqNullB(ctx.get$view().get$nextSibling());
  }
 });
 
-Isolate.$defineClass("Closure70", "Closure94", [], {
+Isolate.$defineClass("Closure63", "Closure94", [], {
  $call$2: function(ctx, param) {
   return $.eqNullB(param) && $.eqNullB(ctx.get$view().get$previousSibling()) && $.eqNullB(ctx.get$view().get$nextSibling());
  }
 });
 
-Isolate.$defineClass("Closure71", "Closure94", [], {
+Isolate.$defineClass("Closure64", "Closure94", [], {
  $call$2: function(ctx, param) {
   return $.eqNullB(param) && $.eqB(ctx.get$view().get$childCount(), 0);
  }
 });
 
-Isolate.$defineClass("Closure72", "Closure94", [], {
+Isolate.$defineClass("Closure65", "Closure94", [], {
  $call$2: function(ctx, param) {
   return !$.eqNullB(param);
  }
 });
 
-Isolate.$defineClass("Closure73", "Closure94", [], {
+Isolate.$defineClass("Closure66", "Closure94", [], {
  $call$2: function(ctx, param) {
   return !$.eqNullB(param);
  }
 });
 
-Isolate.$defineClass("Closure74", "Closure94", ["this_0"], {
+Isolate.$defineClass("Closure67", "Closure94", ["this_0"], {
  $call$1: function(event$) {
   this.this_0.updateSize$0();
  }
 });
 
-Isolate.$defineClass("Closure75", "Closure94", [], {
+Isolate.$defineClass("Closure68", "Closure94", [], {
  $call$1: function(event$) {
   $.broadcaster().sendEvent$1($.PopupEvent$2(event$.get$target(), 'popup'));
+ }
+});
+
+Isolate.$defineClass("Closure69", "Closure94", ["this_2", "box_0"], {
+ $call$0: function() {
+  return $._ViewEventListenerList$2(this.this_2.get$_lib9_ptr(), this.box_0.type_1);
+ }
+});
+
+Isolate.$defineClass("Closure70", "Closure94", ["box_0"], {
+ $call$0: function() {
+  this.box_0.first_1 = true;
+  return [];
+ }
+});
+
+Isolate.$defineClass("Closure71", "Closure94", ["box_2"], {
+ $call$1: function(target) {
+  var t0 = ({});
+  t0.target_1 = target;
+  return new $.Closure72(t0, this.box_2);
+ }
+});
+
+Isolate.$defineClass("Closure72", "Closure94", ["box_0", "box_2"], {
+ $call$1: function(event$) {
+  this.box_0.target_1.sendEvent$1($.ViewEvent$dom$3(this.box_0.target_1, event$, this.box_2.type_3));
+ }
+});
+
+Isolate.$defineClass("Closure73", "Closure94", ["keys_0"], {
+ $call$2: function(k, v) {
+  return $.add$1(this.keys_0, k);
+ }
+});
+
+Isolate.$defineClass("Closure74", "Closure94", ["box_0"], {
+ $call$2: function(key, value) {
+  var t0 = this.box_0.list_1;
+  var t1 = this.box_0.i_2;
+  var i = $.add(t1, 1);
+  this.box_0.i_2 = i;
+  $.indexSet(t0, t1, key);
+ }
+});
+
+Isolate.$defineClass("Closure75", "Closure94", ["box_0"], {
+ $call$1: function(entry) {
+  var t0 = this.box_0.list_1;
+  var t1 = this.box_0.index_2;
+  var index = $.add(t1, 1);
+  this.box_0.index_2 = index;
+  $.indexSet(t0, t1, entry.get$key());
  }
 });
 
@@ -8556,7 +8571,7 @@ Isolate.$defineClass("Closure90", "Closure94", ["completer_3", "box_0"], {
 
 Isolate.$defineClass("Closure91", "Closure94", [], {
  $call$0: function() {
-  return $.CTC57;
+  return $.CTC59;
  }
 });
 
@@ -8666,14 +8681,8 @@ $call$0: function() {
   return this.self.firstChild$0();
 },
 });
-$.forEach3 = function(iterable, f) {
-  for (var t0 = $.iterator(iterable); t0.hasNext$0() === true; ) {
-    f.$call$1(t0.next$0());
-  }
-};
-
 $._ViewEvents$1 = function(ptr) {
-  return new $._ViewEvents($.HashMapImplementation$0(), ptr);
+  return new $._ViewEvents($.makeLiteralMap([]), ptr);
 };
 
 $.floor = function(receiver) {
@@ -8685,26 +8694,6 @@ $.floor = function(receiver) {
 
 $.eqB = function(a, b) {
   return $.eq(a, b) === true;
-};
-
-$.toString = function(value) {
-  if (typeof value == "object") {
-    if ($.isJsArray(value) === true) {
-      return $.collectionToString(value);
-    } else {
-      return value.toString$0();
-    }
-  }
-  if (value === 0 && (1 / value) < 0) {
-    return '-0.0';
-  }
-  if (value === (void 0)) {
-    return 'null';
-  }
-  if (typeof value == "function") {
-    return 'Closure';
-  }
-  return String(value);
 };
 
 $._containsRef = function(c, ref) {
@@ -8732,6 +8721,14 @@ $.allMatches = function(receiver, str) {
   return $.allMatchesInStringUnchecked(receiver, str);
 };
 
+$.forEach = function(receiver, f) {
+  if ($.isJsArray(receiver) !== true) {
+    return receiver.forEach$1(f);
+  } else {
+    return $.forEach2(receiver, f);
+  }
+};
+
 $.get$length = function(receiver) {
   if (typeof receiver === 'string' || $.isJsArray(receiver) === true) {
     return receiver.length;
@@ -8742,6 +8739,12 @@ $.get$length = function(receiver) {
 
 $.Token$fromChar$2 = function(c, index) {
   return new $.Token($.add(index, 1), index, $.getTypeFromChar(c));
+};
+
+$.forEach2 = function(iterable, f) {
+  for (var t0 = $.iterator(iterable); t0.hasNext$0() === true; ) {
+    f.$call$1(t0.next$0());
+  }
 };
 
 $.IllegalJSRegExpException$2 = function(_pattern, _errmsg) {
@@ -8772,6 +8775,23 @@ $.tdiv = function(a, b) {
     return $.truncate($.div(a, b));
   }
   return a.operator$tdiv$1(b);
+};
+
+$.JSSyntaxRegExp$_globalVersionOf$1 = function(other) {
+  var t0 = other.get$pattern();
+  var t1 = other.get$multiLine();
+  var t2 = new $.JSSyntaxRegExp(other.get$ignoreCase(), t1, t0);
+  t2.JSSyntaxRegExp$_globalVersionOf$1(other);
+  return t2;
+};
+
+$.printString = function(string) {
+  if (typeof console == "object") {
+    console.log(string);
+  } else {
+    write(string);
+    write("\n");
+  }
 };
 
 $.removeRange = function(receiver, start, length$) {
@@ -8805,21 +8825,24 @@ $.removeRange = function(receiver, start, length$) {
   $.set$length(receiver, $.sub(receiverLength, length$));
 };
 
-$.JSSyntaxRegExp$_globalVersionOf$1 = function(other) {
-  var t0 = other.get$pattern();
-  var t1 = other.get$multiLine();
-  var t2 = new $.JSSyntaxRegExp(other.get$ignoreCase(), t1, t0);
-  t2.JSSyntaxRegExp$_globalVersionOf$1(other);
-  return t2;
-};
-
-$.printString = function(string) {
-  if (typeof console == "object") {
-    console.log(string);
-  } else {
-    write(string);
-    write("\n");
+$.toString = function(value) {
+  if (typeof value == "object") {
+    if ($.isJsArray(value) === true) {
+      return $.collectionToString(value);
+    } else {
+      return value.toString$0();
+    }
   }
+  if (value === 0 && (1 / value) < 0) {
+    return '-0.0';
+  }
+  if (value === (void 0)) {
+    return 'null';
+  }
+  if (typeof value == "function") {
+    return 'Closure';
+  }
+  return String(value);
 };
 
 $.typeNameInChrome = function(obj) {
@@ -8945,12 +8968,6 @@ $.StringMatch$3 = function(_start, str, pattern) {
   return new $.StringMatch(pattern, str, _start);
 };
 
-$.ViewMatchContext$root$2 = function(view, selectors) {
-  var t0 = new $.ViewMatchContext($._initBoolList(selectors), 0, view, (void 0));
-  t0.ViewMatchContext$root$2(view, selectors);
-  return t0;
-};
-
 $.encodeXML = function(txt, multiline, maxlength, pre) {
   if (typeof txt !== 'string' && (typeof txt !== 'object'||txt.constructor !== Array)) return $.encodeXML$bailout(txt, multiline, maxlength, pre,  0);
   if (typeof maxlength !== 'number') return $.encodeXML$bailout(txt, multiline, maxlength, pre,  0);
@@ -8988,7 +9005,7 @@ $.encodeXML = function(txt, multiline, maxlength, pre) {
       var t7 = txt.length;
       if (j1 < 0 || j1 >= t7) throw $.ioore(j1);
       var t8 = txt[j1];
-      var enc0 = $.CTC55.operator$index$1(t8);
+      var enc0 = $.CTC11.operator$index$1(t8);
       if (!$.eqNullB(enc0)) {
         $.add$1($.add$1($.add$1(out.add$1($.substring$2(txt, k, j1)), '&'), enc0), ';');
         k0 = j1 + 1;
@@ -9016,7 +9033,7 @@ $.encodeXML = function(txt, multiline, maxlength, pre) {
       var k3 = k2;
       var t9 = txt.length;
       if (j3 < 0 || j3 >= t9) throw $.ioore(j3);
-      var enc2 = $.CTC55.operator$index$1(txt[j3]);
+      var enc2 = $.CTC11.operator$index$1(txt[j3]);
       k3 = k2;
       if (!$.eqNullB(enc2)) {
         $.add$1($.add$1($.add$1(out.add$1($.substring$2(txt, k2, j3)), '&'), enc2), ';');
@@ -9036,12 +9053,22 @@ $.encodeXML = function(txt, multiline, maxlength, pre) {
   return out.toString$0();
 };
 
+$.ViewMatchContext$root$2 = function(view, selectors) {
+  var t0 = new $.ViewMatchContext($._initBoolList(selectors), 0, view, (void 0));
+  t0.ViewMatchContext$root$2(view, selectors);
+  return t0;
+};
+
 $.ViewIterable$2 = function(_root, _selector) {
   return new $.ViewIterable(_selector, _root);
 };
 
 $.String$fromCharCodes = function(charCodes) {
   return $.createFromCharCodes(charCodes);
+};
+
+$._DataAttributeMap$1 = function($$dom_attributes) {
+  return new $._DataAttributeMap($$dom_attributes);
 };
 
 $._createMeasurementFuture = function(computeValue, completer) {
@@ -9051,14 +9078,6 @@ $._createMeasurementFuture = function(computeValue, completer) {
   }
   $.add$1($._pendingRequests, $._MeasurementRequest$2(computeValue, completer));
   return completer.get$future();
-};
-
-$.filter = function(receiver, predicate) {
-  if ($.isJsArray(receiver) !== true) {
-    return receiver.filter$1(predicate);
-  } else {
-    return $.filter2(receiver, [], predicate);
-  }
 };
 
 $.buildDynamicMetadata = function(inputTable) {
@@ -9085,6 +9104,14 @@ $.buildDynamicMetadata = function(inputTable) {
   return result;
 };
 
+$.filter = function(receiver, predicate) {
+  if ($.isJsArray(receiver) !== true) {
+    return receiver.filter$1(predicate);
+  } else {
+    return $.filter2(receiver, [], predicate);
+  }
+};
+
 $.filter2 = function(source, destination, f) {
   for (var t0 = $.iterator(source); t0.hasNext$0() === true; ) {
     var t1 = t0.next$0();
@@ -9102,16 +9129,6 @@ $.application = function() {
   return $._app;
 };
 
-$.filter3 = function(source, destination, f) {
-  for (var t0 = $.iterator(source); t0.hasNext$0() === true; ) {
-    var t1 = t0.next$0();
-    if (f.$call$1(t1) === true) {
-      $.add$1(destination, t1);
-    }
-  }
-  return destination;
-};
-
 $.DOMQuery = function(v) {
   if (typeof v === 'object' && !!v.is$View) {
     var v0 = v.get$node();
@@ -9123,19 +9140,19 @@ $.DOMQuery = function(v) {
     }
   }
   if (typeof v0 === 'object' && v0.is$Window()) {
-    var t0 = $._WindowQuery$_init$1(v0);
+    var t0 = $._WindowQuery$1(v0);
   } else {
-    t0 = $.DOMQuery$_init$1(v0);
+    if (!(v0 === (void 0))) {
+      t0 = $.DOMQuery$_init$1(v0);
+    } else {
+      t0 = $._NullQuery$0();
+    }
   }
   return t0;
 };
 
 $.parseInt = function(str) {
   return $.parseInt2(str);
-};
-
-$._NotificationEventsImpl$1 = function(_ptr) {
-  return new $._NotificationEventsImpl(_ptr);
 };
 
 $.parseInt2 = function(str) {
@@ -9155,6 +9172,20 @@ $.parseInt2 = function(str) {
   return ret;
 };
 
+$._NotificationEventsImpl$1 = function(_ptr) {
+  return new $._NotificationEventsImpl(_ptr);
+};
+
+$.filter3 = function(source, destination, f) {
+  for (var t0 = $.iterator(source); t0.hasNext$0() === true; ) {
+    var t1 = t0.next$0();
+    if (f.$call$1(t1) === true) {
+      $.add$1(destination, t1);
+    }
+  }
+  return destination;
+};
+
 $.computeViewChildIndex = function(view) {
   for (var index = -1, view0 = view; !$.eqNullB(view0); index = index0, view0 = view1) {
     var index0 = index;
@@ -9171,6 +9202,12 @@ $.neg = function(a) {
     return -a;
   }
   return a.operator$negate$0();
+};
+
+$.Selector$1 = function(selectorIndex) {
+  var t0 = $.List((void 0));
+  $.setRuntimeTypeInfo(t0, ({E: 'SimpleSelectorSequence'}));
+  return new $.Selector(t0, selectorIndex);
 };
 
 $._emitCollection = function(c, result, visiting) {
@@ -9198,12 +9235,6 @@ $._emitCollection = function(c, result, visiting) {
   }
   $.add$1(result, t3);
   $.removeLast(visiting);
-};
-
-$.Selector$1 = function(selectorIndex) {
-  var t0 = $.List((void 0));
-  $.setRuntimeTypeInfo(t0, ({E: 'SimpleSelectorSequence'}));
-  return new $.Selector(t0, selectorIndex);
 };
 
 $._init = function() {
@@ -9258,15 +9289,15 @@ $._positionRoot = function(view) {
   var loc = view.get$profile().get$location();
   if ($.isEmpty(loc) !== true) {
     var handlers = $._getHandlers(loc);
-    $.index($._anchorXHandlers(), $.index(handlers, 0)).$call$3(0, $.CTC41, view);
-    $.index($._anchorYHandlers(), $.index(handlers, 1)).$call$3(0, $.CTC41, view);
+    $.index($._anchorXHandlers(), $.index(handlers, 0)).$call$3(0, $.CTC43, view);
+    $.index($._anchorYHandlers(), $.index(handlers, 1)).$call$3(0, $.CTC43, view);
   }
 };
 
 $.getDOMEventDispatcher = function(type) {
   if ($._domEvtDisps === (void 0)) {
     $._domEvtDisps = $.makeLiteralMap([]);
-    for (var t0 = $.iterator($.CTC10); t0.hasNext$0() === true; ) {
+    for (var t0 = $.iterator($.CTC56); t0.hasNext$0() === true; ) {
       var t1 = t0.next$0();
       $.indexSet($._domEvtDisps, t1, $._domEvtDisp(t1));
     }
@@ -9278,12 +9309,10 @@ $.regExpTest = function(regExp, str) {
   return $.regExpGetNative(regExp).test(str);
 };
 
-$.getDefaultAmountInfo = function(info) {
-  var amt = $.LayoutAmountInfo$1(info);
-  if ($.eqB(amt.type, 0)) {
-    amt.type = 4;
+$.forEach3 = function(iterable, f) {
+  for (var t0 = $.iterator(iterable); t0.hasNext$0() === true; ) {
+    f.$call$1(t0.next$0());
   }
-  return amt;
 };
 
 $.stringSplitUnchecked = function(receiver, pattern) {
@@ -9340,6 +9369,10 @@ $.window = function() {
   return window;;
 };
 
+$.DocumentFragment = function() {
+  return $.document().createDocumentFragment$0();
+};
+
 $.add = function(a, b) {
   if ($.checkNumbers(a, b) === true) {
     return a + b;
@@ -9354,10 +9387,6 @@ $.add = function(a, b) {
     }
   }
   return a.operator$add$1(b);
-};
-
-$.DocumentFragment = function() {
-  return $.document().createDocumentFragment$0();
 };
 
 $.regExpAttachGlobalNative = function(regExp) {
@@ -9558,11 +9587,12 @@ $._SimpleClientRect$4 = function(left, top$, width, height) {
 
 $.MeasureContext$0 = function() {
   var t0 = $.HashMapImplementation$0();
-  return new $.MeasureContext($.HashMapImplementation$0(), t0);
+  var t1 = $.HashMapImplementation$0();
+  return new $.MeasureContext($.HashMapImplementation$0(), t1, t0);
 };
 
 $.View$0 = function() {
-  var t0 = new $.View(false, false, (void 0), (void 0), (void 0), (void 0), (void 0), 0, 0, (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), '');
+  var t0 = new $.View(false, false, (void 0), (void 0), (void 0), (void 0), (void 0), 0, 0, (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), '');
   t0.View$0();
   return t0;
 };
@@ -9657,21 +9687,6 @@ $.isInfinite = function(receiver) {
   return (receiver == Infinity) || (receiver == -Infinity);
 };
 
-$.addLast = function(receiver, value) {
-  if ($.isJsArray(receiver) !== true) {
-    return receiver.addLast$1(value);
-  }
-  $.checkGrowable(receiver, 'addLast');
-  receiver.push(value);
-};
-
-$.Section$0 = function() {
-  var t0 = new $.Section((void 0), false, false, (void 0), (void 0), (void 0), (void 0), (void 0), 0, 0, (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), '');
-  t0.View$0();
-  t0.Section$0();
-  return t0;
-};
-
 $._VLayout$0 = function() {
   return new $._VLayout();
 };
@@ -9707,8 +9722,23 @@ $.ViewMatchContext$child$2 = function(view, parent$) {
   return new $.ViewMatchContext($._initBoolListFromParent(parent$), 0, view, parent$);
 };
 
+$.Section$0 = function() {
+  var t0 = new $.Section((void 0), false, false, (void 0), (void 0), (void 0), (void 0), (void 0), 0, 0, (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), '');
+  t0.View$0();
+  t0.Section$0();
+  return t0;
+};
+
 $._ChildrenElementList$_wrap$1 = function(element) {
   return new $._ChildrenElementList(element.get$$$dom_children(), element);
+};
+
+$.addLast = function(receiver, value) {
+  if ($.isJsArray(receiver) !== true) {
+    return receiver.addLast$1(value);
+  }
+  $.checkGrowable(receiver, 'addLast');
+  receiver.push(value);
 };
 
 $.dynamicSetMetadata = function(inputTable) {
@@ -9760,16 +9790,20 @@ $.ltB = function(a, b) {
   return $.lt(a, b) === true;
 };
 
-$.intOf = function(value) {
+$.intOf = function(value, reportError) {
   try {
     if (!(value === (void 0)) && $.isEmpty(value) !== true) {
-      var m = $.CTC40.firstMatch$1(value);
+      var m = $.CTC38.firstMatch$1(value);
       if (!(m === (void 0))) {
         return $.parseInt(m.group$1(0));
       }
     }
   }catch (t0) {
-    $.unwrapException(t0);
+    var t1 = $.unwrapException(t0);
+    var e = t1;
+    if (!(reportError === (void 0)) && reportError === true) {
+      throw $.captureStackTrace(e);
+    }
   }
   return 0;
 };
@@ -9812,7 +9846,7 @@ $.getRange = function(receiver, start, length$) {
 };
 
 $.ViewEvent$6 = function(target, type, pageX, pageY, offsetX, offsetY) {
-  var t0 = new $.ViewEvent((void 0), false, false, (void 0), $.DateImplementation$now$0().value, type, (void 0), (void 0));
+  var t0 = new $.ViewEvent((void 0), false, false, (void 0), $.DateImplementation$now$0().get$millisecondsSinceEpoch(), type, (void 0), (void 0));
   t0.ViewEvent$6(target, type, pageX, pageY, offsetX, offsetY);
   return t0;
 };
@@ -9995,15 +10029,6 @@ $.px = function(val) {
   return t0;
 };
 
-$.profileWidth = function(view, amtDefault) {
-  var amt = $.LayoutAmountInfo$1(view.get$profile().get$width());
-  if ($.eqB(amt.type, 0)) {
-    amt.type = amtDefault.get$type();
-    amt.value = amtDefault.get$value();
-  }
-  return amt;
-};
-
 $.matchType = function(view, type) {
   return $.eqNullB(type) || $.eqB(type, view.get$className());
 };
@@ -10054,13 +10079,10 @@ $.CSSStyleDeclaration$css = function(css) {
   return style;
 };
 
-$._EventListenerInfo$0 = function() {
-  return new $._EventListenerInfo((void 0), (void 0), (void 0));
-};
-
-$.defineProperty = function(obj, property, value) {
-  Object.defineProperty(obj, property,
-      {value: value, enumerable: false, writable: true, configurable: true});;
+$._EventListenerInfo$1 = function(_owner) {
+  var t0 = new $._EventListenerInfo((void 0), (void 0), (void 0), _owner);
+  t0._EventListenerInfo$1(_owner);
+  return t0;
 };
 
 $.print = function(obj) {
@@ -10082,19 +10104,13 @@ $.div = function(a, b) {
   return a.operator$div$1(b);
 };
 
-$._initSize = function(profile, current) {
-  var szinf = $.LayoutAmountInfo$1(profile);
-  if ($.eqB(szinf.type, 1)) {
-    var v = szinf.value;
-  } else {
-    v = current.$call$0();
-  }
-  if (!$.eqNullB(v)) {
-    var t0 = v;
-  } else {
-    t0 = (void 0);
-  }
-  return t0;
+$.defineProperty = function(obj, property, value) {
+  Object.defineProperty(obj, property,
+      {value: value, enumerable: false, writable: true, configurable: true});;
+};
+
+$._NullQuery$0 = function() {
+  return new $._NullQuery((void 0));
 };
 
 $.dynamicFunction = function(name$) {
@@ -10103,7 +10119,7 @@ $.dynamicFunction = function(name$) {
     return f.methods;
   }
   var methods = ({});
-  var dartMethod = (Object.getPrototypeOf($.CTC59)[name$]);
+  var dartMethod = (Object.getPrototypeOf($.CTC61)[name$]);
   if (!(dartMethod === (void 0))) {
     methods['Object'] = dartMethod;
   }
@@ -10111,16 +10127,6 @@ $.dynamicFunction = function(name$) {
   bind.methods = methods;
   $.defineProperty((Object.prototype), name$, bind);
   return methods;
-};
-
-$.addAll = function(receiver, collection) {
-  if ($.isJsArray(receiver) !== true) {
-    return receiver.addAll$1(collection);
-  }
-  var iterator = $.iterator(collection);
-  for (; iterator.hasNext$0() === true; ) {
-    $.add$1(receiver, iterator.next$0());
-  }
 };
 
 $.objectToString = function(object) {
@@ -10164,10 +10170,6 @@ $.AnchorRelation$1 = function(view) {
   return t1;
 };
 
-$._WindowQuery$_init$1 = function(v) {
-  return new $._WindowQuery(v);
-};
-
 $._initBoolListFromParent = function(parent$) {
   var plist = parent$.get$_qualified();
   var list = $.List((void 0));
@@ -10183,6 +10185,16 @@ $._initBoolListFromParent = function(parent$) {
     sublist = sublist0;
   }
   return list;
+};
+
+$.addAll = function(receiver, collection) {
+  if ($.isJsArray(receiver) !== true) {
+    return receiver.addAll$1(collection);
+  }
+  var iterator = $.iterator(collection);
+  for (; iterator.hasNext$0() === true; ) {
+    $.add$1(receiver, iterator.next$0());
+  }
 };
 
 $.SnakeEnvironment$2 = function(height, width) {
@@ -10336,48 +10348,6 @@ $.toLowerCase = function(receiver) {
   return receiver.toLowerCase();
 };
 
-$.profileHeight = function(view, amtDefault) {
-  var amt = $.LayoutAmountInfo$1(view.get$profile().get$height());
-  if ($.eqB(amt.type, 0)) {
-    amt.type = amtDefault.get$type();
-    amt.value = amtDefault.get$value();
-  }
-  return amt;
-};
-
-$._isPowerOfTwo = function(x) {
-  return $.eq($.and(x, $.sub(x, 1)), 0);
-};
-
-$._createSafe = function(w) {
-  if (w === $.window()) {
-    return w;
-  } else {
-    return $._DOMWindowCrossFrameImpl$1(w);
-  }
-};
-
-$._XMLHttpRequestUploadEventsImpl$1 = function(_ptr) {
-  return new $._XMLHttpRequestUploadEventsImpl(_ptr);
-};
-
-$.LayoutAmountInfo$1 = function(profile) {
-  var t0 = new $.LayoutAmountInfo((void 0), (void 0));
-  t0.LayoutAmountInfo$1(profile);
-  return t0;
-};
-
-$._CssClassSet$1 = function(_element) {
-  return new $._CssClassSet(_element);
-};
-
-$.captureStackTrace = function(ex) {
-  var jsError = (new Error());
-  jsError.dartException = ex;
-  jsError.toString = $.toStringWrapper.$call$0;
-  return jsError;
-};
-
 $.addToIdSpace = function(view, skipFirst) {
   var id = view.get$id();
   if ($.eqB($.get$length(id), 0)) {
@@ -10400,6 +10370,28 @@ $.addToIdSpace = function(view, skipFirst) {
   }
 };
 
+$._isPowerOfTwo = function(x) {
+  return $.eq($.and(x, $.sub(x, 1)), 0);
+};
+
+$._createSafe = function(w) {
+  if (w === $.window()) {
+    return w;
+  } else {
+    return $._DOMWindowCrossFrameImpl$1(w);
+  }
+};
+
+$.LayoutAmountInfo$1 = function(profile) {
+  var t0 = new $.LayoutAmountInfo((void 0), (void 0));
+  t0.LayoutAmountInfo$1(profile);
+  return t0;
+};
+
+$._XMLHttpRequestUploadEventsImpl$1 = function(_ptr) {
+  return new $._XMLHttpRequestUploadEventsImpl(_ptr);
+};
+
 $.SimpleSelectorSequence$0 = function() {
   var t0 = $.HashSetImplementation$0();
   $.setRuntimeTypeInfo(t0, ({E: 'String'}));
@@ -10408,6 +10400,17 @@ $.SimpleSelectorSequence$0 = function() {
   var t2 = $.List((void 0));
   $.setRuntimeTypeInfo(t2, ({E: 'PseudoClass'}));
   return new $.SimpleSelectorSequence(0, t2, t1, t0, (void 0), (void 0));
+};
+
+$._CssClassSet$1 = function(_element) {
+  return new $._CssClassSet(_element);
+};
+
+$.captureStackTrace = function(ex) {
+  var jsError = (new Error());
+  jsError.dartException = ex;
+  jsError.toString = $.toStringWrapper.$call$0;
+  return jsError;
 };
 
 $.StackOverflowException$0 = function() {
@@ -10423,6 +10426,10 @@ $.eq = function(a, b) {
     }
   }
   return a === b;
+};
+
+$.join = function(strings, separator) {
+  return $.join2(strings, separator);
 };
 
 $.join2 = function(strings, separator) {
@@ -10448,10 +10455,6 @@ $.join2 = function(strings, separator) {
   return result;
 };
 
-$.join = function(strings, separator) {
-  return $.join2(strings, separator);
-};
-
 $._SubviewList$1 = function(_owner) {
   return new $._SubviewList(_owner);
 };
@@ -10467,7 +10470,7 @@ $.translate3d = function(x, y, z) {
 };
 
 $.Canvas$0 = function() {
-  var t0 = new $.Canvas(false, false, (void 0), (void 0), (void 0), (void 0), (void 0), 0, 0, (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), '');
+  var t0 = new $.Canvas(false, false, (void 0), (void 0), (void 0), (void 0), (void 0), 0, 0, (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), '');
   t0.View$0();
   return t0;
 };
@@ -10482,18 +10485,31 @@ $.setRuntimeTypeInfo = function(target, typeInfo) {
   }
 };
 
-$.document = function() {
-  return document;;
+$.shl = function(a, b) {
+  if ($.checkNumbers(a, b) === true) {
+    if ($.ltB(b, 0)) {
+      throw $.captureStackTrace($.IllegalArgumentException$1(b));
+    }
+    if ($.gtB(b, 31)) {
+      return 0;
+    }
+    return (a << b) >>> 0;
+  }
+  return a.operator$shl$1(b);
 };
 
-$._FileWriterEventsImpl$1 = function(_ptr) {
-  return new $._FileWriterEventsImpl(_ptr);
+$.document = function() {
+  return document;;
 };
 
 $.LayoutSideInfo$3 = function(profile, defaultValue, defaultInfo) {
   var t0 = new $.LayoutSideInfo((void 0), (void 0), (void 0), (void 0));
   t0.LayoutSideInfo$3(profile, defaultValue, defaultInfo);
   return t0;
+};
+
+$._FileWriterEventsImpl$1 = function(_ptr) {
+  return new $._FileWriterEventsImpl(_ptr);
 };
 
 $.ceil = function(receiver) {
@@ -10582,7 +10598,7 @@ $.isJsArray = function(value) {
 };
 
 $._BroadcastEvents$1 = function(ptr) {
-  return new $._BroadcastEvents($.HashMapImplementation$0(), ptr);
+  return new $._BroadcastEvents($.makeLiteralMap([]), ptr);
 };
 
 $.substringUnchecked = function(receiver, startIndex, endIndex) {
@@ -10702,7 +10718,7 @@ $.name = function(propertyName) {
     if ($.browser.get$ios() === true && $.ltB($.browser.get$iosVersion(), 5) || $.browser.get$android() === true && $.ltB($.browser.get$androidVersion(), 2.4) || $.browser.get$firefox() === true) {
       $.add$1($._nsnms, 'box-sizing');
     }
-    for (var t0 = $.iterator($.CTC52); t0.hasNext$0() === true; ) {
+    for (var t0 = $.iterator($.CTC53); t0.hasNext$0() === true; ) {
       var t1 = t0.next$0();
       $.add$1($._nsnms, t1);
     }
@@ -10749,13 +10765,6 @@ $.gt = function(a, b) {
 $.assert = function(condition) {
 };
 
-$.last = function(receiver) {
-  if ($.isJsArray(receiver) !== true) {
-    return receiver.last$0();
-  }
-  return $.index(receiver, $.sub($.get$length(receiver), 1));
-};
-
 $._maybeScheduleMeasurementFrame = function() {
   if ($._nextMeasurementFrameScheduled === true) {
     return;
@@ -10766,6 +10775,13 @@ $._maybeScheduleMeasurementFrame = function() {
     $._firstMeasurementRequest = false;
   }
   $.window().postMessage$2('DART-MEASURE', '*');
+};
+
+$.last = function(receiver) {
+  if ($.isJsArray(receiver) !== true) {
+    return receiver.last$0();
+  }
+  return $.index(receiver, $.sub($.get$length(receiver), 1));
 };
 
 $.contains$1 = function(receiver, other) {
@@ -10879,13 +10895,6 @@ $.link = function(view, child, beforeChild) {
   }
 };
 
-$.isEmpty = function(receiver) {
-  if (typeof receiver === 'string' || $.isJsArray(receiver) === true) {
-    return receiver.length === 0;
-  }
-  return receiver.isEmpty$0();
-};
-
 $.getDay = function(receiver) {
   if (receiver.get$timeZone().get$isUtc() === true) {
     var t0 = ($.lazyAsJsDate(receiver).getUTCDate());
@@ -10907,6 +10916,13 @@ $.HashSetImplementation$0 = function() {
 
 $.DateImplementation$fromEpoch$2 = function(value, timeZone) {
   return new $.DateImplementation(timeZone, value);
+};
+
+$.isEmpty = function(receiver) {
+  if (typeof receiver === 'string' || $.isJsArray(receiver) === true) {
+    return receiver.length === 0;
+  }
+  return receiver.isEmpty$0();
 };
 
 $._IDBRequestEventsImpl$1 = function(_ptr) {
@@ -10937,16 +10953,6 @@ $.regExpExec = function(regExp, str) {
   return result;
 };
 
-$._isAllIds = function(list, offset) {
-  if (typeof offset !== 'number') return $._isAllIds$bailout(list, offset,  0);
-  for (var t0 = $.iterator(list); t0.hasNext$0() === true; ) {
-    if ($.gtB($.get$length(t0.next$0().get$seqs()), offset)) {
-      return false;
-    }
-  }
-  return true;
-};
-
 $.getMonth = function(receiver) {
   if (receiver.get$timeZone().get$isUtc() === true) {
     var t0 = ($.lazyAsJsDate(receiver).getUTCMonth()) + 1;
@@ -10958,6 +10964,20 @@ $.getMonth = function(receiver) {
 
 $._isWhitespace = function(c) {
   return $.eqB(c, 32) || $.eqB(c, 9) || $.eqB(c, 10) || $.eqB(c, 13);
+};
+
+$._isAllIds = function(list, offset) {
+  if (typeof offset !== 'number') return $._isAllIds$bailout(list, offset,  0);
+  for (var t0 = $.iterator(list); t0.hasNext$0() === true; ) {
+    if ($.gtB($.get$length(t0.next$0().get$seqs()), offset)) {
+      return false;
+    }
+  }
+  return true;
+};
+
+$._WindowQuery$1 = function(v) {
+  return new $._WindowQuery(v);
 };
 
 $.stringContainsUnchecked = function(receiver, other, startIndex) {
@@ -11016,13 +11036,6 @@ $._DragGesture = function(owner, handle, transform, range, movement, start, end,
   return t0;
 };
 
-$.iterator = function(receiver) {
-  if ($.isJsArray(receiver) === true) {
-    return $.ListIterator$1(receiver);
-  }
-  return receiver.iterator$0();
-};
-
 $.regExpMakeNative = function(regExp, global) {
   var pattern = regExp.get$pattern();
   var multiLine = regExp.get$multiLine();
@@ -11051,21 +11064,17 @@ $.BadNumberFormatException$1 = function(_s) {
   return new $.BadNumberFormatException(_s);
 };
 
+$.iterator = function(receiver) {
+  if ($.isJsArray(receiver) === true) {
+    return $.ListIterator$1(receiver);
+  }
+  return receiver.iterator$0();
+};
+
 $.mapToString = function(m) {
   var result = $.StringBufferImpl$1('');
   $._emitMap(m, result, $.List((void 0)));
   return result.toString$0();
-};
-
-$.remove = function(list, obj) {
-  if (!(list === (void 0))) {
-    var j = $.indexOf$1(list, obj);
-    if ($.geB(j, 0)) {
-      $.removeRange(list, j, 1);
-      return true;
-    }
-  }
-  return false;
 };
 
 $.lazyAsJsDate = function(receiver) {
@@ -11080,52 +11089,10 @@ $._IDBDatabaseEventsImpl$1 = function(_ptr) {
 };
 
 $.TextView$1 = function(text) {
-  var t0 = new $.TextView((void 0), (void 0), false, false, (void 0), (void 0), (void 0), (void 0), (void 0), 0, 0, (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), '');
+  var t0 = new $.TextView((void 0), (void 0), false, false, (void 0), (void 0), (void 0), (void 0), (void 0), 0, 0, (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), (void 0), '');
   t0.View$0();
   t0.TextView$1(text);
   return t0;
-};
-
-$.ViewEvent$dom$3 = function(target, domEvent, type) {
-  if (!$.eqNullB(type)) {
-    var t0 = type;
-  } else {
-    t0 = domEvent.get$type();
-  }
-  var t1 = new $.ViewEvent((void 0), false, false, (void 0), domEvent.get$timeStamp(), t0, domEvent, (void 0));
-  t1.ViewEvent$dom$3(target, domEvent, type);
-  return t1;
-};
-
-$.ge = function(a, b) {
-  if ($.checkNumbers(a, b) === true) {
-    return a >= b;
-  }
-  return a.operator$ge$1(b);
-};
-
-$.isDescendant = function(c1, c2) {
-  if ($.eqB(c1, c2)) {
-    return true;
-  }
-  for (var c10 = c1; c11 = c10.get$parent(), !$.eqNullB(c11); c10 = c11) {
-    if ($.eqB(c11, c2)) {
-      return true;
-    }
-    if (typeof c11 === 'object' && !!c11.is$IdSpace) {
-      return $.eq(c11, c2);
-    }
-  }
-  return false;
-  var c11;
-};
-
-$._MeasurementRequest$2 = function(computeValue, completer) {
-  return new $._MeasurementRequest(false, (void 0), completer, computeValue);
-};
-
-$._TextTrackCueEventsImpl$1 = function(_ptr) {
-  return new $._TextTrackCueEventsImpl(_ptr);
 };
 
 $.compareTo = function(a, b) {
@@ -11179,6 +11146,48 @@ $.compareTo = function(a, b) {
       return a.compareTo$1(b);
     }
   }
+};
+
+$.ge = function(a, b) {
+  if ($.checkNumbers(a, b) === true) {
+    return a >= b;
+  }
+  return a.operator$ge$1(b);
+};
+
+$.isDescendant = function(c1, c2) {
+  if ($.eqB(c1, c2)) {
+    return true;
+  }
+  for (var c10 = c1; c11 = c10.get$parent(), !$.eqNullB(c11); c10 = c11) {
+    if ($.eqB(c11, c2)) {
+      return true;
+    }
+    if (typeof c11 === 'object' && !!c11.is$IdSpace) {
+      return $.eq(c11, c2);
+    }
+  }
+  return false;
+  var c11;
+};
+
+$._MeasurementRequest$2 = function(computeValue, completer) {
+  return new $._MeasurementRequest(false, (void 0), completer, computeValue);
+};
+
+$._TextTrackCueEventsImpl$1 = function(_ptr) {
+  return new $._TextTrackCueEventsImpl(_ptr);
+};
+
+$.ViewEvent$dom$3 = function(target, domEvent, type) {
+  if (!$.eqNullB(type)) {
+    var t0 = type;
+  } else {
+    t0 = domEvent.get$type();
+  }
+  var t1 = new $.ViewEvent((void 0), false, false, (void 0), domEvent.get$timeStamp(), t0, domEvent, (void 0));
+  t1.ViewEvent$dom$3(target, domEvent, type);
+  return t1;
 };
 
 $.MatchImplementation$5 = function(pattern, str, _start, _end, _groups) {
@@ -11268,18 +11277,18 @@ $._MediaElementEventsImpl$1 = function(_ptr) {
   return new $._MediaElementEventsImpl(_ptr);
 };
 
-$._BodyElementEventsImpl$1 = function(_ptr) {
-  return new $._BodyElementEventsImpl(_ptr);
-};
-
 $._IDBTransactionEventsImpl$1 = function(_ptr) {
   return new $._IDBTransactionEventsImpl(_ptr);
+};
+
+$._BodyElementEventsImpl$1 = function(_ptr) {
+  return new $._BodyElementEventsImpl(_ptr);
 };
 
 $._domEvtDisp = function(type) {
   var t0 = ({});
   t0.type_3 = type;
-  return new $.Closure19(t0);
+  return new $.Closure71(t0);
 };
 
 $.iae = function(argument) {
@@ -11388,7 +11397,7 @@ $.LayoutManager$0 = function() {
   var t1 = $.HashSetImplementation$0();
   var t2 = $.List((void 0));
   var t3 = $.makeLiteralMap([]);
-  var t4 = new $.LayoutManager($.HashSetImplementation$0(), t3, true, true, t2, (void 0), t1, t0);
+  var t4 = new $.LayoutManager(0, $.HashSetImplementation$0(), t3, true, true, t2, (void 0), t1, t0);
   t4.LayoutManager$0();
   return t4;
 };
@@ -11411,7 +11420,7 @@ $.offset3dOf = function(value) {
     var i1 = i0;
     var t1 = t0.next$0();
     var i2 = i0 + 1;
-    var t2 = $.intOf(t1);
+    var t2 = $.intOf(t1, (void 0));
     var t3 = ary.length;
     if (i0 < 0 || i0 >= t3) throw $.ioore(i0);
     ary[i0] = t2;
@@ -11429,6 +11438,17 @@ $.offset3dOf = function(value) {
   var t8 = ary.length;
   if (2 >= t8) throw $.ioore(2);
   return $._Offset3d$3(t5, t7, ary[2]);
+};
+
+$.remove = function(list, obj) {
+  if (!(list === (void 0))) {
+    var j = $.indexOf$1(list, obj);
+    if ($.geB(j, 0)) {
+      $.removeRange(list, j, 1);
+      return true;
+    }
+  }
+  return false;
 };
 
 $._getTokenClass = function(c) {
@@ -11743,7 +11763,7 @@ $._InputElementEventsImpl$1 = function(_ptr) {
 };
 
 $.PopupEvent$2 = function(source, type) {
-  var t0 = new $.PopupEvent(source, (void 0), false, false, (void 0), $.DateImplementation$now$0().value, type, (void 0), (void 0));
+  var t0 = new $.PopupEvent(source, (void 0), false, false, (void 0), $.DateImplementation$now$0().get$millisecondsSinceEpoch(), type, (void 0), (void 0));
   t0.ViewEvent$6((void 0), type, (void 0), (void 0), (void 0), (void 0));
   return t0;
 };
@@ -11793,22 +11813,22 @@ $.CompleterImpl$0 = function() {
 $.getDefinition = function(name$) {
   $0:{
     if ('first-child' === name$) {
-      return new $.Closure68();
+      return new $.Closure61();
     } else {
       if ('last-child' === name$) {
-        return new $.Closure69();
+        return new $.Closure62();
       } else {
         if ('only-child' === name$) {
-          return new $.Closure70();
+          return new $.Closure63();
         } else {
           if ('empty' === name$) {
-            return new $.Closure71();
+            return new $.Closure64();
           } else {
             if ('nth-child' === name$) {
-              return new $.Closure72();
+              return new $.Closure65();
             } else {
               if ('last-nth-child' === name$) {
-                return new $.Closure73();
+                return new $.Closure66();
               } else {
                 return;
               }
@@ -11859,12 +11879,12 @@ $._ChildInfo$0 = function() {
 };
 
 $._now = function() {
-  return $.DateImplementation$now$0().value;
+  return $.DateImplementation$now$0().get$millisecondsSinceEpoch();
 };
 
 $._anchorXHandlers = function() {
   if ($.eqNullB($._cacheXAnchorHandlers)) {
-    $._cacheXAnchorHandlers = [new $.Closure41(), new $.Closure42(), new $.Closure43(), new $.Closure44(), new $.Closure45()];
+    $._cacheXAnchorHandlers = [new $.Closure36(), new $.Closure37(), new $.Closure38(), new $.Closure39(), new $.Closure40()];
   }
   return $._cacheXAnchorHandlers;
 };
@@ -12119,12 +12139,34 @@ $._MessagePortEventsImpl$1 = function(_ptr) {
   return new $._MessagePortEventsImpl(_ptr);
 };
 
+$.indexOf2 = function(a, element, startIndex, endIndex) {
+  if (typeof a !== 'string' && (typeof a !== 'object'||a.constructor !== Array)) return $.indexOf2$bailout(a, element, startIndex, endIndex,  0);
+  if (typeof endIndex !== 'number') return $.indexOf2$bailout(a, element, startIndex, endIndex,  0);
+  if ($.geB(startIndex, a.length)) {
+    return -1;
+  }
+  var startIndex0 = startIndex;
+  if ($.ltB(startIndex, 0)) {
+    startIndex0 = 0;
+  }
+  if (typeof startIndex0 !== 'number') return $.indexOf2$bailout(a, element, startIndex, endIndex, 3, a, endIndex, startIndex0);
+  for (var i = startIndex0; i < endIndex; i = i + 1) {
+    if (i !== (i | 0)) throw $.iae(i);
+    var t0 = a.length;
+    if (i < 0 || i >= t0) throw $.ioore(i);
+    if ($.eqB(a[i], element)) {
+      return i;
+    }
+  }
+  return -1;
+};
+
 $.getFunctionForTypeNameOf = function() {
   if (!((typeof(navigator)) === 'object')) {
     return $.typeNameInChrome;
   }
   var userAgent = (navigator.userAgent);
-  if ($.contains$1(userAgent, $.CTC58) === true) {
+  if ($.contains$1(userAgent, $.CTC60) === true) {
     return $.typeNameInChrome;
   } else {
     if ($.contains$1(userAgent, 'Firefox') === true) {
@@ -12142,7 +12184,7 @@ $.getFunctionForTypeNameOf = function() {
 $._check = function(propertyName) {
   if ($._illnms === (void 0)) {
     $._illnms = $.HashSetImplementation$0();
-    for (var t0 = $.iterator($.CTC53); t0.hasNext$0() === true; ) {
+    for (var t0 = $.iterator($.CTC54); t0.hasNext$0() === true; ) {
       var t1 = t0.next$0();
       $.add$1($._illnms, t1);
     }
@@ -12156,9 +12198,9 @@ $.PseudoClass$1 = function(name$) {
   return new $.PseudoClass((void 0), name$);
 };
 
-$.indexOf2 = function(a, element, startIndex, endIndex) {
-  if (typeof a !== 'string' && (typeof a !== 'object'||a.constructor !== Array)) return $.indexOf2$bailout(a, element, startIndex, endIndex,  0);
-  if (typeof endIndex !== 'number') return $.indexOf2$bailout(a, element, startIndex, endIndex,  0);
+$.indexOf = function(a, element, startIndex, endIndex) {
+  if (typeof a !== 'string' && (typeof a !== 'object'||a.constructor !== Array)) return $.indexOf$bailout(a, element, startIndex, endIndex,  0);
+  if (typeof endIndex !== 'number') return $.indexOf$bailout(a, element, startIndex, endIndex,  0);
   if ($.geB(startIndex, a.length)) {
     return -1;
   }
@@ -12166,7 +12208,7 @@ $.indexOf2 = function(a, element, startIndex, endIndex) {
   if ($.ltB(startIndex, 0)) {
     startIndex0 = 0;
   }
-  if (typeof startIndex0 !== 'number') return $.indexOf2$bailout(a, element, startIndex, endIndex, 3, a, endIndex, startIndex0);
+  if (typeof startIndex0 !== 'number') return $.indexOf$bailout(a, element, startIndex, endIndex, 3, a, endIndex, startIndex0);
   for (var i = startIndex0; i < endIndex; i = i + 1) {
     if (i !== (i | 0)) throw $.iae(i);
     var t0 = a.length;
@@ -12237,21 +12279,13 @@ $.indexOf$1 = function(receiver, element) {
 
 $._anchorYHandlers = function() {
   if ($.eqNullB($._cacheYAnchorHandlers)) {
-    $._cacheYAnchorHandlers = [new $.Closure36(), new $.Closure37(), new $.Closure38(), new $.Closure39(), new $.Closure40()];
+    $._cacheYAnchorHandlers = [new $.Closure31(), new $.Closure32(), new $.Closure33(), new $.Closure34(), new $.Closure35()];
   }
   return $._cacheYAnchorHandlers;
 };
 
 $._BroadcastListeners$1 = function(_owner) {
   return new $._BroadcastListeners($.HashMapImplementation$0(), _owner);
-};
-
-$.forEach = function(receiver, f) {
-  if ($.isJsArray(receiver) !== true) {
-    return receiver.forEach$1(f);
-  } else {
-    return $.forEach2(receiver, f);
-  }
 };
 
 $.StringBufferImpl$1 = function(content$) {
@@ -12273,32 +12307,13 @@ $.substring$1 = function(receiver, startIndex) {
   return $.substring$2(receiver, startIndex, (void 0));
 };
 
-$.forEach2 = function(iterable, f) {
-  for (var t0 = $.iterator(iterable); t0.hasNext$0() === true; ) {
-    f.$call$1(t0.next$0());
+$._getSetByApp = function(view, val, nm) {
+  if (!(val === (void 0)) && !$.eqB(val, $.index(view.get$dataAttributes(), nm))) {
+    var t0 = val;
+  } else {
+    t0 = (void 0);
   }
-};
-
-$.indexOf = function(a, element, startIndex, endIndex) {
-  if (typeof a !== 'string' && (typeof a !== 'object'||a.constructor !== Array)) return $.indexOf$bailout(a, element, startIndex, endIndex,  0);
-  if (typeof endIndex !== 'number') return $.indexOf$bailout(a, element, startIndex, endIndex,  0);
-  if ($.geB(startIndex, a.length)) {
-    return -1;
-  }
-  var startIndex0 = startIndex;
-  if ($.ltB(startIndex, 0)) {
-    startIndex0 = 0;
-  }
-  if (typeof startIndex0 !== 'number') return $.indexOf$bailout(a, element, startIndex, endIndex, 3, a, endIndex, startIndex0);
-  for (var i = startIndex0; i < endIndex; i = i + 1) {
-    if (i !== (i | 0)) throw $.iae(i);
-    var t0 = a.length;
-    if (i < 0 || i >= t0) throw $.ioore(i);
-    if ($.eqB(a[i], element)) {
-      return i;
-    }
-  }
-  return -1;
+  return t0;
 };
 
 $._SharedWorkerContextEventsImpl$1 = function(_ptr) {
@@ -12307,6 +12322,14 @@ $._SharedWorkerContextEventsImpl$1 = function(_ptr) {
 
 $._IDBVersionChangeRequestEventsImpl$1 = function(_ptr) {
   return new $._IDBVersionChangeRequestEventsImpl(_ptr);
+};
+
+$._OnDemandMap$1 = function(_creator) {
+  return new $._OnDemandMap((void 0), _creator);
+};
+
+$.onDemand = function(creator) {
+  return $._OnDemandMap$1(creator);
 };
 
 $.FutureNotCompleteException$0 = function() {
@@ -12428,6 +12451,41 @@ $.tokenize$bailout = function(source, state, env0, env1) {
   }
 };
 
+$.encodeId$bailout = function(v, prefix, state, env0) {
+  switch (state) {
+    case 1:
+      t0 = env0;
+      break;
+  }
+  switch (state) {
+    case 0:
+    case 1:
+      state = 0;
+      var sb = $.StringBufferImpl$1('');
+      if (!(prefix === (void 0))) {
+        sb.add$1(prefix);
+      }
+      var v0 = v;
+      L0: while (true) {
+        var v2 = $.mod(v0, 37);
+        if ($.leB(v2, 9)) {
+          sb.add$1($.addCharCodes('0', v2));
+        } else {
+          if ($.eqB(v2, 36)) {
+            var t1 = '_';
+          } else {
+            t1 = $.addCharCodes('a', $.sub(v2, 10));
+          }
+          sb.add$1(t1);
+        }
+        var v1 = $.tdiv(v0, 37);
+        v0 = v1;
+        if (!$.geB(v1, 1)) break L0;
+      }
+      return sb.toString$0();
+  }
+};
+
 $.copy$bailout = function(src, srcStart, dst, dstStart, count, state, env0, env1, env2, env3, env4) {
   switch (state) {
     case 1:
@@ -12498,41 +12556,6 @@ $.copy$bailout = function(src, srcStart, dst, dstStart, count, state, env0, env1
           j0 = $.add(j0, 1);
         }
       }
-  }
-};
-
-$.encodeId$bailout = function(v, prefix, state, env0) {
-  switch (state) {
-    case 1:
-      t0 = env0;
-      break;
-  }
-  switch (state) {
-    case 0:
-    case 1:
-      state = 0;
-      var sb = $.StringBufferImpl$1('');
-      if (!(prefix === (void 0))) {
-        sb.add$1(prefix);
-      }
-      var v0 = v;
-      L0: while (true) {
-        var v2 = $.mod(v0, 37);
-        if ($.leB(v2, 9)) {
-          sb.add$1($.addCharCodes('0', v2));
-        } else {
-          if ($.eqB(v2, 36)) {
-            var t1 = '_';
-          } else {
-            t1 = $.addCharCodes('a', $.sub(v2, 10));
-          }
-          sb.add$1(t1);
-        }
-        var v1 = $.tdiv(v0, 37);
-        v0 = v1;
-        if (!$.geB(v1, 1)) break L0;
-      }
-      return sb.toString$0();
   }
 };
 
@@ -12855,7 +12878,7 @@ $.encodeXML$bailout = function(txt, multiline, maxlength, pre, state, env0, env1
           if (!$.ltB(j2, tl)) break L1;
           var k0 = k;
           var cc = $.index(txt, j2);
-          var enc0 = $.CTC55.operator$index$1(cc);
+          var enc0 = $.CTC11.operator$index$1(cc);
           if (!$.eqNullB(enc0)) {
             $.add$1($.add$1($.add$1(out.add$1($.substring$2(txt, k, j2)), '&'), enc0), ';');
             k0 = j2 + 1;
@@ -12887,7 +12910,7 @@ $.encodeXML$bailout = function(txt, multiline, maxlength, pre, state, env0, env1
         L2: while (true) {
           if (!$.ltB(j4, tl)) break L2;
           var k3 = k2;
-          var enc2 = $.CTC55.operator$index$1($.index(txt, j4));
+          var enc2 = $.CTC11.operator$index$1($.index(txt, j4));
           k3 = k2;
           if (!$.eqNullB(enc2)) {
             $.add$1($.add$1($.add$1(out.add$1($.substring$2(txt, k2, j4)), '&'), enc2), ';');
@@ -12946,67 +12969,70 @@ Isolate.makeConstantList = function(list) {
   return list;
 };
 $.CTC2 = Isolate.makeConstantList([]);
-$.CTC36 = Isolate.makeConstantList(['north start', 'north center', 'north end', 'south start', 'south center', 'south end', 'west start', 'west center', 'west end', 'east start', 'east center', 'east end', 'top left', 'top center', 'top right', 'center left', 'center center', 'center right', 'bottom left', 'bottom center', 'bottom right']);
 $.CTC15 = Isolate.makeConstantList([1, 0]);
 $.CTC16 = Isolate.makeConstantList([2, 0]);
 $.CTC17 = Isolate.makeConstantList([3, 0]);
+$.CTC23 = Isolate.makeConstantList([0, 3]);
 $.CTC18 = Isolate.makeConstantList([1, 4]);
 $.CTC19 = Isolate.makeConstantList([2, 4]);
 $.CTC20 = Isolate.makeConstantList([3, 4]);
-$.CTC21 = Isolate.makeConstantList([0, 1]);
 $.CTC22 = Isolate.makeConstantList([0, 2]);
-$.CTC23 = Isolate.makeConstantList([0, 3]);
+$.CTC = new Isolate.$isolateProperties.UIException('Only one activity is allowed');
+$.CTC40 = new Isolate.$isolateProperties.ConstantMap(Isolate.$isolateProperties.CTC2, {}, 0);
+$.CTC21 = Isolate.makeConstantList([0, 1]);
+$.CTC3 = new Isolate.$isolateProperties._DeletedKeySentinel();
+$.CTC26 = Isolate.makeConstantList([4, 3]);
 $.CTC24 = Isolate.makeConstantList([4, 1]);
 $.CTC25 = Isolate.makeConstantList([4, 2]);
-$.CTC26 = Isolate.makeConstantList([4, 3]);
-$.CTC27 = Isolate.makeConstantList([1, 1]);
-$.CTC28 = Isolate.makeConstantList([2, 1]);
 $.CTC29 = Isolate.makeConstantList([3, 1]);
-$.CTC30 = Isolate.makeConstantList([1, 2]);
-$.CTC31 = Isolate.makeConstantList([2, 2]);
+$.CTC28 = Isolate.makeConstantList([2, 1]);
+$.CTC38 = new Isolate.$isolateProperties.JSSyntaxRegExp(false, false, '([-]?[0-9]+)');
 $.CTC32 = Isolate.makeConstantList([3, 2]);
 $.CTC33 = Isolate.makeConstantList([1, 3]);
+$.CTC30 = Isolate.makeConstantList([1, 2]);
+$.CTC10 = Isolate.makeConstantList(['<', '>', '&', '"']);
+$.CTC11 = new Isolate.$isolateProperties.ConstantMap(Isolate.$isolateProperties.CTC10, {'<': 'lt', '>': 'gt', '&': 'amp', '"': 'quot'}, 4);
+$.CTC27 = Isolate.makeConstantList([1, 1]);
 $.CTC34 = Isolate.makeConstantList([2, 3]);
+$.CTC48 = new Isolate.$isolateProperties.JSSyntaxRegExp(false, false, '(safari)[ /]([\\w.]+)');
+$.CTC41 = new Isolate.$isolateProperties._EmptyColl();
+$.CTC42 = new Isolate.$isolateProperties._EmptyIter();
+$.CTC31 = Isolate.makeConstantList([2, 2]);
+$.CTC43 = new Isolate.$isolateProperties._AnchorOfRoot();
+$.CTC36 = Isolate.makeConstantList(['north start', 'north center', 'north end', 'south start', 'south center', 'south end', 'west start', 'west center', 'west end', 'east start', 'east center', 'east end', 'top left', 'top center', 'top right', 'center left', 'center center', 'center right', 'bottom left', 'bottom center', 'bottom right']);
+$.CTC61 = new Isolate.$isolateProperties.Object();
 $.CTC35 = Isolate.makeConstantList([3, 3]);
+$.CTC45 = new Isolate.$isolateProperties.JSSyntaxRegExp(false, false, '(webkit)[ /]([\\w.]+)');
+$.CTC54 = Isolate.makeConstantList(['left', 'top', 'right', 'bottom', 'width', 'height', 'display']);
+$.CTC12 = new Isolate.$isolateProperties.IllegalAccessException();
 $.CTC37 = new Isolate.$isolateProperties.ConstantMap(Isolate.$isolateProperties.CTC36, {'north start': Isolate.$isolateProperties.CTC15, 'north center': Isolate.$isolateProperties.CTC16, 'north end': Isolate.$isolateProperties.CTC17, 'south start': Isolate.$isolateProperties.CTC18, 'south center': Isolate.$isolateProperties.CTC19, 'south end': Isolate.$isolateProperties.CTC20, 'west start': Isolate.$isolateProperties.CTC21, 'west center': Isolate.$isolateProperties.CTC22, 'west end': Isolate.$isolateProperties.CTC23, 'east start': Isolate.$isolateProperties.CTC24, 'east center': Isolate.$isolateProperties.CTC25, 'east end': Isolate.$isolateProperties.CTC26, 'top left': Isolate.$isolateProperties.CTC27, 'top center': Isolate.$isolateProperties.CTC28, 'top right': Isolate.$isolateProperties.CTC29, 'center left': Isolate.$isolateProperties.CTC30, 'center center': Isolate.$isolateProperties.CTC31, 'center right': Isolate.$isolateProperties.CTC32, 'bottom left': Isolate.$isolateProperties.CTC33, 'bottom center': Isolate.$isolateProperties.CTC34, 'bottom right': Isolate.$isolateProperties.CTC35}, 21);
-$.CTC = new Isolate.$isolateProperties.UIException('Only one activity is allowed');
-$.CTC3 = new Isolate.$isolateProperties._DeletedKeySentinel();
-$.CTC40 = new Isolate.$isolateProperties.JSSyntaxRegExp(false, false, '([-]?[0-9]+)');
-$.CTC54 = Isolate.makeConstantList(['<', '>', '&', '"']);
-$.CTC55 = new Isolate.$isolateProperties.ConstantMap(Isolate.$isolateProperties.CTC54, {'<': 'lt', '>': 'gt', '&': 'amp', '"': 'quot'}, 4);
-$.CTC46 = new Isolate.$isolateProperties.JSSyntaxRegExp(false, false, '(safari)[ /]([\\w.]+)');
-$.CTC59 = new Isolate.$isolateProperties.Object();
-$.CTC43 = new Isolate.$isolateProperties.JSSyntaxRegExp(false, false, '(webkit)[ /]([\\w.]+)');
-$.CTC53 = Isolate.makeConstantList(['left', 'top', 'right', 'bottom', 'width', 'height', 'display']);
-$.CTC38 = new Isolate.$isolateProperties.IllegalAccessException();
-$.CTC47 = new Isolate.$isolateProperties.JSSyntaxRegExp(false, false, 'OS[ /]([\\w_]+) like Mac OS');
+$.CTC49 = new Isolate.$isolateProperties.JSSyntaxRegExp(false, false, 'OS[ /]([\\w_]+) like Mac OS');
 $.CTC4 = new Isolate.$isolateProperties.NoMoreElementsException();
 $.CTC5 = new Isolate.$isolateProperties.EmptyQueueException();
-$.CTC6 = new Isolate.$isolateProperties.UIException('type required');
-$.CTC12 = new Isolate.$isolateProperties.UnsupportedOperationException('');
-$.CTC13 = new Isolate.$isolateProperties.NotImplementedException();
-$.CTC49 = new Isolate.$isolateProperties.JSSyntaxRegExp(false, false, '(mozilla)(?:.*? rv:([\\w.]+))?');
-$.CTC48 = new Isolate.$isolateProperties.JSSyntaxRegExp(false, false, '(msie) ([\\w.]+)');
+$.CTC13 = new Isolate.$isolateProperties.UnsupportedOperationException('');
+$.CTC57 = new Isolate.$isolateProperties.NotImplementedException();
+$.CTC51 = new Isolate.$isolateProperties.JSSyntaxRegExp(false, false, '(mozilla)(?:.*? rv:([\\w.]+))?');
+$.CTC50 = new Isolate.$isolateProperties.JSSyntaxRegExp(false, false, '(msie) ([\\w.]+)');
 $.CTC8 = new Isolate.$isolateProperties.UnsupportedOperationException('Not IdSpace');
-$.CTC10 = Isolate.makeConstantList(['click', 'blur', 'focus', 'change', 'mouseDown', 'mouseUp', 'mouseMove', 'mouseOver', 'mouseOut', 'mouseWheel']);
-$.CTC58 = new Isolate.$isolateProperties.JSSyntaxRegExp(false, false, 'Chrome|DumpRenderTree');
-$.CTC51 = new Isolate.$isolateProperties.ConstantMap(Isolate.$isolateProperties.CTC2, {}, 0);
-$.CTC44 = new Isolate.$isolateProperties.JSSyntaxRegExp(false, false, '(chrome)[ /]([\\w.]+)');
-$.CTC42 = new Isolate.$isolateProperties.SystemException('document not ready yet');
-$.CTC9 = new Isolate.$isolateProperties.UIException('listener required');
+$.CTC6 = new Isolate.$isolateProperties.UIException('type required');
+$.CTC56 = Isolate.makeConstantList(['blur', 'click', 'focus', 'mouseDown', 'mouseMove', 'mouseOut', 'mouseOver', 'mouseUp', 'mouseWheel', 'scroll']);
+$.CTC60 = new Isolate.$isolateProperties.JSSyntaxRegExp(false, false, 'Chrome|DumpRenderTree');
+$.CTC46 = new Isolate.$isolateProperties.JSSyntaxRegExp(false, false, '(chrome)[ /]([\\w.]+)');
+$.CTC44 = new Isolate.$isolateProperties.SystemException('document not ready yet');
 $.CTC14 = new Isolate.$isolateProperties.IllegalArgumentException('Invalid list length');
-$.CTC50 = new Isolate.$isolateProperties.JSSyntaxRegExp(false, false, '^#[_a-zA-Z]\\w*$');
+$.CTC52 = new Isolate.$isolateProperties.JSSyntaxRegExp(false, false, '^#[_a-zA-Z]\\w*$');
 $.CTC39 = new Isolate.$isolateProperties.JSSyntaxRegExp(false, false, '(\\w+)');
-$.CTC45 = new Isolate.$isolateProperties.JSSyntaxRegExp(false, false, 'android[ /]([\\w.]+)');
-$.CTC56 = new Isolate.$isolateProperties._SimpleClientRect(0, 0, 0, 0);
-$.CTC57 = new Isolate.$isolateProperties.EmptyElementRect(Isolate.$isolateProperties.CTC2, Isolate.$isolateProperties.CTC56, Isolate.$isolateProperties.CTC56, Isolate.$isolateProperties.CTC56, Isolate.$isolateProperties.CTC56);
-$.CTC52 = Isolate.makeConstantList(['animation', 'animation-delay', 'animation-direction', 'animation-duration', 'animation-fill-mode', 'animation-iteration-count', 'animation-name', 'animation-play-state', 'animation-timing-function', 'appearance', 'backface-visibility', 'background-composite', 'border-after', 'border-after-color', 'border-after-style', 'border-after-width', 'border-before', 'border-before-color', 'border-before-style', 'border-before-width', 'border-end', 'border-end-color', 'border-end-style', 'border-end-width', 'border-fit', 'border-horizontal-spacing', 'border-start', 'border-start-color', 'border-start-style', 'border-start-width', 'border-vertical-spacing', 'box-align', 'box-direction', 'box-flex', 'box-flex-group', 'box-lines', 'box-ordinal-group', 'box-orient', 'box-pack', 'box-reflect', 'color-correction', 'column-break-after', 'column-break-before', 'column-break-inside', 'column-count', 'column-gap', 'column-rule', 'column-rule-color', 'column-rule-style', 'column-rule-width', 'column-span', 'column-width', 'columns', 'filter', 'flex-align', 'flex-flow', 'flex-order', 'flex-pack', 'flow-from', 'flow-into', 'font-feature-settings', 'font-size-delta', 'font-smoothing', 'highlight', 'hyphenate-character', 'hyphenate-limit-after', 'hyphenate-limit-before', 'hyphenate-limit-lines', 'hyphens', 'line-box-contain', 'line-break', 'line-clamp', 'locale', 'logical-height', 'logical-width', 'margin-after', 'margin-after-collapse', 'margin-before', 'margin-before-collapse', 'margin-bottom-collapse', 'margin-collapse', 'margin-end', 'margin-start', 'margin-top-collapse', 'marquee', 'marquee-direction', 'marquee-increment', 'marquee-repetition', 'marquee-speed', 'marquee-style', 'mask', 'mask-attachment', 'mask-box-image', 'mask-box-image-outset', 'mask-box-image-repeat', 'mask-box-image-slice', 'mask-box-image-source', 'mask-box-image-width', 'mask-clip', 'mask-composite', 'mask-image', 'mask-origin', 'mask-position', 'mask-position-x', 'mask-position-y', 'mask-repeat', 'mask-repeat-x', 'mask-repeat-y', 'mask-size', 'match-nearest-mail-blockquote-color', 'max-logical-height', 'max-logical-width', 'min-logical-height', 'min-logical-width', 'nbsp-mode', 'padding-after', 'padding-before', 'padding-end', 'padding-start', 'perspective', 'perspective-origin', 'perspective-origin-x', 'perspective-origin-y', 'region-break-after', 'region-break-before', 'region-break-inside', 'region-overflow', 'rtl-ordering', 'tap-highlight-color', 'text-combine', 'text-decorations-in-effect', 'text-emphasis', 'text-emphasis-color', 'text-emphasis-position', 'text-emphasis-style', 'text-fill-color', 'text-orientation', 'text-security', 'text-size-adjust', 'text-stroke', 'text-stroke-color', 'text-stroke-width', 'transform', 'transform-origin', 'transform-origin-x', 'transform-origin-y', 'transform-origin-z', 'transform-style', 'transition', 'transition-delay', 'transition-duration', 'transition-property', 'transition-timing-function', 'user-drag', 'user-modify', 'user-select', 'wrap-shape', 'writing-mode']);
-$.CTC11 = new Isolate.$isolateProperties.IllegalArgumentException('null');
+$.CTC47 = new Isolate.$isolateProperties.JSSyntaxRegExp(false, false, 'android[ /]([\\w.]+)');
+$.CTC55 = new Isolate.$isolateProperties.UIException('listener required');
+$.CTC58 = new Isolate.$isolateProperties._SimpleClientRect(0, 0, 0, 0);
+$.CTC59 = new Isolate.$isolateProperties.EmptyElementRect(Isolate.$isolateProperties.CTC2, Isolate.$isolateProperties.CTC58, Isolate.$isolateProperties.CTC58, Isolate.$isolateProperties.CTC58, Isolate.$isolateProperties.CTC58);
+$.CTC53 = Isolate.makeConstantList(['animation', 'animation-delay', 'animation-direction', 'animation-duration', 'animation-fill-mode', 'animation-iteration-count', 'animation-name', 'animation-play-state', 'animation-timing-function', 'appearance', 'backface-visibility', 'background-composite', 'border-after', 'border-after-color', 'border-after-style', 'border-after-width', 'border-before', 'border-before-color', 'border-before-style', 'border-before-width', 'border-end', 'border-end-color', 'border-end-style', 'border-end-width', 'border-fit', 'border-horizontal-spacing', 'border-start', 'border-start-color', 'border-start-style', 'border-start-width', 'border-vertical-spacing', 'box-align', 'box-direction', 'box-flex', 'box-flex-group', 'box-lines', 'box-ordinal-group', 'box-orient', 'box-pack', 'box-reflect', 'color-correction', 'column-break-after', 'column-break-before', 'column-break-inside', 'column-count', 'column-gap', 'column-rule', 'column-rule-color', 'column-rule-style', 'column-rule-width', 'column-span', 'column-width', 'columns', 'filter', 'flex-align', 'flex-flow', 'flex-order', 'flex-pack', 'flow-from', 'flow-into', 'font-feature-settings', 'font-size-delta', 'font-smoothing', 'highlight', 'hyphenate-character', 'hyphenate-limit-after', 'hyphenate-limit-before', 'hyphenate-limit-lines', 'hyphens', 'line-box-contain', 'line-break', 'line-clamp', 'locale', 'logical-height', 'logical-width', 'margin-after', 'margin-after-collapse', 'margin-before', 'margin-before-collapse', 'margin-bottom-collapse', 'margin-collapse', 'margin-end', 'margin-start', 'margin-top-collapse', 'marquee', 'marquee-direction', 'marquee-increment', 'marquee-repetition', 'marquee-speed', 'marquee-style', 'mask', 'mask-attachment', 'mask-box-image', 'mask-box-image-outset', 'mask-box-image-repeat', 'mask-box-image-slice', 'mask-box-image-source', 'mask-box-image-width', 'mask-clip', 'mask-composite', 'mask-image', 'mask-origin', 'mask-position', 'mask-position-x', 'mask-position-y', 'mask-repeat', 'mask-repeat-x', 'mask-repeat-y', 'mask-size', 'match-nearest-mail-blockquote-color', 'max-logical-height', 'max-logical-width', 'min-logical-height', 'min-logical-width', 'nbsp-mode', 'padding-after', 'padding-before', 'padding-end', 'padding-start', 'perspective', 'perspective-origin', 'perspective-origin-x', 'perspective-origin-y', 'region-break-after', 'region-break-before', 'region-break-inside', 'region-overflow', 'rtl-ordering', 'tap-highlight-color', 'text-combine', 'text-decorations-in-effect', 'text-emphasis', 'text-emphasis-color', 'text-emphasis-position', 'text-emphasis-style', 'text-fill-color', 'text-orientation', 'text-security', 'text-size-adjust', 'text-stroke', 'text-stroke-color', 'text-stroke-width', 'transform', 'transform-origin', 'transform-origin-x', 'transform-origin-y', 'transform-origin-z', 'transform-style', 'transition', 'transition-delay', 'transition-duration', 'transition-property', 'transition-timing-function', 'user-drag', 'user-modify', 'user-select', 'wrap-shape', 'writing-mode']);
+$.CTC9 = new Isolate.$isolateProperties.IllegalArgumentException('null');
 $.CTC7 = new Isolate.$isolateProperties.UnsupportedOperationException('Cannot modify');
-$.CTC41 = new Isolate.$isolateProperties._AnchorOfRoot();
 $._pendingRequests = (void 0);
-$._cachedBrowserPrefix = (void 0);
 $._CC_A = (void 0);
+$._cachedBrowserPrefix = (void 0);
+$._mntCnt = 0;
 $._firstMeasurementRequest = true;
 $._nextMeasurementFrameScheduled = false;
 $._pendingMeasurementFrameCallbacks = (void 0);
@@ -13025,7 +13051,6 @@ $._broadcaster = (void 0);
 $._cacheYAnchorHandlers = (void 0);
 $.viewConfig = (void 0);
 $._CC_Z = (void 0);
-$._enterDocCnt = 0;
 $.prefix = (void 0);
 $._getTypeNameOf = (void 0);
 $._illnms = (void 0);
@@ -13534,7 +13559,7 @@ $.$defineNativeClass('HTMLDocument', ["title!", "body?"], {
   return this.querySelector(selectors);;
  },
  query$1: function(selectors) {
-  if ($.CTC50.hasMatch$1(selectors) === true) {
+  if ($.CTC52.hasMatch$1(selectors) === true) {
     return this.$dom_getElementById$1($.substring$1(selectors, 1));
   }
   return this.$dom_querySelector$1(selectors);
@@ -13568,13 +13593,16 @@ $.$defineNativeClass('DocumentFragment', [], {
  get$style: function() {
   return $.Element$tag('div').get$style();
  },
+ get$dataAttributes: function() {
+  return $.CTC40;
+ },
  get$classes: function() {
   var t0 = $.HashSetImplementation$0();
   $.setRuntimeTypeInfo(t0, ({E: 'String'}));
   return t0;
  },
  get$attributes: function() {
-  return $.CTC51;
+  return $.CTC40;
  },
  get$parent: function() {
   return;
@@ -13744,6 +13772,9 @@ $.$defineNativeClass('Element', ["title!", "style?", "offsetParent?", "nextEleme
   return $._createMeasurementFuture(t0, t1);
  },
  rect$4: function(arg0, arg1, arg2, arg3) { return this.get$rect().$call$4(arg0, arg1, arg2, arg3); },
+ get$dataAttributes: function() {
+  return $._DataAttributeMap$1(this.get$attributes());
+ },
  get$classes: function() {
   if (Object.getPrototypeOf(this).hasOwnProperty('get$classes')) {
     return $._CssClassSet$1(this);
@@ -15015,20 +15046,6 @@ $.$defineNativeClass('SVGElement', [], {
 });
 
 $.$defineNativeClass('SVGElementInstance', ["previousSibling?", "nextSibling?", "lastChild?", "firstChild?"], {
- removeEventListener$3: function(type, listener, useCapture) {
-  return this.removeEventListener(type,$.convertDartClosureToJS(listener),useCapture);
- },
- removeEventListener$2: function(type,listener) {
-  listener = $.convertDartClosureToJS(listener);
-  return this.removeEventListener(type,listener);
-},
- addEventListener$3: function(type, listener, useCapture) {
-  return this.addEventListener(type,$.convertDartClosureToJS(listener),useCapture);
- },
- addEventListener$2: function(type,listener) {
-  listener = $.convertDartClosureToJS(listener);
-  return this.addEventListener(type,listener);
-},
  get$on: function() {
   return $._SVGElementInstanceEventsImpl$1(this);
  }
@@ -15465,6 +15482,9 @@ $.$defineNativeClass('ScriptProfileNode', ["children?"], {
 });
 
 $.$defineNativeClass('HTMLSelectElement', ["value=", "type?", "size?", "name=", "length="], {
+ add$2: function(element, before) {
+  return this.add(element,before);
+ },
  is$Element: function() { return true; }
 });
 
@@ -15548,12 +15568,12 @@ $.$defineNativeClass('Storage', [], {
  },
  getValues$0: function() {
   var values = [];
-  this.forEach$1(new $.Closure29(values));
+  this.forEach$1(new $.Closure23(values));
   return values;
  },
  getKeys$0: function() {
   var keys = [];
-  this.forEach$1(new $.Closure21(keys));
+  this.forEach$1(new $.Closure73(keys));
   return keys;
  },
  forEach$1: function(f) {

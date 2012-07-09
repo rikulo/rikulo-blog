@@ -1,0 +1,81 @@
+.div-button-a {
+    display: block;
+    height: 100%;
+}
+.div-button-hidden-txt {
+    display: block;
+    overflow: hidden;
+    text-indent: 180%;
+    white-space: nowrap;
+}
+.clearfix:before, .clearfix:after {
+    content: "";
+    display: table;
+}
+.clearfix:after {
+    clear: both;
+}
+.clearfix {
+}
+#rikulo-template {
+    background: url("http://10.1.3.113:8090/resource/img/template/title.png") repeat-x scroll 0 0 transparent;
+}
+#template-inner {
+    margin: 0 auto;
+    width: 960px;
+}
+#page-banner {
+    height: 96px;
+    margin-bottom: 44px;
+}
+#page-banner h1 {
+    color: #F2F2E1;
+    font-family: 'Oswald',sans-serif;
+    font-size: 48px;
+    padding-top: 16px;
+    text-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+    text-transform: uppercase;
+}
+#page-content {
+    color: #0D0D0D;
+    font-family: 'Asap',sans-serif;
+}
+#page-content h2 {
+    font-family: 'Oswald',sans-serif;
+    font-size: 20px;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+}
+#page-content {
+}
+#blog-content {
+    width: 690px;
+    float: left;
+}
+#side-bar {
+    float: left;
+}
+#page-content .column {
+    float: left;
+    margin: 0 40px 0 0;
+    width: 400px;
+}
+#page-content p, #page-content a {
+    font-size: 14px;
+}
+#page-content p {
+    padding-top: 1px;
+}
+#page-content a {
+    color: #914503;
+}
+#page-content a:hover {
+    color: #D49B50;
+}
+#page-content ul.benefits {
+    margin: 20px 0 0 25px;
+}
+
+#page-content .how li {
+    margin-bottom: 4px;
+}

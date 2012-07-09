@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:og="http://ogp.me/ns#">
+<head>
+    {% block head %}
+
+    <title>{% block title %} Blog | Rikulo {% endblock title %}</title>
+    <meta charset="utf-8" />
+    {% endblock head %}
+
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />    
+    <link rel="stylesheet" type="text/css" href="http://10.1.3.113:8090/less/template" />
+    <link href='http://fonts.googleapis.com/css?family=Oswald|Asap|Lora' rel='stylesheet' type='text/css' />
+    
+    <link rel="stylesheet" type="text/css" href="/theme/css/blog.css" />
+
+    <script type="text/javascript" src="/resource/js/lib/jquery-1.6.2.min.js" ></script>
+    
+    <!--[if lt IE 9]>
+        <script src="/resource/js/lib/html5.js"></script>
+        <![endif]-->
+    </head>
+    <!--[if lte IE 6]><body id="zbody" class="ie ie6 ie67 ie678"><![endif]-->
+    <!--[if IE 7]><body id="zbody" class="ie ie7 ie67 ie78 ie678 ie789"><![endif]-->
+    <!--[if IE 8]><body id="zbody" class="ie ie8 ie678 ie89"><![endif]-->
+    <!--[if gte IE 9]><body id="zbody" class="ie9"><![endif]-->
+    <!--[if !IE]>--><body id="zbody" class=""><!--<![endif]-->
+    <div id="rikulo-container">
+        <div id="index-header">
+            <h1 id="rikulo-logo">
+                <em><a href="/" rel="canonical" title="Rikulo Home" name="top"> <img
+                    width="140" src="/resource/img/template/rikulo_logo.png"
+                    title="Rikulo" alt="Rikulo" class="logo-img">Rikulo</a>
+                </em>
+            </h1>
+
+
+
+            <div id="main_menu">
+                <nav class="navigation_menu"> 
+                    <header>
+                        <h5>Navigation Menu</h5>
+                    </header>
+                    <ul class='menu new-style'>
+                        <li class='menuitem '>
+                            <div class="menuitem-right">
+                                <a href="/demo/" class="menulink">Demo</a>
+                            </div>
+                        </li>
+                        <li class='menuitem '>
+                            <div class="menuitem-right">
+                                <a href="/contribute/" class="menulink">Contribute</a>
+                            </div>
+                        </li>
+                        <li class='menuitem '>
+                            <div class="menuitem-right">
+                                <a href="/discuss/" class="menulink">Discuss</a>
+                            </div>
+                        </li>
+                        <li class='menuitem '>
+                            <div class="menuitem-right">
+                                <a href="/learn/" class="menulink">Learn</a>
+                            </div>
+                        </li>
+                        <li class='menuitem menuitem-sel'>
+                            <div class="menuitem-right">
+                                <a href="/blog/" class="menulink">Blog</a>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+        </div>
+
+        <div id="rikulo-template">
+            <div id="template-inner">   
+                <div id="page-banner">
+                    <h1 class="page-name">Blog</h1>
+                </div>
+
+                <div id="page-content" class="clearfix">
+
+                    <div id="blog-content">
+                        {% block content %}
+                        {% endblock %}
+                    </div>
+
+                    <div id="categories-bar">
+                        <h1>CATEGORIES</h1>
+                        {% for cat, null in categories %}
+                        <span {% if cat == category %} class="active"{% endif %}><a href="{{ SITEURL }}/category/{{ cat }}.html">{{ cat }}</a></li>
+                        {% endfor %}
+                    </div>                   
+                </div>
+            </div>
+        </div> 
+
+        <!-- Google  -->
+
+        <!-- Google  -->
+        <footer id="footer">
+            <div id="footer-inner">
+                <div id="footer-txt">
+                    Rikulo is a registered trademark of Potix Corporation.<br />
+                    Copyright &copy; 2012 Potix Corporation. All rights reserved.</div>
+                    <div id="sns-items">
+                        <ul>
+                            <li class="label">Follow us on :</li>
+                            <li class="sns-btn rss"><a href="http://feeds.feedburner.com/rikulo" title="ZK RSS">Rikulo RSS</a></li>
+                            <li class="sns-btn twitter"><a href="http://twitter.com/rikuloui" title="ZK Twitter">twitter @rikuloui </a></li>
+                            <li class="sns-btn facebook"><a href="http://www.facebook.com/rikulo" title="ZK Facebook">facebook</a></li>
+                            <li class="sns-btn googleplus"><a href="https://plus.google.com/u/0/b/117602514255061155793/117602514255061155793" title="Rikulo GooglePlus">Google plus</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </footer>
+        </div>
+    </body>
+</html>
