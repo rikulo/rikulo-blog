@@ -1,5 +1,5 @@
 
-PELICAN=pelican
+PELICAN=./pelican/run.py
 PELICANOPTS=None
 
 BASEDIR=$(PWD)
