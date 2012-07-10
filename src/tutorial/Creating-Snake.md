@@ -2,7 +2,6 @@ Date: 2012-6-27
 Title: Creating Snake
 Tags: snake, game, core, dart
 Author: Timothy Clare
-Slug: A tutorial detailing how to create a snake game in Dart using Rikulo
 summary: This blog post details how to create a Snake game using Rikulo, Dart, HTML 5 and the Canvas.
 
 #Introduction
