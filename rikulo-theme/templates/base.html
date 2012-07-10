@@ -9,12 +9,13 @@
 
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="chrome=1" />    
-    <link rel="stylesheet" type="text/css" href="http://10.1.3.113:8090/less/template" />
+    <link rel="stylesheet" type="text/css" href="http://{{ MAINSITE }}/less/template" />
     <link href='http://fonts.googleapis.com/css?family=Oswald|Asap|Lora' rel='stylesheet' type='text/css' />
-    
+    <link rel="shortcut icon" type="image/ico" href="http://{{ MAINSITE }}/resource/img/favicon.ico" >
     <link rel="stylesheet" type="text/css" href="/theme/css/blog.css" />
+    <link rel="stylesheet" type="text/css" href="/theme/css/pygment.css" />
 
-    <script type="text/javascript" src="/resource/js/lib/jquery-1.6.2.min.js" ></script>
+    <script type="text/javascript" src="http://{{ MAINSITE }}/resource/js/lib/jquery-1.6.2.min.js" ></script>
     
     <!--[if lt IE 9]>
         <script src="/resource/js/lib/html5.js"></script>
@@ -29,7 +30,7 @@
         <div id="index-header">
             <h1 id="rikulo-logo">
                 <em><a href="/" rel="canonical" title="Rikulo Home" name="top"> <img
-                    width="140" src="/resource/img/template/rikulo_logo.png"
+                    width="140" src="http://{{ MAINSITE }}/resource/img/template/rikulo_logo.png"
                     title="Rikulo" alt="Rikulo" class="logo-img">Rikulo</a>
                 </em>
             </h1>
@@ -44,27 +45,22 @@
                     <ul class='menu new-style'>
                         <li class='menuitem '>
                             <div class="menuitem-right">
-                                <a href="/demo/" class="menulink">Demo</a>
+                                <a href="http://www.rikulo.org/contribute/" class="menulink">Contribute</a>
                             </div>
                         </li>
                         <li class='menuitem '>
                             <div class="menuitem-right">
-                                <a href="/contribute/" class="menulink">Contribute</a>
+                                <a href="http://www.rikulo.org/discuss/" class="menulink">Discuss</a>
                             </div>
                         </li>
                         <li class='menuitem '>
                             <div class="menuitem-right">
-                                <a href="/discuss/" class="menulink">Discuss</a>
-                            </div>
-                        </li>
-                        <li class='menuitem '>
-                            <div class="menuitem-right">
-                                <a href="/learn/" class="menulink">Learn</a>
+                                <a href="http://www.rikulo.org/learn/" class="menulink">Learn</a>
                             </div>
                         </li>
                         <li class='menuitem menuitem-sel'>
                             <div class="menuitem-right">
-                                <a href="/blog/" class="menulink">Blog</a>
+                                <a href="http://blog.rikulo.org" class="menulink">Blog</a>
                             </div>
                         </li>
                     </ul>
@@ -87,10 +83,12 @@
                     </div>
 
                     <div id="categories-bar">
-                        <h1>CATEGORIES</h1>
-                        {% for cat, null in categories %}
-                        <span {% if cat == category %} class="active"{% endif %}><a href="{{ SITEURL }}/category/{{ cat }}.html">{{ cat }}</a></li>
-                        {% endfor %}
+                        <h2>CATEGORIES</h2>
+                        <ul>
+                            {% for cat, null in categories %}
+                            <li><span {% if cat == category %} class="active"{% endif %}><a href="{{ SITEURL }}/category/{{ cat }}.html">{{ cat }}</a></span></li>
+                            {% endfor %}
+                        </ul>
                     </div>                   
                 </div>
             </div>
@@ -107,7 +105,7 @@
                     <div id="sns-items">
                         <ul>
                             <li class="label">Follow us on :</li>
-                            <li class="sns-btn rss"><a href="http://feeds.feedburner.com/rikulo" title="ZK RSS">Rikulo RSS</a></li>
+                            <li class="sns-btn rss"><a href="http://blog.rikulo.org/feeds/all.rss.xml" title="Rikulo RSS">Rikulo RSS</a></li>
                             <li class="sns-btn twitter"><a href="http://twitter.com/rikuloui" title="ZK Twitter">twitter @rikuloui </a></li>
                             <li class="sns-btn facebook"><a href="http://www.facebook.com/rikulo" title="ZK Facebook">facebook</a></li>
                             <li class="sns-btn googleplus"><a href="https://plus.google.com/u/0/b/117602514255061155793/117602514255061155793" title="Rikulo GooglePlus">Google plus</a></li>

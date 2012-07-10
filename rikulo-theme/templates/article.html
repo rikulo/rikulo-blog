@@ -1,19 +1,27 @@
 {% extends "base.html" %}
 {% block content %}        
 <section id="content" class="body">    
-        <header> <h2 class="entry-title"><a href="{{ pagename }}" rel="bookmark" title="Permalink to {{ article.title}}">{{ article.title }}</a></h2> </header>
-        <footer class="post-info">
-                <abbr class="published" title="{{ article.date.isoformat() }}">
-                        {{ article.locale_date }}
-                </abbr>
-                {% if article.author %}
-                <address class="vcard author">
-                        By <a class="url fn" href="#">{{ article.author }}</a>
-                </address>
-                {% endif %}
-        </footer><!-- /.post-info -->
-        <div class="entry-content">
+        <header> <h1><span class="article-title">{{ article.title }}</span></h1> </header>
+        <div class="author-date" title="{{ article.date.strftime('%B %d, %Y') }}"> {{ article.date.strftime('%B %d, %Y') }} {% if article.author %} by <a href="{{ SITEURL }}/{{ article.author.url }}"><span class="author-date">{{ article.author }}</span></a>{% endif %}</div>
+        <div id="entry-content">
         {{ article.content }}
         </div><!-- /.entry-content -->
+        <div class="disqus">
+                <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+                            var disqus_shortname = 'rikuloblog'; // required: replace example with your forum shortname
+        
+                    /* * * DON'T EDIT BELOW THIS LINE * * */
+                    (function() {
+                        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+                        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                    })();
+                </script>
+                <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+                
+        </div>
 </section>
 {% endblock %}
