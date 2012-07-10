@@ -1,21 +1,20 @@
 {% extends "base.html" %}
 {% block content %}        
 <section id="content">
-{% block content_title %}
-
-{% endblock %}
 
 <ol id="post-list">
 {% for article in articles_page.object_list %}        
         <li><article class="hentry">    
-                <header> <h1 class="entry-title"><a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title}}">{{ article.title }}</a></h1> </header>
-                <div class="published" title="{{ article.date.isoformat() }}"> {{ article.locale_date }} {% if article.author %} By <a class="url fn" href="{{ SITEURL }}/author/{{ article.author }}.html">{{ article.author }}</a>{% endif %}</div>
+                <header> <h1><a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title}}"><span class="article-title">{{ article.title }}</span></a></h1> </header>
+                <div class="author-date" title="{{ article.date.strftime('%B %d, %Y') }}"> {{ article.date.strftime('%B %d, %Y') }} {% if article.author %} by <a href="{{ SITEURL }}/{{ article.author.url }}"><span class="author-date">{{ article.author }}</span></a>{% endif %}</div>
                 <div class="entry-content"> {{ article.summary }} </div><!-- /.entry-content -->
                 <footer class="post-info">
-                <div><a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title}}">Read more...</a></div>
-                <div>
-                    {% for tag in article.tags %}
-                        <a href="{{ SITEURL }}/tag/{{ tag }}.html">{{ tag }}</a>
+                <div class="read-more">
+                    <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title}}">Read more...</a>
+                </div>
+                <div class="tags">
+                    {% for pagetag in article.tags %}
+                        <a href="{{ SITEURL }}/tag/{{ pagetag }}.html"><span class="tag {% if tag == pagetag %}active{% endif %}">{{ pagetag }}</span></a>{% if not loop.last %}, {% endif %}
                     {% endfor %}
                 </div>
                 </footer><!-- /.post-info -->
@@ -30,7 +29,7 @@
             <a href="{{ SITEURL }}/{{ page_name }}{{ articles_page.previous_page_number() }}.html">&laquo;</a>
         {% endif %}
     {% endif %}
-    Page {{ articles_page.number }} / {{ articles_paginator.num_pages }}
+    <!--Page {{ articles_page.number }} / {{ articles_paginator.num_pages }}-->
     {% if articles_page.has_next() %}
         <a href="{{ SITEURL }}/{{ page_name }}{{ articles_page.next_page_number() }}.html">&raquo;</a>
     {% endif %}
