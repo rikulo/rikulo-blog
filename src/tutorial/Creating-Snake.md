@@ -3,13 +3,14 @@ Title: Creating Snake
 Tags: snake, game, core, dart
 Author: Timothy Clare
 Slug: A tutorial detailing how to create a snake game in Dart using Rikulo
+summary: This blog post details how to create a Snake game using Rikulo, Dart, HTML 5 and the Canvas.
 
 #Introduction
 
 This blog post details how to create a Snake game using Rikulo, Dart, HTML 5 and the Canvas.
 
 #The Result
-<iframe height="400px" width="572px" src="/files/tutorial/creating-snake/index.html" style="width:572px height:396px"></iframe> 
+<iframe height="400px" width="572px" src="http://blog.rikulo.org/static/files/tutorial/creating-snake/index.html" style="width:572px height:396px"></iframe> 
 
 #Modeling the items
 
@@ -28,15 +29,15 @@ I will walk you through the process of modeling these items in the game.
 As previously mentioned the Snake will be responsible for its own body and direction. First of all let's setup the snake body. The body will be represented via a list of SnakePoints. The SnakePoint is very easy so we can include the entire code for the class here.
 
 	::dart
-		class SnakePoint {
- 			int x, y;
- 		 
- 			nakePoint(this.x, this.y);
- 			
- 			String toString() {
- 				return "($x, $y)";
- 			}
-		}
+	class SnakePoint {
+ 		int x, y;
+ 	 
+ 		SnakePoint(this.x, this.y);
+ 		
+ 		String toString() {
+ 			return "($x, $y)";
+ 		}
+	}
 
 As we can see the SnakePoint class is just used to represent a point and does nothing else. So the body representation of the snake in Snake.dart. The snippet below also includes methods for retrieving the Snake's length and head.
 
