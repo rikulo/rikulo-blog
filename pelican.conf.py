@@ -21,4 +21,8 @@ DEFAULT_PAGINATION = 7
 RELATIVE_URL = True
 STATIC_PATHS = ["files"]
 
+ARTICLE_URL = 'posts/{date:%Y}/{date:%b}/{category}/{slug}/'
+ARTICLE_SAVE_AS = 'posts/{date:%Y}/{date:%b}/{category}/{slug}/index.html'
+
+
 
