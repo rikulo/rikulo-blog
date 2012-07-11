@@ -4,7 +4,7 @@
 
 <ol id="post-list">
 {% for article in articles_page.object_list %}        
-        <li><article class="hentry">    
+        <li class="article-entry"><article class="hentry">    
                 <header> <h1><a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title}}"><span class="article-title">{{ article.title }}</span></a></h1> </header>
                 <div class="author-date" title="{{ article.date.strftime('%B %d, %Y') }}"> {{ article.date.strftime('%B %d, %Y') }} {% if article.author %} by <a href="{{ SITEURL }}/{{ article.author.url }}"><span class="author-date">{{ article.author }}</span></a>{% endif %}</div>
                 <div class="entry-content"> {{ article.summary }} </div><!-- /.entry-content -->

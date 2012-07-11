@@ -83,10 +83,10 @@
                     </div>
 
                     <div id="categories-bar">
-                        <h2>CATEGORIES</h2>
+                        <h2 class="category-header">CATEGORIES</h2>
                         <ul>
                             {% for cat, null in categories %}
-                            <li><span {% if cat == category %} class="active"{% endif %}><a href="{{ SITEURL }}/category/{{ cat }}.html">{{ cat }}</a></span></li>
+                            <li class="category-menu-entry"><span class="{% if cat == category %} active{% endif %}"><a href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a></span></li>
                             {% endfor %}
                         </ul>
                     </div>                   
