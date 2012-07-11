@@ -18,6 +18,14 @@
 .clearfix {
 }
 
+pre {
+    white-space: pre-wrap;       /* css-3 */
+    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+    white-space: -pre-wrap;      /* Opera 4-6 */
+    white-space: -o-pre-wrap;    /* Opera 7 */
+    word-wrap: break-word;       /* Internet Explorer 5.5+ */
+}
+
 #rikulo-template {
     background: url("http://173.203.80.173/resource/img/template/title.png") repeat-x scroll 0 0 transparent;
 }
@@ -46,16 +54,21 @@
     font-family: 'Asap',sans-serif;
 }
 
+#page-content {
+    
+}
+
+#page-content h1 {
+    font-size: 20px;
+}
+
 #page-content h2 {
     font-size: 20px;
 }
 
-#page-content {
-
-}
-
 #blog-content {
-    width: 690px;
+    width: 700px;
+    margin-right: 20px;
     float: left;
 }
 
@@ -70,7 +83,7 @@
 }
 
 #page-content p, #page-content a {
-    font-size: 14px;
+    font-size: 16px;
 }
 
 #page-content p {
@@ -95,27 +108,30 @@
 
 
 #entry-content {
-    line-height: 20px;
+    line-height: 24px;
     padding-bottom: 60px;
 }
 
 #entry-content h1 {
-    font-size: 20px;
+    font-size: 24px;
     margin-top: 14px;
+    margin-bottom: 12px;
 }
 
 #entry-content h2 {
-    font-size: 18px;
+    font-size: 20px;
     margin-top: 12px;
+    margin-bottom: 8px;
 }
 
 #entry-content h3 {
-    font-size: 16px;
+    font-size: 18px;
     margin-top: 12px;
+    margin-bottom: 8px;
 }
 
 #entry-content p {
-    padding-bottom: 4px;
+    padding-bottom: 16px;
 }
 
 #entry-content img {
@@ -135,7 +151,8 @@
 }
 
 #entry-content .codehilite {
-    padding-bottom: 4px;
+    margin-bottom: 12px;
+    padding-left: 16px;
     background-color: white;
 }
 
@@ -160,7 +177,7 @@
 
 .article-title {
     color: #914503;
-    font-size: 24px;
+    font-size: 28px;
 }
 
 .author-date {
