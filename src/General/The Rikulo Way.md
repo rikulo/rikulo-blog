@@ -20,7 +20,7 @@ The Structured UI Model forms a central basis of our philosophy which has been a
 
 This simple philosophy gives developer's the power they require when laying out their while keeping the implementation simple. This simplicity is the *key*. We shield the developer from any need to interact with the DOM. The following diagram outlines our architecture.
 
-<img src="http://10.1.3.158:8000/static/files/general/the-rikulo-way/the-rikulo-way-architecture.png" style="width: 400px" alt="architecture" />
+<img src="http://blog.rikulo.org/static/files/general/the-rikulo-way/the-rikulo-way-architecture.png" class="center-blog-image" style="width: 400px;" alt="architecture" />
 
 The above architecture outlines that you do not need to touch the DOM at all, Rikulo's UI Model will do all that work for you. 
 
@@ -43,13 +43,11 @@ As well as being able to effortlessly layout components manually, Rikulo also pr
 
 ##Layouts
 
-No introduction would be complete without a stock HelloWorld example as outlined below.
+The layouts are an extensions of Rikulo's **UI Model** a good example of said layout is a Linear layout which can help developers layout their components vertically or horizontally. An example of linear layouts with different sized views is shown below.
 
+<img src="http://blog.rikulo.org/static/files/general/the-rikulo-way/layout.jpg" class="center-blog-image" style="width: 700px" alt="layout" />
 
-
-This example optimizes the simplicity the model strives to provide for the developer. 
-
-The layouts are an extensions of Rikulo's **UI Model** a good example of said layout is a Linear layout which can help developers layout their components vertically or horizontally. An excellent example of layouts is the anchor layout which provides the ability to place a view at any of the anchor locations shown below.
+In additon to linear layouts Rikulo also provides an Anchor layout. The example below shows an Anchor layout in action.
 
     ::dart
     TextView welcome = new TextView("Hello World!");

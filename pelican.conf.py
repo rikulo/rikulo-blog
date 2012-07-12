@@ -5,7 +5,7 @@ AUTHOR = u"Various"
 SITENAME = u"Rikulo Blog"
 SITEURL = 'blog.rikulo.org'
 
-MAINSITE = '173.203.80.173'
+MAINSITE = 'rikulo.org'
 
 TIMEZONE = 'Europe/Paris'
 

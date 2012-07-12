@@ -27,7 +27,7 @@ pre {
 }
 
 #rikulo-template {
-    background: url("http://173.203.80.173/resource/img/template/title.png") repeat-x scroll 0 0 transparent;
+    background: url("http://rikulo.org/resource/img/template/title.png") repeat-x scroll 0 0 transparent;
 }
 
 #template-inner {
@@ -144,7 +144,7 @@ pre {
 }
 
 #entry-content ul li {
-    background: url("http://173.203.80.173/resource/img/contribute/bullet.png") no-repeat scroll 3px 6px transparent;
+    background: url("http://rikulo.org/resource/img/contribute/bullet.png") no-repeat scroll 3px 6px transparent;
     letter-spacing: 0.45px;
     list-style: none outside none;
     padding-left: 27px;
@@ -203,4 +203,10 @@ pre {
 
 .category-menu-entry {
     padding-bottom: 3px;
+}
+
+.center-blog-image {
+    display: block; 
+    margin-right: auto;
+    margin-left: auto;
 }
