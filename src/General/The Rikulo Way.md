@@ -2,7 +2,8 @@ Date: 2012-7-10
 Title: The Rikulo Way
 Tags: rikulo, philosophy
 Author: Timothy Clare
-summary: This blog post discusses Rikulo and the philosophy behind it.
+summary: <p>Rikulo is a free and open source framework for creating incredible cross-platform web and native mobile applications in Dart & HTML5. Our aim is soley to provide developers with the easiest and most powerful ways to create their application. We do this by bringing structure to your user interface.</p>
+
 
 #Introduction
 
