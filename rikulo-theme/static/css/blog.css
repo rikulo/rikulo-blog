@@ -156,6 +156,11 @@ pre {
     background-color: white;
 }
 
+#categories-bar {
+    width: 200px;
+    float: left;
+}
+
 #categories-bar h2 {
     font-family: 'Oswald',sans-serif;
 }
