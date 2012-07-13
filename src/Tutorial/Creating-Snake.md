@@ -1,4 +1,4 @@
-Date: 2012-6-27
+Date: 2012-7-9
 Title: Creating a Snake game using Rikulo, HTML 5 and the canvas
 Tags: snake, game, core, dart
 Author: Timothy Clare
@@ -9,7 +9,8 @@ summary: This blog post details how to create a Snake game using Rikulo, Dart, H
 This blog post details how to create a Snake game using Rikulo, Dart, HTML 5 and the Canvas.
 
 #The Result
-<iframe height="400px" width="572px" src="http://blog.rikulo.org/static/files/tutorial/creating-snake/index.html" style="width:572px height:396px"></iframe> 
+
+<iframe height="400px" width="572px" src="http://blog.rikulo.org/static/files/tutorial/creating-snake/index.html" class="center-blog-image" style="border: 0px"></iframe> 
 
 #Modeling the items
 

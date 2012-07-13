@@ -6,7 +6,7 @@ summary: This blog post discusses Rikulo and the philosophy behind it.
 
 #Introduction
 
-Rikulo is a free and open source framework for creating amazing cross-platform native mobile applications. Our aim is soley to provide developers with the easiest and most powerful ways to create their application. We do this by bringing structure to your user interface.
+Rikulo is a free and open source framework for creating incredible cross-platform web and native mobile applications in Dart & HTML5. Our aim is soley to provide developers with the easiest and most powerful ways to create their application. We do this by bringing structure to your user interface.
 
 Dart has brought structured programming to the web allowing code to be run at the client and on the server. With Rikulo we wanted to push this philosophy further and place it into the UI. HTML and CSS are great for websites which contain a lot of textual content and with the advent of HTML 5 and CSS 3 even better features have been introduced. However, when creating complex applications HTML and CSS can cause more problems than it solves due to side-effects introduced when creating and updating complex layouts. 
 
