@@ -10,7 +10,12 @@ This blog post details how to create a Snake style game using Rikulo, Dart, HTML
 
 #The Result
 
-<iframe height="400px" width="572px" src="http://blog.rikulo.org/static/files/tutorial/creating-snake/index.html" class="center-blog-image" style="border: 0px"></iframe> 
+<p>
+<link rel="stylesheet" type="text/css" href="/files/tutorial/creating-snake/view.css" />
+<div id="v-main" class="center-blog-image" style="width:572px;height:396px"></div>
+<script type="application/dart" src="/files/tutorial/creating-snake/SnakeCanvas.dart"></script>
+<script src="/files/tutorial/creating-snake/dart.js"></script>
+</p>
 
 To control the Snake try using the arrow keys or using a mouse on a computer or finger to swipe on a tablet or phone.
 
@@ -268,7 +273,7 @@ That pretty much wraps up the SnakeEnvironment, it is time to discuss how the ga
 
 Now under normal circumstances it is better to separate the UI loop from the actual game loop. In the future I will look into doing this with an Isolate. However, for the purposes of simplicity in this example the game loop is also responsible for the painting the items onto the canvas.
 
-The game loop is activated in the SnakeCanvas class which has a Rikulo method named onMount. This method is fired when Rikulo binds the components to the DOM tree. On binding the components a Rikulo Animator is created.
+The game loop is activated in the SnakeCanvas class by creating a Rikulo Animator object.
 
 	::dart
 	new Animator().add((int time, int elapsed) {
