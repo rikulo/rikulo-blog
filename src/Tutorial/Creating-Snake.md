@@ -310,33 +310,29 @@ Let's now look at how the UI and control elements were implemented.
 To build the UI with Rikulo is very easy to do. In our case we want a background so we will create a view to hold that, then we will require a new View to hold both the canvas and score positioning the score underneath the canvas. Here is the code to do this which is contained in the onCreate method.
 
 	::dart
-	View div = new View();
-    div.style.backgroundImage = "url('./res/snake_bg.png')";
-    div.profile.width = "flex";
-    div.profile.height = "flex";
-
-    //first vlayout
+	mainView.width = 572;
+    mainView.height = 396;
+    mainView.style.backgroundImage = "url('http://blog.rikulo.org/static/files/tutorial/creating-snake/res/snake_bg.png')";
+    
+    //vlayout
     View vlayout = new View();
     vlayout.layout.type = "linear";
     vlayout.layout.orient = "vertical";
-    vlayout.profile.width = "flex";
-    vlayout.profile.height = "flex";    
-    vlayout.top = 60;
-    vlayout.left = 80;
+    vlayout.profile.anchorView = mainView;   
+    vlayout.profile.location = "center center";
     
     //canvas
     canvas = new Canvas();
     canvas.profile.text = "width: ${width}; height: ${height}";
     canvas.style.border = "1px solid black";
     vlayout.addChild(canvas);
-
+    
     scoreBar = new TextView("Your score is: ${score}");
     scoreBar.profile.width = "flex";
     scoreBar.profile.height = "30";
     vlayout.addChild(scoreBar);
     
-    div.addChild(vlayout);
-    mainView.addChild(div);
+    mainView.addChild(vlayout);
 
 The code above demonstrates how the views are combined to create the layout. The View with the background is named div and created first, then a view which arranges its children vertically is created. Then the Canvas and a TextView is added to the vlayout view to complete the cycle.
 
