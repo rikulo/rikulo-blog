@@ -1596,6 +1596,7 @@ $$.SnakeCanvas = {"":
       }
     }
   }
+  event$.preventDefault$0();
  },
  get$onKeyDown: function() { return new $.BoundClosure(this, 'onKeyDown$1'); },
  gameOverDialog$0: function() {

@@ -19,6 +19,8 @@ This blog post details how to create a Snake style game using Rikulo, Dart, HTML
 
 To control the Snake try using the arrow keys or using a mouse on a computer or finger to swipe on a tablet or phone.
 
+[For a better experience you can view the demo on its own here](/files/tutorial/creating-snake/index.html)
+
 #Modeling the items
 
 I started by modeling the different elements of the game, we are required to model the Snake, its environment and the food that it eats. If an item was complex I split it over a couple of classes. The file names should give you all a clue as to what elements are modeled within them, but just for completeness sake here is a list of files and what they represent.
