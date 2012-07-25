@@ -1,4 +1,4 @@
-Date: 2012-7-24
+Date: 2012-7-25
 Title: Building a List View Demo using Rikulo
 Tags: scroller, list-view, dart
 Author: Simon Pai
@@ -21,6 +21,8 @@ Before we rush to create a List View widget, we would like to simulate its left 
 <script type="application/dart" src="/files/tutorial/list-view/ListViewDemo.dart"></script>
 <script src="/files/_common/dart.js"></script>
 </p>
+
+To scroll down the list drag with mouse or swipe with finger.
 
 #Starting with ScrollView
 
