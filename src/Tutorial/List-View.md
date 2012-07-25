@@ -15,7 +15,7 @@ Before we rush to create a List View widget, we would like to simulate its left 
 #The Outcome
 
 <p>
-<link rel="stylesheet" type="text/css" href="/files/tutorial/list-view/view.css" />
+<link rel="stylesheet" type="text/css" href="/files/_common/view.css" />
 <div id="v-main" class="center-blog-image" style="width:572px;height:396px"></div>
 <script type="application/dart" src="/files/tutorial/list-view/ListViewDemo.dart"></script>
 <script src="/files/_common/dart.js"></script>
