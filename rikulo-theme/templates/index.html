@@ -14,7 +14,7 @@
                 </div>
                 <div class="tags">
                     {% for pagetag in article.tags %}
-                        <a href="{{ SITEURL }}/tag/{{ pagetag }}.html"><span class="tag {% if tag == pagetag %}active{% endif %}">{{ pagetag }}</span></a>{% if not loop.last %}, {% endif %}
+                        <a href="{{ SITEURL }}/{{ pagetag.url }}"><span class="tag {% if tag == pagetag %}active{% endif %}">{{ pagetag }}</span></a>{% if not loop.last %}, {% endif %}
                     {% endfor %}
                 </div>
                 </footer><!-- /.post-info -->

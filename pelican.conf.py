@@ -3,7 +3,7 @@
 
 AUTHOR = u"Various"
 SITENAME = u"Rikulo Blog"
-SITEURL = 'blog.rikulo.org'
+SITEURL = 'http://blog.rikulo.org'
 
 MAINSITE = 'rikulo.org'
 
