@@ -34,5 +34,3 @@ We'll be talking to Tim Clare and Simon Pai about Rikulo, a "free and open sourc
 **More info:**
 
 [Watch it here](https://developers.google.com/live/shows/ahNzfmdvb2dsZS1kZXZlbG9wZXJzcg4LEgVFdmVudBjt1NoCDA/)
-
-[http://www.dartlang.org/](http://www.dartlang.org/)
