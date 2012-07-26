@@ -2,7 +2,7 @@ Date: 2012-7-25
 Title: Building a List View Demo using Rikulo
 Tags: scroller, list-view, dart
 Author: Simon Pai
-summary: <p>This blog post talks about building a List View sample using Rikulo's ScrollView component.</p><img src="/files/tutorial/list-view/list-view-sample.png" class="center-blog-image" />
+summary: <p>This blog post talks about building a List View sample using Rikulo's ScrollView component.</p><img src="http://blog.rikulo.org/static/files/tutorial/list-view/list-view-sample.png" class="center-blog-image" />
 
 #Introduction
 
