@@ -6,7 +6,7 @@ summary: <p>This blog post talks about building a Grid sample with two dimension
 
 #Introduction
 
-Continued from the [previous post](/files/tutorial/grid-view/index.html), this time we are going to build a grid sample, with scrolling on both directions. In addition, we would like to try the events on ScrollView and Scroller control functions, by contructing multiple ScrollViews whose scrolling are "linked" to each others.
+Continued from the [previous post](http://blog.rikulo.org/posts/2012/Jul/Tutorial/building-a-list-view-demo-using-rikulo/), this time we are going to build a grid sample, with scrolling on both directions. In addition, we would like to try the events on ScrollView and Scroller control functions, by contructing multiple ScrollViews whose scrolling are "linked" to each others.
 
 <img src="/files/tutorial/grid-view/grid-view-design.png" class="center-blog-image" />
 
@@ -28,7 +28,7 @@ Grag or swipe on the each area to scroll.
 
 #Prepare ScrollView and Their Contents.
 
-The ScrollView and content preparation itself is quite straightforward. You can refer to the [previous blog post](/files/tutorial/grid-view/index.html) or the [source code](http://github.com/rikulo/rikulo/blob/master/samples/scroll-view/GridViewDemo.dart). Here is an overview of what we do:
+The ScrollView and content preparation itself is quite straightforward. You can refer to the [previous blog post](http://blog.rikulo.org/posts/2012/Jul/Tutorial/building-a-list-view-demo-using-rikulo/) or the [source code](http://github.com/rikulo/rikulo/blob/master/samples/scroll-view/GridViewDemo.dart). Here is an overview of what we do:
 
 	::dart
 	final int barSize = 50, barInnerSize = 40;
