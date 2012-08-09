@@ -1,4 +1,4 @@
-Date: 2012-8-9
+Date: 2012-8-10
 Title: A Photo Album Prototype with Swipe Gesture
 Tags: swipe, gesture, rikulo, dart
 Author: Simon Pai
