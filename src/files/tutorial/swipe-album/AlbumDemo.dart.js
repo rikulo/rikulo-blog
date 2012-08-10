@@ -25823,7 +25823,7 @@ $$.AlbumDemo = {"":
     var photo = $.Image$(null);
     $.add$1(photo.get$classes(), 'photo');
     photo.get$profile().set$text('location: top left; width: 100%; height: 100%');
-    photo.set$src('res/alpaca-0' + $.S(i + 1) + '.jpg');
+    photo.set$src('/static/files/tutorial/swipe-album/res/alpaca-0' + $.S(i + 1) + '.jpg');
     var mask = $.View$();
     $.add$1(mask.get$classes(), 'photo-mask');
     mask.get$profile().set$text('location: top left; width: 100%; height: 100%');
