@@ -1586,7 +1586,7 @@ $$.MapDemo = {"":
   var panel = $.View$();
   panel.get$profile().set$text('location: center center; width: 90%; height: 90%');
   var img = $.Image$(null);
-  img.set$src('res/dutch-west-india-company-map.jpg');
+  img.set$src('/static/files/tutorial/zoom-map/res/dutch-west-india-company-map.jpg');
   img.get$profile().set$text('location: center center');
   panel.addChild$1(img);
   this.get$mainView().addChild$1(panel);

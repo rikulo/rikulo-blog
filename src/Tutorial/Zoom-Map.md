@@ -2,7 +2,7 @@ Date: 2012-8-28
 Title: A Rotatable Map Prototype
 Tags: zoom, gesture, rikulo, dart
 Author: Simon Pai
-summary: <p>This image tricks your eyes, but you don't really need to worry about it. Anyway, this blog post demonstrates a rotatable map prototype.</p><img src="http://blog.rikulo.org/static/files/tutorial/zoom-map/zoom-map-sample.png" class="center-blog-image" />
+summary: <p>This image tricks your eyes, but you don't really need to worry about it. Anyway, this blog post demonstrates a rotatable map prototype.</p><br/><img src="http://blog.rikulo.org/static/files/tutorial/zoom-map/zoom-map-sample.png" class="center-blog-image" />
 
 #A Rotatable Map
 
@@ -57,7 +57,7 @@ From the initial and current positions, it further derives the following values:
 	num angle = state.angle; // angular change, in radian
 	Offset transition = state.transition; // displacement of midpoint
 
-<img src="/files/tutorial/zoom-map/zoom-map-01.png" class="center-blog-image" />
+<img src="/files/tutorial/zoom-map/zoom-map-02.png" class="center-blog-image" />
 
 Last but not least, it also supplies a [Matrix](http://github.com/rikulo/rikulo/blob/master/client/util/src/Matrix.dart) object to describe the entire transformation, with respect to the midpoint of initial positions as the origin. With Dart's power of operator definition, you can even do matrix multiplication easily.
 
