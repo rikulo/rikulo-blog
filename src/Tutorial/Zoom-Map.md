@@ -6,7 +6,7 @@ summary: <p>This image tricks your eyes, but you don't really need to worry abou
 
 #A Rotatable Map
 
-This is going to be a very simple demo. Have you tried Google Maps on a touched device? Have you ever wondered what if Google Maps is rotatable by two fingers? This will be the demo that realize the imagination. 
+This is going to be a very simple demo. Have you tried Google Maps on a touch device? Have you ever wondered what if Google Maps is rotatable by two fingers? This will be the demo that realizes the imagination. 
 
 
 
