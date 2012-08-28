@@ -64,7 +64,7 @@ Last but not least, it also supplies a [Transformation](http://github.com/rikulo
 	::dart
 	Transformation t1 = state.transformation;
 	Transformation t2 = new Transformation.rotate(PI / 3);
-	Transformation t3 = t1 % t2; // matrix multiplication
+	Transformation t3 = t1 * t2; // matrix multiplication
 	element.style.transform = CSS.transform(t3);
 
 
@@ -86,11 +86,11 @@ One thing to note here: the transformation matrix provided by ZoomGesture has it
 	}, move: (ZoomGestureState state) {
 		// 1. the origin needs to shift
 		// 2. the transformation shall stack with ones from previous gestures
-		img.style.transform = CSS.transform(state.transformation.originAt(diff) % trans);
+		img.style.transform = CSS.transform(state.transformation.originAt(diff) * trans);
 		
 	}, end: (ZoomGestureState state) {
 		// write the transformation back
-		trans = state.transformation.originAt(diff) % trans;
+		trans = state.transformation.originAt(diff) * trans;
 		
 	});
 	
@@ -115,10 +115,10 @@ When you touch the screen with a single finger, you would expect the image to be
 
 	::dart
 	new DragGesture(mainView.node, move: (DragGestureState state) {
-		img.style.transform = CSS.transform(new Transformation.transit(state.transition) % trans);
+		img.style.transform = CSS.transform(new Transformation.transit(state.transition) * trans);
 		
 	}, end: (DragGestureState state) {
-		trans = new Transformation.transit(state.transition) % trans;
+		trans = new Transformation.transit(state.transition) * trans;
 		
 	});
 
