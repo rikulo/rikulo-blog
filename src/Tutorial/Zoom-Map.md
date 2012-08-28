@@ -59,7 +59,7 @@ From the initial and current positions, it further derives the following values:
 
 <img src="/files/tutorial/zoom-map/zoom-map-02.png" class="center-blog-image" />
 
-Last but not least, it also supplies a [Matrix](http://github.com/rikulo/rikulo/blob/master/client/util/src/Matrix.dart) object to describe the entire transformation, with respect to the midpoint of initial positions as the origin. With Dart's power of operator definition, you can even do matrix multiplication easily.
+Last but not least, it also supplies a [Transformation](http://github.com/rikulo/rikulo/blob/master/client/util/src/Matrix.dart) object to describe the entire transformation, with respect to the midpoint of initial positions as the origin. With Dart's power of operator definition, you can even do matrix multiplication easily.
 
 	::dart
 	Transformation t1 = state.transformation;
