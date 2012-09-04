@@ -12,7 +12,7 @@ This blog post details how to create a Snake style game using Rikulo, Dart, HTML
 
 <p>
 <link rel="stylesheet" type="text/css" href="/files/tutorial/creating-snake/view.css" />
-<div id="v-main" class="center-blog-image"></div>
+<div id="v-main" class="center-blog-image" style="width:572px;height:396px"></div>
 <script type="application/dart" src="/files/tutorial/creating-snake/SnakeCanvas.dart"></script>
 <script src="/files/tutorial/creating-snake/dart.js"></script>
 </p>
