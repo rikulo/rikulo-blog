@@ -2,7 +2,7 @@ Date: 2012-7-9
 Title: Creating a Snake game using Rikulo, HTML 5 and the canvas
 Tags: snake, game, core, dart
 Author: Timothy Clare
-summary: <p>This blog post details how to create a Snake game using Rikulo, Dart, HTML 5 and the Canvas. The final game serves as a sample of how to use Rikulo along with Dart</p><p>The image below is a screenshot of the example game</p><img src="http://blog.rikulo.org/static/files/tutorial/creating-snake/snake-example.png" class="center-blog-image" />
+summary: <p>This blog post details how to create a Snake game using Rikulo, Dart, HTML 5 and the Canvas. The final game serves as a sample of how to use Rikulo along with Dart</p><p>The image below is a screenshot of the example game</p><img src="http://static.rikulo.org/blogs/tutorial/creating-snake/snake-example.png" class="center-blog-image" />
 
 #Introduction
 
@@ -11,10 +11,10 @@ This blog post details how to create a Snake style game using Rikulo, Dart, HTML
 #The Result
 
 <p>
-<link rel="stylesheet" type="text/css" href="/files/tutorial/creating-snake/view.css" />
+<link rel="stylesheet" type="text/css" href="http://static.rikulo.org/blogs/tutorial/creating-snake/view.css" />
 <div id="v-main" class="center-blog-image" style="width:572px;height:396px"></div>
-<script type="application/dart" src="/files/tutorial/creating-snake/SnakeCanvas.dart"></script>
-<script src="/files/tutorial/creating-snake/dart.js"></script>
+<script type="application/dart" src="http://static.rikulo.org/blogs/tutorial/creating-snake/SnakeCanvas.dart"></script>
+<script src="http://static.rikulo.org/blogs/tutorial/creating-snake/dart.js"></script>
 </p>
 
 To control the Snake try using the arrow keys or using a mouse on a computer or finger to swipe on a tablet or phone.
@@ -314,7 +314,7 @@ To build the UI with Rikulo is very easy to do. In our case we want a background
 	::dart
 	mainView.width = 572;
     mainView.height = 396;
-    mainView.style.backgroundImage = "url('http://blog.rikulo.org/static/files/tutorial/creating-snake/res/snake_bg.png')";
+    mainView.style.backgroundImage = "url('http://static.rikulo.org/blogs/tutorial/creating-snake/res/snake_bg.png')";
     
     //vlayout
     View vlayout = new View();

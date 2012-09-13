@@ -2,7 +2,7 @@ Date: 2012-8-28
 Title: A Rotatable Map Prototype
 Tags: zoom, gesture, rikulo, dart
 Author: Simon Pai
-summary: <p>This image tricks your eyes, but you don't really need to worry about it. Anyway, this blog post demonstrates a rotatable map prototype.</p><br/><img src="http://blog.rikulo.org/static/files/tutorial/zoom-map/zoom-map-sample.png" class="center-blog-image" />
+summary: <p>This image tricks your eyes, but you don't really need to worry about it. Anyway, this blog post demonstrates a rotatable map prototype.</p><br/><img src="http://static.rikulo.org/blogs/tutorial/zoom-map/zoom-map-sample.png" class="center-blog-image" />
 
 #A Rotatable Map
 
@@ -13,10 +13,10 @@ This is going to be a very simple demo. Have you tried Google Maps on a touch de
 #The Outcome
 
 <p>
-<link rel="stylesheet" type="text/css" href="/files/_common/view.css" />
+<link rel="stylesheet" type="text/css" href="http://static.rikulo.org/blogs/_common/view.css" />
 <div id="v-main" class="center-blog-image" style="width:600px;height:600px"></div>
-<script type="application/dart" src="/files/tutorial/zoom-map/MapDemo.dart"></script>
-<script src="/files/_common/dart.js"></script>
+<script type="application/dart" src="http://static.rikulo.org/blogs/tutorial/zoom-map/MapDemo.dart"></script>
+<script src="http://static.rikulo.org/blogs/_common/dart.js"></script>
 </p>
 
 * You will need to play on a touch device to explore the full functionality of this demo.
@@ -48,7 +48,7 @@ Anytime during a ZoomGesture, the following raw information are supplied:
 	Offset[] spos = state.startPositions; // the initial touch positions
 	Offset[] cpos = state.positions; // the current touch positions
 
-<img src="/files/tutorial/zoom-map/zoom-map-01.png" class="center-blog-image" />
+<img src="http://static.rikulo.org/blogs/tutorial/zoom-map/zoom-map-01.png" class="center-blog-image" />
 
 From the initial and current positions, it further derives the following values:
 
@@ -57,7 +57,7 @@ From the initial and current positions, it further derives the following values:
 	num angle = state.angle; // angular change, in radian
 	Offset transition = state.transition; // displacement of midpoint
 
-<img src="/files/tutorial/zoom-map/zoom-map-02.png" class="center-blog-image" />
+<img src="http://static.rikulo.org/blogs/tutorial/zoom-map/zoom-map-02.png" class="center-blog-image" />
 
 Last but not least, it also supplies a [Transformation](http://github.com/rikulo/rikulo/blob/master/client/util/src/Matrix.dart) object to describe the entire transformation, with respect to the midpoint of initial positions as the origin. With Dart's power of operator definition, you can even do matrix multiplication easily.
 

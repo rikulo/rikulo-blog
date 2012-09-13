@@ -2,14 +2,14 @@ Date: 2012-8-10
 Title: A Photo Album Prototype with Swipe Gesture
 Tags: swipe, gesture, rikulo, dart
 Author: Simon Pai
-summary: <p>This blog post reveals a prototype implementation of photo album with swipe gesture.</p><img src="http://blog.rikulo.org/static/files/tutorial/swipe-album/swipe-album-sample.png" class="center-blog-image" />
+summary: <p>This blog post reveals a prototype implementation of photo album with swipe gesture.</p><img src="http://static.rikulo.org/blogs/tutorial/swipe-album/swipe-album-sample.png" class="center-blog-image" />
 
 #The Plan
 
 We are going to build an album-like demo as an application of the new SwipeGesture. If you are
 a front end web developer, you should be familiar with the construction:
 
-<img src="/files/tutorial/swipe-album/swipe-album-plan.png" class="center-blog-image" />
+<img src="http://static.rikulo.org/blogs/tutorial/swipe-album/swipe-album-plan.png" class="center-blog-image" />
 
 Then we are going to wire up a [SwipeGesture](http://github.com/rikulo/rikulo/blob/master/client/gesture/src/SwipeGesture.dart) and a Motion, so that the pictures will shift when they receive a swipe gesture.
 
@@ -18,11 +18,11 @@ Then we are going to wire up a [SwipeGesture](http://github.com/rikulo/rikulo/bl
 #The Outcome
 
 <p>
-<link rel="stylesheet" type="text/css" href="/files/_common/view.css" />
-<link rel="stylesheet" type="text/css" href="/files/tutorial/swipe-album/gesture-demo.css" />
+<link rel="stylesheet" type="text/css" href="http://static.rikulo.org/blogs/_common/view.css" />
+<link rel="stylesheet" type="text/css" href="http://static.rikulo.org/blogs/tutorial/swipe-album/gesture-demo.css" />
 <div id="v-main" class="center-blog-image" style="width:600px;height:600px"></div>
-<script type="application/dart" src="/files/tutorial/swipe-album/AlbumDemo.dart"></script>
-<script src="/files/_common/dart.js"></script>
+<script type="application/dart" src="http://static.rikulo.org/blogs/tutorial/swipe-album/AlbumDemo.dart"></script>
+<script src="http://static.rikulo.org/blogs/_common/dart.js"></script>
 </p>
 
 Swipe to view next or previous photo.

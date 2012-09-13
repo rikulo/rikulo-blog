@@ -2,24 +2,24 @@ Date: 2012-8-2
 Title: Building a Grid Demo using Rikulo
 Tags: scroller, grid, rikulo, dart
 Author: Simon Pai
-summary: <p>This blog post talks about building a Grid sample with two dimensional scrolling using Rikulo's ScrollView component.</p><img src="http://blog.rikulo.org/static/files/tutorial/grid-view/grid-view-sample.png" class="center-blog-image" />
+summary: <p>This blog post talks about building a Grid sample with two dimensional scrolling using Rikulo's ScrollView component.</p><img src="http://static.rikulo.org/blogs/tutorial/grid-view/grid-view-sample.png" class="center-blog-image" />
 
 #Introduction
 
 Continued from the [previous post](http://blog.rikulo.org/posts/2012/Jul/Tutorial/building-a-list-view-demo-using-rikulo/), this time we are going to build a grid sample, with scrolling on both directions. In addition, we would like to try the events on ScrollView and Scroller control functions, by contructing multiple ScrollViews whose scrolling are "linked" to each others.
 
-<img src="/files/tutorial/grid-view/grid-view-design.png" class="center-blog-image" />
+<img src="http://static.rikulo.org/blogs/tutorial/grid-view/grid-view-design.png" class="center-blog-image" />
 
 
 
 #The Outcome
 
 <p>
-<link rel="stylesheet" type="text/css" href="/files/_common/view.css" />
-<link rel="stylesheet" type="text/css" href="/files/tutorial/grid-view/scroll-view.css" />
+<link rel="stylesheet" type="text/css" href="http://static.rikulo.org/blogs/_common/view.css" />
+<link rel="stylesheet" type="text/css" href="http://static.rikulo.org/blogs/tutorial/grid-view/scroll-view.css" />
 <div id="v-main" class="center-blog-image" style="width:600px;height:600px"></div>
-<script type="application/dart" src="/files/tutorial/grid-view/GridViewDemo.dart"></script>
-<script src="/files/_common/dart.js"></script>
+<script type="application/dart" src="http://static.rikulo.org/blogs/tutorial/grid-view/GridViewDemo.dart"></script>
+<script src="http://static.rikulo.org/blogs/_common/dart.js"></script>
 </p>
 
 Grag or swipe on the each area to scroll. 

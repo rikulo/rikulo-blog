@@ -2,24 +2,24 @@ Date: 2012-7-25
 Title: Building a List View Demo using Rikulo
 Tags: scroller, list-view, dart
 Author: Simon Pai
-summary: <p>This blog post talks about building a List View sample using Rikulo's ScrollView component.</p><img src="http://blog.rikulo.org/static/files/tutorial/list-view/list-view-sample.png" class="center-blog-image" />
+summary: <p>This blog post talks about building a List View sample using Rikulo's ScrollView component.</p><img src="http://static.rikulo.org/blogs/tutorial/list-view/list-view-sample.png" class="center-blog-image" />
 
 #Introduction
 
 As we are building up the UI infrastructure of Rikulo, there is a critical widget we can't miss: List View. On our skretch paper, the rough architecture is like this:
 
-<img src="/files/tutorial/list-view/list-view-architecture.png" class="center-blog-image" />
+<img src="http://static.rikulo.org/blogs/tutorial/list-view/list-view-architecture.png" class="center-blog-image" />
 
 Before we rush to create a List View widget, we would like to simulate its left part as an application of ScrollView first. Also this gives us a chance to test the strength of the Scroller utility.
 
 #The Outcome
 
 <p>
-<link rel="stylesheet" type="text/css" href="/files/_common/view.css" />
-<link rel="stylesheet" type="text/css" href="/files/tutorial/list-view/scroll-view.css" />
+<link rel="stylesheet" type="text/css" href="http://static.rikulo.org/blogs/_common/view.css" />
+<link rel="stylesheet" type="text/css" href="http://static.rikulo.org/blogs/tutorial/list-view/scroll-view.css" />
 <div id="v-main" class="center-blog-image" style="width:572px;height:396px"></div>
-<script type="application/dart" src="/files/tutorial/list-view/ListViewDemo.dart"></script>
-<script src="/files/_common/dart.js"></script>
+<script type="application/dart" src="http://static.rikulo.org/blogs/tutorial/list-view/ListViewDemo.dart"></script>
+<script src="http://static.rikulo.org/blogs/_common/dart.js"></script>
 </p>
 
 To scroll down the list drag with mouse or swipe with finger.
