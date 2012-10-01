@@ -23,13 +23,13 @@ EL indeed is more of a specification than an implementation.
 #Use Rikulo EL
 Rikulo EL implements the EL specification thus you can use it as what 
  you have used it before if you are familiar with it. Or maybe you 
- want to check the [EL specification](http://download.oracle.com/otndocs/jcp/expression_language-2.2-mrel-eval-oth-JSpec/)
+ want to check the [EL specificationn](http://download.oracle.com/otndocs/jcp/expression_language-2.2-mrel-eval-oth-JSpec/)
  for details.
 
 Nevertheless, I will show you the enhancements that Rikulo EL added that
  are specific for Dart language.
 
-##Access top level variables seemlessly 
+##Access top level variables seamlessly 
 
 Following is a typical "Hello World" example. The variable to be
 evaluated is a Dart top level variable.
@@ -65,10 +65,10 @@ evaluated is a Dart top level variable.
       print(ve.getValue(ctx)); //'Hello, Rikulo!'
     }	
 
-> The default ELResolver implemenation of the Rikulo EL supports resolving top 
+> The default ELResolver implementation of the Rikulo EL supports resolving top 
 > variables of the *root library* only.
 
-##Access top level functions seemlessly 
+##Access top level functions seamlessly 
 
 Following is still a typical "Hello World" example. The function to be
 evaluated is a Dart top level function.
@@ -206,9 +206,9 @@ simple example.
 
 #Conclusion
 
-Rikulo EL implments the Unified Exprssion Language specification and adds some enhancement
+Rikulo EL implements the Unified Expression Language specification and adds some enhancement
  features specific for Dart language. Authoring the presentation layer(web pages)
- in Dart and Rikulo will be easier and more vesatile. It will serves as the important base 
+ in Dart and Rikulo will be easier and more versatile. It will serves as the important base 
  templating engine for [Rikulo UXL](https://github.com/rikulo/rikulo-uxl) UI eXtensible Language
  and the [Rikulo ORM](https://github.com/rikulo/rikulo-orm) libraries. Stay tuned.
  
