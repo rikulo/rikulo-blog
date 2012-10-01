@@ -208,7 +208,7 @@ simple example.
 
 Rikulo EL implements the Unified Expression Language specification and adds some enhancement
  features specific for Dart language. Authoring the presentation layer(web pages)
- in Dart and Rikulo will be easier and more versatile. It will serves as the important base 
+ in Dart and Rikulo will be easier and more versatile. It will serve as the important base 
  templating engine for [Rikulo UXL](https://github.com/rikulo/rikulo-uxl) UI eXtensible Language
  and the [Rikulo ORM](https://github.com/rikulo/rikulo-orm) libraries. Stay tuned.
  
