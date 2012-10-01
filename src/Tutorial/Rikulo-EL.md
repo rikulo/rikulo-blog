@@ -2,9 +2,7 @@ Date: 2012-9-28
 Title: Rikulo EL, an Expression Language for and in Dart
 Tags: Expression Language, EL, rikulo-el, rikulo, dart
 Author: Henri Chen
-summary: <p>Rikulo EL is an implementation of the [Unified Expression
- Language](http://en.wikipedia.org/wiki/Unified_Expression_Language) 
- specification plus some enhancements for and in Dart.</p>
+summary: <p>Rikulo EL is an implementation of the <a href="http://en.wikipedia.org/wiki/Unified_Expression_Language">Unified Expression Language</a> specification plus some enhancements for and in Dart.</p>
 
 #Isn't EL for Java and JSP/JSF?
 
@@ -25,7 +23,7 @@ EL indeed is more of a specification than an implementation.
 #Use Rikulo EL
 Rikulo EL implements the EL specification thus you can use it as what 
  you have used it before if you are familiar with it. Or maybe you 
- want to check the EL specification(http://download.oracle.com/otndocs/jcp/expression_language-2.2-mrel-eval-oth-JSpec/)
+ want to check the [EL specification](http://download.oracle.com/otndocs/jcp/expression_language-2.2-mrel-eval-oth-JSpec/)
  for details.
 
 Nevertheless, I will show you the enhancements that Rikulo EL added that
@@ -203,7 +201,7 @@ simple example.
 + There are still some enhancements we can do, e.g. supporting named optional arguments
   for top level functions and class methods. And there must be still some bugs there. We
   need your feed back to make Rikulo EL more stable and complete. Please try it and post
-  enhancements/bugs issue here(https://github.com/rikulo/rikulo-el/issues/new). We will
+  enhancements/bugs issue [here](https://github.com/rikulo/rikulo-el/issues/new). We will
   appreciate it very much.
 
 #Conclusion
@@ -211,6 +209,6 @@ simple example.
 Rikulo EL implments the Unified Exprssion Language specification and adds some enhancement
  features specific for Dart language. Authoring the presentation layer(web pages)
  in Dart and Rikulo will be easier and more vesatile. It will serves as the important base 
- templating engine for Rikulo UXL(https://github.com/rikulo/rikulo-uxl) UI eXtensible Language
- and the Rikulo ORM(https://github.com/rikulo/rikulo-orm) libraries. Stay tuned.
+ templating engine for [Rikulo UXL](https://github.com/rikulo/rikulo-uxl) UI eXtensible Language
+ and the [Rikulo ORM](https://github.com/rikulo/rikulo-orm) libraries. Stay tuned.
  
