@@ -36,7 +36,7 @@ evaluated is a Dart top level variable.
 
     ::dart
     #import('dart:mirrors');
-    #import('package:rikulo_el/api.dart');
+    #import('package:rikulo_el/el.dart');
     #import('package:rikulo_el/impl.dart');
     
     class Person {
@@ -75,7 +75,7 @@ evaluated is a Dart top level function.
 
     ::dart
     #import('dart:mirrors');
-    #import('package:rikulo_el/api.dart');
+    #import('package:rikulo_el/el.dart');
     #import('package:rikulo_el/impl.dart');
     
     class Person {
@@ -115,7 +115,7 @@ simple example.
 
     ::dart
     #import('dart:mirrors');
-    #import('package:rikulo_el/api.dart');
+    #import('package:rikulo_el/el.dart');
     #import('package:rikulo_el/impl.dart');
     
     class Person {
@@ -155,7 +155,7 @@ simple example.
 
     ::dart
     #import('dart:mirrors');
-    #import('package:rikulo_el/api.dart');
+    #import('package:rikulo_el/el.dart');
     #import('package:rikulo_el/impl.dart');
     
     class Person {
