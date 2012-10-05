@@ -4,7 +4,7 @@
         <header> <h1><span class="article-title">{{ article.title }}</span></h1> </header>
         <div class="author-date" style="padding-bottom: 6px" title="{{ article.date.strftime('%B %d, %Y') }}"> {{ article.date.strftime('%B %d, %Y') }} {% if article.author %} by <a href="{{ SITEURL }}/{{ article.author.url }}"><span class="author-date">{{ article.author }}</span></a>{% endif %}</div>
         <script>
-                window.title = "{{ article.title }}";
+                document.title = "{{ article.title }}";
         </script>
         
         <div style="padding-bottom:30px">
