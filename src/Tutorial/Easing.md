@@ -57,7 +57,8 @@ At the start and the end of motion, you can provide callbacks:
 	}).run(); // runs for 2 sec
 
 There are lifecycle managements:
-
+	
+	::dart
 	EasingMotion motion = new EasingMotion(action); // some easing motion
 	motion.run();
 	if (motion.isRunning()) {
@@ -78,7 +79,8 @@ Here are some tips we would like to share:
 * For example, to make the motion smooth, avoid cusp in the easing function.
 * In a bounced free-fall function, keep the gravity consistent.
 * Effects regarding to change of color or opacity are rather insensitive to the choice of easing function. The linear function is usually good enough.
-* Here are some nice easing functions:
+
+Here are some nice easing functions:
 
 	::dart
 	// free fall, gives a natural sense of gravity/attraction
