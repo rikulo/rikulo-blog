@@ -23,8 +23,7 @@ In the following sections, we are going to demonstrate how to use effects in you
 
 // demo 1 (view)
 <p>
-<div id="v-main-view" class="center-blog-image" style="width:600px;height:600px"></div>
-<script type="application/dart" src="http://static.rikulo.org/blogs/tutorial/effect/ViewEffectDemo2.dart"></script>
+<div id="v-main-view" style="margin:0 auto;width:500px;height:500px"></div>
 </p>
 
 * You can read the [source code](http://github.com/rikulo/rikulo/blob/master/example/effect/ViewEffectDemo2.dart).
@@ -68,8 +67,7 @@ Rikulo supplies a few built-in effects: [FadeInEffect](http://github.com/rikulo/
 
 // demo 2 (dialog/panel)
 <p>
-<div id="v-main-panel" class="center-blog-image" style="width:600px;height:600px"></div>
-<script type="application/dart" src="http://static.rikulo.org/blogs/tutorial/effect/PanelEffectDemo.dart"></script>
+<div id="v-main-panel" style="margin:0 auto;width:500px;height:500px"></div>
 </p>
 
 * You can read the [source code](http://github.com/rikulo/rikulo/blob/master/example/effect/PanelEffectDemo.dart).
@@ -91,8 +89,9 @@ Effects for showing or hiding a dialog is similar, expect that there is an addit
 
 // demo 3 (switch)
 <p>
-<div id="v-main-switch" class="center-blog-image" style="width:600px;height:600px;overflow:hidden"></div>
-<script type="application/dart" src="http://static.rikulo.org/blogs/tutorial/effect/SwitchViewEffectDemo2.dart"></script>
+<div style="margin:0 auto;width:500px;height:500px">
+<div id="v-main-switch" style="width:500px;height:500px;overflow:hidden;position:absolute"></div>
+</div>
 </p>
 
 Here goes some slightly advanced effect applications. In the demo above, we switch two views with visual effects by 
@@ -104,6 +103,7 @@ Here goes some slightly advanced effect applications. In the demo above, we swit
 Feel free to take a glance at the [source code](http://github.com/rikulo/rikulo/blob/master/example/effect/SwitchViewEffectDemo2.dart) to get more details.
 
 <p>
+<script type="application/dart" src="http://static.rikulo.org/blogs/tutorial/effect/MiscEffectDemo.dart"></script>
 <script src="http://static.rikulo.org/blogs/tutorial/effect/dart.js"></script>
 </p>
 
