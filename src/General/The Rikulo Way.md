@@ -46,7 +46,7 @@ As well as being able to effortlessly layout components manually, Rikulo also pr
 
 The layouts are an extensions of Rikulo's **UI Model** a good example of said layout is a Linear layout which can help developers layout their components vertically or horizontally. An example of linear layouts with different sized views is shown below.
 
-<img src="http://static.rikulo.org/blogs/files/general/the-rikulo-way/layout.jpg" class="center-blog-image" style="width: 700px" alt="layout" />
+<img src="http://static.rikulo.org/blogs/general/the-rikulo-way/layout.jpg" class="center-blog-image" style="width: 700px" alt="layout" />
 
 In additon to linear layouts Rikulo also provides an Anchor layout. The example below shows an Anchor layout in action.
 
