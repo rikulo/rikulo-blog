@@ -48,9 +48,58 @@ Update flow is about how model and view communicate through controller (or, view
 * GWT implementation of todoMVC: MVP
 * Dart Web UI: model driven view (MDV)
 
-Rikulo is a typical MVC framework, which provides a skeleton controller class to extend from. The controller listens to DOM event, manipulates model directly, and then update DOM elements.
+Rikulo is a typical MVC framework, which provides a skeleton controller class to extend from. The controller listens to DOM event, manipulates model directly, and then update DOM elements. For example,
 
-However, if you prefer using data event like in Backbone.js, Rikulo also supports it via [ListModel](https://github.com/rikulo/rikulo/blob/master/lib/src/model/ListModel.dart). You can register callbacks to listen to data events, which is fired when model is updated.
+	::dart
+	class TodoItemControl extends Control {
+	
+		final TodoAppControl _appc;
+		final Todo _todo;
+		
+		TextBox get input => view.query("TextBox.edit");
+		TextView get label => view.query("TextView.title");
+		
+		TodoItemControl(this._appc, this._todo);
+		
+		// event handlers, which listen to DOM events (specified in view file)
+		void toggleCompleted(ChangeEvent<bool> event) {
+			_appc.increaseCompleted(_todo.completed = event.value);
+		}
+		void editTitle(ViewEvent event) {
+			view.classes.add("editing");
+			input.node.focus();
+		}
+		void enterTitle(DomEvent event) {
+			if (event.keyCode == ENTER_KEY)
+				input.node.blur();
+		}
+		void submitTitle(ViewEvent event) {
+			final String title = input.value.trim();
+			if (!title.isEmpty) {
+				label.text = _todo.title = title;
+				_appc.save();
+				view.classes.remove("editing");
+			} else 
+				destroy();
+		}
+		void destroy([ViewEvent event]) => _appc.destroy(_todo);
+	}
+
+Rikulo does not have any restriction on the type of model -- it can be any plain Dart object. For example, in our todoMVC implementation, the model is as simple as:
+
+	::dart
+	class Todo {
+		String title;
+		bool completed;
+		
+		Todo(this.title, [this.completed = false]);
+		
+		// JSON, for local storage persistence //
+		Todo.fromJson(Map m) : this(m["title"], m["completed"]);
+		Map toJson() => { "title": title, "completed": completed };
+	}
+
+However, if you prefer using data event like in Backbone.js, Rikulo also supports it via [DataModel](http://api.rikulo.org/rikulo/latest/rikulo_model/DataModel.html). You can register callbacks to listen to data events, which is fired when model is updated. For details, please refer to our [documentation](http://docs.rikulo.org/rikulo/latest/UXL/Standard_Attributes/on.event.html).
 
 
 
