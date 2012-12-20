@@ -34,11 +34,6 @@
   font-smoothing: antialiased;
 }
 
-#v-main #footer {
-    font-family: inherit;
-    margin-top: 0;
-}
-
 #todo-app {
   width: 100%;
   background: #fff;
@@ -321,7 +316,9 @@ label[for='toggle-all'] {
   margin-bottom: -1px;
 }
 
-#footer {
+#v-main #footer {
+  font-family: inherit;
+  margin-top: 0;
   height: 32px;
   width: 100%;
   right: 0;
@@ -333,7 +330,7 @@ label[for='toggle-all'] {
   text-align: center;
 }
 
-#footer:before {
+#v-main #footer:before {
   content: '';
   position: absolute;
   right: 0;

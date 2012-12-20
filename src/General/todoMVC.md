@@ -2,15 +2,13 @@ Date: 2012-12-20
 Title: Rikulo's todoMVC
 Tags: Rikulo, MVC, ideology, todoMVC, UXL
 Author: Simon Pai
-summary: <p>An overview of todoMVC project and Rikulo's implementation.</p><img src="http://static.rikulo.org/blogs/general/todoMVC/todoMVC-sample.png" class="center-blog-image" />
+summary: <p>An overview of todoMVC project and Rikulo's implementation.</p><img src="http://static.rikulo.org/blogs/general/todoMVC/todoMVC-sample.png" class="center-blog-image" style="margin-top:16px" />
 
 
 
 #What's todoMVC
 
 [todoMVC](http://todomvc.com/) is a collection of a sample "Todo" web application implemented by different MVC frameworks, for helping interested users to compare and inspect them. It includes many popular frameworks, like Backbone.js, KnockoutJS, AngularJS, and other interesting constructions, like GWT, Dart (Vanilla), etc.
-
-Not all available implementations are included in the official repository. For example, [Dart Web UI](http://www.dartlang.org/articles/dart-web-components/) has an implementation hosted in its [own repository](https://github.com/dart-lang/web-ui/tree/master/example/todomvc).
 
 
 
