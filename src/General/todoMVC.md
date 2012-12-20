@@ -68,7 +68,7 @@ UXL contains some neat features to make UI declaration friendly:
 * Flow control unit, such as for loop and conditional operator
 * Template declaration
 
-Here is a snippet of Rikulo UXL in todoMVC implementation:
+Here is a snippet of UXL in todoMVC implementation:
 
 	::xml
 	<View tag="ul" id="todo-list" layout="type: linear; orient: vertical; spacing: 0">
@@ -76,7 +76,8 @@ Here is a snippet of Rikulo UXL in todoMVC implementation:
 			<View tag="li" class="${t.completed ? 'completed' : ''}" 
 			control="new TodoItemControl(app, t)">
 				<View class="show">
-					<CheckBox class="toggle" value="${t.completed}" on.change="toggleCompleted" />
+					<CheckBox class="toggle" value="${t.completed}" 
+					on.change="toggleCompleted" />
 					<TextView class="title" text="${t.title}" on.dblclick="editTitle" />
 					<Button class="destroy" on.click="destroy" />
 				</View>
@@ -111,12 +112,12 @@ Most MVC/MVVM frameworks encourage user to separate view, model, and controller,
 
 In Rikulo, like most frameworks, model, view, and controller are kept as separate files. Views are represented by XML, models can be arbitrary classes, and controllers are classes extended from a base class.
 
-<img src="http://static.rikulo.org/blogs/general/todoMVC/code-structure.png" class="center-blog-image" />
+<img src="http://static.rikulo.org/blogs/general/todoMVC/code-structure.png" />
 
 
 
 #Conclusion
 
-Rikulo, as an MVC framework, provides model data events, UXL view representation, and controller skeleton for an easy and scalable development experience. Visit our website and join [our community](https://plus.google.com/u/2/117602514255061155793) on Google+!
+Rikulo, as an MVC framework, provides model data events, UXL view representation, and controller skeleton for an easy and scalable development experience. Explore our website and join [our community](https://plus.google.com/u/2/117602514255061155793) on Google+!
 
 
