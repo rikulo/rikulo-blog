@@ -28,9 +28,9 @@ Here is the demo of Rikulo's implementation.
 
 
 
-#Essential Elements in MVC
+#Elements in MVC
 
-We think there are several important criteria to look at when surveying an MVC framework: data flow, view representation, view modulization, code structure.
+We are going to explore the crutial elements in an MVC framework.
 
 ##Data Flow
 
@@ -48,42 +48,13 @@ Update flow is about how model and view communicate through controller (or, view
 * GWT implementation of todoMVC: MVP
 * Dart Web UI: model driven view (MDV)
 
-Rikulo is a typical MVC framework, which provides a skeleton controller class to extend from. The controller listens to DOM event, manipulates model directly, and then update DOM elements. For example,
+Most MVC/MVVM frameworks encourage user to separate view, model, and controller, so user can focus on views and models individually, and then think about putting them together with controllers. 
 
-	::dart
-	class TodoItemControl extends Control {
-	
-		final TodoAppControl _appc;
-		final Todo _todo;
-		
-		TextBox get input => view.query("TextBox.edit");
-		TextView get label => view.query("TextView.title");
-		
-		TodoItemControl(this._appc, this._todo);
-		
-		// event handlers, which listen to DOM events (specified in view file)
-		void toggleCompleted(ChangeEvent<bool> event) {
-			_appc.increaseCompleted(_todo.completed = event.value);
-		}
-		void editTitle(ViewEvent event) {
-			view.classes.add("editing");
-			input.node.focus();
-		}
-		void enterTitle(DomEvent event) {
-			if (event.keyCode == ENTER_KEY)
-				input.node.blur();
-		}
-		void submitTitle(ViewEvent event) {
-			final String title = input.value.trim();
-			if (!title.isEmpty) {
-				label.text = _todo.title = title;
-				_appc.save();
-				view.classes.remove("editing");
-			} else 
-				destroy();
-		}
-		void destroy([ViewEvent event]) => _appc.destroy(_todo);
-	}
+In Rikulo, model, view, and controller are kept as separate files. Views are represented by XML, models can be arbitrary classes, and controllers are classes extended from a base class. As shown in the code snippet below, view files concern purely views, containing no mixture of business logic.
+
+
+
+##Model
 
 Rikulo does not have any restriction on the type of model -- it can be any plain Dart object. For example, in our todoMVC implementation, the model is as simple as:
 
@@ -103,7 +74,7 @@ However, if you prefer using data event like in Backbone.js, Rikulo also support
 
 
 
-##View Representation
+##View
 
 To render UI from a page request, some component-based frameworks introduce their own ways of specifying UI layout, to relief user from bizzare Swing-like component construction. 
 
@@ -136,10 +107,6 @@ Here is a snippet of UXL in todoMVC implementation:
 
 You can also read the full [source code](https://github.com/rikulo/todoMVC/blob/master/web/views/app.uxl.xml).
 
-
-
-##View Modularization
-
 Due to the need of rendering a collection of items, view modularization is a necessity in a MVC framework. Component-based frameworks have a natural layer for packing DOM elements into a view unit. However, frameworks with DOM-based view (i.e. pure HTML) may also introduce a thin layer of view unit to provide the right granularity of views.
 
 When combined with the need of view representation, this part is often assisted by template definition utilities. For instance,
@@ -151,13 +118,44 @@ Rikulo offers template declaration ability naturally with UXL infrastructure.
 
 
 
-##Code Structure
+##Controller
 
-Code structure is about how model, view, and controller code is organized in your code base. The purpose of maintaining a code structure is to reduce development overhead in large projects.
+Rikulo is a typical MVC framework, which provides a skeleton controller class to extend from. The controller listens to DOM event, manipulates model directly, and then update DOM elements. For example,
 
-Most MVC/MVVM frameworks encourage user to separate view, model, and controller, so user can focus on views and models individually, and then think about putting them together with controllers. However, there is no best answer to this question; it is really up to the paradigm of the framework to decide what is the fittest code structure. For example, Dart Web UI emphasizes on component encapsulation, so it promotes packing model/view/controller code together in the unit of components.
-
-In Rikulo, like most frameworks, model, view, and controller are kept as separate files. Views are represented by XML, models can be arbitrary classes, and controllers are classes extended from a base class.
+	::dart
+	class TodoItemControl extends Control {
+	
+		final TodoAppControl _appc;
+		final Todo _todo;
+		
+		TextBox get input => view.query("TextBox.edit");
+		TextView get label => view.query("TextView.title");
+		
+		TodoItemControl(this._appc, this._todo);
+		
+		// event handlers, which listen to DOM events (specified in view file) //
+		void toggleCompleted(ChangeEvent<bool> event) {
+			_appc.increaseCompleted(_todo.completed = event.value);
+		}
+		void editTitle(ViewEvent event) {
+			view.classes.add("editing");
+			input.node.focus();
+		}
+		void enterTitle(DomEvent event) {
+			if (event.keyCode == ENTER_KEY)
+				input.node.blur();
+		}
+		void submitTitle(ViewEvent event) {
+			final String title = input.value.trim();
+			if (!title.isEmpty) {
+				label.text = _todo.title = title;
+				_appc.save();
+				view.classes.remove("editing");
+			} else 
+				destroy();
+		}
+		void destroy([ViewEvent event]) => _appc.destroy(_todo);
+	}
 
 
 
