@@ -114,7 +114,7 @@ When combined with the need of view representation, this part is often assisted 
 * Backbone.js: uses Underscore.js to define HTML template
 * Dart Web UI: has a template infrastructure that implements Web Components standard
 
-Rikulo offers template declaration ability naturally with UXL infrastructure.
+In Rikulo, a view file will be compiled into a dart class, as an reusable template object. Thus it naturally covers the demand of template definition.
 
 
 
