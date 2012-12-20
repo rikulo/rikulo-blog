@@ -120,7 +120,7 @@ Rikulo offers template declaration ability naturally with UXL infrastructure.
 
 ##Controller
 
-Rikulo is a typical MVC framework, which provides a skeleton controller class to extend from. The controller listens to DOM event, manipulates model directly, and then update DOM elements. For example,
+In Rikulo, controller connects view to model, and handles the business logic between them. The controller listens to DOM event, manipulates model directly, and then update DOM elements. For example,
 
 	::dart
 	class TodoItemControl extends Control {
@@ -156,6 +156,8 @@ Rikulo is a typical MVC framework, which provides a skeleton controller class to
 		}
 		void destroy([ViewEvent event]) => _appc.destroy(_todo);
 	}
+
+Having controller taking care of business logic, view and model can be kept clean to a maximal extent.
 
 
 
