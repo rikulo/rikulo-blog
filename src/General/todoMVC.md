@@ -159,8 +159,6 @@ Most MVC/MVVM frameworks encourage user to separate view, model, and controller,
 
 In Rikulo, like most frameworks, model, view, and controller are kept as separate files. Views are represented by XML, models can be arbitrary classes, and controllers are classes extended from a base class.
 
-<img src="http://static.rikulo.org/blogs/general/todoMVC/code-structure.png" />
-
 
 
 #Conclusion
