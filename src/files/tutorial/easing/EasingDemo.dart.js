@@ -1259,7 +1259,6 @@ $$.EasingDemo = {"":
  ["rbtn", "pbtn", "sbtn", "tarv", "progBar?", "_em", "_rgef", "_rgma?", "_title", "_mainView", "_dlgInfos", "_masks", "_container", "_creating"],
  "super": "Activity",
  onCreate_$0: function() {
-  this.set$title('Easing Demo');
   this.get$mainView().get$style().set$backgroundColor('#000000');
   var container = $.View$();
   container.set$width(200);
@@ -3349,11 +3348,6 @@ $$.Activity = {"":
     for (t1 = $.iterator(this._masks); t1.hasNext$0() === true;)
       t1.next$0().resize$0();
   }
-},
- set$title: function(title) {
-  var t1 = !(title == null) ? title : '';
-  this._title = t1;
-  $.document().set$title(t1);
 },
  onCreate_$0: function() {
 },
@@ -9748,12 +9742,6 @@ $.stringTypeCast = function(value) {
   throw $.$$throw($.CastErrorImplementation$($.Primitives_objectTypeName(value), 'String'));
 };
 
-$.isEmpty = function(receiver) {
-  if (typeof receiver === 'string' || $.isJsArray(receiver))
-    return receiver.length === 0;
-  return receiver.isEmpty$0();
-};
-
 $._currentIsolate = function() {
   return $._globalState().get$currentContext();
 };
@@ -9808,6 +9796,12 @@ $.getRange = function(receiver, start, length$) {
   if (t1)
     throw $.$$throw($.ArgumentError$(length$));
   return receiver.slice(start, end);
+};
+
+$.isEmpty = function(receiver) {
+  if (typeof receiver === 'string' || $.isJsArray(receiver))
+    return receiver.length === 0;
+  return receiver.isEmpty$0();
 };
 
 $._TextTrackListEventsImpl$ = function(_ptr) {
@@ -14580,9 +14574,6 @@ $.$defineNativeClass('DocumentFragment', [], {
  set$id: function(value) {
   throw $.$$throw($.UnsupportedOperationException$('ID can\'t be set for document fragments.'));
 },
- set$title: function(value) {
-  throw $.$$throw($.UnsupportedOperationException$('Title can\'t be set for document fragments.'));
-},
  get$on: function() {
   return $._ElementEventsImpl$(this);
 },
@@ -14592,7 +14583,7 @@ $.$defineNativeClass('DocumentFragment', [], {
  is$Element: function() { return true; }
 });
 
-$.$defineNativeClass('HTMLDocument', ["body?", "title!"], {
+$.$defineNativeClass('HTMLDocument', ["body?"], {
  get$on: function() {
   return $._DocumentEventsImpl$(this);
 },
@@ -14623,7 +14614,7 @@ $.$defineNativeClass('DocumentType', ["name?"], {
 }
 });
 
-$.$defineNativeClass('Element', ["hidden=", "id=", "innerHTML!", "title!", "nextElementSibling?", "offsetParent?", "style?"], {
+$.$defineNativeClass('Element', ["hidden=", "id=", "innerHTML!", "nextElementSibling?", "offsetParent?", "style?"], {
  get$attributes: function() {
   return $._ElementAttributeMap$(this);
 },
@@ -17441,9 +17432,6 @@ return this[index];
 });
 
 $.$defineNativeClass('SVGStyleElement', ["type="], {
- set$title: function(value) {
-this.title = value;
-},
  is$Element: function() { return true; }
 });
 
