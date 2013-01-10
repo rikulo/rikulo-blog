@@ -22,6 +22,12 @@
 	<link href="http://blog.rikulo.org/feeds/all.rss.xml" rel="alternate" type="application/rss+xml" title="Rikulo RSS FEED" />
 	<script type="text/javascript" src="http://{{ MAINSITE }}/resource/js/lib/jquery-1.6.2.min.js" ></script>
 	
+	<script type="text/css">
+		.v-Image {
+			padding-bottom: 0px;
+		}
+	</script>
+
 	<!--[if lt IE 9]>
 		<script src="http://{{ MAINSITE }}/resource/js/lib/html5.js"></script>
 	<![endif]-->
@@ -74,6 +80,8 @@
 					<div id="page-content" class="blog-page grid_12 clearfix">
 
 						<div id="blog-content" class="grid_9 alpha">
+							{% block toindex %}
+							{% endblock %}
 							{% block content %}
 							{% endblock %}
 						</div>
