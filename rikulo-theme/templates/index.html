@@ -26,12 +26,12 @@
         {% if articles_page.previous_page_number() == 1 %}
             <a href="{{ SITEURL }}/{{ page_name }}.html">&laquo;&nbsp;Newer Posts</a>
         {% else %}
-            <a href="{{ SITEURL }}/{{ page_name }}{{ articles_page.previous_page_number() }}.html">&laquo;&nbsp;Newer Posts</a>
+            <a href="{{ SITEURL }}/{{ page_name }}{{ articles_page.previous_page_number() }}.html" style="float:left;">&laquo;&nbsp;Newer Posts</a>
         {% endif %}
     {% endif %}
     <!--Page {{ articles_page.number }} / {{ articles_paginator.num_pages }}-->
     {% if articles_page.has_next() %}
-        <a href="{{ SITEURL }}/{{ page_name }}{{ articles_page.next_page_number() }}.html">Older Posts&nbsp;&raquo;</a>
+        <a href="{{ SITEURL }}/{{ page_name }}{{ articles_page.next_page_number() }}.html" style="float:right;">Older Posts&nbsp;&raquo;</a>
     {% endif %}
 </p>
 </section><!-- /#content -->
