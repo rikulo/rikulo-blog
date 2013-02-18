@@ -11,7 +11,7 @@ a front end web developer, you should be familiar with the construction:
 
 <img src="http://static.rikulo.org/blogs/tutorial/swipe-album/swipe-album-plan.png" class="center-blog-image" />
 
-Then we are going to wire up a [SwipeGesture](http://github.com/rikulo/rikulo/blob/master/client/gesture/src/SwipeGesture.dart) and a Motion, so that the pictures will shift when they receive a swipe gesture.
+Then we are going to wire up a [SwipeGesture](http://github.com/rikulo/ui/blob/master/client/gesture/src/SwipeGesture.dart) and a Motion, so that the pictures will shift when they receive a swipe gesture.
 
 
 
@@ -185,6 +185,6 @@ The gestures come with enable/disable APIs, allowing us to easily turn it on and
 
 #Conclusion
 
-At the end we added a few more decorations to the demo to make it fancier. They are quite straightforward to figure out from the [source code](http://github.com/rikulo/rikulo/blob/master/samples/gesture/AlbumDemo.dart).
+At the end we added a few more decorations to the demo to make it fancier. They are quite straightforward to figure out from the [source code](http://github.com/rikulo/ui/blob/master/samples/gesture/AlbumDemo.dart).
 
 

@@ -26,7 +26,7 @@ In the following sections, we are going to demonstrate how to use effects in you
 <div id="v-main-view" style="margin:0 auto;width:500px;height:500px"></div>
 </p>
 
-* You can read the [source code](http://github.com/rikulo/rikulo/blob/master/example/effect/ViewEffectDemo2.dart).
+* You can read the [source code](http://github.com/rikulo/ui/blob/master/example/effect/ViewEffectDemo2.dart).
 
 To add a view without effect is simple:
 
@@ -40,7 +40,7 @@ To add a view with an effect (say, fade-in) is not difficult either. Without the
 	parent.addChild(view);
 	new FadeInEffect(view.node).run();
 	
-[FadeInEffect](http://github.com/rikulo/rikulo/blob/master/lib/src/effect/Effect.dart) is a subclass of [EasingMotion](http://github.com/rikulo/rikulo/blob/master/lib/src/effect/EasingMotion.dart), which iteratively assign CSS opacity to the element from 0 to 1 in a given period (default: 500 ms). Like other [EasingMotions](http://github.com/rikulo/rikulo/blob/master/lib/src/effect/EasingMotion.dart), you can customize its running time, easing function, and pass in callback at the end of motion. For example,
+[FadeInEffect](http://github.com/rikulo/ui/blob/master/lib/src/effect/Effect.dart) is a subclass of [EasingMotion](http://github.com/rikulo/ui/blob/master/lib/src/effect/EasingMotion.dart), which iteratively assign CSS opacity to the element from 0 to 1 in a given period (default: 500 ms). Like other [EasingMotions](http://github.com/rikulo/ui/blob/master/lib/src/effect/EasingMotion.dart), you can customize its running time, easing function, and pass in callback at the end of motion. For example,
 
 	::dart
 	view.style.visibility = "hidden"; // add the view while invisible
@@ -57,9 +57,9 @@ When you need to remove a view with an effect, do it reversely:
 		view.style.visibility = ""; // change the visibility back after removal
     }).run();
 
-Note that [FadeInEffect](http://github.com/rikulo/rikulo/blob/master/lib/src/effect/Effect.dart) is also a subclass of [ShowEffect](http://github.com/rikulo/rikulo/blob/master/lib/src/effect/Effect.dart), which assumes element's visibility to be "hidden" to start with, and will make the element visible during the effect. On the contrary, [FadeOutEffect](http://github.com/rikulo/rikulo/blob/master/lib/src/effect/Effect.dart), as a [HideEffect](http://github.com/rikulo/rikulo/blob/master/lib/src/effect/Effect.dart), assumes element to be visible at the beginning, and will turn it invisible at the end.
+Note that [FadeInEffect](http://github.com/rikulo/ui/blob/master/lib/src/effect/Effect.dart) is also a subclass of [ShowEffect](http://github.com/rikulo/ui/blob/master/lib/src/effect/Effect.dart), which assumes element's visibility to be "hidden" to start with, and will make the element visible during the effect. On the contrary, [FadeOutEffect](http://github.com/rikulo/ui/blob/master/lib/src/effect/Effect.dart), as a [HideEffect](http://github.com/rikulo/ui/blob/master/lib/src/effect/Effect.dart), assumes element to be visible at the beginning, and will turn it invisible at the end.
 
-Rikulo supplies a few built-in effects: [FadeInEffect](http://github.com/rikulo/rikulo/blob/master/lib/src/effect/Effect.dart), [ZoomInEffect](http://github.com/rikulo/rikulo/blob/master/lib/src/effect/Effect.dart), [SlideInEffect](http://github.com/rikulo/rikulo/blob/master/lib/src/effect/SlideEffect.dart) for showing an element, and [FadeOutEffect](http://github.com/rikulo/rikulo/blob/master/lib/src/effect/Effect.dart), [ZoomOutEffect](http://github.com/rikulo/rikulo/blob/master/lib/src/effect/Effect.dart), [SlideOutEffect](http://github.com/rikulo/rikulo/blob/master/lib/src/effect/SlideEffect.dart) for hiding an element. However, you can always easily customize them, or design your own effects by subclassing [ShowEffect](http://github.com/rikulo/rikulo/blob/master/lib/src/effect/Effect.dart) and [HideEffect](http://github.com/rikulo/rikulo/blob/master/lib/src/effect/Effect.dart).
+Rikulo supplies a few built-in effects: [FadeInEffect](http://github.com/rikulo/ui/blob/master/lib/src/effect/Effect.dart), [ZoomInEffect](http://github.com/rikulo/ui/blob/master/lib/src/effect/Effect.dart), [SlideInEffect](http://github.com/rikulo/ui/blob/master/lib/src/effect/SlideEffect.dart) for showing an element, and [FadeOutEffect](http://github.com/rikulo/ui/blob/master/lib/src/effect/Effect.dart), [ZoomOutEffect](http://github.com/rikulo/ui/blob/master/lib/src/effect/Effect.dart), [SlideOutEffect](http://github.com/rikulo/ui/blob/master/lib/src/effect/SlideEffect.dart) for hiding an element. However, you can always easily customize them, or design your own effects by subclassing [ShowEffect](http://github.com/rikulo/ui/blob/master/lib/src/effect/Effect.dart) and [HideEffect](http://github.com/rikulo/ui/blob/master/lib/src/effect/Effect.dart).
 
 
 
@@ -70,7 +70,7 @@ Rikulo supplies a few built-in effects: [FadeInEffect](http://github.com/rikulo/
 <div id="v-main-panel" style="margin:0 auto;width:500px;height:500px"></div>
 </p>
 
-* You can read the [source code](http://github.com/rikulo/rikulo/blob/master/example/effect/PanelEffectDemo.dart).
+* You can read the [source code](http://github.com/rikulo/ui/blob/master/example/effect/PanelEffectDemo.dart).
 
 Effects for showing or hiding a dialog is similar, expect that there is an additional mask element to take care of.
 
@@ -100,7 +100,7 @@ Here goes some slightly advanced effect applications. In the demo above, we swit
 * Apply the effect on both views together
 * Remove the first view
 
-Feel free to take a glance at the [source code](http://github.com/rikulo/rikulo/blob/master/example/effect/SwitchViewEffectDemo2.dart) to get more details.
+Feel free to take a glance at the [source code](http://github.com/rikulo/ui/blob/master/example/effect/SwitchViewEffectDemo2.dart) to get more details.
 
 <p>
 <script type="application/dart" src="http://static.rikulo.org/blogs/tutorial/effect/MiscEffectDemo.dart"></script>

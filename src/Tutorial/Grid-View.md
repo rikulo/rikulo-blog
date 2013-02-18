@@ -28,7 +28,7 @@ Grag or swipe on the each area to scroll.
 
 #Prepare ScrollView and Their Contents.
 
-The ScrollView and content preparation itself is quite straightforward. You can refer to the [previous blog post](http://blog.rikulo.org/posts/2012/Jul/Tutorial/building-a-list-view-demo-using-rikulo/) or the [source code](http://github.com/rikulo/rikulo/blob/master/samples/scroll-view/GridViewDemo.dart). Here is an overview of what we do:
+The ScrollView and content preparation itself is quite straightforward. You can refer to the [previous blog post](http://blog.rikulo.org/posts/2012/Jul/Tutorial/building-a-list-view-demo-using-rikulo/) or the [source code](http://github.com/rikulo/ui/blob/master/samples/scroll-view/GridViewDemo.dart). Here is an overview of what we do:
 
 	::dart
 	final int barSize = 50, barInnerSize = 40;

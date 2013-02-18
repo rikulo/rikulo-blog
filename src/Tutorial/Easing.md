@@ -16,13 +16,13 @@ summary: <p>This blog post introduces the capability and usage of Rikulo EasingM
 
 Try different combinations of easing functions and actions.
 
-The [source code](http://github.com/rikulo/rikulo/blob/master/example/effect/EasingDemo.dart) is also available.
+The [source code](http://github.com/rikulo/ui/blob/master/example/effect/EasingDemo.dart) is also available.
 
 
 
 #EasingMotion
 
-Many of web prgrammers are familiar with the idea of easing function when working on visual effects. In Rikulo, we provided [EasingMotion](http://github.com/rikulo/rikulo/blob/master/lib/src/effect/EasingMotion.dart) as a utility to easily construct easing-function-based effects and motions.
+Many of web prgrammers are familiar with the idea of easing function when working on visual effects. In Rikulo, we provided [EasingMotion](http://github.com/rikulo/ui/blob/master/lib/src/effect/EasingMotion.dart) as a utility to easily construct easing-function-based effects and motions.
 
 If you are not familiar with the idea, here is a quick explanation: Imagine we are going to implement a slide-down effect by iteratively setting the height of a DIV element from 0 to 100px. If the height increment is linear to elapsed time, the element will slide down linearly. (OK, this sounds like rubblish!)
 

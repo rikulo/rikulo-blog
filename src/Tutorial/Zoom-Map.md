@@ -27,7 +27,7 @@ This is going to be a very simple demo. Have you tried Google Maps on a touch de
 
 #The Idea
 
-The idea is straightforward: we use the information from a [ZoomGesture](http://github.com/rikulo/rikulo/blob/master/client/gesture/src/ZoomGesture.dart) to determine a CSS transformation to apply to the photo image element. The transformation must satisfy the following properties:
+The idea is straightforward: we use the information from a [ZoomGesture](http://github.com/rikulo/ui/blob/master/client/gesture/src/ZoomGesture.dart) to determine a CSS transformation to apply to the photo image element. The transformation must satisfy the following properties:
 
 * It has to be linear and angle preserving. (i.e. no stretch/skew)
 * It should map the initial touch positions to the current touch positions, respectively. (i.e. say, on a real map, if you touch London and Paris and move your fingers, they should be always on London and Paris.)
@@ -59,7 +59,7 @@ From the initial and current positions, it further derives the following values:
 
 <img src="http://static.rikulo.org/blogs/tutorial/zoom-map/zoom-map-02.png" class="center-blog-image" />
 
-Last but not least, it also supplies a [Transformation](http://github.com/rikulo/rikulo/blob/master/client/util/src/Matrix.dart) object to describe the entire transformation, with respect to the midpoint of initial positions as the origin. With Dart's power of operator definition, you can even do matrix multiplication easily.
+Last but not least, it also supplies a [Transformation](http://github.com/rikulo/ui/blob/master/client/util/src/Matrix.dart) object to describe the entire transformation, with respect to the midpoint of initial positions as the origin. With Dart's power of operator definition, you can even do matrix multiplication easily.
 
 	::dart
 	Transformation t1 = state.transformation;
@@ -71,7 +71,7 @@ Last but not least, it also supplies a [Transformation](http://github.com/rikulo
 
 #Implementation
 
-We are going to skip the basic layout part of this demo, but you can always explore the [source code](https://github.com/rikulo/rikulo/blob/master/samples/gesture/MapDemo.dart).
+We are going to skip the basic layout part of this demo, but you can always explore the [source code](https://github.com/rikulo/ui/blob/master/samples/gesture/MapDemo.dart).
 
 One thing to note here: the transformation matrix provided by ZoomGesture has its origin at the midpoint of initial touches, while the CSS transformation has its origin at the center of the element. To make them compatible, we will shift the transformation origin by API.
 
