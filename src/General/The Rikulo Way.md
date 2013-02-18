@@ -54,7 +54,7 @@ In additon to linear layouts Rikulo also provides an Anchor layout. The example 
     TextView welcome = new TextView("Hello World!");
     welcome.profile.text = "anchor: parent; location: center center";
 
-In addition to the provided layouts developers are able to create their own using Rikulo's base layout, more information on layouts can be [found here](http://docs.rikulo.org/rikulo/latest/Layouts/index.html).
+In addition to the provided layouts developers are able to create their own using Rikulo's base layout, more information on layouts can be [found here](http://docs.rikulo.org/ui/latest/Layouts/index.html).
 
 
 ##HTML & CSS - you can still use it

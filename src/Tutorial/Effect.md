@@ -113,6 +113,6 @@ Feel free to take a glance at the [source code](http://github.com/rikulo/rikulo/
 
 We believe visualization is an important part in the application that you don't want to compromise. With the effect infrastructure of Rikulo, you can achieve almost every kind of effect you want. 
 
-In the next post, we are going to talk about MVC and [UXL](http://docs.rikulo.org/rikulo/latest/UXL/Fundamentals/UXL_Overview.html) (User-interface eXtensible language) in Rikulo, with an implementation of [todoMVC](http://github.com/addyosmani/todomvc).
+In the next post, we are going to talk about MVC and [UXL](http://docs.rikulo.org/ui/latest/UXL/Fundamentals/UXL_Overview.html) (User-interface eXtensible language) in Rikulo, with an implementation of [todoMVC](http://github.com/addyosmani/todomvc).
 
 

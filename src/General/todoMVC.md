@@ -70,7 +70,7 @@ Rikulo does not have any restriction on the type of model -- it can be any plain
 		Map toJson() => { "title": title, "completed": completed };
 	}
 
-However, if you prefer using data event like in Backbone.js, Rikulo also supports it via [DataModel](http://api.rikulo.org/rikulo/latest/rikulo_model/DataModel.html). You can register callbacks to listen to data events, which is fired when model is updated. For details, please refer to our [documentation](http://docs.rikulo.org/rikulo/latest/UXL/Standard_Attributes/on.event.html).
+However, if you prefer using data event like in Backbone.js, Rikulo also supports it via [DataModel](http://api.rikulo.org/ui/latest/rikulo_model/DataModel.html). You can register callbacks to listen to data events, which is fired when model is updated. For details, please refer to our [documentation](http://docs.rikulo.org/ui/latest/UXL/Standard_Attributes/on.event.html).
 
 
 
@@ -78,7 +78,7 @@ However, if you prefer using data event like in Backbone.js, Rikulo also support
 
 To render UI from a page request, some component-based frameworks introduce their own ways of specifying UI layout, to relief user from bizzare Swing-like component construction. 
 
-Rikulo uses [UXL](http://docs.rikulo.org/rikulo/latest/UXL/Fundamentals/UXL_Overview.html), an XML language, to help you specifying widget layout. Rikulo UXL compiler will then compile the xml file to a human-readable dart class which builds up the corresponding component tree for you.
+Rikulo uses [UXL](http://docs.rikulo.org/ui/latest/UXL/Fundamentals/UXL_Overview.html), an XML language, to help you specifying widget layout. Rikulo UXL compiler will then compile the xml file to a human-readable dart class which builds up the corresponding component tree for you.
 
 UXL contains some neat features to make UI declaration friendly:
 
