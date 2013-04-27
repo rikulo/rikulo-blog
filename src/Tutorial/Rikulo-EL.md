@@ -29,84 +29,85 @@ Rikulo EL implements the EL specification thus you can use it as what
 Nevertheless, I will show you the enhancements that Rikulo EL added that
  are specific for Dart language.
 
-##Access top level variables seamlessly 
+##Access variables 
 
 Following is a typical "Hello World" example. The variable to be
-evaluated is a Dart top level variable.
+evaluated is provided by use of [VariableMapper](http://api.rikulo.org/el/latest/rikulo_el/VariableMapper.html).
 
     ::dart
-    #import('dart:mirrors');
-    #import('package:rikulo_el/el.dart');
-    #import('package:rikulo_el/impl.dart');
+    import 'dart:mirrors' show reflect;
+    import 'package:rikulo_el/el.dart';
     
     class Person {
       String name;
       Person(this.name);
     }
 
-    //Top level variable to be evaluated in EL expression
-	Person person = new Person('Rikulo');
-	
     void main() {
       //Prepare an expression factory.
       ExpressionFactory ef = new ExpressionFactory();
     
       //Prepare the expression script
-	  //expression inside #{...} is to be evaluated
+      //expression inside #{...} is to be evaluated
       String script = 'Hello, #{person.name}!'; 
     
-	  //Prepare an expression context.
-	  ELContext ctx = new ELContext();
+      //Prepare an expression context.
+      ELContext ctx = new ELContext();
+      ctx.variableMapper.setVariable('person',
+          ef.createVariable(new Person('Rikulo')));
       
       //Parse the script and create a value expression which expect a String type
       ValueExpression ve = ef.createValueExpression(ctx, script, reflect('').type);
       
       //Evaluate the expression and return the evaluated result
       print(ve.getValue(ctx)); //'Hello, Rikulo!'
-    }	
+    }
 
-> The default ELResolver implementation of the Rikulo EL supports resolving top 
-> variables of the *root library* only.
+> If you don't want to save `ValueExpression` for repeating use, you can use [ELUtil.eval()](http://api.rikulo.org/el/latest/rikulo_el/ELUtil.html#eval) instead.
 
-##Access top level functions seamlessly 
+> Instead of reflecting the string's type (with `reflect()`), you can use [STRING_MIRROR](http://api.rikulo.org/commons/latest/rikulo_mirrors.html) instead.
 
-Following is still a typical "Hello World" example. The function to be
-evaluated is a Dart top level function.
+##Access functions 
+
+Following is still a typical "Hello World" example. Here we use [FunctionMapper](http://api.rikulo.org/el/latest/rikulo_el/FunctionMapper.html).
 
     ::dart
-    #import('dart:mirrors');
-    #import('package:rikulo_el/el.dart');
-    #import('package:rikulo_el/impl.dart');
+    import 'dart:mirrors' show reflect;
+    import 'package:rikulo_el/el.dart';
     
     class Person {
       String name;
       Person(this.name);
     }
 
-    //Top level function to be evaluated in EL expression
-	Person currentPerson() => new Person('Rikulo');
+    //Implements a function mapper
+    class _FuncMapper implements FunctionMapper {
+      Function resolveFunction(String name) {
+        switch (name) {
+          case "currentPerson":
+            return () => new Person('Rikulo');
+        }
+      }
+    }
 	
     void main() {
       //Prepare an expression factory.
       ExpressionFactory ef = new ExpressionFactory();
     
       //Prepare the expression script
-	  //expression inside #{...} is to be evaluated
+      //expression inside #{...} is to be evaluated
       String script = 'Hello, #{currentPerson().name}!'; 
     
-	  //Prepare an expression context.
-	  ELContext ctx = new ELContext();
+      //Prepare an expression context.
+      ELContext ctx = new ELContext(functionMapper: new _FuncMapper());
       
       //Parse the script and create a value expression which expect a String type
       ValueExpression ve = ef.createValueExpression(ctx, script, reflect('').type);
       
       //Evaluate the expression and return the evaluated result
       print(ve.getValue(ctx)); //'Hello, Rikulo!'
-    }	
+    }
 
-> The default FunctionMapper implementation of the Rikulo EL supports resolving 
-> top functions of the *root library* only.
-	
 ##Allow using Dart array syntax in EL expression
 
 There is no counter part in EL specification and Rikulo EL enhances 
@@ -114,32 +115,29 @@ the parser and evaluator to handle the Dart arrays. Following is a
 simple example.
 
     ::dart
-    #import('dart:mirrors');
-    #import('package:rikulo_el/el.dart');
-    #import('package:rikulo_el/impl.dart');
+    import 'dart:mirrors';
+    import 'package:rikulo_el/el.dart';
     
     class Person {
       String name;
       Person(this.name);
     }
 
-    //Top level variables
-	Person henri = new Person('Henri');
-	Person tom = new Person('Tom');
-	Person simon = new Person('Simon');
-	Person tim = new Person('Tim');
-	
     void main() {
       //Prepare an expression factory.
       ExpressionFactory ef = new ExpressionFactory();
     
       //Prepare the expression script
-	  //expression inside #{...} is to be evaluated
-      String script = 'Hello, #{[henri, tom, simon, tim][0].name}!'; 
+      //expression inside #{...} is to be evaluated
+      String script = 'Hello, #{[henri, john, mary][0].name}!'; 
     
-	  //Prepare an expression context.
-	  ELContext ctx = new ELContext();
-      
+      //Prepare an expression context.
+      ELContext ctx = new ELContext();
+      ctx.variableMapper
+        ..setVariable('henri', ef.createVariable(new Person('Henri')))
+        ..setVariable('john', ef.createVariable(new Person('John')))
+        ..setVariable('mary', ef.createVariable(new Person('Mary')));
+
       //Parse the script and create a value expression which expect a String type
       ValueExpression ve = ef.createValueExpression(ctx, script, reflect('').type);
       
@@ -154,32 +152,30 @@ simple example.
 ##Allow using Dart map syntax in EL expression
 
     ::dart
-    #import('dart:mirrors');
-    #import('package:rikulo_el/el.dart');
-    #import('package:rikulo_el/impl.dart');
+    import 'dart:mirrors';
+    import 'package:rikulo_el/el.dart';
+    import 'package:rikulo_el/impl.dart';
     
     class Person {
       String name;
       Person(this.name);
     }
 
-    //Top level variables
-	Person henri = new Person('Henri');
-	Person tom = new Person('Tom');
-	Person simon = new Person('Simon');
-	Person tim = new Person('Tim');
-	
     void main() {
       //Prepare an expression factory.
       ExpressionFactory ef = new ExpressionFactory();
     
       //Prepare the expression script
-	  //expression inside #{...} is to be evaluated
+      //expression inside #{...} is to be evaluated
       String script = 
-		"Hello, #{{'henri' : henri, 'tom' : tom, 'simon' : simon, 'tim' : tim}['henri'].name}!"; 
+        "Hello, #{{'henri' : henri, 'john' : john, 'mary' : mary}['henri'].name}!"; 
     
-	  //Prepare an expression context.
-	  ELContext ctx = new ELContext();
+      //Prepare an expression context.
+      ELContext ctx = new ELContext();
+      ctx.variableMapper
+        ..setVariable('henri', ef.createVariable(new Person('Henri')))
+        ..setVariable('john', ef.createVariable(new Person('John')))
+        ..setVariable('mary', ef.createVariable(new Person('Mary')));
       
       //Parse the script and create a value expression which expect a String type
       ValueExpression ve = ef.createValueExpression(ctx, script, reflect('').type);
@@ -191,18 +187,6 @@ simple example.
 > Note that such Dart map instance is created everytime the value expression is 
 > evaluated and its life scope is only within that "Evaluation". That is, after the 
 > evaluation is done, it will be left as is and finally garbage collected.
-
-#Things can be better
-
-+ Currently some APIs require the programmers to provide `ClassMirror` of an object 
-  instead of, IMO more appropriate, Dart `runtimeType`. It is because that this Dart 
-  feature is not ready yet in current Dart build. I expect to modify this part when 
-  Dart done supporting the `Object.runtimeType`. Hope it is not too far away.
-+ There are still some enhancements we can do, e.g. supporting named optional arguments
-  for top level functions and class methods. And there must be still some bugs there. We
-  need your feed back to make Rikulo EL more stable and complete. Please try it and post
-  enhancements/bugs issue [here](https://github.com/rikulo/rikulo-el/issues/new). We will
-  appreciate it very much.
 
 #Conclusion
 
