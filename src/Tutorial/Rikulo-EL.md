@@ -37,7 +37,7 @@ evaluated is provided by use of [VariableMapper](http://api.rikulo.org/el/latest
     ::dart
     import 'dart:mirrors' show reflect;
     import 'package:rikulo_el/el.dart';
-    
+
     class Person {
       String name;
       Person(this.name);
@@ -46,16 +46,16 @@ evaluated is provided by use of [VariableMapper](http://api.rikulo.org/el/latest
     void main() {
       //Prepare an expression factory.
       ExpressionFactory ef = new ExpressionFactory();
-    
+
       //Prepare the expression script
       //expression inside #{...} is to be evaluated
       String script = 'Hello, #{person.name}!'; 
-    
+
       //Prepare an expression context.
-      ELContext ctx = new ELContext();
-      ctx.variableMapper.setVariable('person',
-          ef.createVariable(new Person('Rikulo')));
-      
+      ELContext ctx = new ELContext(
+        variableMapper:
+          (String name) => name == 'person' ? new Person('Rikulo'): null);
+
       //Parse the script and create a value expression which expect a String type
       ValueExpression ve = ef.createValueExpression(ctx, script, reflect('').type);
       
@@ -74,33 +74,26 @@ Following is still a typical "Hello World" example. Here we use [FunctionMapper]
     ::dart
     import 'dart:mirrors' show reflect;
     import 'package:rikulo_el/el.dart';
-    
+
     class Person {
       String name;
       Person(this.name);
     }
 
-    //Implements a function mapper
-    class _FuncMapper implements FunctionMapper {
-      Function resolveFunction(String name) {
-        switch (name) {
-          case "currentPerson":
-            return () => new Person('Rikulo');
-        }
-      }
-    }
-	
     void main() {
       //Prepare an expression factory.
       ExpressionFactory ef = new ExpressionFactory();
-    
+
       //Prepare the expression script
       //expression inside #{...} is to be evaluated
-      String script = 'Hello, #{currentPerson().name}!'; 
-    
+      String script = 'Hello, #{currentPerson().name}!';
+
       //Prepare an expression context.
-      ELContext ctx = new ELContext(functionMapper: new _FuncMapper());
-      
+      Person currentPerson() => new Person('Rikulo');
+      ELContext ctx = new ELContext(
+        functionMapper:
+          (String name) => name == "currentPerson" ? currentPerson: null);
+
       //Parse the script and create a value expression which expect a String type
       ValueExpression ve = ef.createValueExpression(ctx, script, reflect('').type);
       
@@ -115,9 +108,9 @@ the parser and evaluator to handle the Dart arrays. Following is a
 simple example.
 
     ::dart
-    import 'dart:mirrors';
+    import 'dart:mirrors' show reflect;
     import 'package:rikulo_el/el.dart';
-    
+
     class Person {
       String name;
       Person(this.name);
@@ -126,24 +119,30 @@ simple example.
     void main() {
       //Prepare an expression factory.
       ExpressionFactory ef = new ExpressionFactory();
-    
+
       //Prepare the expression script
       //expression inside #{...} is to be evaluated
       String script = 'Hello, #{[henri, john, mary][0].name}!'; 
-    
+
       //Prepare an expression context.
-      ELContext ctx = new ELContext();
-      ctx.variableMapper
-        ..setVariable('henri', ef.createVariable(new Person('Henri')))
-        ..setVariable('john', ef.createVariable(new Person('John')))
-        ..setVariable('mary', ef.createVariable(new Person('Mary')));
+      String getPerson(String name) {
+        switch (name) {
+          case 'henri':
+            return new Person('Henri');
+          case 'john':
+            return new Person('John');
+          case 'mary':
+            return new Person('Mary');
+        }
+      }
+      ELContext ctx = new ELContext(variableMapper: getPerson);
 
       //Parse the script and create a value expression which expect a String type
       ValueExpression ve = ef.createValueExpression(ctx, script, reflect('').type);
       
       //Evaluate the expression and return the evaluated result
       print(ve.getValue(ctx)); //'Hello, Henri!'
-    }	
+    }
 
 > Note that such Dart array instance is created everytime the value expression is 
 > evaluated and its life scope is only within that "Evaluation". That is, after the 
@@ -152,10 +151,9 @@ simple example.
 ##Allow using Dart map syntax in EL expression
 
     ::dart
-    import 'dart:mirrors';
+    import 'dart:mirrors' show reflect;
     import 'package:rikulo_el/el.dart';
-    import 'package:rikulo_el/impl.dart';
-    
+
     class Person {
       String name;
       Person(this.name);
@@ -164,25 +162,31 @@ simple example.
     void main() {
       //Prepare an expression factory.
       ExpressionFactory ef = new ExpressionFactory();
-    
+
       //Prepare the expression script
       //expression inside #{...} is to be evaluated
       String script = 
         "Hello, #{{'henri' : henri, 'john' : john, 'mary' : mary}['henri'].name}!"; 
-    
+
       //Prepare an expression context.
-      ELContext ctx = new ELContext();
-      ctx.variableMapper
-        ..setVariable('henri', ef.createVariable(new Person('Henri')))
-        ..setVariable('john', ef.createVariable(new Person('John')))
-        ..setVariable('mary', ef.createVariable(new Person('Mary')));
-      
+      String getPerson(String name) {
+        switch (name) {
+          case 'henri':
+            return new Person('Henri');
+          case 'john':
+            return new Person('John');
+          case 'mary':
+            return new Person('Mary');
+        }
+      }
+      ELContext ctx = new ELContext(variableMapper: getPerson);
+
       //Parse the script and create a value expression which expect a String type
       ValueExpression ve = ef.createValueExpression(ctx, script, reflect('').type);
       
       //Evaluate the expression and return the evaluated result
       print(ve.getValue(ctx)); //'Hello, Henri!'
-    }	
+    }
 
 > Note that such Dart map instance is created everytime the value expression is 
 > evaluated and its life scope is only within that "Evaluation". That is, after the 
