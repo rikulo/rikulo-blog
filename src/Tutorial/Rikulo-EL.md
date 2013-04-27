@@ -63,8 +63,6 @@ evaluated is provided by use of [VariableMapper](http://api.rikulo.org/el/latest
       print(ve.getValue(ctx)); //'Hello, Rikulo!'
     }
 
-> If you don't want to save `ValueExpression` for repeating use, you can use [ELUtil.eval()](http://api.rikulo.org/el/latest/rikulo_el/ELUtil.html#eval) instead.
-
 > Instead of reflecting the string's type (with `reflect()`), you can use [STRING_MIRROR](http://api.rikulo.org/commons/latest/rikulo_mirrors.html) instead.
 
 ##Access functions 
