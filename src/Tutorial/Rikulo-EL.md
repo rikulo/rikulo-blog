@@ -123,7 +123,7 @@ simple example.
       String script = 'Hello, #{[henri, john, mary][0].name}!'; 
 
       //Prepare an expression context.
-      String getPerson(String name) {
+      Person getPerson(String name) {
         switch (name) {
           case 'henri':
             return new Person('Henri');
@@ -167,7 +167,7 @@ simple example.
         "Hello, #{{'henri' : henri, 'john' : john, 'mary' : mary}['henri'].name}!"; 
 
       //Prepare an expression context.
-      String getPerson(String name) {
+      Person getPerson(String name) {
         switch (name) {
           case 'henri':
             return new Person('Henri');
