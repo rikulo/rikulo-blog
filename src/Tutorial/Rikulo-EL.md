@@ -53,7 +53,7 @@ evaluated is provided by use of [VariableMapper](http://api.rikulo.org/el/latest
 
       //Prepare an expression context.
       ELContext ctx = new ELContext(
-        variableMapper:
+        resolveVariable:
           (String name) => name == 'person' ? new Person('Rikulo'): null);
 
       //Parse the script and create a value expression which expect a String type
@@ -89,7 +89,7 @@ Following is still a typical "Hello World" example. Here we use [FunctionMapper]
       //Prepare an expression context.
       Person currentPerson() => new Person('Rikulo');
       ELContext ctx = new ELContext(
-        functionMapper:
+        resolveFunction:
           (String name) => name == "currentPerson" ? currentPerson: null);
 
       //Parse the script and create a value expression which expect a String type
@@ -133,7 +133,7 @@ simple example.
             return new Person('Mary');
         }
       }
-      ELContext ctx = new ELContext(variableMapper: getPerson);
+      ELContext ctx = new ELContext(resolveVariable: getPerson);
 
       //Parse the script and create a value expression which expect a String type
       ValueExpression ve = ef.createValueExpression(ctx, script, reflect('').type);
@@ -177,7 +177,7 @@ simple example.
             return new Person('Mary');
         }
       }
-      ELContext ctx = new ELContext(variableMapper: getPerson);
+      ELContext ctx = new ELContext(resolveVariable: getPerson);
 
       //Parse the script and create a value expression which expect a String type
       ValueExpression ve = ef.createValueExpression(ctx, script, reflect('').type);
