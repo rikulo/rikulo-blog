@@ -1,5 +1,5 @@
 Date: 2013-5-3
-Title: Bookjack and DQuery
+Title: Bootjack and DQuery
 Tags: Rikulo, jQuery, Bootstrap
 Author: Simon Pai
 summary: <p>Bootjack and DQuery bring the power of Twitter Bootstrap and jQuery into the Dart world. Read more to explore the design philosophy, a demo and sample usage of them.</p><img src="http://static.rikulo.org/blogs/general/bootjack-dquery/bootjack+dquery-title.png" class="center-blog-image" style="margin-top:16px" />
