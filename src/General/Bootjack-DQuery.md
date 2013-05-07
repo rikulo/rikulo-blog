@@ -77,7 +77,7 @@ With the following global registration in Dart:
 
 	::dart
 	void main() {
-		Bootjack.use(['dropdown']);
+		Dropdown.use();
 	}
 
 That's right. All you need to do in Dart is to tell Bootjack you are using Dropdown components. You can also progammatically access and manipulate the Dropdown:
@@ -129,6 +129,7 @@ The following are not included yet:
 
 * Attributes, Dimentions, CSS
 * Manipulation
+* Event alias
 * Effect
 * Ajax
 * Deferred Object (same as Dart's Future)
