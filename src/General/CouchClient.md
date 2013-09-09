@@ -48,7 +48,7 @@ HelloCouch.dart
 
     ::dart
     import "dart:uri";
-    import "dart:utf";
+    import "dart:convert";
     import "dart:async";
     import "package:couchclient/couchclient.dart";
     
@@ -77,13 +77,13 @@ HelloCouch.dart
     
     Future access(CouchClient client) {
       // Do a set
-      return client.set(DOC_ID, encodeUtf8(VALUE))
+      return client.set(DOC_ID, UTF8.encode(VALUE))
       // Check if set succeeded and show message
       .then((ok) => print(ok ? "Set Succeeded" : "Set failed"))
       // Then get the value back by document id
       .then((_) => client.get(DOC_ID))
       // Check if get data equals to set one
-      .then((val) => decodeUtf8(val.data) == VALUE)
+      .then((val) => UTF8.decode(val.data) == VALUE)
       // Show message
       .then((ok) => print(ok ? "Get Succeeded" : "Get failed"))
       // Close the client
@@ -134,9 +134,8 @@ QueryCouch.dart
 
     ::dart
     import 'dart:async';
-    import 'dart:utf';
+    import 'dart:convert';
     import 'dart:uri';
-    import 'dart:json' as json;
     import 'package:memcached_client/memcached_client.dart';
     import 'package:couchclient/couchclient.dart';
     
@@ -190,13 +189,13 @@ Following is the definition of `queryByView()` function.
       .then((results) {
         for (ViewRow row in results.rows) {
           // Convert List<int> to String
-          String data = decodeUtf8(row.doc.data);
+          String data = UTF8.decode(row.doc.data);
           // Print out some infos about the document
           print("The Key is: ${row.key}");
           print("The full document is : ${data}");
     
-          // Convert it back to an object with json
-          Map bm = json.parse(data);
+          // Convert it back to an object with JSON.decode
+          Map bm = JSON.decode(data);
           Beer beer = new Beer.fromMap(bm);
     
           print("Hi, my name is ${beer.name}!");
